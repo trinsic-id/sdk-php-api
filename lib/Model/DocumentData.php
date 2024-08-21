@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * DocumentData Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => 'string',
         'issue_date' => 'string',
         'expiration_date' => 'string',
-        'issuing_country' => 'string'
+        'issuing_country' => 'string',
+        'issuing_authority' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => null,
         'issue_date' => null,
         'expiration_date' => null,
-        'issuing_country' => null
+        'issuing_country' => null,
+        'issuing_authority' => null
     ];
 
     /**
@@ -89,7 +91,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => false,
         'issue_date' => false,
         'expiration_date' => false,
-        'issuing_country' => false
+        'issuing_country' => false,
+        'issuing_authority' => false
     ];
 
     /**
@@ -182,7 +185,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => 'number',
         'issue_date' => 'issueDate',
         'expiration_date' => 'expirationDate',
-        'issuing_country' => 'issuingCountry'
+        'issuing_country' => 'issuingCountry',
+        'issuing_authority' => 'issuingAuthority'
     ];
 
     /**
@@ -195,7 +199,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => 'setNumber',
         'issue_date' => 'setIssueDate',
         'expiration_date' => 'setExpirationDate',
-        'issuing_country' => 'setIssuingCountry'
+        'issuing_country' => 'setIssuingCountry',
+        'issuing_authority' => 'setIssuingAuthority'
     ];
 
     /**
@@ -208,7 +213,8 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'number' => 'getNumber',
         'issue_date' => 'getIssueDate',
         'expiration_date' => 'getExpirationDate',
-        'issuing_country' => 'getIssuingCountry'
+        'issuing_country' => 'getIssuingCountry',
+        'issuing_authority' => 'getIssuingAuthority'
     ];
 
     /**
@@ -273,6 +279,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('issue_date', $data ?? [], null);
         $this->setIfExists('expiration_date', $data ?? [], null);
         $this->setIfExists('issuing_country', $data ?? [], null);
+        $this->setIfExists('issuing_authority', $data ?? [], null);
     }
 
     /**
@@ -448,6 +455,33 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable issuing_country cannot be null');
         }
         $this->container['issuing_country'] = $issuing_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuing_authority
+     *
+     * @return string|null
+     */
+    public function getIssuingAuthority()
+    {
+        return $this->container['issuing_authority'];
+    }
+
+    /**
+     * Sets issuing_authority
+     *
+     * @param string|null $issuing_authority issuing_authority
+     *
+     * @return self
+     */
+    public function setIssuingAuthority($issuing_authority)
+    {
+        if (is_null($issuing_authority)) {
+            throw new \InvalidArgumentException('non-nullable issuing_authority cannot be null');
+        }
+        $this->container['issuing_authority'] = $issuing_authority;
 
         return $this;
     }

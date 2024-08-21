@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,14 +25,14 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect;
+namespace Trinsic\Api;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://connect.trinsic.id';
+    protected $host = 'https://api.trinsic.id';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -429,7 +429,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Trinsic\Connect) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Trinsic\Api) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: v1' . PHP_EOL;
@@ -473,7 +473,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://connect.trinsic.id",
+                "url" => "https://api.trinsic.id",
                 "description" => "Production server",
             ]
         ];

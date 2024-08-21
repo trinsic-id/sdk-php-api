@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Api;
+namespace Trinsic\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Trinsic\Connect\ApiException;
-use Trinsic\Connect\Configuration;
-use Trinsic\Connect\HeaderSelector;
-use Trinsic\Connect\ObjectSerializer;
+use Trinsic\Api\ApiException;
+use Trinsic\Api\Configuration;
+use Trinsic\Api\HeaderSelector;
+use Trinsic\Api\ObjectSerializer;
 
 /**
  * AttachmentsApi Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -129,10 +129,10 @@ class AttachmentsApi
      *
      * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
      *
-     * @param  \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request exchange_attachment_access_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request exchange_attachment_access_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeAttachmentAccessKey'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -146,10 +146,10 @@ class AttachmentsApi
      *
      * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
      *
-     * @param  \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeAttachmentAccessKey'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -199,7 +199,7 @@ class AttachmentsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -207,7 +207,7 @@ class AttachmentsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class AttachmentsApi
      *
      * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
      *
-     * @param  \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeAttachmentAccessKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -243,7 +243,7 @@ class AttachmentsApi
      *
      * Exchange an Attachment Access Key (from &#x60;IdentityData.Attachments&#x60;) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
      *
-     * @param  \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeAttachmentAccessKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -280,7 +280,7 @@ class AttachmentsApi
     /**
      * Create request for operation 'exchangeAttachmentAccessKey'
      *
-     * @param  \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest $exchange_attachment_access_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeAttachmentAccessKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

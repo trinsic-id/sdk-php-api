@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * Verification Class Doc Comment
  *
  * @category Class
  * @description A Verification contained within a Session
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'provider' => 'string',
-        'fail_code' => '\Trinsic\Connect\Model\VerificationFailCode'
+        'fail_code' => '\Trinsic\Api\Model\VerificationFailCode'
     ];
 
     /**
@@ -327,7 +327,7 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fail_code
      *
-     * @return \Trinsic\Connect\Model\VerificationFailCode|null
+     * @return \Trinsic\Api\Model\VerificationFailCode|null
      */
     public function getFailCode()
     {
@@ -337,7 +337,7 @@ class Verification implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fail_code
      *
-     * @param \Trinsic\Connect\Model\VerificationFailCode|null $fail_code If the Verification is in state `VerificationFailed`, this field contains the reason for failure
+     * @param \Trinsic\Api\Model\VerificationFailCode|null $fail_code If the Verification is in state `VerificationFailed`, this field contains the reason for failure
      *
      * @return self
      */

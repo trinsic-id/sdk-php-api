@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,18 +25,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Trinsic\Connect\Test\Api;
+namespace Trinsic\Api\Test\Api;
 
-use \Trinsic\Connect\Configuration;
-use \Trinsic\Connect\ApiException;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\Configuration;
+use \Trinsic\Api\ApiException;
+use \Trinsic\Api\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * AttachmentsApiTest Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Api;
+namespace Trinsic\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Trinsic\Connect\ApiException;
-use Trinsic\Connect\Configuration;
-use Trinsic\Connect\HeaderSelector;
-use Trinsic\Connect\ObjectSerializer;
+use Trinsic\Api\ApiException;
+use Trinsic\Api\Configuration;
+use Trinsic\Api\HeaderSelector;
+use Trinsic\Api\ObjectSerializer;
 
 /**
  * NetworkApi Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -133,9 +133,9 @@ class NetworkApi
      * @param  string $phone_number phone_number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['identityLookup'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\IdentityLookupResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\IdentityLookupResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function identityLookup($phone_number, string $contentType = self::contentTypes['identityLookup'][0])
     {
@@ -151,9 +151,9 @@ class NetworkApi
      * @param  string $phone_number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['identityLookup'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\IdentityLookupResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\IdentityLookupResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function identityLookupWithHttpInfo($phone_number, string $contentType = self::contentTypes['identityLookup'][0])
     {
@@ -196,11 +196,11 @@ class NetworkApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\IdentityLookupResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\IdentityLookupResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\IdentityLookupResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\IdentityLookupResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -218,16 +218,16 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\IdentityLookupResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\IdentityLookupResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -245,16 +245,16 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -272,13 +272,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\IdentityLookupResponse';
+            $returnType = '\Trinsic\Api\Model\IdentityLookupResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -311,7 +311,7 @@ class NetworkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\IdentityLookupResponse',
+                        '\Trinsic\Api\Model\IdentityLookupResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -319,7 +319,7 @@ class NetworkApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -327,7 +327,7 @@ class NetworkApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -371,7 +371,7 @@ class NetworkApi
      */
     public function identityLookupAsyncWithHttpInfo($phone_number, string $contentType = self::contentTypes['identityLookup'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\IdentityLookupResponse';
+        $returnType = '\Trinsic\Api\Model\IdentityLookupResponse';
         $request = $this->identityLookupRequest($phone_number, $contentType);
 
         return $this->client
@@ -513,9 +513,9 @@ class NetworkApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\ListProvidersResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function listProviders(string $contentType = self::contentTypes['listProviders'][0])
     {
@@ -530,9 +530,9 @@ class NetworkApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\ListProvidersResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProvidersWithHttpInfo(string $contentType = self::contentTypes['listProviders'][0])
     {
@@ -575,11 +575,11 @@ class NetworkApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\ListProvidersResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ListProvidersResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ListProvidersResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\ListProvidersResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -597,16 +597,16 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ListProvidersResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ListProvidersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -624,16 +624,16 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -651,13 +651,13 @@ class NetworkApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\ListProvidersResponse';
+            $returnType = '\Trinsic\Api\Model\ListProvidersResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -690,7 +690,7 @@ class NetworkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ListProvidersResponse',
+                        '\Trinsic\Api\Model\ListProvidersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -698,7 +698,7 @@ class NetworkApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -706,7 +706,7 @@ class NetworkApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -748,7 +748,7 @@ class NetworkApi
      */
     public function listProvidersAsyncWithHttpInfo(string $contentType = self::contentTypes['listProviders'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\ListProvidersResponse';
+        $returnType = '\Trinsic\Api\Model\ListProvidersResponse';
         $request = $this->listProvidersRequest($contentType);
 
         return $this->client

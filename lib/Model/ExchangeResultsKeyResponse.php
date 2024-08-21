@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * ExchangeResultsKeyResponse Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ExchangeResultsKeyResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'session' => '\Trinsic\Connect\Model\Session',
-        'identity_data' => '\Trinsic\Connect\Model\IdentityData'
+        'session' => '\Trinsic\Api\Model\Session',
+        'identity_data' => '\Trinsic\Api\Model\IdentityData'
     ];
 
     /**
@@ -302,7 +302,7 @@ class ExchangeResultsKeyResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets session
      *
-     * @return \Trinsic\Connect\Model\Session
+     * @return \Trinsic\Api\Model\Session
      */
     public function getSession()
     {
@@ -312,7 +312,7 @@ class ExchangeResultsKeyResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets session
      *
-     * @param \Trinsic\Connect\Model\Session $session session
+     * @param \Trinsic\Api\Model\Session $session session
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class ExchangeResultsKeyResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets identity_data
      *
-     * @return \Trinsic\Connect\Model\IdentityData|null
+     * @return \Trinsic\Api\Model\IdentityData|null
      */
     public function getIdentityData()
     {
@@ -339,7 +339,7 @@ class ExchangeResultsKeyResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets identity_data
      *
-     * @param \Trinsic\Connect\Model\IdentityData|null $identity_data identity_data
+     * @param \Trinsic\Api\Model\IdentityData|null $identity_data identity_data
      *
      * @return self
      */

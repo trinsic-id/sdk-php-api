@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * CreateSessionRequest Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,8 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'launch_method_directly' => 'bool',
-        'redirect_url' => 'string',
         'providers' => 'string[]',
-        'disclosed_fields' => '\Trinsic\Connect\Model\DisclosedFieldsRequest'
+        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
     ];
 
     /**
@@ -72,7 +71,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'launch_method_directly' => null,
-        'redirect_url' => null,
         'providers' => null,
         'disclosed_fields' => null
     ];
@@ -84,7 +82,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'launch_method_directly' => false,
-        'redirect_url' => false,
         'providers' => false,
         'disclosed_fields' => false
     ];
@@ -176,7 +173,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'launch_method_directly' => 'launchMethodDirectly',
-        'redirect_url' => 'redirectUrl',
         'providers' => 'providers',
         'disclosed_fields' => 'disclosedFields'
     ];
@@ -188,7 +184,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'launch_method_directly' => 'setLaunchMethodDirectly',
-        'redirect_url' => 'setRedirectUrl',
         'providers' => 'setProviders',
         'disclosed_fields' => 'setDisclosedFields'
     ];
@@ -200,7 +195,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'launch_method_directly' => 'getLaunchMethodDirectly',
-        'redirect_url' => 'getRedirectUrl',
         'providers' => 'getProviders',
         'disclosed_fields' => 'getDisclosedFields'
     ];
@@ -263,7 +257,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->setIfExists('launch_method_directly', $data ?? [], null);
-        $this->setIfExists('redirect_url', $data ?? [], null);
         $this->setIfExists('providers', $data ?? [], null);
         $this->setIfExists('disclosed_fields', $data ?? [], null);
     }
@@ -338,33 +331,6 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets redirect_url
-     *
-     * @return string|null
-     */
-    public function getRedirectUrl()
-    {
-        return $this->container['redirect_url'];
-    }
-
-    /**
-     * Sets redirect_url
-     *
-     * @param string|null $redirect_url The URL to redirect to after the user has completed the identity verification process.                If `LaunchMethodDirectly` is set to `true`, this field is required.
-     *
-     * @return self
-     */
-    public function setRedirectUrl($redirect_url)
-    {
-        if (is_null($redirect_url)) {
-            throw new \InvalidArgumentException('non-nullable redirect_url cannot be null');
-        }
-        $this->container['redirect_url'] = $redirect_url;
-
-        return $this;
-    }
-
-    /**
      * Gets providers
      *
      * @return string[]|null
@@ -394,7 +360,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets disclosed_fields
      *
-     * @return \Trinsic\Connect\Model\DisclosedFieldsRequest|null
+     * @return \Trinsic\Api\Model\DisclosedFieldsRequest|null
      */
     public function getDisclosedFields()
     {
@@ -404,7 +370,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets disclosed_fields
      *
-     * @param \Trinsic\Connect\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
+     * @param \Trinsic\Api\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
      *
      * @return self
      */

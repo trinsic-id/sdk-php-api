@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * Address Class Doc Comment
  *
  * @category Class
  * @description Address information for an individual
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **nationality** | **string** |  | [optional]
 **gender** | **string** |  | [optional]
 **phone_number** | **string** |  | [optional]
-**address** | [**\Trinsic\Connect\Model\Address**](Address.md) | Address information for an individual | [optional]
+**address** | [**\Trinsic\Api\Model\Address**](Address.md) | Address information for an individual | [optional]
 **date_of_birth** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

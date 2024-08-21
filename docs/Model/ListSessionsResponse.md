@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sessions** | [**\Trinsic\Connect\Model\Session[]**](Session.md) |  |
+**sessions** | [**\Trinsic\Api\Model\Session[]**](Session.md) |  |
 **total** | **int** | The total number of sessions tied to your account |
 **more** | **bool** | Whether there are additional pages of sessions to retrieve |
 

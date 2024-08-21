@@ -1,6 +1,6 @@
-# Trinsic\Connect\SessionsApi
+# Trinsic\Api\SessionsApi
 
-All URIs are relative to https://connect.trinsic.id, except if the operation defines another base path.
+All URIs are relative to https://api.trinsic.id, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -15,7 +15,7 @@ All URIs are relative to https://connect.trinsic.id, except if the operation def
 ## `cancelSession()`
 
 ```php
-cancelSession($session_id): \Trinsic\Connect\Model\CancelSessionResponse
+cancelSession($session_id): \Trinsic\Api\Model\CancelSessionResponse
 ```
 
 Cancel a Session by its ID
@@ -28,10 +28,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\Trinsic\Connect\Model\CancelSessionResponse**](../Model/CancelSessionResponse.md)
+[**\Trinsic\Api\Model\CancelSessionResponse**](../Model/CancelSessionResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ try {
 ## `createSession()`
 
 ```php
-createSession($create_session_request): \Trinsic\Connect\Model\CreateSessionResponse
+createSession($create_session_request): \Trinsic\Api\Model\CreateSessionResponse
 ```
 
 Create a Session to verify a user's identity
@@ -86,16 +86,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_session_request = new \Trinsic\Connect\Model\CreateSessionRequest(); // \Trinsic\Connect\Model\CreateSessionRequest
+$create_session_request = new \Trinsic\Api\Model\CreateSessionRequest(); // \Trinsic\Api\Model\CreateSessionRequest
 
 try {
     $result = $apiInstance->createSession($create_session_request);
@@ -109,11 +109,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_session_request** | [**\Trinsic\Connect\Model\CreateSessionRequest**](../Model/CreateSessionRequest.md)|  | [optional] |
+| **create_session_request** | [**\Trinsic\Api\Model\CreateSessionRequest**](../Model/CreateSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\Trinsic\Connect\Model\CreateSessionResponse**](../Model/CreateSessionResponse.md)
+[**\Trinsic\Api\Model\CreateSessionResponse**](../Model/CreateSessionResponse.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ## `exchangeResultsKey()`
 
 ```php
-exchangeResultsKey($session_id, $exchange_results_key_request): \Trinsic\Connect\Model\ExchangeResultsKeyResponse
+exchangeResultsKey($session_id, $exchange_results_key_request): \Trinsic\Api\Model\ExchangeResultsKeyResponse
 ```
 
 Exchange a Results Access Key for Identity Data
@@ -144,17 +144,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $session_id = 'session_id_example'; // string
-$exchange_results_key_request = new \Trinsic\Connect\Model\ExchangeResultsKeyRequest(); // \Trinsic\Connect\Model\ExchangeResultsKeyRequest
+$exchange_results_key_request = new \Trinsic\Api\Model\ExchangeResultsKeyRequest(); // \Trinsic\Api\Model\ExchangeResultsKeyRequest
 
 try {
     $result = $apiInstance->exchangeResultsKey($session_id, $exchange_results_key_request);
@@ -169,11 +169,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **session_id** | **string**|  | |
-| **exchange_results_key_request** | [**\Trinsic\Connect\Model\ExchangeResultsKeyRequest**](../Model/ExchangeResultsKeyRequest.md)|  | [optional] |
+| **exchange_results_key_request** | [**\Trinsic\Api\Model\ExchangeResultsKeyRequest**](../Model/ExchangeResultsKeyRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\Trinsic\Connect\Model\ExchangeResultsKeyResponse**](../Model/ExchangeResultsKeyResponse.md)
+[**\Trinsic\Api\Model\ExchangeResultsKeyResponse**](../Model/ExchangeResultsKeyResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ try {
 ## `getSession()`
 
 ```php
-getSession($session_id): \Trinsic\Connect\Model\GetSessionResponse
+getSession($session_id): \Trinsic\Api\Model\GetSessionResponse
 ```
 
 Get a Session by its ID
@@ -204,10 +204,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -231,7 +231,7 @@ try {
 
 ### Return type
 
-[**\Trinsic\Connect\Model\GetSessionResponse**](../Model/GetSessionResponse.md)
+[**\Trinsic\Api\Model\GetSessionResponse**](../Model/GetSessionResponse.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ try {
 ## `listSessions()`
 
 ```php
-listSessions($order_by, $order_direction, $page_size, $page): \Trinsic\Connect\Model\ListSessionsResponse
+listSessions($order_by, $order_direction, $page_size, $page): \Trinsic\Api\Model\ListSessionsResponse
 ```
 
 List Sessions created by your account
@@ -262,17 +262,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_by = Created; // \Trinsic\Connect\Model\SessionOrdering | The field by which sessions should be ordered
-$order_direction = Descending; // \Trinsic\Connect\Model\OrderDirection
+$order_by = Created; // \Trinsic\Api\Model\SessionOrdering | The field by which sessions should be ordered
+$order_direction = Descending; // \Trinsic\Api\Model\OrderDirection
 $page_size = 50; // int | The number of items to return per page -- must be between `1` and `50`
 $page = 1; // int | The page number to return -- starts at `1`
 
@@ -288,14 +288,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_by** | [**\Trinsic\Connect\Model\SessionOrdering**](../Model/.md)| The field by which sessions should be ordered | [optional] |
-| **order_direction** | [**\Trinsic\Connect\Model\OrderDirection**](../Model/.md)|  | [optional] |
+| **order_by** | [**\Trinsic\Api\Model\SessionOrdering**](../Model/.md)| The field by which sessions should be ordered | [optional] |
+| **order_direction** | [**\Trinsic\Api\Model\OrderDirection**](../Model/.md)|  | [optional] |
 | **page_size** | **int**| The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; | [optional] |
 | **page** | **int**| The page number to return -- starts at &#x60;1&#x60; | [optional] |
 
 ### Return type
 
-[**\Trinsic\Connect\Model\ListSessionsResponse**](../Model/ListSessionsResponse.md)
+[**\Trinsic\Api\Model\ListSessionsResponse**](../Model/ListSessionsResponse.md)
 
 ### Authorization
 
@@ -326,10 +326,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\SessionsApi(
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

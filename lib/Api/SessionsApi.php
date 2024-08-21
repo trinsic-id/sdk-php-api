@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Api;
+namespace Trinsic\Api\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Trinsic\Connect\ApiException;
-use Trinsic\Connect\Configuration;
-use Trinsic\Connect\HeaderSelector;
-use Trinsic\Connect\ObjectSerializer;
+use Trinsic\Api\ApiException;
+use Trinsic\Api\Configuration;
+use Trinsic\Api\HeaderSelector;
+use Trinsic\Api\ObjectSerializer;
 
 /**
  * SessionsApi Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,9 +149,9 @@ class SessionsApi
      * @param  string $session_id session_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\CancelSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function cancelSession($session_id, string $contentType = self::contentTypes['cancelSession'][0])
     {
@@ -167,9 +167,9 @@ class SessionsApi
      * @param  string $session_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\CancelSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSessionWithHttpInfo($session_id, string $contentType = self::contentTypes['cancelSession'][0])
     {
@@ -212,11 +212,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\CancelSessionResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\CancelSessionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\CancelSessionResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\CancelSessionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -234,16 +234,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\CancelSessionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\CancelSessionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -261,16 +261,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -288,13 +288,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\CancelSessionResponse';
+            $returnType = '\Trinsic\Api\Model\CancelSessionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -327,7 +327,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\CancelSessionResponse',
+                        '\Trinsic\Api\Model\CancelSessionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -335,7 +335,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -343,7 +343,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -387,7 +387,7 @@ class SessionsApi
      */
     public function cancelSessionAsyncWithHttpInfo($session_id, string $contentType = self::contentTypes['cancelSession'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\CancelSessionResponse';
+        $returnType = '\Trinsic\Api\Model\CancelSessionResponse';
         $request = $this->cancelSessionRequest($session_id, $contentType);
 
         return $this->client
@@ -527,12 +527,12 @@ class SessionsApi
      *
      * Create a Session to verify a user&#39;s identity
      *
-     * @param  \Trinsic\Connect\Model\CreateSessionRequest $create_session_request create_session_request (optional)
+     * @param  \Trinsic\Api\Model\CreateSessionRequest $create_session_request create_session_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\CreateSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\CreateSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function createSession($create_session_request = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -545,12 +545,12 @@ class SessionsApi
      *
      * Create a Session to verify a user&#39;s identity
      *
-     * @param  \Trinsic\Connect\Model\CreateSessionRequest $create_session_request (optional)
+     * @param  \Trinsic\Api\Model\CreateSessionRequest $create_session_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\CreateSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CreateSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSessionWithHttpInfo($create_session_request = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -593,11 +593,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\CreateSessionResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\CreateSessionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\CreateSessionResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\CreateSessionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -615,16 +615,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\CreateSessionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\CreateSessionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -642,16 +642,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -669,13 +669,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\CreateSessionResponse';
+            $returnType = '\Trinsic\Api\Model\CreateSessionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -708,7 +708,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\CreateSessionResponse',
+                        '\Trinsic\Api\Model\CreateSessionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -716,7 +716,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -724,7 +724,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -739,7 +739,7 @@ class SessionsApi
      *
      * Create a Session to verify a user&#39;s identity
      *
-     * @param  \Trinsic\Connect\Model\CreateSessionRequest $create_session_request (optional)
+     * @param  \Trinsic\Api\Model\CreateSessionRequest $create_session_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -760,7 +760,7 @@ class SessionsApi
      *
      * Create a Session to verify a user&#39;s identity
      *
-     * @param  \Trinsic\Connect\Model\CreateSessionRequest $create_session_request (optional)
+     * @param  \Trinsic\Api\Model\CreateSessionRequest $create_session_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -768,7 +768,7 @@ class SessionsApi
      */
     public function createSessionAsyncWithHttpInfo($create_session_request = null, string $contentType = self::contentTypes['createSession'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\CreateSessionResponse';
+        $returnType = '\Trinsic\Api\Model\CreateSessionResponse';
         $request = $this->createSessionRequest($create_session_request, $contentType);
 
         return $this->client
@@ -810,7 +810,7 @@ class SessionsApi
     /**
      * Create request for operation 'createSession'
      *
-     * @param  \Trinsic\Connect\Model\CreateSessionRequest $create_session_request (optional)
+     * @param  \Trinsic\Api\Model\CreateSessionRequest $create_session_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -902,12 +902,12 @@ class SessionsApi
      * Exchange a Results Access Key for Identity Data
      *
      * @param  string $session_id session_id (required)
-     * @param  \Trinsic\Connect\Model\ExchangeResultsKeyRequest $exchange_results_key_request exchange_results_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeResultsKeyRequest $exchange_results_key_request exchange_results_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeResultsKey'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\ExchangeResultsKeyResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\ExchangeResultsKeyResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function exchangeResultsKey($session_id, $exchange_results_key_request = null, string $contentType = self::contentTypes['exchangeResultsKey'][0])
     {
@@ -921,12 +921,12 @@ class SessionsApi
      * Exchange a Results Access Key for Identity Data
      *
      * @param  string $session_id (required)
-     * @param  \Trinsic\Connect\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeResultsKey'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\ExchangeResultsKeyResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ExchangeResultsKeyResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function exchangeResultsKeyWithHttpInfo($session_id, $exchange_results_key_request = null, string $contentType = self::contentTypes['exchangeResultsKey'][0])
     {
@@ -969,11 +969,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\ExchangeResultsKeyResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ExchangeResultsKeyResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ExchangeResultsKeyResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\ExchangeResultsKeyResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -991,16 +991,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ExchangeResultsKeyResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ExchangeResultsKeyResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1018,16 +1018,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1045,13 +1045,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\ExchangeResultsKeyResponse';
+            $returnType = '\Trinsic\Api\Model\ExchangeResultsKeyResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1084,7 +1084,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ExchangeResultsKeyResponse',
+                        '\Trinsic\Api\Model\ExchangeResultsKeyResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1092,7 +1092,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1100,7 +1100,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1116,7 +1116,7 @@ class SessionsApi
      * Exchange a Results Access Key for Identity Data
      *
      * @param  string $session_id (required)
-     * @param  \Trinsic\Connect\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeResultsKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1138,7 +1138,7 @@ class SessionsApi
      * Exchange a Results Access Key for Identity Data
      *
      * @param  string $session_id (required)
-     * @param  \Trinsic\Connect\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeResultsKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1146,7 +1146,7 @@ class SessionsApi
      */
     public function exchangeResultsKeyAsyncWithHttpInfo($session_id, $exchange_results_key_request = null, string $contentType = self::contentTypes['exchangeResultsKey'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\ExchangeResultsKeyResponse';
+        $returnType = '\Trinsic\Api\Model\ExchangeResultsKeyResponse';
         $request = $this->exchangeResultsKeyRequest($session_id, $exchange_results_key_request, $contentType);
 
         return $this->client
@@ -1189,7 +1189,7 @@ class SessionsApi
      * Create request for operation 'exchangeResultsKey'
      *
      * @param  string $session_id (required)
-     * @param  \Trinsic\Connect\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
+     * @param  \Trinsic\Api\Model\ExchangeResultsKeyRequest $exchange_results_key_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exchangeResultsKey'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1298,9 +1298,9 @@ class SessionsApi
      * @param  string $session_id  (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\GetSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function getSession($session_id, string $contentType = self::contentTypes['getSession'][0])
     {
@@ -1316,9 +1316,9 @@ class SessionsApi
      * @param  string $session_id  (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\GetSessionResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionWithHttpInfo($session_id, string $contentType = self::contentTypes['getSession'][0])
     {
@@ -1361,11 +1361,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\GetSessionResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\GetSessionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\GetSessionResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\GetSessionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1383,16 +1383,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\GetSessionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\GetSessionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1410,16 +1410,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1437,13 +1437,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\GetSessionResponse';
+            $returnType = '\Trinsic\Api\Model\GetSessionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1476,7 +1476,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\GetSessionResponse',
+                        '\Trinsic\Api\Model\GetSessionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1484,7 +1484,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1492,7 +1492,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1536,7 +1536,7 @@ class SessionsApi
      */
     public function getSessionAsyncWithHttpInfo($session_id, string $contentType = self::contentTypes['getSession'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\GetSessionResponse';
+        $returnType = '\Trinsic\Api\Model\GetSessionResponse';
         $request = $this->getSessionRequest($session_id, $contentType);
 
         return $this->client
@@ -1676,15 +1676,15 @@ class SessionsApi
      *
      * List Sessions created by your account
      *
-     * @param  \Trinsic\Connect\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
-     * @param  \Trinsic\Connect\Model\OrderDirection $order_direction order_direction (optional)
+     * @param  \Trinsic\Api\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
+     * @param  \Trinsic\Api\Model\OrderDirection $order_direction order_direction (optional)
      * @param  int $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
      * @param  int $page The page number to return -- starts at &#x60;1&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSessions'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Connect\Model\ListSessionsResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage
+     * @return \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage
      */
     public function listSessions($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
@@ -1697,15 +1697,15 @@ class SessionsApi
      *
      * List Sessions created by your account
      *
-     * @param  \Trinsic\Connect\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
-     * @param  \Trinsic\Connect\Model\OrderDirection $order_direction (optional)
+     * @param  \Trinsic\Api\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
+     * @param  \Trinsic\Api\Model\OrderDirection $order_direction (optional)
      * @param  int $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
      * @param  int $page The page number to return -- starts at &#x60;1&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSessions'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Connect\Model\ListSessionsResponse|\Trinsic\Connect\Model\ValidationResult[]|\Trinsic\Connect\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ValidationResult[]|\Trinsic\Api\Model\FailureMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSessionsWithHttpInfo($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
@@ -1748,11 +1748,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Trinsic\Connect\Model\ListSessionsResponse' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ListSessionsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ListSessionsResponse' !== 'string') {
+                        if ('\Trinsic\Api\Model\ListSessionsResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1770,16 +1770,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ListSessionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ListSessionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Trinsic\Connect\Model\ValidationResult[]' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\ValidationResult[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\ValidationResult[]' !== 'string') {
+                        if ('\Trinsic\Api\Model\ValidationResult[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1797,16 +1797,16 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\ValidationResult[]', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\ValidationResult[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Trinsic\Connect\Model\FailureMessage' === '\SplFileObject') {
+                    if ('\Trinsic\Api\Model\FailureMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Trinsic\Connect\Model\FailureMessage' !== 'string') {
+                        if ('\Trinsic\Api\Model\FailureMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1824,13 +1824,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Trinsic\Connect\Model\FailureMessage', []),
+                        ObjectSerializer::deserialize($content, '\Trinsic\Api\Model\FailureMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Trinsic\Connect\Model\ListSessionsResponse';
+            $returnType = '\Trinsic\Api\Model\ListSessionsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1863,7 +1863,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ListSessionsResponse',
+                        '\Trinsic\Api\Model\ListSessionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1871,7 +1871,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1879,7 +1879,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1894,8 +1894,8 @@ class SessionsApi
      *
      * List Sessions created by your account
      *
-     * @param  \Trinsic\Connect\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
-     * @param  \Trinsic\Connect\Model\OrderDirection $order_direction (optional)
+     * @param  \Trinsic\Api\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
+     * @param  \Trinsic\Api\Model\OrderDirection $order_direction (optional)
      * @param  int $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
      * @param  int $page The page number to return -- starts at &#x60;1&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSessions'] to see the possible values for this operation
@@ -1918,8 +1918,8 @@ class SessionsApi
      *
      * List Sessions created by your account
      *
-     * @param  \Trinsic\Connect\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
-     * @param  \Trinsic\Connect\Model\OrderDirection $order_direction (optional)
+     * @param  \Trinsic\Api\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
+     * @param  \Trinsic\Api\Model\OrderDirection $order_direction (optional)
      * @param  int $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
      * @param  int $page The page number to return -- starts at &#x60;1&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSessions'] to see the possible values for this operation
@@ -1929,7 +1929,7 @@ class SessionsApi
      */
     public function listSessionsAsyncWithHttpInfo($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
-        $returnType = '\Trinsic\Connect\Model\ListSessionsResponse';
+        $returnType = '\Trinsic\Api\Model\ListSessionsResponse';
         $request = $this->listSessionsRequest($order_by, $order_direction, $page_size, $page, $contentType);
 
         return $this->client
@@ -1971,8 +1971,8 @@ class SessionsApi
     /**
      * Create request for operation 'listSessions'
      *
-     * @param  \Trinsic\Connect\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
-     * @param  \Trinsic\Connect\Model\OrderDirection $order_direction (optional)
+     * @param  \Trinsic\Api\Model\SessionOrdering $order_by The field by which sessions should be ordered (optional)
+     * @param  \Trinsic\Api\Model\OrderDirection $order_direction (optional)
      * @param  int $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
      * @param  int $page The page number to return -- starts at &#x60;1&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSessions'] to see the possible values for this operation
@@ -2112,7 +2112,7 @@ class SessionsApi
      * @param  string $session_id session_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redactSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2129,7 +2129,7 @@ class SessionsApi
      * @param  string $session_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redactSession'] to see the possible values for this operation
      *
-     * @throws \Trinsic\Connect\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2179,7 +2179,7 @@ class SessionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\ValidationResult[]',
+                        '\Trinsic\Api\Model\ValidationResult[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2187,7 +2187,7 @@ class SessionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Connect\Model\FailureMessage',
+                        '\Trinsic\Api\Model\FailureMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Trinsic\Connect\Test\Model;
+namespace Trinsic\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description CreateSessionRequest
- * @package     Trinsic\Connect
+ * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
@@ -83,15 +83,6 @@ class CreateSessionRequestTest extends TestCase
      * Test attribute "launch_method_directly"
      */
     public function testPropertyLaunchMethodDirectly()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "redirect_url"
-     */
-    public function testPropertyRedirectUrl()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

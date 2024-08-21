@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * ListProvidersResponse Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'providers' => '\Trinsic\Connect\Model\ProviderInfo[]'
+        'providers' => '\Trinsic\Api\Model\ProviderInfo[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets providers
      *
-     * @return \Trinsic\Connect\Model\ProviderInfo[]
+     * @return \Trinsic\Api\Model\ProviderInfo[]
      */
     public function getProviders()
     {
@@ -305,7 +305,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets providers
      *
-     * @param \Trinsic\Connect\Model\ProviderInfo[] $providers The list of identity providers available to your account
+     * @param \Trinsic\Api\Model\ProviderInfo[] $providers The list of identity providers available to your account
      *
      * @return self
      */

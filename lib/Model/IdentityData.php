@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * IdentityData Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'originating_provider_id' => 'string',
-        'person' => '\Trinsic\Connect\Model\PersonData',
-        'document' => '\Trinsic\Connect\Model\DocumentData',
-        'attachments' => '\Trinsic\Connect\Model\Attachments'
+        'person' => '\Trinsic\Api\Model\PersonData',
+        'document' => '\Trinsic\Api\Model\DocumentData',
+        'attachments' => '\Trinsic\Api\Model\Attachments'
     ];
 
     /**
@@ -340,7 +340,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person
      *
-     * @return \Trinsic\Connect\Model\PersonData|null
+     * @return \Trinsic\Api\Model\PersonData|null
      */
     public function getPerson()
     {
@@ -350,7 +350,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person
      *
-     * @param \Trinsic\Connect\Model\PersonData|null $person Identity data of the individual who was verified
+     * @param \Trinsic\Api\Model\PersonData|null $person Identity data of the individual who was verified
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets document
      *
-     * @return \Trinsic\Connect\Model\DocumentData|null
+     * @return \Trinsic\Api\Model\DocumentData|null
      */
     public function getDocument()
     {
@@ -377,7 +377,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets document
      *
-     * @param \Trinsic\Connect\Model\DocumentData|null $document Identity data of the document involved in verification, if relevant
+     * @param \Trinsic\Api\Model\DocumentData|null $document Identity data of the document involved in verification, if relevant
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachments
      *
-     * @return \Trinsic\Connect\Model\Attachments|null
+     * @return \Trinsic\Api\Model\Attachments|null
      */
     public function getAttachments()
     {
@@ -404,7 +404,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \Trinsic\Connect\Model\Attachments|null $attachments Access keys for attachments (eg document/selfie images)
+     * @param \Trinsic\Api\Model\Attachments|null $attachments Access keys for attachments (eg document/selfie images)
      *
      * @return self
      */

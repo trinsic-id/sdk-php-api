@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * PersonData Class Doc Comment
  *
  * @category Class
  * @description Identity information for the individual being verified
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,7 +65,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
         'nationality' => 'string',
         'gender' => 'string',
         'phone_number' => 'string',
-        'address' => '\Trinsic\Connect\Model\Address',
+        'address' => '\Trinsic\Api\Model\Address',
         'date_of_birth' => 'string'
     ];
 
@@ -538,7 +538,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \Trinsic\Connect\Model\Address|null
+     * @return \Trinsic\Api\Model\Address|null
      */
     public function getAddress()
     {
@@ -548,7 +548,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \Trinsic\Connect\Model\Address|null $address Address information for an individual
+     * @param \Trinsic\Api\Model\Address|null $address Address information for an individual
      *
      * @return self
      */

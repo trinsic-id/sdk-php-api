@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Trinsic\Connect\Test\Model;
+namespace Trinsic\Api\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description DocumentData
- * @package     Trinsic\Connect
+ * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
@@ -119,6 +119,15 @@ class DocumentDataTest extends TestCase
      * Test attribute "issuing_country"
      */
     public function testPropertyIssuingCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issuing_authority"
+     */
+    public function testPropertyIssuingAuthority()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

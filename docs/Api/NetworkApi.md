@@ -1,6 +1,6 @@
-# Trinsic\Connect\NetworkApi
+# Trinsic\Api\NetworkApi
 
-All URIs are relative to https://connect.trinsic.id, except if the operation defines another base path.
+All URIs are relative to https://api.trinsic.id, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,7 +11,7 @@ All URIs are relative to https://connect.trinsic.id, except if the operation def
 ## `identityLookup()`
 
 ```php
-identityLookup($phone_number): \Trinsic\Connect\Model\IdentityLookupResponse
+identityLookup($phone_number): \Trinsic\Api\Model\IdentityLookupResponse
 ```
 
 Query the availability of an identity in the Trinsic Network by phone number
@@ -24,10 +24,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\NetworkApi(
+$apiInstance = new Trinsic\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ try {
 
 ### Return type
 
-[**\Trinsic\Connect\Model\IdentityLookupResponse**](../Model/IdentityLookupResponse.md)
+[**\Trinsic\Api\Model\IdentityLookupResponse**](../Model/IdentityLookupResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ try {
 ## `listProviders()`
 
 ```php
-listProviders(): \Trinsic\Connect\Model\ListProvidersResponse
+listProviders(): \Trinsic\Api\Model\ListProvidersResponse
 ```
 
 List all identity providers available for use
@@ -82,10 +82,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\NetworkApi(
+$apiInstance = new Trinsic\Api\Api\NetworkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Trinsic\Connect\Model\ListProvidersResponse**](../Model/ListProvidersResponse.md)
+[**\Trinsic\Api\Model\ListProvidersResponse**](../Model/ListProvidersResponse.md)
 
 ### Authorization
 

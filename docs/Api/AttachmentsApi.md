@@ -1,6 +1,6 @@
-# Trinsic\Connect\AttachmentsApi
+# Trinsic\Api\AttachmentsApi
 
-All URIs are relative to https://connect.trinsic.id, except if the operation defines another base path.
+All URIs are relative to https://api.trinsic.id, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -23,16 +23,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: Bearer
-$config = Trinsic\Connect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Trinsic\Connect\Api\AttachmentsApi(
+$apiInstance = new Trinsic\Api\Api\AttachmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$exchange_attachment_access_key_request = new \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest(); // \Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest
+$exchange_attachment_access_key_request = new \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest(); // \Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest
 
 try {
     $apiInstance->exchangeAttachmentAccessKey($exchange_attachment_access_key_request);
@@ -45,7 +45,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exchange_attachment_access_key_request** | [**\Trinsic\Connect\Model\ExchangeAttachmentAccessKeyRequest**](../Model/ExchangeAttachmentAccessKeyRequest.md)|  | [optional] |
+| **exchange_attachment_access_key_request** | [**\Trinsic\Api\Model\ExchangeAttachmentAccessKeyRequest**](../Model/ExchangeAttachmentAccessKeyRequest.md)|  | [optional] |
 
 ### Return type
 

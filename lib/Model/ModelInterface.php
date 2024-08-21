@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect\Model
+ * @package  Trinsic\Api\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Trinsic\Connect\Model
+ * @package Trinsic\Api\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

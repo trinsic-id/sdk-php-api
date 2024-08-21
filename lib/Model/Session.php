@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Trinsic\Connect\Model;
+namespace Trinsic\Api\Model;
 
 use \ArrayAccess;
-use \Trinsic\Connect\ObjectSerializer;
+use \Trinsic\Api\ObjectSerializer;
 
 /**
  * Session Class Doc Comment
  *
  * @category Class
- * @package  Trinsic\Connect
+ * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,10 +58,10 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'state' => '\Trinsic\Connect\Model\SessionState',
-        'fail_code' => '\Trinsic\Connect\Model\SessionFailCode',
-        'verification' => '\Trinsic\Connect\Model\Verification',
-        'disclosed_fields' => '\Trinsic\Connect\Model\DisclosedFields',
+        'state' => '\Trinsic\Api\Model\SessionState',
+        'fail_code' => '\Trinsic\Api\Model\SessionFailCode',
+        'verification' => '\Trinsic\Api\Model\Verification',
+        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFields',
         'created' => 'int',
         'updated' => 'int'
     ];
@@ -379,7 +379,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets state
      *
-     * @return \Trinsic\Connect\Model\SessionState
+     * @return \Trinsic\Api\Model\SessionState
      */
     public function getState()
     {
@@ -389,7 +389,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state
      *
-     * @param \Trinsic\Connect\Model\SessionState $state The state of the session
+     * @param \Trinsic\Api\Model\SessionState $state The state of the session
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fail_code
      *
-     * @return \Trinsic\Connect\Model\SessionFailCode|null
+     * @return \Trinsic\Api\Model\SessionFailCode|null
      */
     public function getFailCode()
     {
@@ -416,7 +416,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fail_code
      *
-     * @param \Trinsic\Connect\Model\SessionFailCode|null $fail_code If the session is in state `IdvFailed`, this field contains the reason for failure.
+     * @param \Trinsic\Api\Model\SessionFailCode|null $fail_code If the session is in state `IdvFailed`, this field contains the reason for failure.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets verification
      *
-     * @return \Trinsic\Connect\Model\Verification
+     * @return \Trinsic\Api\Model\Verification
      */
     public function getVerification()
     {
@@ -443,7 +443,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets verification
      *
-     * @param \Trinsic\Connect\Model\Verification $verification The underlying verification for this Session
+     * @param \Trinsic\Api\Model\Verification $verification The underlying verification for this Session
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets disclosed_fields
      *
-     * @return \Trinsic\Connect\Model\DisclosedFields
+     * @return \Trinsic\Api\Model\DisclosedFields
      */
     public function getDisclosedFields()
     {
@@ -470,7 +470,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets disclosed_fields
      *
-     * @param \Trinsic\Connect\Model\DisclosedFields $disclosed_fields The fields that were requested to be disclosed when the Session was created
+     * @param \Trinsic\Api\Model\DisclosedFields $disclosed_fields The fields that were requested to be disclosed when the Session was created
      *
      * @return self
      */

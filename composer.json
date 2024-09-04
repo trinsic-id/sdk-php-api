@@ -1,6 +1,6 @@
 {
   "name": "trinsic/api",
-  "version": "0.5.0",
+  "version": "0.5.5",
   "description": "Trinsic API PHP library.",
   "keywords": [
     "openapitools",
@@ -12,7 +12,7 @@
     "api"
   ],
   "homepage": "https://github.com/trinsic-id/sdk-php-api",
-  "license": "unlicense",
+  "license": "MIT",
   "authors": [
     {
       "name": "Trinsic",

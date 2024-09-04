@@ -57,7 +57,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'launch_method_directly' => 'bool',
+        'launch_provider_directly' => 'bool',
         'providers' => 'string[]',
         'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
     ];
@@ -70,7 +70,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'launch_method_directly' => null,
+        'launch_provider_directly' => null,
         'providers' => null,
         'disclosed_fields' => null
     ];
@@ -81,7 +81,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'launch_method_directly' => false,
+        'launch_provider_directly' => false,
         'providers' => false,
         'disclosed_fields' => false
     ];
@@ -172,7 +172,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'launch_method_directly' => 'launchMethodDirectly',
+        'launch_provider_directly' => 'launchProviderDirectly',
         'providers' => 'providers',
         'disclosed_fields' => 'disclosedFields'
     ];
@@ -183,7 +183,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'launch_method_directly' => 'setLaunchMethodDirectly',
+        'launch_provider_directly' => 'setLaunchProviderDirectly',
         'providers' => 'setProviders',
         'disclosed_fields' => 'setDisclosedFields'
     ];
@@ -194,7 +194,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'launch_method_directly' => 'getLaunchMethodDirectly',
+        'launch_provider_directly' => 'getLaunchProviderDirectly',
         'providers' => 'getProviders',
         'disclosed_fields' => 'getDisclosedFields'
     ];
@@ -256,7 +256,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('launch_method_directly', $data ?? [], null);
+        $this->setIfExists('launch_provider_directly', $data ?? [], null);
         $this->setIfExists('providers', $data ?? [], null);
         $this->setIfExists('disclosed_fields', $data ?? [], null);
     }
@@ -304,28 +304,28 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets launch_method_directly
+     * Gets launch_provider_directly
      *
      * @return bool|null
      */
-    public function getLaunchMethodDirectly()
+    public function getLaunchProviderDirectly()
     {
-        return $this->container['launch_method_directly'];
+        return $this->container['launch_provider_directly'];
     }
 
     /**
-     * Sets launch_method_directly
+     * Sets launch_provider_directly
      *
-     * @param bool|null $launch_method_directly Whether to immediately launch the identity provider, without invoking the Trinsic Connect Widget UI.                Users will not be shown the Connect Widget; therefore, reuse of Connect credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
+     * @param bool|null $launch_provider_directly Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
      *
      * @return self
      */
-    public function setLaunchMethodDirectly($launch_method_directly)
+    public function setLaunchProviderDirectly($launch_provider_directly)
     {
-        if (is_null($launch_method_directly)) {
-            throw new \InvalidArgumentException('non-nullable launch_method_directly cannot be null');
+        if (is_null($launch_provider_directly)) {
+            throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
         }
-        $this->container['launch_method_directly'] = $launch_method_directly;
+        $this->container['launch_provider_directly'] = $launch_provider_directly;
 
         return $this;
     }

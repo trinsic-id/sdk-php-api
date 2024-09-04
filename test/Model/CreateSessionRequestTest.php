@@ -80,9 +80,9 @@ class CreateSessionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "launch_method_directly"
+     * Test attribute "launch_provider_directly"
      */
-    public function testPropertyLaunchMethodDirectly()
+    public function testPropertyLaunchProviderDirectly()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

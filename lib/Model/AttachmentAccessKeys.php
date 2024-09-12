@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityData
+ * AttachmentAccessKeys
  *
  * PHP version 7.4
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * IdentityData Class Doc Comment
+ * AttachmentAccessKeys Class Doc Comment
  *
  * @category Class
+ * @description Attachment Access Keys for attachments (eg document / selfie images)
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
+class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IdentityData';
+    protected static $openAPIModelName = 'AttachmentAccessKeys';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +58,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'originating_provider_id' => 'string',
-        'person' => '\Trinsic\Api\Model\PersonData',
-        'document' => '\Trinsic\Api\Model\DocumentData',
-        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys'
+        'selfie' => 'string',
+        'document_front' => 'string',
+        'document_back' => 'string',
+        'document_portrait' => 'string'
     ];
 
     /**
@@ -71,10 +72,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'originating_provider_id' => null,
-        'person' => null,
-        'document' => null,
-        'attachment_access_keys' => null
+        'selfie' => null,
+        'document_front' => null,
+        'document_back' => null,
+        'document_portrait' => null
     ];
 
     /**
@@ -83,10 +84,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'originating_provider_id' => false,
-        'person' => false,
-        'document' => false,
-        'attachment_access_keys' => false
+        'selfie' => false,
+        'document_front' => false,
+        'document_back' => false,
+        'document_portrait' => false
     ];
 
     /**
@@ -175,10 +176,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'originating_provider_id' => 'originatingProviderId',
-        'person' => 'person',
-        'document' => 'document',
-        'attachment_access_keys' => 'attachmentAccessKeys'
+        'selfie' => 'selfie',
+        'document_front' => 'documentFront',
+        'document_back' => 'documentBack',
+        'document_portrait' => 'documentPortrait'
     ];
 
     /**
@@ -187,10 +188,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'originating_provider_id' => 'setOriginatingProviderId',
-        'person' => 'setPerson',
-        'document' => 'setDocument',
-        'attachment_access_keys' => 'setAttachmentAccessKeys'
+        'selfie' => 'setSelfie',
+        'document_front' => 'setDocumentFront',
+        'document_back' => 'setDocumentBack',
+        'document_portrait' => 'setDocumentPortrait'
     ];
 
     /**
@@ -199,10 +200,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'originating_provider_id' => 'getOriginatingProviderId',
-        'person' => 'getPerson',
-        'document' => 'getDocument',
-        'attachment_access_keys' => 'getAttachmentAccessKeys'
+        'selfie' => 'getSelfie',
+        'document_front' => 'getDocumentFront',
+        'document_back' => 'getDocumentBack',
+        'document_portrait' => 'getDocumentPortrait'
     ];
 
     /**
@@ -262,10 +263,10 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('originating_provider_id', $data ?? [], null);
-        $this->setIfExists('person', $data ?? [], null);
-        $this->setIfExists('document', $data ?? [], null);
-        $this->setIfExists('attachment_access_keys', $data ?? [], null);
+        $this->setIfExists('selfie', $data ?? [], null);
+        $this->setIfExists('document_front', $data ?? [], null);
+        $this->setIfExists('document_back', $data ?? [], null);
+        $this->setIfExists('document_portrait', $data ?? [], null);
     }
 
     /**
@@ -311,109 +312,109 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets originating_provider_id
+     * Gets selfie
      *
      * @return string|null
      */
-    public function getOriginatingProviderId()
+    public function getSelfie()
     {
-        return $this->container['originating_provider_id'];
+        return $this->container['selfie'];
     }
 
     /**
-     * Sets originating_provider_id
+     * Sets selfie
      *
-     * @param string|null $originating_provider_id The ID of the integration from which this data originated (eg \"yoti\", \"clear\")
+     * @param string|null $selfie Key to access the selfie image (if relevant) for this verification
      *
      * @return self
      */
-    public function setOriginatingProviderId($originating_provider_id)
+    public function setSelfie($selfie)
     {
-        if (is_null($originating_provider_id)) {
-            throw new \InvalidArgumentException('non-nullable originating_provider_id cannot be null');
+        if (is_null($selfie)) {
+            throw new \InvalidArgumentException('non-nullable selfie cannot be null');
         }
-        $this->container['originating_provider_id'] = $originating_provider_id;
+        $this->container['selfie'] = $selfie;
 
         return $this;
     }
 
     /**
-     * Gets person
+     * Gets document_front
      *
-     * @return \Trinsic\Api\Model\PersonData|null
+     * @return string|null
      */
-    public function getPerson()
+    public function getDocumentFront()
     {
-        return $this->container['person'];
+        return $this->container['document_front'];
     }
 
     /**
-     * Sets person
+     * Sets document_front
      *
-     * @param \Trinsic\Api\Model\PersonData|null $person Identity data of the individual who was verified
+     * @param string|null $document_front Key to access the document front image (if relevant) for this verification
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setDocumentFront($document_front)
     {
-        if (is_null($person)) {
-            throw new \InvalidArgumentException('non-nullable person cannot be null');
+        if (is_null($document_front)) {
+            throw new \InvalidArgumentException('non-nullable document_front cannot be null');
         }
-        $this->container['person'] = $person;
+        $this->container['document_front'] = $document_front;
 
         return $this;
     }
 
     /**
-     * Gets document
+     * Gets document_back
      *
-     * @return \Trinsic\Api\Model\DocumentData|null
+     * @return string|null
      */
-    public function getDocument()
+    public function getDocumentBack()
     {
-        return $this->container['document'];
+        return $this->container['document_back'];
     }
 
     /**
-     * Sets document
+     * Sets document_back
      *
-     * @param \Trinsic\Api\Model\DocumentData|null $document Identity data of the document involved in verification, if relevant
+     * @param string|null $document_back Key to access the document back image (if relevant) for this verification
      *
      * @return self
      */
-    public function setDocument($document)
+    public function setDocumentBack($document_back)
     {
-        if (is_null($document)) {
-            throw new \InvalidArgumentException('non-nullable document cannot be null');
+        if (is_null($document_back)) {
+            throw new \InvalidArgumentException('non-nullable document_back cannot be null');
         }
-        $this->container['document'] = $document;
+        $this->container['document_back'] = $document_back;
 
         return $this;
     }
 
     /**
-     * Gets attachment_access_keys
+     * Gets document_portrait
      *
-     * @return \Trinsic\Api\Model\AttachmentAccessKeys|null
+     * @return string|null
      */
-    public function getAttachmentAccessKeys()
+    public function getDocumentPortrait()
     {
-        return $this->container['attachment_access_keys'];
+        return $this->container['document_portrait'];
     }
 
     /**
-     * Sets attachment_access_keys
+     * Sets document_portrait
      *
-     * @param \Trinsic\Api\Model\AttachmentAccessKeys|null $attachment_access_keys Attachment Access Keys for attachments (eg document / selfie images)
+     * @param string|null $document_portrait Key to access the document portrait image (if relevant and available) for this verification.                Specifically, this is a cropped version of the document front image which includes only the portrait on the document.
      *
      * @return self
      */
-    public function setAttachmentAccessKeys($attachment_access_keys)
+    public function setDocumentPortrait($document_portrait)
     {
-        if (is_null($attachment_access_keys)) {
-            throw new \InvalidArgumentException('non-nullable attachment_access_keys cannot be null');
+        if (is_null($document_portrait)) {
+            throw new \InvalidArgumentException('non-nullable document_portrait cannot be null');
         }
-        $this->container['attachment_access_keys'] = $attachment_access_keys;
+        $this->container['document_portrait'] = $document_portrait;
 
         return $this;
     }

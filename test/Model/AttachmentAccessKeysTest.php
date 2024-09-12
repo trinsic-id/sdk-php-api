@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityDataTest
+ * AttachmentAccessKeysTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * IdentityDataTest Class Doc Comment
+ * AttachmentAccessKeysTest Class Doc Comment
  *
  * @category    Class
- * @description IdentityData
+ * @description Attachment Access Keys for attachments (eg document / selfie images)
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class IdentityDataTest extends TestCase
+class AttachmentAccessKeysTest extends TestCase
 {
 
     /**
@@ -71,45 +71,45 @@ class IdentityDataTest extends TestCase
     }
 
     /**
-     * Test "IdentityData"
+     * Test "AttachmentAccessKeys"
      */
-    public function testIdentityData()
+    public function testAttachmentAccessKeys()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "originating_provider_id"
+     * Test attribute "selfie"
      */
-    public function testPropertyOriginatingProviderId()
+    public function testPropertySelfie()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "person"
+     * Test attribute "document_front"
      */
-    public function testPropertyPerson()
+    public function testPropertyDocumentFront()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document"
+     * Test attribute "document_back"
      */
-    public function testPropertyDocument()
+    public function testPropertyDocumentBack()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "attachment_access_keys"
+     * Test attribute "document_portrait"
      */
-    public function testPropertyAttachmentAccessKeys()
+    public function testPropertyDocumentPortrait()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

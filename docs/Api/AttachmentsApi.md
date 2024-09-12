@@ -10,12 +10,12 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 ## `getAttachment()`
 
 ```php
-getAttachment($get_attachment_request)
+getAttachment($get_attachment_request): \Trinsic\Api\Model\GetAttachmentResponse
 ```
 
 Get Attachment
 
-Exchange an Attachment Access Key (from `IdentityData.Attachments`) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed. If so, this endpoint will return an HTTP 202 code, and you should try again later.
+Exchange an Attachment Access Key (from `IdentityData.Attachments`) for the raw contents of the attachment.                Use this API to fetch document (front, back, portrait) or other (selfie) images from a verification, if relevant.                In some cases, attachments may not be immediately available after a verification is completed.  If so, this endpoint will return an HTTP 503 code, and you should try again later.
 
 ### Example
 
@@ -37,7 +37,8 @@ $apiInstance = new Trinsic\Api\Api\AttachmentsApi(
 $get_attachment_request = new \Trinsic\Api\Model\GetAttachmentRequest(); // \Trinsic\Api\Model\GetAttachmentRequest
 
 try {
-    $apiInstance->getAttachment($get_attachment_request);
+    $result = $apiInstance->getAttachment($get_attachment_request);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttachmentsApi->getAttachment: ', $e->getMessage(), PHP_EOL;
 }
@@ -51,7 +52,7 @@ try {
 
 ### Return type
 
-void (empty response body)
+[**\Trinsic\Api\Model\GetAttachmentResponse**](../Model/GetAttachmentResponse.md)
 
 ### Authorization
 
@@ -60,7 +61,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`, `text/json`, `application/*+json`
-- **Accept**: `application/json`
+- **Accept**: `text/plain`, `application/json`, `text/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

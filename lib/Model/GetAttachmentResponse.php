@@ -1,6 +1,6 @@
 <?php
 /**
- * Attachments
+ * GetAttachmentResponse
  *
  * PHP version 7.4
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * Attachments Class Doc Comment
+ * GetAttachmentResponse Class Doc Comment
  *
  * @category Class
- * @description Attachment Access Keys for attachments (eg document / selfie images)
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Attachments';
+    protected static $openAPIModelName = 'GetAttachmentResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +57,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'selfie' => 'string',
-        'document_front' => 'string',
-        'document_back' => 'string',
-        'document_portrait' => 'string'
+        'content' => 'string',
+        'content_type' => 'string'
     ];
 
     /**
@@ -72,10 +69,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'selfie' => null,
-        'document_front' => null,
-        'document_back' => null,
-        'document_portrait' => null
+        'content' => 'byte',
+        'content_type' => null
     ];
 
     /**
@@ -84,10 +79,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'selfie' => false,
-        'document_front' => false,
-        'document_back' => false,
-        'document_portrait' => false
+        'content' => false,
+        'content_type' => false
     ];
 
     /**
@@ -176,10 +169,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'selfie' => 'selfie',
-        'document_front' => 'documentFront',
-        'document_back' => 'documentBack',
-        'document_portrait' => 'documentPortrait'
+        'content' => 'content',
+        'content_type' => 'contentType'
     ];
 
     /**
@@ -188,10 +179,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'selfie' => 'setSelfie',
-        'document_front' => 'setDocumentFront',
-        'document_back' => 'setDocumentBack',
-        'document_portrait' => 'setDocumentPortrait'
+        'content' => 'setContent',
+        'content_type' => 'setContentType'
     ];
 
     /**
@@ -200,10 +189,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'selfie' => 'getSelfie',
-        'document_front' => 'getDocumentFront',
-        'document_back' => 'getDocumentBack',
-        'document_portrait' => 'getDocumentPortrait'
+        'content' => 'getContent',
+        'content_type' => 'getContentType'
     ];
 
     /**
@@ -263,10 +250,8 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('selfie', $data ?? [], null);
-        $this->setIfExists('document_front', $data ?? [], null);
-        $this->setIfExists('document_back', $data ?? [], null);
-        $this->setIfExists('document_portrait', $data ?? [], null);
+        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('content_type', $data ?? [], null);
     }
 
     /**
@@ -296,6 +281,12 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
+        }
+        if ($this->container['content_type'] === null) {
+            $invalidProperties[] = "'content_type' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -312,109 +303,55 @@ class Attachments implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets selfie
+     * Gets content
      *
-     * @return string|null
+     * @return string
      */
-    public function getSelfie()
+    public function getContent()
     {
-        return $this->container['selfie'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets selfie
+     * Sets content
      *
-     * @param string|null $selfie Key to access the selfie image (if relevant) for this verification
+     * @param string $content The raw file contents of the Attachment
      *
      * @return self
      */
-    public function setSelfie($selfie)
+    public function setContent($content)
     {
-        if (is_null($selfie)) {
-            throw new \InvalidArgumentException('non-nullable selfie cannot be null');
+        if (is_null($content)) {
+            throw new \InvalidArgumentException('non-nullable content cannot be null');
         }
-        $this->container['selfie'] = $selfie;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets document_front
+     * Gets content_type
      *
-     * @return string|null
+     * @return string
      */
-    public function getDocumentFront()
+    public function getContentType()
     {
-        return $this->container['document_front'];
+        return $this->container['content_type'];
     }
 
     /**
-     * Sets document_front
+     * Sets content_type
      *
-     * @param string|null $document_front Key to access the document front image (if relevant) for this verification
+     * @param string $content_type The MIME type of the Attachment data
      *
      * @return self
      */
-    public function setDocumentFront($document_front)
+    public function setContentType($content_type)
     {
-        if (is_null($document_front)) {
-            throw new \InvalidArgumentException('non-nullable document_front cannot be null');
+        if (is_null($content_type)) {
+            throw new \InvalidArgumentException('non-nullable content_type cannot be null');
         }
-        $this->container['document_front'] = $document_front;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_back
-     *
-     * @return string|null
-     */
-    public function getDocumentBack()
-    {
-        return $this->container['document_back'];
-    }
-
-    /**
-     * Sets document_back
-     *
-     * @param string|null $document_back Key to access the document back image (if relevant) for this verification
-     *
-     * @return self
-     */
-    public function setDocumentBack($document_back)
-    {
-        if (is_null($document_back)) {
-            throw new \InvalidArgumentException('non-nullable document_back cannot be null');
-        }
-        $this->container['document_back'] = $document_back;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_portrait
-     *
-     * @return string|null
-     */
-    public function getDocumentPortrait()
-    {
-        return $this->container['document_portrait'];
-    }
-
-    /**
-     * Sets document_portrait
-     *
-     * @param string|null $document_portrait Key to access the document portrait image (if relevant and available) for this verification.                Specifically, this is a cropped version of the document front image which includes only the portrait on the document.
-     *
-     * @return self
-     */
-    public function setDocumentPortrait($document_portrait)
-    {
-        if (is_null($document_portrait)) {
-            throw new \InvalidArgumentException('non-nullable document_portrait cannot be null');
-        }
-        $this->container['document_portrait'] = $document_portrait;
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }

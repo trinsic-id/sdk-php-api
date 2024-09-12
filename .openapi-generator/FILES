@@ -8,7 +8,7 @@ docs/Api/AttachmentsApi.md
 docs/Api/NetworkApi.md
 docs/Api/SessionsApi.md
 docs/Model/Address.md
-docs/Model/Attachments.md
+docs/Model/AttachmentAccessKeys.md
 docs/Model/CancelSessionResponse.md
 docs/Model/CreateSessionRequest.md
 docs/Model/CreateSessionResponse.md
@@ -17,6 +17,7 @@ docs/Model/DisclosedFieldsRequest.md
 docs/Model/DocumentData.md
 docs/Model/FailureMessage.md
 docs/Model/GetAttachmentRequest.md
+docs/Model/GetAttachmentResponse.md
 docs/Model/GetSessionResponse.md
 docs/Model/GetSessionResultRequest.md
 docs/Model/GetSessionResultResponse.md
@@ -42,7 +43,7 @@ lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/Address.php
-lib/Model/Attachments.php
+lib/Model/AttachmentAccessKeys.php
 lib/Model/CancelSessionResponse.php
 lib/Model/CreateSessionRequest.php
 lib/Model/CreateSessionResponse.php
@@ -51,6 +52,7 @@ lib/Model/DisclosedFieldsRequest.php
 lib/Model/DocumentData.php
 lib/Model/FailureMessage.php
 lib/Model/GetAttachmentRequest.php
+lib/Model/GetAttachmentResponse.php
 lib/Model/GetSessionResponse.php
 lib/Model/GetSessionResultRequest.php
 lib/Model/GetSessionResultResponse.php
@@ -75,7 +77,7 @@ test/Api/AttachmentsApiTest.php
 test/Api/NetworkApiTest.php
 test/Api/SessionsApiTest.php
 test/Model/AddressTest.php
-test/Model/AttachmentsTest.php
+test/Model/AttachmentAccessKeysTest.php
 test/Model/CancelSessionResponseTest.php
 test/Model/CreateSessionRequestTest.php
 test/Model/CreateSessionResponseTest.php
@@ -84,6 +86,7 @@ test/Model/DisclosedFieldsTest.php
 test/Model/DocumentDataTest.php
 test/Model/FailureMessageTest.php
 test/Model/GetAttachmentRequestTest.php
+test/Model/GetAttachmentResponseTest.php
 test/Model/GetSessionResponseTest.php
 test/Model/GetSessionResultRequestTest.php
 test/Model/GetSessionResultResponseTest.php

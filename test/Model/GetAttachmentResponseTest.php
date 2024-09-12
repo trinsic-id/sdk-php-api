@@ -1,6 +1,6 @@
 <?php
 /**
- * AttachmentsTest
+ * GetAttachmentResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AttachmentsTest Class Doc Comment
+ * GetAttachmentResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Attachment Access Keys for attachments (eg document / selfie images)
+ * @description GetAttachmentResponse
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AttachmentsTest extends TestCase
+class GetAttachmentResponseTest extends TestCase
 {
 
     /**
@@ -71,45 +71,27 @@ class AttachmentsTest extends TestCase
     }
 
     /**
-     * Test "Attachments"
+     * Test "GetAttachmentResponse"
      */
-    public function testAttachments()
+    public function testGetAttachmentResponse()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "selfie"
+     * Test attribute "content"
      */
-    public function testPropertySelfie()
+    public function testPropertyContent()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document_front"
+     * Test attribute "content_type"
      */
-    public function testPropertyDocumentFront()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_back"
-     */
-    public function testPropertyDocumentBack()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_portrait"
-     */
-    public function testPropertyDocumentPortrait()
+    public function testPropertyContentType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

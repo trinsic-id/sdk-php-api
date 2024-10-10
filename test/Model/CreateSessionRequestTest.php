@@ -89,6 +89,15 @@ class CreateSessionRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "enable_remember_me"
+     */
+    public function testPropertyEnableRememberMe()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "providers"
      */
     public function testPropertyProviders()

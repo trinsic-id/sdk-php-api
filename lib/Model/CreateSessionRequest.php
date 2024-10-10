@@ -58,6 +58,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'launch_provider_directly' => 'bool',
+        'enable_remember_me' => 'bool',
         'providers' => 'string[]',
         'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
     ];
@@ -71,6 +72,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'launch_provider_directly' => null,
+        'enable_remember_me' => null,
         'providers' => null,
         'disclosed_fields' => null
     ];
@@ -82,6 +84,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'launch_provider_directly' => false,
+        'enable_remember_me' => false,
         'providers' => false,
         'disclosed_fields' => false
     ];
@@ -173,6 +176,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'launch_provider_directly' => 'launchProviderDirectly',
+        'enable_remember_me' => 'enableRememberMe',
         'providers' => 'providers',
         'disclosed_fields' => 'disclosedFields'
     ];
@@ -184,6 +188,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'launch_provider_directly' => 'setLaunchProviderDirectly',
+        'enable_remember_me' => 'setEnableRememberMe',
         'providers' => 'setProviders',
         'disclosed_fields' => 'setDisclosedFields'
     ];
@@ -195,6 +200,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'launch_provider_directly' => 'getLaunchProviderDirectly',
+        'enable_remember_me' => 'getEnableRememberMe',
         'providers' => 'getProviders',
         'disclosed_fields' => 'getDisclosedFields'
     ];
@@ -257,6 +263,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->setIfExists('launch_provider_directly', $data ?? [], null);
+        $this->setIfExists('enable_remember_me', $data ?? [], null);
         $this->setIfExists('providers', $data ?? [], null);
         $this->setIfExists('disclosed_fields', $data ?? [], null);
     }
@@ -326,6 +333,33 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
         }
         $this->container['launch_provider_directly'] = $launch_provider_directly;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_remember_me
+     *
+     * @return bool|null
+     */
+    public function getEnableRememberMe()
+    {
+        return $this->container['enable_remember_me'];
+    }
+
+    /**
+     * Sets enable_remember_me
+     *
+     * @param bool|null $enable_remember_me Whether to enable Trinsic's \"Remember Me\" feature, which allows users to save their credentials for future use.                This option is only relevant when `LaunchProviderDirectly` is unspecified or set to `false`.  If `LaunchProviderDirectly` is `true`, this field must be unspecified or set to `false`.                If this field is set to `true`, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to `false`, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
+     *
+     * @return self
+     */
+    public function setEnableRememberMe($enable_remember_me)
+    {
+        if (is_null($enable_remember_me)) {
+            throw new \InvalidArgumentException('non-nullable enable_remember_me cannot be null');
+        }
+        $this->container['enable_remember_me'] = $enable_remember_me;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequest
+ * KnownPersonData
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateSessionRequest Class Doc Comment
+ * KnownPersonData Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateSessionRequest';
+    protected static $openAPIModelName = 'KnownPersonData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'launch_provider_directly' => 'bool',
-        'enable_remember_me' => 'bool',
-        'providers' => 'string[]',
-        'known_identity_data' => '\Trinsic\Api\Model\KnownIdentityData',
-        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
+        'given_name' => 'string',
+        'family_name' => 'string',
+        'middle_name' => 'string',
+        'phone_number' => 'string',
+        'address' => '\Trinsic\Api\Model\KnownAddress',
+        'date_of_birth' => 'string'
     ];
 
     /**
@@ -72,11 +73,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'launch_provider_directly' => null,
-        'enable_remember_me' => null,
-        'providers' => null,
-        'known_identity_data' => null,
-        'disclosed_fields' => null
+        'given_name' => null,
+        'family_name' => null,
+        'middle_name' => null,
+        'phone_number' => null,
+        'address' => null,
+        'date_of_birth' => null
     ];
 
     /**
@@ -85,11 +87,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'launch_provider_directly' => false,
-        'enable_remember_me' => false,
-        'providers' => false,
-        'known_identity_data' => false,
-        'disclosed_fields' => false
+        'given_name' => false,
+        'family_name' => false,
+        'middle_name' => false,
+        'phone_number' => false,
+        'address' => false,
+        'date_of_birth' => false
     ];
 
     /**
@@ -178,11 +181,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'launch_provider_directly' => 'launchProviderDirectly',
-        'enable_remember_me' => 'enableRememberMe',
-        'providers' => 'providers',
-        'known_identity_data' => 'knownIdentityData',
-        'disclosed_fields' => 'disclosedFields'
+        'given_name' => 'givenName',
+        'family_name' => 'familyName',
+        'middle_name' => 'middleName',
+        'phone_number' => 'phoneNumber',
+        'address' => 'address',
+        'date_of_birth' => 'dateOfBirth'
     ];
 
     /**
@@ -191,11 +195,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'launch_provider_directly' => 'setLaunchProviderDirectly',
-        'enable_remember_me' => 'setEnableRememberMe',
-        'providers' => 'setProviders',
-        'known_identity_data' => 'setKnownIdentityData',
-        'disclosed_fields' => 'setDisclosedFields'
+        'given_name' => 'setGivenName',
+        'family_name' => 'setFamilyName',
+        'middle_name' => 'setMiddleName',
+        'phone_number' => 'setPhoneNumber',
+        'address' => 'setAddress',
+        'date_of_birth' => 'setDateOfBirth'
     ];
 
     /**
@@ -204,11 +209,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'launch_provider_directly' => 'getLaunchProviderDirectly',
-        'enable_remember_me' => 'getEnableRememberMe',
-        'providers' => 'getProviders',
-        'known_identity_data' => 'getKnownIdentityData',
-        'disclosed_fields' => 'getDisclosedFields'
+        'given_name' => 'getGivenName',
+        'family_name' => 'getFamilyName',
+        'middle_name' => 'getMiddleName',
+        'phone_number' => 'getPhoneNumber',
+        'address' => 'getAddress',
+        'date_of_birth' => 'getDateOfBirth'
     ];
 
     /**
@@ -268,11 +274,12 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('launch_provider_directly', $data ?? [], null);
-        $this->setIfExists('enable_remember_me', $data ?? [], null);
-        $this->setIfExists('providers', $data ?? [], null);
-        $this->setIfExists('known_identity_data', $data ?? [], null);
-        $this->setIfExists('disclosed_fields', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('middle_name', $data ?? [], null);
+        $this->setIfExists('phone_number', $data ?? [], null);
+        $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('date_of_birth', $data ?? [], null);
     }
 
     /**
@@ -318,136 +325,163 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets launch_provider_directly
+     * Gets given_name
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getLaunchProviderDirectly()
+    public function getGivenName()
     {
-        return $this->container['launch_provider_directly'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets launch_provider_directly
+     * Sets given_name
      *
-     * @param bool|null $launch_provider_directly Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
+     * @param string|null $given_name Given (first) name of the individual
      *
      * @return self
      */
-    public function setLaunchProviderDirectly($launch_provider_directly)
+    public function setGivenName($given_name)
     {
-        if (is_null($launch_provider_directly)) {
-            throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
+        if (is_null($given_name)) {
+            throw new \InvalidArgumentException('non-nullable given_name cannot be null');
         }
-        $this->container['launch_provider_directly'] = $launch_provider_directly;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets enable_remember_me
+     * Gets family_name
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getEnableRememberMe()
+    public function getFamilyName()
     {
-        return $this->container['enable_remember_me'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets enable_remember_me
+     * Sets family_name
      *
-     * @param bool|null $enable_remember_me Whether to enable Trinsic's \"Remember Me\" feature, which allows users to save their credentials for future use.                This option is only relevant when `LaunchProviderDirectly` is unspecified or set to `false`.  If `LaunchProviderDirectly` is `true`, this field must be unspecified or set to `false`.                If this field is set to `true`, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to `false`, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
+     * @param string|null $family_name Family (last) name of the individual
      *
      * @return self
      */
-    public function setEnableRememberMe($enable_remember_me)
+    public function setFamilyName($family_name)
     {
-        if (is_null($enable_remember_me)) {
-            throw new \InvalidArgumentException('non-nullable enable_remember_me cannot be null');
+        if (is_null($family_name)) {
+            throw new \InvalidArgumentException('non-nullable family_name cannot be null');
         }
-        $this->container['enable_remember_me'] = $enable_remember_me;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets providers
+     * Gets middle_name
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getProviders()
+    public function getMiddleName()
     {
-        return $this->container['providers'];
+        return $this->container['middle_name'];
     }
 
     /**
-     * Sets providers
+     * Sets middle_name
      *
-     * @param string[]|null $providers The list of allowed identity providers. If not specified, all available providers will be allowed.                If `LaunchMethodDirectly` is `true`, this field must be set, and must have only a single entry.  If `LaunchMethodDirectly` is not specified or is `false`, this field may have any number of entries.
+     * @param string|null $middle_name Middle name of the individual
      *
      * @return self
      */
-    public function setProviders($providers)
+    public function setMiddleName($middle_name)
     {
-        if (is_null($providers)) {
-            throw new \InvalidArgumentException('non-nullable providers cannot be null');
+        if (is_null($middle_name)) {
+            throw new \InvalidArgumentException('non-nullable middle_name cannot be null');
         }
-        $this->container['providers'] = $providers;
+        $this->container['middle_name'] = $middle_name;
 
         return $this;
     }
 
     /**
-     * Gets known_identity_data
+     * Gets phone_number
      *
-     * @return \Trinsic\Api\Model\KnownIdentityData|null
+     * @return string|null
      */
-    public function getKnownIdentityData()
+    public function getPhoneNumber()
     {
-        return $this->container['known_identity_data'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets known_identity_data
+     * Sets phone_number
      *
-     * @param \Trinsic\Api\Model\KnownIdentityData|null $known_identity_data Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+     * @param string|null $phone_number The phone number (with preceding + character and country code) of the individual being verified
      *
      * @return self
      */
-    public function setKnownIdentityData($known_identity_data)
+    public function setPhoneNumber($phone_number)
     {
-        if (is_null($known_identity_data)) {
-            throw new \InvalidArgumentException('non-nullable known_identity_data cannot be null');
+        if (is_null($phone_number)) {
+            throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
-        $this->container['known_identity_data'] = $known_identity_data;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
 
     /**
-     * Gets disclosed_fields
+     * Gets address
      *
-     * @return \Trinsic\Api\Model\DisclosedFieldsRequest|null
+     * @return \Trinsic\Api\Model\KnownAddress|null
      */
-    public function getDisclosedFields()
+    public function getAddress()
     {
-        return $this->container['disclosed_fields'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets disclosed_fields
+     * Sets address
      *
-     * @param \Trinsic\Api\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
+     * @param \Trinsic\Api\Model\KnownAddress|null $address The address of the individual being verified
      *
      * @return self
      */
-    public function setDisclosedFields($disclosed_fields)
+    public function setAddress($address)
     {
-        if (is_null($disclosed_fields)) {
-            throw new \InvalidArgumentException('non-nullable disclosed_fields cannot be null');
+        if (is_null($address)) {
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
-        $this->container['disclosed_fields'] = $disclosed_fields;
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_birth
+     *
+     * @return string|null
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['date_of_birth'];
+    }
+
+    /**
+     * Sets date_of_birth
+     *
+     * @param string|null $date_of_birth Date of birth of the individual, in the format \"YYYY-MM-DD\"
+     *
+     * @return self
+     */
+    public function setDateOfBirth($date_of_birth)
+    {
+        if (is_null($date_of_birth)) {
+            throw new \InvalidArgumentException('non-nullable date_of_birth cannot be null');
+        }
+        $this->container['date_of_birth'] = $date_of_birth;
 
         return $this;
     }

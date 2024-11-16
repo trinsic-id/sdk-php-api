@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequestTest
+ * KnownPersonDataTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateSessionRequestTest Class Doc Comment
+ * KnownPersonDataTest Class Doc Comment
  *
  * @category    Class
- * @description CreateSessionRequest
+ * @description KnownPersonData
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateSessionRequestTest extends TestCase
+class KnownPersonDataTest extends TestCase
 {
 
     /**
@@ -71,54 +71,63 @@ class CreateSessionRequestTest extends TestCase
     }
 
     /**
-     * Test "CreateSessionRequest"
+     * Test "KnownPersonData"
      */
-    public function testCreateSessionRequest()
+    public function testKnownPersonData()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "launch_provider_directly"
+     * Test attribute "given_name"
      */
-    public function testPropertyLaunchProviderDirectly()
+    public function testPropertyGivenName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "enable_remember_me"
+     * Test attribute "family_name"
      */
-    public function testPropertyEnableRememberMe()
+    public function testPropertyFamilyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "providers"
+     * Test attribute "middle_name"
      */
-    public function testPropertyProviders()
+    public function testPropertyMiddleName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "known_identity_data"
+     * Test attribute "phone_number"
      */
-    public function testPropertyKnownIdentityData()
+    public function testPropertyPhoneNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "disclosed_fields"
+     * Test attribute "address"
      */
-    public function testPropertyDisclosedFields()
+    public function testPropertyAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_of_birth"
+     */
+    public function testPropertyDateOfBirth()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

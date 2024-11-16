@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequest
+ * RecommendRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateSessionRequest Class Doc Comment
+ * RecommendRequest Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateSessionRequest';
+    protected static $openAPIModelName = 'RecommendRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'launch_provider_directly' => 'bool',
-        'enable_remember_me' => 'bool',
-        'providers' => 'string[]',
-        'known_identity_data' => '\Trinsic\Api\Model\KnownIdentityData',
-        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
+        'phone_number' => 'string',
+        'countries' => 'string[]',
+        'states' => 'string[]'
     ];
 
     /**
@@ -72,11 +70,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'launch_provider_directly' => null,
-        'enable_remember_me' => null,
-        'providers' => null,
-        'known_identity_data' => null,
-        'disclosed_fields' => null
+        'phone_number' => null,
+        'countries' => null,
+        'states' => null
     ];
 
     /**
@@ -85,11 +81,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'launch_provider_directly' => false,
-        'enable_remember_me' => false,
-        'providers' => false,
-        'known_identity_data' => false,
-        'disclosed_fields' => false
+        'phone_number' => false,
+        'countries' => false,
+        'states' => false
     ];
 
     /**
@@ -178,11 +172,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'launch_provider_directly' => 'launchProviderDirectly',
-        'enable_remember_me' => 'enableRememberMe',
-        'providers' => 'providers',
-        'known_identity_data' => 'knownIdentityData',
-        'disclosed_fields' => 'disclosedFields'
+        'phone_number' => 'phoneNumber',
+        'countries' => 'countries',
+        'states' => 'states'
     ];
 
     /**
@@ -191,11 +183,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'launch_provider_directly' => 'setLaunchProviderDirectly',
-        'enable_remember_me' => 'setEnableRememberMe',
-        'providers' => 'setProviders',
-        'known_identity_data' => 'setKnownIdentityData',
-        'disclosed_fields' => 'setDisclosedFields'
+        'phone_number' => 'setPhoneNumber',
+        'countries' => 'setCountries',
+        'states' => 'setStates'
     ];
 
     /**
@@ -204,11 +194,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'launch_provider_directly' => 'getLaunchProviderDirectly',
-        'enable_remember_me' => 'getEnableRememberMe',
-        'providers' => 'getProviders',
-        'known_identity_data' => 'getKnownIdentityData',
-        'disclosed_fields' => 'getDisclosedFields'
+        'phone_number' => 'getPhoneNumber',
+        'countries' => 'getCountries',
+        'states' => 'getStates'
     ];
 
     /**
@@ -268,11 +256,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('launch_provider_directly', $data ?? [], null);
-        $this->setIfExists('enable_remember_me', $data ?? [], null);
-        $this->setIfExists('providers', $data ?? [], null);
-        $this->setIfExists('known_identity_data', $data ?? [], null);
-        $this->setIfExists('disclosed_fields', $data ?? [], null);
+        $this->setIfExists('phone_number', $data ?? [], null);
+        $this->setIfExists('countries', $data ?? [], null);
+        $this->setIfExists('states', $data ?? [], null);
     }
 
     /**
@@ -302,6 +288,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['phone_number'] === null) {
+            $invalidProperties[] = "'phone_number' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -318,136 +307,82 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets launch_provider_directly
+     * Gets phone_number
      *
-     * @return bool|null
+     * @return string
      */
-    public function getLaunchProviderDirectly()
+    public function getPhoneNumber()
     {
-        return $this->container['launch_provider_directly'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets launch_provider_directly
+     * Sets phone_number
      *
-     * @param bool|null $launch_provider_directly Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
+     * @param string $phone_number The phone number of the user you whish to generate a recommendation for. Will be used to lookup the user's identity in the network
      *
      * @return self
      */
-    public function setLaunchProviderDirectly($launch_provider_directly)
+    public function setPhoneNumber($phone_number)
     {
-        if (is_null($launch_provider_directly)) {
-            throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
+        if (is_null($phone_number)) {
+            throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
-        $this->container['launch_provider_directly'] = $launch_provider_directly;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
 
     /**
-     * Gets enable_remember_me
-     *
-     * @return bool|null
-     */
-    public function getEnableRememberMe()
-    {
-        return $this->container['enable_remember_me'];
-    }
-
-    /**
-     * Sets enable_remember_me
-     *
-     * @param bool|null $enable_remember_me Whether to enable Trinsic's \"Remember Me\" feature, which allows users to save their credentials for future use.                This option is only relevant when `LaunchProviderDirectly` is unspecified or set to `false`.  If `LaunchProviderDirectly` is `true`, this field must be unspecified or set to `false`.                If this field is set to `true`, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to `false`, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
-     *
-     * @return self
-     */
-    public function setEnableRememberMe($enable_remember_me)
-    {
-        if (is_null($enable_remember_me)) {
-            throw new \InvalidArgumentException('non-nullable enable_remember_me cannot be null');
-        }
-        $this->container['enable_remember_me'] = $enable_remember_me;
-
-        return $this;
-    }
-
-    /**
-     * Gets providers
+     * Gets countries
      *
      * @return string[]|null
      */
-    public function getProviders()
+    public function getCountries()
     {
-        return $this->container['providers'];
+        return $this->container['countries'];
     }
 
     /**
-     * Sets providers
+     * Sets countries
      *
-     * @param string[]|null $providers The list of allowed identity providers. If not specified, all available providers will be allowed.                If `LaunchMethodDirectly` is `true`, this field must be set, and must have only a single entry.  If `LaunchMethodDirectly` is not specified or is `false`, this field may have any number of entries.
+     * @param string[]|null $countries A list of countries, in alpha-2 ISO 3166 format, you wish to specify for the recommendation, this can include the user's country of residence, nationality, etc.
      *
      * @return self
      */
-    public function setProviders($providers)
+    public function setCountries($countries)
     {
-        if (is_null($providers)) {
-            throw new \InvalidArgumentException('non-nullable providers cannot be null');
+        if (is_null($countries)) {
+            throw new \InvalidArgumentException('non-nullable countries cannot be null');
         }
-        $this->container['providers'] = $providers;
+        $this->container['countries'] = $countries;
 
         return $this;
     }
 
     /**
-     * Gets known_identity_data
+     * Gets states
      *
-     * @return \Trinsic\Api\Model\KnownIdentityData|null
+     * @return string[]|null
      */
-    public function getKnownIdentityData()
+    public function getStates()
     {
-        return $this->container['known_identity_data'];
+        return $this->container['states'];
     }
 
     /**
-     * Sets known_identity_data
+     * Sets states
      *
-     * @param \Trinsic\Api\Model\KnownIdentityData|null $known_identity_data Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+     * @param string[]|null $states If one of the countries is US, you can specify a list of US states to further refine the recommendation (e.g., CA, UT, NY)
      *
      * @return self
      */
-    public function setKnownIdentityData($known_identity_data)
+    public function setStates($states)
     {
-        if (is_null($known_identity_data)) {
-            throw new \InvalidArgumentException('non-nullable known_identity_data cannot be null');
+        if (is_null($states)) {
+            throw new \InvalidArgumentException('non-nullable states cannot be null');
         }
-        $this->container['known_identity_data'] = $known_identity_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets disclosed_fields
-     *
-     * @return \Trinsic\Api\Model\DisclosedFieldsRequest|null
-     */
-    public function getDisclosedFields()
-    {
-        return $this->container['disclosed_fields'];
-    }
-
-    /**
-     * Sets disclosed_fields
-     *
-     * @param \Trinsic\Api\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
-     *
-     * @return self
-     */
-    public function setDisclosedFields($disclosed_fields)
-    {
-        if (is_null($disclosed_fields)) {
-            throw new \InvalidArgumentException('non-nullable disclosed_fields cannot be null');
-        }
-        $this->container['disclosed_fields'] = $disclosed_fields;
+        $this->container['states'] = $states;
 
         return $this;
     }

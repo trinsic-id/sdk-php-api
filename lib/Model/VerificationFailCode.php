@@ -52,6 +52,8 @@ class VerificationFailCode
 
     public const VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT = 'VerificationFailUnsupportedDocument';
 
+    public const VERIFICATION_FAIL_USER_ABANDONED = 'VerificationFailUserAbandoned';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -63,7 +65,8 @@ class VerificationFailCode
             self::VERIFICATION_FAIL_INTERNAL,
             self::VERIFICATION_FAIL_INVALID_IMAGE,
             self::VERIFICATION_FAIL_INAUTHENTIC,
-            self::VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT
+            self::VERIFICATION_FAIL_UNSUPPORTED_DOCUMENT,
+            self::VERIFICATION_FAIL_USER_ABANDONED
         ];
     }
 }

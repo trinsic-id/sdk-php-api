@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequest
+ * KnownAddress
  *
  * PHP version 7.4
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateSessionRequest Class Doc Comment
+ * KnownAddress Class Doc Comment
  *
  * @category Class
+ * @description Address information for an individual
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateSessionRequest';
+    protected static $openAPIModelName = 'KnownAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +58,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'launch_provider_directly' => 'bool',
-        'enable_remember_me' => 'bool',
-        'providers' => 'string[]',
-        'known_identity_data' => '\Trinsic\Api\Model\KnownIdentityData',
-        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
+        'line1' => 'string',
+        'line2' => 'string',
+        'line3' => 'string',
+        'city' => 'string',
+        'state' => 'string',
+        'postal_code' => 'string',
+        'country' => 'string'
     ];
 
     /**
@@ -72,11 +75,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'launch_provider_directly' => null,
-        'enable_remember_me' => null,
-        'providers' => null,
-        'known_identity_data' => null,
-        'disclosed_fields' => null
+        'line1' => null,
+        'line2' => null,
+        'line3' => null,
+        'city' => null,
+        'state' => null,
+        'postal_code' => null,
+        'country' => null
     ];
 
     /**
@@ -85,11 +90,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'launch_provider_directly' => false,
-        'enable_remember_me' => false,
-        'providers' => false,
-        'known_identity_data' => false,
-        'disclosed_fields' => false
+        'line1' => false,
+        'line2' => false,
+        'line3' => false,
+        'city' => false,
+        'state' => false,
+        'postal_code' => false,
+        'country' => false
     ];
 
     /**
@@ -178,11 +185,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'launch_provider_directly' => 'launchProviderDirectly',
-        'enable_remember_me' => 'enableRememberMe',
-        'providers' => 'providers',
-        'known_identity_data' => 'knownIdentityData',
-        'disclosed_fields' => 'disclosedFields'
+        'line1' => 'line1',
+        'line2' => 'line2',
+        'line3' => 'line3',
+        'city' => 'city',
+        'state' => 'state',
+        'postal_code' => 'postalCode',
+        'country' => 'country'
     ];
 
     /**
@@ -191,11 +200,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'launch_provider_directly' => 'setLaunchProviderDirectly',
-        'enable_remember_me' => 'setEnableRememberMe',
-        'providers' => 'setProviders',
-        'known_identity_data' => 'setKnownIdentityData',
-        'disclosed_fields' => 'setDisclosedFields'
+        'line1' => 'setLine1',
+        'line2' => 'setLine2',
+        'line3' => 'setLine3',
+        'city' => 'setCity',
+        'state' => 'setState',
+        'postal_code' => 'setPostalCode',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -204,11 +215,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'launch_provider_directly' => 'getLaunchProviderDirectly',
-        'enable_remember_me' => 'getEnableRememberMe',
-        'providers' => 'getProviders',
-        'known_identity_data' => 'getKnownIdentityData',
-        'disclosed_fields' => 'getDisclosedFields'
+        'line1' => 'getLine1',
+        'line2' => 'getLine2',
+        'line3' => 'getLine3',
+        'city' => 'getCity',
+        'state' => 'getState',
+        'postal_code' => 'getPostalCode',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -268,11 +281,13 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('launch_provider_directly', $data ?? [], null);
-        $this->setIfExists('enable_remember_me', $data ?? [], null);
-        $this->setIfExists('providers', $data ?? [], null);
-        $this->setIfExists('known_identity_data', $data ?? [], null);
-        $this->setIfExists('disclosed_fields', $data ?? [], null);
+        $this->setIfExists('line1', $data ?? [], null);
+        $this->setIfExists('line2', $data ?? [], null);
+        $this->setIfExists('line3', $data ?? [], null);
+        $this->setIfExists('city', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('postal_code', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
     }
 
     /**
@@ -318,136 +333,190 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets launch_provider_directly
+     * Gets line1
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getLaunchProviderDirectly()
+    public function getLine1()
     {
-        return $this->container['launch_provider_directly'];
+        return $this->container['line1'];
     }
 
     /**
-     * Sets launch_provider_directly
+     * Sets line1
      *
-     * @param bool|null $launch_provider_directly Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
+     * @param string|null $line1 line1
      *
      * @return self
      */
-    public function setLaunchProviderDirectly($launch_provider_directly)
+    public function setLine1($line1)
     {
-        if (is_null($launch_provider_directly)) {
-            throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
+        if (is_null($line1)) {
+            throw new \InvalidArgumentException('non-nullable line1 cannot be null');
         }
-        $this->container['launch_provider_directly'] = $launch_provider_directly;
+        $this->container['line1'] = $line1;
 
         return $this;
     }
 
     /**
-     * Gets enable_remember_me
+     * Gets line2
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getEnableRememberMe()
+    public function getLine2()
     {
-        return $this->container['enable_remember_me'];
+        return $this->container['line2'];
     }
 
     /**
-     * Sets enable_remember_me
+     * Sets line2
      *
-     * @param bool|null $enable_remember_me Whether to enable Trinsic's \"Remember Me\" feature, which allows users to save their credentials for future use.                This option is only relevant when `LaunchProviderDirectly` is unspecified or set to `false`.  If `LaunchProviderDirectly` is `true`, this field must be unspecified or set to `false`.                If this field is set to `true`, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to `false`, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
+     * @param string|null $line2 line2
      *
      * @return self
      */
-    public function setEnableRememberMe($enable_remember_me)
+    public function setLine2($line2)
     {
-        if (is_null($enable_remember_me)) {
-            throw new \InvalidArgumentException('non-nullable enable_remember_me cannot be null');
+        if (is_null($line2)) {
+            throw new \InvalidArgumentException('non-nullable line2 cannot be null');
         }
-        $this->container['enable_remember_me'] = $enable_remember_me;
+        $this->container['line2'] = $line2;
 
         return $this;
     }
 
     /**
-     * Gets providers
+     * Gets line3
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getProviders()
+    public function getLine3()
     {
-        return $this->container['providers'];
+        return $this->container['line3'];
     }
 
     /**
-     * Sets providers
+     * Sets line3
      *
-     * @param string[]|null $providers The list of allowed identity providers. If not specified, all available providers will be allowed.                If `LaunchMethodDirectly` is `true`, this field must be set, and must have only a single entry.  If `LaunchMethodDirectly` is not specified or is `false`, this field may have any number of entries.
+     * @param string|null $line3 line3
      *
      * @return self
      */
-    public function setProviders($providers)
+    public function setLine3($line3)
     {
-        if (is_null($providers)) {
-            throw new \InvalidArgumentException('non-nullable providers cannot be null');
+        if (is_null($line3)) {
+            throw new \InvalidArgumentException('non-nullable line3 cannot be null');
         }
-        $this->container['providers'] = $providers;
+        $this->container['line3'] = $line3;
 
         return $this;
     }
 
     /**
-     * Gets known_identity_data
+     * Gets city
      *
-     * @return \Trinsic\Api\Model\KnownIdentityData|null
+     * @return string|null
      */
-    public function getKnownIdentityData()
+    public function getCity()
     {
-        return $this->container['known_identity_data'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets known_identity_data
+     * Sets city
      *
-     * @param \Trinsic\Api\Model\KnownIdentityData|null $known_identity_data Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+     * @param string|null $city city
      *
      * @return self
      */
-    public function setKnownIdentityData($known_identity_data)
+    public function setCity($city)
     {
-        if (is_null($known_identity_data)) {
-            throw new \InvalidArgumentException('non-nullable known_identity_data cannot be null');
+        if (is_null($city)) {
+            throw new \InvalidArgumentException('non-nullable city cannot be null');
         }
-        $this->container['known_identity_data'] = $known_identity_data;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets disclosed_fields
+     * Gets state
      *
-     * @return \Trinsic\Api\Model\DisclosedFieldsRequest|null
+     * @return string|null
      */
-    public function getDisclosedFields()
+    public function getState()
     {
-        return $this->container['disclosed_fields'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets disclosed_fields
+     * Sets state
      *
-     * @param \Trinsic\Api\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
+     * @param string|null $state state
      *
      * @return self
      */
-    public function setDisclosedFields($disclosed_fields)
+    public function setState($state)
     {
-        if (is_null($disclosed_fields)) {
-            throw new \InvalidArgumentException('non-nullable disclosed_fields cannot be null');
+        if (is_null($state)) {
+            throw new \InvalidArgumentException('non-nullable state cannot be null');
         }
-        $this->container['disclosed_fields'] = $disclosed_fields;
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string|null $postal_code postal_code
+     *
+     * @return self
+     */
+    public function setPostalCode($postal_code)
+    {
+        if (is_null($postal_code)) {
+            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
+        }
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
+        }
+        $this->container['country'] = $country;
 
         return $this;
     }

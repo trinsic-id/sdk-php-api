@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequest
+ * ProviderInformation
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateSessionRequest Class Doc Comment
+ * ProviderInformation Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateSessionRequest';
+    protected static $openAPIModelName = 'ProviderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'launch_provider_directly' => 'bool',
-        'enable_remember_me' => 'bool',
-        'providers' => 'string[]',
-        'known_identity_data' => '\Trinsic\Api\Model\KnownIdentityData',
-        'disclosed_fields' => '\Trinsic\Api\Model\DisclosedFieldsRequest'
+        'provider_id' => 'string',
+        'provider_display_name' => 'string',
+        'provider_logo' => 'string'
     ];
 
     /**
@@ -72,11 +70,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'launch_provider_directly' => null,
-        'enable_remember_me' => null,
-        'providers' => null,
-        'known_identity_data' => null,
-        'disclosed_fields' => null
+        'provider_id' => null,
+        'provider_display_name' => null,
+        'provider_logo' => null
     ];
 
     /**
@@ -85,11 +81,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'launch_provider_directly' => false,
-        'enable_remember_me' => false,
-        'providers' => false,
-        'known_identity_data' => false,
-        'disclosed_fields' => false
+        'provider_id' => false,
+        'provider_display_name' => false,
+        'provider_logo' => false
     ];
 
     /**
@@ -178,11 +172,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'launch_provider_directly' => 'launchProviderDirectly',
-        'enable_remember_me' => 'enableRememberMe',
-        'providers' => 'providers',
-        'known_identity_data' => 'knownIdentityData',
-        'disclosed_fields' => 'disclosedFields'
+        'provider_id' => 'providerId',
+        'provider_display_name' => 'providerDisplayName',
+        'provider_logo' => 'providerLogo'
     ];
 
     /**
@@ -191,11 +183,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'launch_provider_directly' => 'setLaunchProviderDirectly',
-        'enable_remember_me' => 'setEnableRememberMe',
-        'providers' => 'setProviders',
-        'known_identity_data' => 'setKnownIdentityData',
-        'disclosed_fields' => 'setDisclosedFields'
+        'provider_id' => 'setProviderId',
+        'provider_display_name' => 'setProviderDisplayName',
+        'provider_logo' => 'setProviderLogo'
     ];
 
     /**
@@ -204,11 +194,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'launch_provider_directly' => 'getLaunchProviderDirectly',
-        'enable_remember_me' => 'getEnableRememberMe',
-        'providers' => 'getProviders',
-        'known_identity_data' => 'getKnownIdentityData',
-        'disclosed_fields' => 'getDisclosedFields'
+        'provider_id' => 'getProviderId',
+        'provider_display_name' => 'getProviderDisplayName',
+        'provider_logo' => 'getProviderLogo'
     ];
 
     /**
@@ -268,11 +256,9 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('launch_provider_directly', $data ?? [], null);
-        $this->setIfExists('enable_remember_me', $data ?? [], null);
-        $this->setIfExists('providers', $data ?? [], null);
-        $this->setIfExists('known_identity_data', $data ?? [], null);
-        $this->setIfExists('disclosed_fields', $data ?? [], null);
+        $this->setIfExists('provider_id', $data ?? [], null);
+        $this->setIfExists('provider_display_name', $data ?? [], null);
+        $this->setIfExists('provider_logo', $data ?? [], null);
     }
 
     /**
@@ -302,6 +288,15 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['provider_id'] === null) {
+            $invalidProperties[] = "'provider_id' can't be null";
+        }
+        if ($this->container['provider_display_name'] === null) {
+            $invalidProperties[] = "'provider_display_name' can't be null";
+        }
+        if ($this->container['provider_logo'] === null) {
+            $invalidProperties[] = "'provider_logo' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -318,136 +313,82 @@ class CreateSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets launch_provider_directly
+     * Gets provider_id
      *
-     * @return bool|null
+     * @return string
      */
-    public function getLaunchProviderDirectly()
+    public function getProviderId()
     {
-        return $this->container['launch_provider_directly'];
+        return $this->container['provider_id'];
     }
 
     /**
-     * Sets launch_provider_directly
+     * Sets provider_id
      *
-     * @param bool|null $launch_provider_directly Whether to immediately launch the identity provider, without invoking the Trinsic Widget UI.                Users will not be shown the Widget; therefore, reuse of credentials, selection of an identity provider, and saving a verification for future reuse  are not available to the end user in this mode.                Sessions created with this option enabled must be created with a `RedirectUrl` specified, and cannot be invoked using the frontend SDK at this time.
+     * @param string $provider_id provider_id
      *
      * @return self
      */
-    public function setLaunchProviderDirectly($launch_provider_directly)
+    public function setProviderId($provider_id)
     {
-        if (is_null($launch_provider_directly)) {
-            throw new \InvalidArgumentException('non-nullable launch_provider_directly cannot be null');
+        if (is_null($provider_id)) {
+            throw new \InvalidArgumentException('non-nullable provider_id cannot be null');
         }
-        $this->container['launch_provider_directly'] = $launch_provider_directly;
+        $this->container['provider_id'] = $provider_id;
 
         return $this;
     }
 
     /**
-     * Gets enable_remember_me
+     * Gets provider_display_name
      *
-     * @return bool|null
+     * @return string
      */
-    public function getEnableRememberMe()
+    public function getProviderDisplayName()
     {
-        return $this->container['enable_remember_me'];
+        return $this->container['provider_display_name'];
     }
 
     /**
-     * Sets enable_remember_me
+     * Sets provider_display_name
      *
-     * @param bool|null $enable_remember_me Whether to enable Trinsic's \"Remember Me\" feature, which allows users to save their credentials for future use.                This option is only relevant when `LaunchProviderDirectly` is unspecified or set to `false`.  If `LaunchProviderDirectly` is `true`, this field must be unspecified or set to `false`.                If this field is set to `true`, then:    - The user will be prompted to authenticate with their phone number at the start of the flow    - If the user has previously saved a verification for reuse with Trinsic, they will be offered the ability to reuse it    - After the user has verified their identity (and if the identity provider in question supports it), they will be prompted to save their credentials for future use                If this field is set to `false`, then:    - The user will not be prompted to authenticate with their phone number at the start of the flow.      - Instead, the user will be immediately shown the list of available providers    - The user will not be offered the ability to reuse a previously-saved Trinsic credential    - After the user has verified their identity, they will not be prompted to save their credentials for future use      - Instead, they will immediately return to your product
+     * @param string $provider_display_name provider_display_name
      *
      * @return self
      */
-    public function setEnableRememberMe($enable_remember_me)
+    public function setProviderDisplayName($provider_display_name)
     {
-        if (is_null($enable_remember_me)) {
-            throw new \InvalidArgumentException('non-nullable enable_remember_me cannot be null');
+        if (is_null($provider_display_name)) {
+            throw new \InvalidArgumentException('non-nullable provider_display_name cannot be null');
         }
-        $this->container['enable_remember_me'] = $enable_remember_me;
+        $this->container['provider_display_name'] = $provider_display_name;
 
         return $this;
     }
 
     /**
-     * Gets providers
+     * Gets provider_logo
      *
-     * @return string[]|null
+     * @return string
      */
-    public function getProviders()
+    public function getProviderLogo()
     {
-        return $this->container['providers'];
+        return $this->container['provider_logo'];
     }
 
     /**
-     * Sets providers
+     * Sets provider_logo
      *
-     * @param string[]|null $providers The list of allowed identity providers. If not specified, all available providers will be allowed.                If `LaunchMethodDirectly` is `true`, this field must be set, and must have only a single entry.  If `LaunchMethodDirectly` is not specified or is `false`, this field may have any number of entries.
+     * @param string $provider_logo provider_logo
      *
      * @return self
      */
-    public function setProviders($providers)
+    public function setProviderLogo($provider_logo)
     {
-        if (is_null($providers)) {
-            throw new \InvalidArgumentException('non-nullable providers cannot be null');
+        if (is_null($provider_logo)) {
+            throw new \InvalidArgumentException('non-nullable provider_logo cannot be null');
         }
-        $this->container['providers'] = $providers;
-
-        return $this;
-    }
-
-    /**
-     * Gets known_identity_data
-     *
-     * @return \Trinsic\Api\Model\KnownIdentityData|null
-     */
-    public function getKnownIdentityData()
-    {
-        return $this->container['known_identity_data'];
-    }
-
-    /**
-     * Sets known_identity_data
-     *
-     * @param \Trinsic\Api\Model\KnownIdentityData|null $known_identity_data Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
-     *
-     * @return self
-     */
-    public function setKnownIdentityData($known_identity_data)
-    {
-        if (is_null($known_identity_data)) {
-            throw new \InvalidArgumentException('non-nullable known_identity_data cannot be null');
-        }
-        $this->container['known_identity_data'] = $known_identity_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets disclosed_fields
-     *
-     * @return \Trinsic\Api\Model\DisclosedFieldsRequest|null
-     */
-    public function getDisclosedFields()
-    {
-        return $this->container['disclosed_fields'];
-    }
-
-    /**
-     * Sets disclosed_fields
-     *
-     * @param \Trinsic\Api\Model\DisclosedFieldsRequest|null $disclosed_fields Specific identity attributes to request. If not provided, all available attributes will be requested.
-     *
-     * @return self
-     */
-    public function setDisclosedFields($disclosed_fields)
-    {
-        if (is_null($disclosed_fields)) {
-            throw new \InvalidArgumentException('non-nullable disclosed_fields cannot be null');
-        }
-        $this->container['disclosed_fields'] = $disclosed_fields;
+        $this->container['provider_logo'] = $provider_logo;
 
         return $this;
     }

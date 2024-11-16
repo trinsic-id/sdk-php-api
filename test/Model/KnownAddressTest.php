@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSessionRequestTest
+ * KnownAddressTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateSessionRequestTest Class Doc Comment
+ * KnownAddressTest Class Doc Comment
  *
  * @category    Class
- * @description CreateSessionRequest
+ * @description Address information for an individual
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateSessionRequestTest extends TestCase
+class KnownAddressTest extends TestCase
 {
 
     /**
@@ -71,54 +71,72 @@ class CreateSessionRequestTest extends TestCase
     }
 
     /**
-     * Test "CreateSessionRequest"
+     * Test "KnownAddress"
      */
-    public function testCreateSessionRequest()
+    public function testKnownAddress()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "launch_provider_directly"
+     * Test attribute "line1"
      */
-    public function testPropertyLaunchProviderDirectly()
+    public function testPropertyLine1()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "enable_remember_me"
+     * Test attribute "line2"
      */
-    public function testPropertyEnableRememberMe()
+    public function testPropertyLine2()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "providers"
+     * Test attribute "line3"
      */
-    public function testPropertyProviders()
+    public function testPropertyLine3()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "known_identity_data"
+     * Test attribute "city"
      */
-    public function testPropertyKnownIdentityData()
+    public function testPropertyCity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "disclosed_fields"
+     * Test attribute "state"
      */
-    public function testPropertyDisclosedFields()
+    public function testPropertyState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional]
+**type** | [**\Trinsic\Api\Model\DocumentType**](DocumentType.md) |  | [optional]
 **number** | **string** |  | [optional]
-**issue_date** | **string** |  | [optional]
-**expiration_date** | **string** |  | [optional]
+**issue_date** | **\DateTime** |  | [optional]
+**expiration_date** | **\DateTime** |  | [optional]
 **issuing_country** | **string** |  | [optional]
 **issuing_authority** | **string** |  | [optional]
 

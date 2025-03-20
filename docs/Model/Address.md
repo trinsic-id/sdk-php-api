@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **line2** | **string** |  | [optional]
 **line3** | **string** |  | [optional]
 **city** | **string** |  | [optional]
-**state** | **string** |  | [optional]
+**subdivision** | **string** |  | [optional]
 **postal_code** | **string** |  | [optional]
 **country** | **string** |  | [optional]
-**full_address** | **string** | The full address as a single string | [optional]
+**full_address** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

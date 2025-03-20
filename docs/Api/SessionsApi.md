@@ -5,11 +5,14 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**cancelSession()**](SessionsApi.md#cancelSession) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
-| [**createSession()**](SessionsApi.md#createSession) | **POST** /api/v1/sessions | Create Session |
+| [**createAdvancedProviderSession()**](SessionsApi.md#createAdvancedProviderSession) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
+| [**createHostedProviderSession()**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
+| [**createWidgetSession()**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
 | [**getSession()**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult()**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
-| [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions | List Sessions |
+| [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions/list | List Sessions |
 | [**redactSession()**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
+| [**refreshStepContent()**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
 
 
 ## `cancelSession()`
@@ -72,15 +75,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `createSession()`
+## `createAdvancedProviderSession()`
 
 ```php
-createSession($create_session_request): \Trinsic\Api\Model\CreateSessionResponse
+createAdvancedProviderSession($create_advanced_provider_session_request): \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse
 ```
 
-Create Session
+Create Advanced Provider Session
 
-Create a Session to verify a user's identity
+Verify a user's identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the `Capabilities` field.    If `FallbackToHostedUi` is `true`, Trinsic's hosted UI will automatically be invoked to handle any capabilities you do not support.
 
 ### Example
 
@@ -99,13 +102,13 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_session_request = new \Trinsic\Api\Model\CreateSessionRequest(); // \Trinsic\Api\Model\CreateSessionRequest
+$create_advanced_provider_session_request = new \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest(); // \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest
 
 try {
-    $result = $apiInstance->createSession($create_session_request);
+    $result = $apiInstance->createAdvancedProviderSession($create_advanced_provider_session_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SessionsApi->createSession: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SessionsApi->createAdvancedProviderSession: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -113,11 +116,131 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_session_request** | [**\Trinsic\Api\Model\CreateSessionRequest**](../Model/CreateSessionRequest.md)|  | [optional] |
+| **create_advanced_provider_session_request** | [**\Trinsic\Api\Model\CreateAdvancedProviderSessionRequest**](../Model/CreateAdvancedProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\Trinsic\Api\Model\CreateSessionResponse**](../Model/CreateSessionResponse.md)
+[**\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse**](../Model/CreateAdvancedProviderSessionResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createHostedProviderSession()`
+
+```php
+createHostedProviderSession($create_hosted_provider_session_request): \Trinsic\Api\Model\CreateHostedProviderSessionResponse
+```
+
+Create Hosted Provider Session
+
+Verify a user's identity with a specific provider, using Trinsic-hosted UI for providers which require additional user interaction.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$create_hosted_provider_session_request = new \Trinsic\Api\Model\CreateHostedProviderSessionRequest(); // \Trinsic\Api\Model\CreateHostedProviderSessionRequest
+
+try {
+    $result = $apiInstance->createHostedProviderSession($create_hosted_provider_session_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->createHostedProviderSession: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_hosted_provider_session_request** | [**\Trinsic\Api\Model\CreateHostedProviderSessionRequest**](../Model/CreateHostedProviderSessionRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\CreateHostedProviderSessionResponse**](../Model/CreateHostedProviderSessionResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createWidgetSession()`
+
+```php
+createWidgetSession($create_widget_session_request): \Trinsic\Api\Model\CreateWidgetSessionResponse
+```
+
+Create Widget Session
+
+Verify a user's identity using Trinsic's hosted Widget flow.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$create_widget_session_request = new \Trinsic\Api\Model\CreateWidgetSessionRequest(); // \Trinsic\Api\Model\CreateWidgetSessionRequest
+
+try {
+    $result = $apiInstance->createWidgetSession($create_widget_session_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->createWidgetSession: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_widget_session_request** | [**\Trinsic\Api\Model\CreateWidgetSessionRequest**](../Model/CreateWidgetSessionRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\CreateWidgetSessionResponse**](../Model/CreateWidgetSessionResponse.md)
 
 ### Authorization
 
@@ -372,6 +495,68 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `refreshStepContent()`
+
+```php
+refreshStepContent($acceptance_session_id, $refresh_step_content_request): \Trinsic\Api\Model\RefreshStepContentResponse
+```
+
+Refresh Step Content
+
+Refreshes the content of a Step for an Advanced Provider Session.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$acceptance_session_id = 'acceptance_session_id_example'; // string
+$refresh_step_content_request = new \Trinsic\Api\Model\RefreshStepContentRequest(); // \Trinsic\Api\Model\RefreshStepContentRequest
+
+try {
+    $result = $apiInstance->refreshStepContent($acceptance_session_id, $refresh_step_content_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->refreshStepContent: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **acceptance_session_id** | **string**|  | |
+| **refresh_step_content_request** | [**\Trinsic\Api\Model\RefreshStepContentRequest**](../Model/RefreshStepContentRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\RefreshStepContentResponse**](../Model/RefreshStepContentResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **line2** | **string** |  | [optional]
 **line3** | **string** |  | [optional]
 **city** | **string** |  | [optional]
-**state** | **string** |  | [optional]
+**subdivision** | **string** |  | [optional]
+**state** | **string** | Deprecated. Use &#x60;Subdivision&#x60; instead. | [optional]
 **postal_code** | **string** |  | [optional]
 **country** | **string** |  | [optional]
 

@@ -98,9 +98,9 @@ class CreateWidgetSessionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "known_identity_data"
+     * Test attribute "recommendation_info"
      */
-    public function testPropertyKnownIdentityData()
+    public function testPropertyRecommendationInfo()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

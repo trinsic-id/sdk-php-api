@@ -67,7 +67,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => '\Trinsic\Api\Model\BrazilCpfCheckInput',
         'brazil_digital_cnh' => '\Trinsic\Api\Model\BrazilDigitalCnhInput',
         'philippine_match' => '\Trinsic\Api\Model\PhilippineMatchInput',
-        'philippine_qr' => '\Trinsic\Api\Model\PhilippineQRInput'
+        'philippine_qr' => '\Trinsic\Api\Model\PhilippineQRInput',
+        'smart_id' => '\Trinsic\Api\Model\SmartIdInput',
+        'mobile_id' => '\Trinsic\Api\Model\MobileIdInput',
+        'idin' => '\Trinsic\Api\Model\IdinInput',
+        'spid' => '\Trinsic\Api\Model\SpidInput',
+        'trinsic_test_database_lookup' => '\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput',
+        'trinsic_test_sub_providers' => '\Trinsic\Api\Model\TrinsicTestSubProvidersInput'
     ];
 
     /**
@@ -88,7 +94,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => null,
         'brazil_digital_cnh' => null,
         'philippine_match' => null,
-        'philippine_qr' => null
+        'philippine_qr' => null,
+        'smart_id' => null,
+        'mobile_id' => null,
+        'idin' => null,
+        'spid' => null,
+        'trinsic_test_database_lookup' => null,
+        'trinsic_test_sub_providers' => null
     ];
 
     /**
@@ -107,7 +119,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => true,
         'brazil_digital_cnh' => true,
         'philippine_match' => true,
-        'philippine_qr' => true
+        'philippine_qr' => true,
+        'smart_id' => true,
+        'mobile_id' => true,
+        'idin' => true,
+        'spid' => true,
+        'trinsic_test_database_lookup' => true,
+        'trinsic_test_sub_providers' => true
     ];
 
     /**
@@ -206,7 +224,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => 'brazilCpfCheck',
         'brazil_digital_cnh' => 'brazilDigitalCnh',
         'philippine_match' => 'philippineMatch',
-        'philippine_qr' => 'philippineQR'
+        'philippine_qr' => 'philippineQR',
+        'smart_id' => 'smartId',
+        'mobile_id' => 'mobileId',
+        'idin' => 'idin',
+        'spid' => 'spid',
+        'trinsic_test_database_lookup' => 'trinsicTestDatabaseLookup',
+        'trinsic_test_sub_providers' => 'trinsicTestSubProviders'
     ];
 
     /**
@@ -225,7 +249,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => 'setBrazilCpfCheck',
         'brazil_digital_cnh' => 'setBrazilDigitalCnh',
         'philippine_match' => 'setPhilippineMatch',
-        'philippine_qr' => 'setPhilippineQr'
+        'philippine_qr' => 'setPhilippineQr',
+        'smart_id' => 'setSmartId',
+        'mobile_id' => 'setMobileId',
+        'idin' => 'setIdin',
+        'spid' => 'setSpid',
+        'trinsic_test_database_lookup' => 'setTrinsicTestDatabaseLookup',
+        'trinsic_test_sub_providers' => 'setTrinsicTestSubProviders'
     ];
 
     /**
@@ -244,7 +274,13 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'brazil_cpf_check' => 'getBrazilCpfCheck',
         'brazil_digital_cnh' => 'getBrazilDigitalCnh',
         'philippine_match' => 'getPhilippineMatch',
-        'philippine_qr' => 'getPhilippineQr'
+        'philippine_qr' => 'getPhilippineQr',
+        'smart_id' => 'getSmartId',
+        'mobile_id' => 'getMobileId',
+        'idin' => 'getIdin',
+        'spid' => 'getSpid',
+        'trinsic_test_database_lookup' => 'getTrinsicTestDatabaseLookup',
+        'trinsic_test_sub_providers' => 'getTrinsicTestSubProviders'
     ];
 
     /**
@@ -315,6 +351,12 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('brazil_digital_cnh', $data ?? [], null);
         $this->setIfExists('philippine_match', $data ?? [], null);
         $this->setIfExists('philippine_qr', $data ?? [], null);
+        $this->setIfExists('smart_id', $data ?? [], null);
+        $this->setIfExists('mobile_id', $data ?? [], null);
+        $this->setIfExists('idin', $data ?? [], null);
+        $this->setIfExists('spid', $data ?? [], null);
+        $this->setIfExists('trinsic_test_database_lookup', $data ?? [], null);
+        $this->setIfExists('trinsic_test_sub_providers', $data ?? [], null);
     }
 
     /**
@@ -372,7 +414,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets indonesia_nik
      *
-     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik Input for the `f-indonesia-nik` integration
+     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik Input for the `f-indonesia-nik` provider
      *
      * @return self
      */
@@ -406,7 +448,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mexico_curp
      *
-     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp Input for the `f-mexico-curp` integration
+     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp Input for the `f-mexico-curp` provider
      *
      * @return self
      */
@@ -440,7 +482,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets south_africa_nid
      *
-     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid Input for the `f-south-africa-nid` integration
+     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid Input for the `f-south-africa-nid` provider
      *
      * @return self
      */
@@ -474,7 +516,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kenya_nid
      *
-     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid Input for the `f-kenya-nid` integration
+     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid Input for the `f-kenya-nid` provider
      *
      * @return self
      */
@@ -508,7 +550,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nigeria_nin
      *
-     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin Input for the `f-nigeria-nin` integration
+     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin Input for the `f-nigeria-nin` provider
      *
      * @return self
      */
@@ -542,7 +584,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets aadhaar
      *
-     * @param \Trinsic\Api\Model\AadhaarInput|null $aadhaar Input for the `f-india-aadhaar-match` integration
+     * @param \Trinsic\Api\Model\AadhaarInput|null $aadhaar Input for the `f-india-aadhaar-match` provider
      *
      * @return self
      */
@@ -576,7 +618,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bangladesh_national_id
      *
-     * @param \Trinsic\Api\Model\BangladeshNationalIdInput|null $bangladesh_national_id Input for the `bangladesh-nid` integration
+     * @param \Trinsic\Api\Model\BangladeshNationalIdInput|null $bangladesh_national_id Input for the `bangladesh-nid` provider
      *
      * @return self
      */
@@ -610,7 +652,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brazil_cpf_check
      *
-     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_check Input for the `g-brazil-cpf` integration
+     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_check Input for the `g-brazil-cpf` provider
      *
      * @return self
      */
@@ -644,7 +686,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brazil_digital_cnh
      *
-     * @param \Trinsic\Api\Model\BrazilDigitalCnhInput|null $brazil_digital_cnh Input for the `g-brazil-digital-cnh` integration
+     * @param \Trinsic\Api\Model\BrazilDigitalCnhInput|null $brazil_digital_cnh Input for the `g-brazil-digital-cnh` provider
      *
      * @return self
      */
@@ -678,7 +720,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets philippine_match
      *
-     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippine_match Input for the `b-philsys-biometric` integration
+     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippine_match Input for the `b-philsys-biometric` provider
      *
      * @return self
      */
@@ -712,7 +754,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets philippine_qr
      *
-     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippine_qr Input for the `b-philippine-qr-digital-national-id` and `b-philippine-qr-ephill-id` integrations
+     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippine_qr Input for the `b-philippine-qr-digital-national-id` and `b-philippine-qr-ephill-id` providers
      *
      * @return self
      */
@@ -729,6 +771,210 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['philippine_qr'] = $philippine_qr;
+
+        return $this;
+    }
+
+    /**
+     * Gets smart_id
+     *
+     * @return \Trinsic\Api\Model\SmartIdInput|null
+     */
+    public function getSmartId()
+    {
+        return $this->container['smart_id'];
+    }
+
+    /**
+     * Sets smart_id
+     *
+     * @param \Trinsic\Api\Model\SmartIdInput|null $smart_id Input for the `smart-id` provider
+     *
+     * @return self
+     */
+    public function setSmartId($smart_id)
+    {
+        if (is_null($smart_id)) {
+            array_push($this->openAPINullablesSetToNull, 'smart_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('smart_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['smart_id'] = $smart_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_id
+     *
+     * @return \Trinsic\Api\Model\MobileIdInput|null
+     */
+    public function getMobileId()
+    {
+        return $this->container['mobile_id'];
+    }
+
+    /**
+     * Sets mobile_id
+     *
+     * @param \Trinsic\Api\Model\MobileIdInput|null $mobile_id Input for the `mobile-id` provider
+     *
+     * @return self
+     */
+    public function setMobileId($mobile_id)
+    {
+        if (is_null($mobile_id)) {
+            array_push($this->openAPINullablesSetToNull, 'mobile_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mobile_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['mobile_id'] = $mobile_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idin
+     *
+     * @return \Trinsic\Api\Model\IdinInput|null
+     */
+    public function getIdin()
+    {
+        return $this->container['idin'];
+    }
+
+    /**
+     * Sets idin
+     *
+     * @param \Trinsic\Api\Model\IdinInput|null $idin Input for the `idin` provider
+     *
+     * @return self
+     */
+    public function setIdin($idin)
+    {
+        if (is_null($idin)) {
+            array_push($this->openAPINullablesSetToNull, 'idin');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('idin', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['idin'] = $idin;
+
+        return $this;
+    }
+
+    /**
+     * Gets spid
+     *
+     * @return \Trinsic\Api\Model\SpidInput|null
+     */
+    public function getSpid()
+    {
+        return $this->container['spid'];
+    }
+
+    /**
+     * Sets spid
+     *
+     * @param \Trinsic\Api\Model\SpidInput|null $spid Input for the `spid` provider
+     *
+     * @return self
+     */
+    public function setSpid($spid)
+    {
+        if (is_null($spid)) {
+            array_push($this->openAPINullablesSetToNull, 'spid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('spid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['spid'] = $spid;
+
+        return $this;
+    }
+
+    /**
+     * Gets trinsic_test_database_lookup
+     *
+     * @return \Trinsic\Api\Model\TrinsicTestDatabaseLookupInput|null
+     */
+    public function getTrinsicTestDatabaseLookup()
+    {
+        return $this->container['trinsic_test_database_lookup'];
+    }
+
+    /**
+     * Sets trinsic_test_database_lookup
+     *
+     * @param \Trinsic\Api\Model\TrinsicTestDatabaseLookupInput|null $trinsic_test_database_lookup *TEST MODE ONLY.*              Input for the `trinsic-test-database-lookup` provider
+     *
+     * @return self
+     */
+    public function setTrinsicTestDatabaseLookup($trinsic_test_database_lookup)
+    {
+        if (is_null($trinsic_test_database_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'trinsic_test_database_lookup');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('trinsic_test_database_lookup', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['trinsic_test_database_lookup'] = $trinsic_test_database_lookup;
+
+        return $this;
+    }
+
+    /**
+     * Gets trinsic_test_sub_providers
+     *
+     * @return \Trinsic\Api\Model\TrinsicTestSubProvidersInput|null
+     */
+    public function getTrinsicTestSubProviders()
+    {
+        return $this->container['trinsic_test_sub_providers'];
+    }
+
+    /**
+     * Sets trinsic_test_sub_providers
+     *
+     * @param \Trinsic\Api\Model\TrinsicTestSubProvidersInput|null $trinsic_test_sub_providers *TEST MODE ONLY.*              Input for the `trinsic-test-sub-providers` provider
+     *
+     * @return self
+     */
+    public function setTrinsicTestSubProviders($trinsic_test_sub_providers)
+    {
+        if (is_null($trinsic_test_sub_providers)) {
+            array_push($this->openAPINullablesSetToNull, 'trinsic_test_sub_providers');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('trinsic_test_sub_providers', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['trinsic_test_sub_providers'] = $trinsic_test_sub_providers;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownIdentityDataTest
+ * ListProviderContractsResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * KnownIdentityDataTest Class Doc Comment
+ * ListProviderContractsResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+ * @description ListProviderContractsResponse
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class KnownIdentityDataTest extends TestCase
+class ListProviderContractsResponseTest extends TestCase
 {
 
     /**
@@ -71,18 +71,18 @@ class KnownIdentityDataTest extends TestCase
     }
 
     /**
-     * Test "KnownIdentityData"
+     * Test "ListProviderContractsResponse"
      */
-    public function testKnownIdentityData()
+    public function testListProviderContractsResponse()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "person"
+     * Test attribute "provider_contracts"
      */
-    public function testPropertyPerson()
+    public function testPropertyProviderContracts()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

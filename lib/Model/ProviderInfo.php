@@ -60,8 +60,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'logo_url' => 'string',
-        'child_provider_ids' => 'string[]'
+        'logo_url' => 'string'
     ];
 
     /**
@@ -74,8 +73,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'logo_url' => null,
-        'child_provider_ids' => null
+        'logo_url' => null
     ];
 
     /**
@@ -86,8 +84,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
-        'logo_url' => false,
-        'child_provider_ids' => true
+        'logo_url' => false
     ];
 
     /**
@@ -178,8 +175,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'logo_url' => 'logoUrl',
-        'child_provider_ids' => 'childProviderIds'
+        'logo_url' => 'logoUrl'
     ];
 
     /**
@@ -190,8 +186,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'logo_url' => 'setLogoUrl',
-        'child_provider_ids' => 'setChildProviderIds'
+        'logo_url' => 'setLogoUrl'
     ];
 
     /**
@@ -202,8 +197,7 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'logo_url' => 'getLogoUrl',
-        'child_provider_ids' => 'getChildProviderIds'
+        'logo_url' => 'getLogoUrl'
     ];
 
     /**
@@ -266,7 +260,6 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('logo_url', $data ?? [], null);
-        $this->setIfExists('child_provider_ids', $data ?? [], null);
     }
 
     /**
@@ -397,40 +390,6 @@ class ProviderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable logo_url cannot be null');
         }
         $this->container['logo_url'] = $logo_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets child_provider_ids
-     *
-     * @return string[]|null
-     */
-    public function getChildProviderIds()
-    {
-        return $this->container['child_provider_ids'];
-    }
-
-    /**
-     * Sets child_provider_ids
-     *
-     * @param string[]|null $child_provider_ids List of child provider id's where the provider allows deep-launching of a specific provider.
-     *
-     * @return self
-     */
-    public function setChildProviderIds($child_provider_ids)
-    {
-        if (is_null($child_provider_ids)) {
-            array_push($this->openAPINullablesSetToNull, 'child_provider_ids');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('child_provider_ids', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['child_provider_ids'] = $child_provider_ids;
 
         return $this;
     }

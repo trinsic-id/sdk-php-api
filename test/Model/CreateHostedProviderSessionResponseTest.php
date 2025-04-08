@@ -96,4 +96,13 @@ class CreateHostedProviderSessionResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "results_access_key"
+     */
+    public function testPropertyResultsAccessKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

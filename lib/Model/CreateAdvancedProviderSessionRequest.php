@@ -410,7 +410,7 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
     /**
      * Sets redirect_url
      *
-     * @param string|null $redirect_url The Redirect URL to which the user should be sent after the session is complete.                This field is required for providers which employ a redirect-based flow.
+     * @param string|null $redirect_url The Redirect URL to which the user should be sent after the session is complete.              This field is required for providers which employ a redirect-based flow.
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
     /**
      * Sets capabilities
      *
-     * @param \Trinsic\Api\Model\IntegrationCapability[] $capabilities The list of capabilities your integration supports. Capabilities are the core of Trinsic's whitelabel-with-optional-fallback offering.                Most capabilities align with either an `IntegrationLaunchMethod` or an `IntegrationCollectionMethod`.  The exception being refresh content to support updating the content of the launch method.                For example, to support a basic redirect-based flow, you must include the `LaunchRedirect` and `CaptureRedirect` capabilities.  To support a mobile deeplink / polling flow, you must include the `DeeplinkToMobile` and `PollForResults` capabilities.                If `FallbackToHostedUi` is `true`, Trinsic will automatically fall back to a Trinsic-hosted UI to cover any gaps in your integration's capabilities.  If `FallbackToHostedUi` is `false`, gaps in your integration's capabilities will result in an error during Session creation.                Read more on how to integrate at <a href=\"https://docs.trinsic.id/docs/advanced-provider-sessions\">the guide on Advanced Provider Sessions</a>
+     * @param \Trinsic\Api\Model\IntegrationCapability[] $capabilities The list of capabilities your integration supports. Capabilities are the core of Trinsic's whitelabel-with-optional-fallback offering.              Most capabilities align with either an `IntegrationLaunchMethod` or an `IntegrationCollectionMethod`. The exception being refresh content to support updating the content of the launch method.              For example, to support a basic redirect-based flow, you must include the `LaunchRedirect` and `CaptureRedirect` capabilities. To support a mobile deeplink / polling flow, you must include the `DeeplinkToMobile` and `PollForResults` capabilities.              If `FallbackToHostedUi` is `true`, Trinsic will automatically fall back to a Trinsic-hosted UI to cover any gaps in your integration's capabilities. If `FallbackToHostedUi` is `false`, gaps in your integration's capabilities will result in an error during Session creation.              Read more on how to integrate at <a href=\"https://docs.trinsic.id/docs/advanced-provider-sessions\">the guide on Advanced Provider Sessions</a>
      *
      * @return self
      */
@@ -476,7 +476,7 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
     /**
      * Sets fallback_to_hosted_ui
      *
-     * @param bool|null $fallback_to_hosted_ui Whether the session should fall back to a Trinsic-hosted UI in certain instances.                Specifically, fallback will occur if any of the following are true:  - You attempted to launch a provider which requires a capability you did not express support for      - In this case, Trinsic's hosted UI will perform the necessary capability  - You attempted to launch a provider which requires input, and the input was either not provided or incomplete      - In this case, Trinsic's hosted UI will collect the necessary input from the user                If fallback occurs, the session's NextStep will always be LaunchBrowser,  and the CollectionMethod will always be CaptureRedirect.                If this field is set to `true`, you must also:  1. Set the `RedirectUrl` field to a non-empty value  2. Include the `LaunchBrowser` and `CaptureRedirect` capabilities in the `Capabilities` field
+     * @param bool|null $fallback_to_hosted_ui Whether the session should fall back to a Trinsic-hosted UI in certain instances.              Specifically, fallback will occur if any of the following are true: - You attempted to launch a provider which requires a capability you did not express support for     - In this case, Trinsic's hosted UI will perform the necessary capability - You attempted to launch a provider which requires input, and the input was either not provided or incomplete     - In this case, Trinsic's hosted UI will collect the necessary input from the user              If fallback occurs, the session's NextStep will always be LaunchBrowser, and the CollectionMethod will always be CaptureRedirect.              If this field is set to `true`, you must also: 1. Set the `RedirectUrl` field to a non-empty value 2. Include the `LaunchBrowser` and `CaptureRedirect` capabilities in the `Capabilities` field
      *
      * @return self
      */

@@ -44,7 +44,7 @@ class IntegrationLaunchMethod
      */
     public const LAUNCH_BROWSER = 'LaunchBrowser';
 
-    public const POLL_RESULT = 'PollResult';
+    public const NONE = 'None';
 
     public const DEEPLINK_TO_MOBILE = 'DeeplinkToMobile';
 
@@ -58,7 +58,7 @@ class IntegrationLaunchMethod
     {
         return [
             self::LAUNCH_BROWSER,
-            self::POLL_RESULT,
+            self::NONE,
             self::DEEPLINK_TO_MOBILE,
             self::SHOW_CONTENT
         ];

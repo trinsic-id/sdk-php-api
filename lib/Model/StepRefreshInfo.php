@@ -325,7 +325,7 @@ class StepRefreshInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expires_at
      *
-     * @param \DateTime $expires_at The UTC date/time at which the step `content` will expire and should no longer be used.                Use the `Refresh Step Content` API to obtain a new value for `content`.
+     * @param \DateTime $expires_at The UTC date/time at which the step `content` will expire and should no longer be used.              Use the `Refresh Step Content` API to obtain a new value for `content`.
      *
      * @return self
      */

@@ -58,6 +58,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'originating_provider_id' => 'string',
+        'originating_sub_provider_id' => 'string',
         'person' => '\Trinsic\Api\Model\PersonData',
         'document' => '\Trinsic\Api\Model\DocumentData',
         'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys'
@@ -72,6 +73,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'originating_provider_id' => null,
+        'originating_sub_provider_id' => null,
         'person' => null,
         'document' => null,
         'attachment_access_keys' => null
@@ -84,6 +86,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'originating_provider_id' => true,
+        'originating_sub_provider_id' => true,
         'person' => true,
         'document' => true,
         'attachment_access_keys' => true
@@ -176,6 +179,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'originating_provider_id' => 'originatingProviderId',
+        'originating_sub_provider_id' => 'originatingSubProviderId',
         'person' => 'person',
         'document' => 'document',
         'attachment_access_keys' => 'attachmentAccessKeys'
@@ -188,6 +192,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'originating_provider_id' => 'setOriginatingProviderId',
+        'originating_sub_provider_id' => 'setOriginatingSubProviderId',
         'person' => 'setPerson',
         'document' => 'setDocument',
         'attachment_access_keys' => 'setAttachmentAccessKeys'
@@ -200,6 +205,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'originating_provider_id' => 'getOriginatingProviderId',
+        'originating_sub_provider_id' => 'getOriginatingSubProviderId',
         'person' => 'getPerson',
         'document' => 'getDocument',
         'attachment_access_keys' => 'getAttachmentAccessKeys'
@@ -263,6 +269,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('originating_provider_id', $data ?? [], null);
+        $this->setIfExists('originating_sub_provider_id', $data ?? [], null);
         $this->setIfExists('person', $data ?? [], null);
         $this->setIfExists('document', $data ?? [], null);
         $this->setIfExists('attachment_access_keys', $data ?? [], null);
@@ -340,6 +347,40 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['originating_provider_id'] = $originating_provider_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets originating_sub_provider_id
+     *
+     * @return string|null
+     */
+    public function getOriginatingSubProviderId()
+    {
+        return $this->container['originating_sub_provider_id'];
+    }
+
+    /**
+     * Sets originating_sub_provider_id
+     *
+     * @param string|null $originating_sub_provider_id originating_sub_provider_id
+     *
+     * @return self
+     */
+    public function setOriginatingSubProviderId($originating_sub_provider_id)
+    {
+        if (is_null($originating_sub_provider_id)) {
+            array_push($this->openAPINullablesSetToNull, 'originating_sub_provider_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('originating_sub_provider_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['originating_sub_provider_id'] = $originating_sub_provider_id;
 
         return $this;
     }

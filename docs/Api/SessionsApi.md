@@ -83,7 +83,7 @@ createAdvancedProviderSession($create_advanced_provider_session_request): \Trins
 
 Create Advanced Provider Session
 
-Verify a user's identity with a specific provider, handling additional user interaction in your own UI.    Signal which kinds of user interactions your UI can handle using the `Capabilities` field.    If `FallbackToHostedUi` is `true`, Trinsic's hosted UI will automatically be invoked to handle any capabilities you do not support.
+Verify a user's identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the `Capabilities` field.   If `FallbackToHostedUi` is `true`, Trinsic's hosted UI will automatically be invoked to handle any capabilities you do not support.
 
 ### Example
 
@@ -449,7 +449,7 @@ redactSession($session_id)
 
 Redact Session
 
-Redact a Session, removing all identity data from Trinsic's servers.  Every application has a redaction period that dictates how long we will hold on to your users' PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session.  You can utilize this endpoint to redact a session immediately.                Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
+Redact a Session, removing all identity data from Trinsic's servers. Every application has a redaction period that dictates how long we will hold on to your users' PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.              Identity data that a user has chosen to save in their passkey-protected wallet will not be deleted.
 
 ### Example
 

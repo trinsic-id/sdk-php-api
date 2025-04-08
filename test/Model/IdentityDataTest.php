@@ -89,6 +89,15 @@ class IdentityDataTest extends TestCase
     }
 
     /**
+     * Test attribute "originating_sub_provider_id"
+     */
+    public function testPropertyOriginatingSubProviderId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "person"
      */
     public function testPropertyPerson()

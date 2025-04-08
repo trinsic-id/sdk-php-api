@@ -57,11 +57,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'phone_number' => 'string',
-        'countries' => 'string[]',
-        'subdivisions' => 'string[]',
-        'ip_addresses' => 'string[]',
-        'include_disabled_providers' => 'bool'
+        'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo'
     ];
 
     /**
@@ -72,11 +68,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'phone_number' => null,
-        'countries' => null,
-        'subdivisions' => null,
-        'ip_addresses' => null,
-        'include_disabled_providers' => null
+        'recommendation_info' => null
     ];
 
     /**
@@ -85,11 +77,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'phone_number' => true,
-        'countries' => true,
-        'subdivisions' => true,
-        'ip_addresses' => true,
-        'include_disabled_providers' => true
+        'recommendation_info' => true
     ];
 
     /**
@@ -178,11 +166,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone_number' => 'phoneNumber',
-        'countries' => 'countries',
-        'subdivisions' => 'subdivisions',
-        'ip_addresses' => 'ipAddresses',
-        'include_disabled_providers' => 'includeDisabledProviders'
+        'recommendation_info' => 'recommendationInfo'
     ];
 
     /**
@@ -191,11 +175,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'phone_number' => 'setPhoneNumber',
-        'countries' => 'setCountries',
-        'subdivisions' => 'setSubdivisions',
-        'ip_addresses' => 'setIpAddresses',
-        'include_disabled_providers' => 'setIncludeDisabledProviders'
+        'recommendation_info' => 'setRecommendationInfo'
     ];
 
     /**
@@ -204,11 +184,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'phone_number' => 'getPhoneNumber',
-        'countries' => 'getCountries',
-        'subdivisions' => 'getSubdivisions',
-        'ip_addresses' => 'getIpAddresses',
-        'include_disabled_providers' => 'getIncludeDisabledProviders'
+        'recommendation_info' => 'getRecommendationInfo'
     ];
 
     /**
@@ -268,11 +244,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('phone_number', $data ?? [], null);
-        $this->setIfExists('countries', $data ?? [], null);
-        $this->setIfExists('subdivisions', $data ?? [], null);
-        $this->setIfExists('ip_addresses', $data ?? [], null);
-        $this->setIfExists('include_disabled_providers', $data ?? [], null);
+        $this->setIfExists('recommendation_info', $data ?? [], null);
     }
 
     /**
@@ -318,171 +290,35 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets phone_number
+     * Gets recommendation_info
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\RecommendationInfo|null
      */
-    public function getPhoneNumber()
+    public function getRecommendationInfo()
     {
-        return $this->container['phone_number'];
+        return $this->container['recommendation_info'];
     }
 
     /**
-     * Sets phone_number
+     * Sets recommendation_info
      *
-     * @param string|null $phone_number The phone number of the user you wish to generate a recommendation for. Will be used to look up the user's identity in the network
+     * @param \Trinsic\Api\Model\RecommendationInfo|null $recommendation_info Information about the user you wish to generate a recommendation for.
      *
      * @return self
      */
-    public function setPhoneNumber($phone_number)
+    public function setRecommendationInfo($recommendation_info)
     {
-        if (is_null($phone_number)) {
-            array_push($this->openAPINullablesSetToNull, 'phone_number');
+        if (is_null($recommendation_info)) {
+            array_push($this->openAPINullablesSetToNull, 'recommendation_info');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone_number', $nullablesSetToNull);
+            $index = array_search('recommendation_info', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets countries
-     *
-     * @return string[]|null
-     */
-    public function getCountries()
-    {
-        return $this->container['countries'];
-    }
-
-    /**
-     * Sets countries
-     *
-     * @param string[]|null $countries A list of countries, in alpha-2 ISO 3166 format, you wish to specify for the recommendation, this can include the user's country of residence, nationality, etc.
-     *
-     * @return self
-     */
-    public function setCountries($countries)
-    {
-        if (is_null($countries)) {
-            array_push($this->openAPINullablesSetToNull, 'countries');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('countries', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['countries'] = $countries;
-
-        return $this;
-    }
-
-    /**
-     * Gets subdivisions
-     *
-     * @return string[]|null
-     */
-    public function getSubdivisions()
-    {
-        return $this->container['subdivisions'];
-    }
-
-    /**
-     * Sets subdivisions
-     *
-     * @param string[]|null $subdivisions If one of the countries has subdivisions, for example the US states, you can specify a list of these to further refine the recommendation (e.g., CA, UT, NY)
-     *
-     * @return self
-     */
-    public function setSubdivisions($subdivisions)
-    {
-        if (is_null($subdivisions)) {
-            array_push($this->openAPINullablesSetToNull, 'subdivisions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subdivisions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['subdivisions'] = $subdivisions;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip_addresses
-     *
-     * @return string[]|null
-     */
-    public function getIpAddresses()
-    {
-        return $this->container['ip_addresses'];
-    }
-
-    /**
-     * Sets ip_addresses
-     *
-     * @param string[]|null $ip_addresses Provide the IP addresses of the user you wish to generate a recommendation for. Will be used to look up the user's geographic location.
-     *
-     * @return self
-     */
-    public function setIpAddresses($ip_addresses)
-    {
-        if (is_null($ip_addresses)) {
-            array_push($this->openAPINullablesSetToNull, 'ip_addresses');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ip_addresses', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ip_addresses'] = $ip_addresses;
-
-        return $this;
-    }
-
-    /**
-     * Gets include_disabled_providers
-     *
-     * @return bool|null
-     */
-    public function getIncludeDisabledProviders()
-    {
-        return $this->container['include_disabled_providers'];
-    }
-
-    /**
-     * Sets include_disabled_providers
-     *
-     * @param bool|null $include_disabled_providers If true, the recommendation will include providers that are disabled for the app
-     *
-     * @return self
-     */
-    public function setIncludeDisabledProviders($include_disabled_providers)
-    {
-        if (is_null($include_disabled_providers)) {
-            array_push($this->openAPINullablesSetToNull, 'include_disabled_providers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('include_disabled_providers', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['include_disabled_providers'] = $include_disabled_providers;
+        $this->container['recommendation_info'] = $recommendation_info;
 
         return $this;
     }

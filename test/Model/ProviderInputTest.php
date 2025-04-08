@@ -177,4 +177,58 @@ class ProviderInputTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "smart_id"
+     */
+    public function testPropertySmartId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mobile_id"
+     */
+    public function testPropertyMobileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "idin"
+     */
+    public function testPropertyIdin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "spid"
+     */
+    public function testPropertySpid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "trinsic_test_database_lookup"
+     */
+    public function testPropertyTrinsicTestDatabaseLookup()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "trinsic_test_sub_providers"
+     */
+    public function testPropertyTrinsicTestSubProviders()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

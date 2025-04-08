@@ -80,7 +80,7 @@ class ResultCollection implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'method' => false,
-        'results_access_key' => true
+        'results_access_key' => false
     ];
 
     /**
@@ -284,6 +284,9 @@ class ResultCollection implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['method'] === null) {
             $invalidProperties[] = "'method' can't be null";
         }
+        if ($this->container['results_access_key'] === null) {
+            $invalidProperties[] = "'results_access_key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -329,7 +332,7 @@ class ResultCollection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets results_access_key
      *
-     * @return string|null
+     * @return string
      */
     public function getResultsAccessKey()
     {
@@ -339,21 +342,14 @@ class ResultCollection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets results_access_key
      *
-     * @param string|null $results_access_key If the method is `PollResult`, this is the key that should be used to poll for the results.
+     * @param string $results_access_key The `resultsAccessKey` for the Acceptance Session.              This is an encrypted payload which contains the decryption key necessary to access the Session's Data Vault.              Save this securely in your systems; it must be passed back with any API call which requires access to the Session's Data Vault.              Trinsic cannot access a Session's Data Vault without this key.
      *
      * @return self
      */
     public function setResultsAccessKey($results_access_key)
     {
         if (is_null($results_access_key)) {
-            array_push($this->openAPINullablesSetToNull, 'results_access_key');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('results_access_key', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable results_access_key cannot be null');
         }
         $this->container['results_access_key'] = $results_access_key;
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownPersonDataTest
+ * RecommendationInfoTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * KnownPersonDataTest Class Doc Comment
+ * RecommendationInfoTest Class Doc Comment
  *
  * @category    Class
- * @description KnownPersonData
+ * @description Information relating to a user; used to generated Identity Provider recommendations.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class KnownPersonDataTest extends TestCase
+class RecommendationInfoTest extends TestCase
 {
 
     /**
@@ -71,54 +71,9 @@ class KnownPersonDataTest extends TestCase
     }
 
     /**
-     * Test "KnownPersonData"
+     * Test "RecommendationInfo"
      */
-    public function testKnownPersonData()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "given_name"
-     */
-    public function testPropertyGivenName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "family_name"
-     */
-    public function testPropertyFamilyName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "middle_name"
-     */
-    public function testPropertyMiddleName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "full_name"
-     */
-    public function testPropertyFullName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "suffix"
-     */
-    public function testPropertySuffix()
+    public function testRecommendationInfo()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -134,18 +89,27 @@ class KnownPersonDataTest extends TestCase
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "countries"
      */
-    public function testPropertyAddress()
+    public function testPropertyCountries()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "date_of_birth"
+     * Test attribute "subdivisions"
      */
-    public function testPropertyDateOfBirth()
+    public function testPropertySubdivisions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ip_addresses"
+     */
+    public function testPropertyIpAddresses()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

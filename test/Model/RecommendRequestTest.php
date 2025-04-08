@@ -80,45 +80,9 @@ class RecommendRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "phone_number"
+     * Test attribute "recommendation_info"
      */
-    public function testPropertyPhoneNumber()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "countries"
-     */
-    public function testPropertyCountries()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "subdivisions"
-     */
-    public function testPropertySubdivisions()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ip_addresses"
-     */
-    public function testPropertyIpAddresses()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "include_disabled_providers"
-     */
-    public function testPropertyIncludeDisabledProviders()
+    public function testPropertyRecommendationInfo()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

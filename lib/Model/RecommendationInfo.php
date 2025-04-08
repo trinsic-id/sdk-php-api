@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownPersonData
+ * RecommendationInfo
  *
  * PHP version 7.4
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * KnownPersonData Class Doc Comment
+ * RecommendationInfo Class Doc Comment
  *
  * @category Class
+ * @description Information relating to a user; used to generated Identity Provider recommendations.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
+class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'KnownPersonData';
+    protected static $openAPIModelName = 'RecommendationInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +58,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'given_name' => 'string',
-        'family_name' => 'string',
-        'middle_name' => 'string',
-        'full_name' => 'string',
-        'suffix' => 'string',
         'phone_number' => 'string',
-        'address' => '\Trinsic\Api\Model\KnownAddress',
-        'date_of_birth' => 'string'
+        'countries' => 'string[]',
+        'subdivisions' => 'string[]',
+        'ip_addresses' => 'string[]'
     ];
 
     /**
@@ -75,14 +72,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'given_name' => null,
-        'family_name' => null,
-        'middle_name' => null,
-        'full_name' => null,
-        'suffix' => null,
         'phone_number' => null,
-        'address' => null,
-        'date_of_birth' => null
+        'countries' => null,
+        'subdivisions' => null,
+        'ip_addresses' => null
     ];
 
     /**
@@ -91,14 +84,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'given_name' => true,
-        'family_name' => true,
-        'middle_name' => true,
-        'full_name' => true,
-        'suffix' => true,
         'phone_number' => true,
-        'address' => true,
-        'date_of_birth' => true
+        'countries' => true,
+        'subdivisions' => true,
+        'ip_addresses' => true
     ];
 
     /**
@@ -187,14 +176,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'given_name' => 'givenName',
-        'family_name' => 'familyName',
-        'middle_name' => 'middleName',
-        'full_name' => 'fullName',
-        'suffix' => 'suffix',
         'phone_number' => 'phoneNumber',
-        'address' => 'address',
-        'date_of_birth' => 'dateOfBirth'
+        'countries' => 'countries',
+        'subdivisions' => 'subdivisions',
+        'ip_addresses' => 'ipAddresses'
     ];
 
     /**
@@ -203,14 +188,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'given_name' => 'setGivenName',
-        'family_name' => 'setFamilyName',
-        'middle_name' => 'setMiddleName',
-        'full_name' => 'setFullName',
-        'suffix' => 'setSuffix',
         'phone_number' => 'setPhoneNumber',
-        'address' => 'setAddress',
-        'date_of_birth' => 'setDateOfBirth'
+        'countries' => 'setCountries',
+        'subdivisions' => 'setSubdivisions',
+        'ip_addresses' => 'setIpAddresses'
     ];
 
     /**
@@ -219,14 +200,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'given_name' => 'getGivenName',
-        'family_name' => 'getFamilyName',
-        'middle_name' => 'getMiddleName',
-        'full_name' => 'getFullName',
-        'suffix' => 'getSuffix',
         'phone_number' => 'getPhoneNumber',
-        'address' => 'getAddress',
-        'date_of_birth' => 'getDateOfBirth'
+        'countries' => 'getCountries',
+        'subdivisions' => 'getSubdivisions',
+        'ip_addresses' => 'getIpAddresses'
     ];
 
     /**
@@ -286,14 +263,10 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('given_name', $data ?? [], null);
-        $this->setIfExists('family_name', $data ?? [], null);
-        $this->setIfExists('middle_name', $data ?? [], null);
-        $this->setIfExists('full_name', $data ?? [], null);
-        $this->setIfExists('suffix', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('countries', $data ?? [], null);
+        $this->setIfExists('subdivisions', $data ?? [], null);
+        $this->setIfExists('ip_addresses', $data ?? [], null);
     }
 
     /**
@@ -339,176 +312,6 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets given_name
-     *
-     * @return string|null
-     */
-    public function getGivenName()
-    {
-        return $this->container['given_name'];
-    }
-
-    /**
-     * Sets given_name
-     *
-     * @param string|null $given_name Given (first) name of the individual
-     *
-     * @return self
-     */
-    public function setGivenName($given_name)
-    {
-        if (is_null($given_name)) {
-            array_push($this->openAPINullablesSetToNull, 'given_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('given_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['given_name'] = $given_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets family_name
-     *
-     * @return string|null
-     */
-    public function getFamilyName()
-    {
-        return $this->container['family_name'];
-    }
-
-    /**
-     * Sets family_name
-     *
-     * @param string|null $family_name Family (last) name of the individual
-     *
-     * @return self
-     */
-    public function setFamilyName($family_name)
-    {
-        if (is_null($family_name)) {
-            array_push($this->openAPINullablesSetToNull, 'family_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('family_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['family_name'] = $family_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets middle_name
-     *
-     * @return string|null
-     */
-    public function getMiddleName()
-    {
-        return $this->container['middle_name'];
-    }
-
-    /**
-     * Sets middle_name
-     *
-     * @param string|null $middle_name Middle name of the individual
-     *
-     * @return self
-     */
-    public function setMiddleName($middle_name)
-    {
-        if (is_null($middle_name)) {
-            array_push($this->openAPINullablesSetToNull, 'middle_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('middle_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['middle_name'] = $middle_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets full_name
-     *
-     * @return string|null
-     */
-    public function getFullName()
-    {
-        return $this->container['full_name'];
-    }
-
-    /**
-     * Sets full_name
-     *
-     * @param string|null $full_name Full name of the individual.
-     *
-     * @return self
-     */
-    public function setFullName($full_name)
-    {
-        if (is_null($full_name)) {
-            array_push($this->openAPINullablesSetToNull, 'full_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('full_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['full_name'] = $full_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets suffix
-     *
-     * @return string|null
-     */
-    public function getSuffix()
-    {
-        return $this->container['suffix'];
-    }
-
-    /**
-     * Sets suffix
-     *
-     * @param string|null $suffix Suffix of the individual
-     *
-     * @return self
-     */
-    public function setSuffix($suffix)
-    {
-        if (is_null($suffix)) {
-            array_push($this->openAPINullablesSetToNull, 'suffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('suffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['suffix'] = $suffix;
-
-        return $this;
-    }
-
-    /**
      * Gets phone_number
      *
      * @return string|null
@@ -521,7 +324,7 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phone_number
      *
-     * @param string|null $phone_number The phone number (with preceding + character and country code) of the individual being verified
+     * @param string|null $phone_number The phone number of the user you wish to generate a recommendation for.              Will be used to look up the user's identity in the network, as well as to determine the user's geographic location.
      *
      * @return self
      */
@@ -543,69 +346,103 @@ class KnownPersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets address
+     * Gets countries
      *
-     * @return \Trinsic\Api\Model\KnownAddress|null
+     * @return string[]|null
      */
-    public function getAddress()
+    public function getCountries()
     {
-        return $this->container['address'];
+        return $this->container['countries'];
     }
 
     /**
-     * Sets address
+     * Sets countries
      *
-     * @param \Trinsic\Api\Model\KnownAddress|null $address The address of the individual being verified
+     * @param string[]|null $countries A list of countries, in alpha-2 ISO 3166 format, which the user is related to.              This can include the user's country of residence, nationality, etc.
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setCountries($countries)
     {
-        if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
+        if (is_null($countries)) {
+            array_push($this->openAPINullablesSetToNull, 'countries');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
+            $index = array_search('countries', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['address'] = $address;
+        $this->container['countries'] = $countries;
 
         return $this;
     }
 
     /**
-     * Gets date_of_birth
+     * Gets subdivisions
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getDateOfBirth()
+    public function getSubdivisions()
     {
-        return $this->container['date_of_birth'];
+        return $this->container['subdivisions'];
     }
 
     /**
-     * Sets date_of_birth
+     * Sets subdivisions
      *
-     * @param string|null $date_of_birth Date of birth of the individual, in the format \"YYYY-MM-DD\"
+     * @param string[]|null $subdivisions If one of the countries has subdivisions (for example: US states), specify those related to the user here (e.g., CA, UT, NY)
      *
      * @return self
      */
-    public function setDateOfBirth($date_of_birth)
+    public function setSubdivisions($subdivisions)
     {
-        if (is_null($date_of_birth)) {
-            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        if (is_null($subdivisions)) {
+            array_push($this->openAPINullablesSetToNull, 'subdivisions');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_of_birth', $nullablesSetToNull);
+            $index = array_search('subdivisions', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['date_of_birth'] = $date_of_birth;
+        $this->container['subdivisions'] = $subdivisions;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip_addresses
+     *
+     * @return string[]|null
+     */
+    public function getIpAddresses()
+    {
+        return $this->container['ip_addresses'];
+    }
+
+    /**
+     * Sets ip_addresses
+     *
+     * @param string[]|null $ip_addresses Any IP addresses related to the user.              Will be used to determine the user's geographic location.
+     *
+     * @return self
+     */
+    public function setIpAddresses($ip_addresses)
+    {
+        if (is_null($ip_addresses)) {
+            array_push($this->openAPINullablesSetToNull, 'ip_addresses');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ip_addresses', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ip_addresses'] = $ip_addresses;
 
         return $this;
     }

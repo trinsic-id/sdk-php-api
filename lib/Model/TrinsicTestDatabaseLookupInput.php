@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownAddress
+ * TrinsicTestDatabaseLookupInput
  *
  * PHP version 7.4
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * KnownAddress Class Doc Comment
+ * TrinsicTestDatabaseLookupInput Class Doc Comment
  *
  * @category Class
- * @description Address information for an individual
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
+class TrinsicTestDatabaseLookupInput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'KnownAddress';
+    protected static $openAPIModelName = 'TrinsicTestDatabaseLookupInput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +57,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'line1' => 'string',
-        'line2' => 'string',
-        'line3' => 'string',
-        'city' => 'string',
-        'subdivision' => 'string',
-        'state' => 'string',
-        'postal_code' => 'string',
-        'country' => 'string'
+        'given_name' => 'string',
+        'family_name' => 'string',
+        'identity_code' => 'string',
+        'selfie_base64' => 'string'
     ];
 
     /**
@@ -76,14 +71,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'line1' => null,
-        'line2' => null,
-        'line3' => null,
-        'city' => null,
-        'subdivision' => null,
-        'state' => null,
-        'postal_code' => null,
-        'country' => null
+        'given_name' => null,
+        'family_name' => null,
+        'identity_code' => null,
+        'selfie_base64' => null
     ];
 
     /**
@@ -92,14 +83,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'line1' => true,
-        'line2' => true,
-        'line3' => true,
-        'city' => true,
-        'subdivision' => true,
-        'state' => true,
-        'postal_code' => true,
-        'country' => true
+        'given_name' => true,
+        'family_name' => true,
+        'identity_code' => true,
+        'selfie_base64' => true
     ];
 
     /**
@@ -188,14 +175,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'line1' => 'line1',
-        'line2' => 'line2',
-        'line3' => 'line3',
-        'city' => 'city',
-        'subdivision' => 'subdivision',
-        'state' => 'state',
-        'postal_code' => 'postalCode',
-        'country' => 'country'
+        'given_name' => 'givenName',
+        'family_name' => 'familyName',
+        'identity_code' => 'identityCode',
+        'selfie_base64' => 'selfieBase64'
     ];
 
     /**
@@ -204,14 +187,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'line1' => 'setLine1',
-        'line2' => 'setLine2',
-        'line3' => 'setLine3',
-        'city' => 'setCity',
-        'subdivision' => 'setSubdivision',
-        'state' => 'setState',
-        'postal_code' => 'setPostalCode',
-        'country' => 'setCountry'
+        'given_name' => 'setGivenName',
+        'family_name' => 'setFamilyName',
+        'identity_code' => 'setIdentityCode',
+        'selfie_base64' => 'setSelfieBase64'
     ];
 
     /**
@@ -220,14 +199,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'line1' => 'getLine1',
-        'line2' => 'getLine2',
-        'line3' => 'getLine3',
-        'city' => 'getCity',
-        'subdivision' => 'getSubdivision',
-        'state' => 'getState',
-        'postal_code' => 'getPostalCode',
-        'country' => 'getCountry'
+        'given_name' => 'getGivenName',
+        'family_name' => 'getFamilyName',
+        'identity_code' => 'getIdentityCode',
+        'selfie_base64' => 'getSelfieBase64'
     ];
 
     /**
@@ -287,14 +262,10 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('line1', $data ?? [], null);
-        $this->setIfExists('line2', $data ?? [], null);
-        $this->setIfExists('line3', $data ?? [], null);
-        $this->setIfExists('city', $data ?? [], null);
-        $this->setIfExists('subdivision', $data ?? [], null);
-        $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('postal_code', $data ?? [], null);
-        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('identity_code', $data ?? [], null);
+        $this->setIfExists('selfie_base64', $data ?? [], null);
     }
 
     /**
@@ -340,275 +311,137 @@ class KnownAddress implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets line1
+     * Gets given_name
      *
      * @return string|null
      */
-    public function getLine1()
+    public function getGivenName()
     {
-        return $this->container['line1'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets line1
+     * Sets given_name
      *
-     * @param string|null $line1 line1
+     * @param string|null $given_name The given name to use for the output of the test Session.              This is required; if not provided, Trinsic's Fallback UI will be invoked to collect it from the user.              Can be any non-empty value.
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setGivenName($given_name)
     {
-        if (is_null($line1)) {
-            array_push($this->openAPINullablesSetToNull, 'line1');
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line1', $nullablesSetToNull);
+            $index = array_search('given_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line1'] = $line1;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets line2
+     * Gets family_name
      *
      * @return string|null
      */
-    public function getLine2()
+    public function getFamilyName()
     {
-        return $this->container['line2'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets line2
+     * Sets family_name
      *
-     * @param string|null $line2 line2
+     * @param string|null $family_name The family name to use for the output of the test Session.              This is required; if not provided, Trinsic's Fallback UI will be invoked to collect it from the user.              Can be any non-empty value.
      *
      * @return self
      */
-    public function setLine2($line2)
+    public function setFamilyName($family_name)
     {
-        if (is_null($line2)) {
-            array_push($this->openAPINullablesSetToNull, 'line2');
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line2', $nullablesSetToNull);
+            $index = array_search('family_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line2'] = $line2;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets line3
+     * Gets identity_code
      *
      * @return string|null
      */
-    public function getLine3()
+    public function getIdentityCode()
     {
-        return $this->container['line3'];
+        return $this->container['identity_code'];
     }
 
     /**
-     * Sets line3
+     * Sets identity_code
      *
-     * @param string|null $line3 line3
+     * @param string|null $identity_code A 6-digit code; must be \"123456\" for the Session to succeed.              This is required; if not provided, Trinsic's Fallback UI will be invoked to collect it from the user.              Any other value will cause the Session to fail.
      *
      * @return self
      */
-    public function setLine3($line3)
+    public function setIdentityCode($identity_code)
     {
-        if (is_null($line3)) {
-            array_push($this->openAPINullablesSetToNull, 'line3');
+        if (is_null($identity_code)) {
+            array_push($this->openAPINullablesSetToNull, 'identity_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line3', $nullablesSetToNull);
+            $index = array_search('identity_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line3'] = $line3;
+        $this->container['identity_code'] = $identity_code;
 
         return $this;
     }
 
     /**
-     * Gets city
+     * Gets selfie_base64
      *
      * @return string|null
      */
-    public function getCity()
+    public function getSelfieBase64()
     {
-        return $this->container['city'];
+        return $this->container['selfie_base64'];
     }
 
     /**
-     * Sets city
+     * Sets selfie_base64
      *
-     * @param string|null $city city
+     * @param string|null $selfie_base64 An optional selfie image, base64-encoded.              Will replace the existing test selfie attachment output if provided.
      *
      * @return self
      */
-    public function setCity($city)
+    public function setSelfieBase64($selfie_base64)
     {
-        if (is_null($city)) {
-            array_push($this->openAPINullablesSetToNull, 'city');
+        if (is_null($selfie_base64)) {
+            array_push($this->openAPINullablesSetToNull, 'selfie_base64');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('city', $nullablesSetToNull);
+            $index = array_search('selfie_base64', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets subdivision
-     *
-     * @return string|null
-     */
-    public function getSubdivision()
-    {
-        return $this->container['subdivision'];
-    }
-
-    /**
-     * Sets subdivision
-     *
-     * @param string|null $subdivision subdivision
-     *
-     * @return self
-     */
-    public function setSubdivision($subdivision)
-    {
-        if (is_null($subdivision)) {
-            array_push($this->openAPINullablesSetToNull, 'subdivision');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subdivision', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['subdivision'] = $subdivision;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state Deprecated. Use `Subdivision` instead.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setState($state)
-    {
-        if (is_null($state)) {
-            array_push($this->openAPINullablesSetToNull, 'state');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string|null
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string|null $postal_code postal_code
-     *
-     * @return self
-     */
-    public function setPostalCode($postal_code)
-    {
-        if (is_null($postal_code)) {
-            array_push($this->openAPINullablesSetToNull, 'postal_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('postal_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country country
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-        if (is_null($country)) {
-            array_push($this->openAPINullablesSetToNull, 'country');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['country'] = $country;
+        $this->container['selfie_base64'] = $selfie_base64;
 
         return $this;
     }

@@ -72,9 +72,21 @@ class NetworkApiTest extends TestCase
     }
 
     /**
+     * Test case for listProviderContracts
+     *
+     * List Provider Contracts.
+     *
+     */
+    public function testListProviderContracts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for listProviders
      *
-     * List Identity Providers.
+     * List Providers.
      *
      */
     public function testListProviders()

@@ -58,7 +58,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'session_id' => 'string',
-        'launch_url' => 'string'
+        'launch_url' => 'string',
+        'results_access_key' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'session_id' => 'uuid',
-        'launch_url' => null
+        'launch_url' => null,
+        'results_access_key' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'session_id' => false,
-        'launch_url' => true
+        'launch_url' => false,
+        'results_access_key' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'session_id' => 'sessionId',
-        'launch_url' => 'launchUrl'
+        'launch_url' => 'launchUrl',
+        'results_access_key' => 'resultsAccessKey'
     ];
 
     /**
@@ -180,7 +184,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'session_id' => 'setSessionId',
-        'launch_url' => 'setLaunchUrl'
+        'launch_url' => 'setLaunchUrl',
+        'results_access_key' => 'setResultsAccessKey'
     ];
 
     /**
@@ -190,7 +195,8 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'session_id' => 'getSessionId',
-        'launch_url' => 'getLaunchUrl'
+        'launch_url' => 'getLaunchUrl',
+        'results_access_key' => 'getResultsAccessKey'
     ];
 
     /**
@@ -252,6 +258,7 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('session_id', $data ?? [], null);
         $this->setIfExists('launch_url', $data ?? [], null);
+        $this->setIfExists('results_access_key', $data ?? [], null);
     }
 
     /**
@@ -283,6 +290,12 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
 
         if ($this->container['session_id'] === null) {
             $invalidProperties[] = "'session_id' can't be null";
+        }
+        if ($this->container['launch_url'] === null) {
+            $invalidProperties[] = "'launch_url' can't be null";
+        }
+        if ($this->container['results_access_key'] === null) {
+            $invalidProperties[] = "'results_access_key' can't be null";
         }
         return $invalidProperties;
     }
@@ -329,7 +342,7 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets launch_url
      *
-     * @return string|null
+     * @return string
      */
     public function getLaunchUrl()
     {
@@ -339,23 +352,43 @@ class CreateWidgetSessionResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets launch_url
      *
-     * @param string|null $launch_url The URL that should be used to invoke the Acceptance Session on your user's device.                You can use our frontend SDKs to launch the user into the Acceptance Session, or you can redirect the user's browser to this URL.                This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
+     * @param string $launch_url The URL that should be used to invoke the Acceptance Session on your user's device.              You can use our frontend SDKs to launch the user into the Acceptance Session, or you can redirect the user's browser to this URL.              This URL is sensitive and as such can only be obtained once. If you need to obtain it again, you will need to create a new Acceptance Session.
      *
      * @return self
      */
     public function setLaunchUrl($launch_url)
     {
         if (is_null($launch_url)) {
-            array_push($this->openAPINullablesSetToNull, 'launch_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('launch_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable launch_url cannot be null');
         }
         $this->container['launch_url'] = $launch_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets results_access_key
+     *
+     * @return string
+     */
+    public function getResultsAccessKey()
+    {
+        return $this->container['results_access_key'];
+    }
+
+    /**
+     * Sets results_access_key
+     *
+     * @param string $results_access_key The `resultsAccessKey` for the Acceptance Session.              This is an encrypted payload which contains the decryption key necessary to access the Session's Data Vault.              Save this securely in your systems; it must be passed back with any API call which requires access to the Session's Data Vault.              Trinsic cannot access a Session's Data Vault without this key.
+     *
+     * @return self
+     */
+    public function setResultsAccessKey($results_access_key)
+    {
+        if (is_null($results_access_key)) {
+            throw new \InvalidArgumentException('non-nullable results_access_key cannot be null');
+        }
+        $this->container['results_access_key'] = $results_access_key;
 
         return $this;
     }

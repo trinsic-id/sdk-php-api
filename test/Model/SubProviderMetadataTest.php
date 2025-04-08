@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownAddressTest
+ * SubProviderMetadataTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * KnownAddressTest Class Doc Comment
+ * SubProviderMetadataTest Class Doc Comment
  *
  * @category    Class
- * @description Address information for an individual
+ * @description Information about a sub-provider.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class KnownAddressTest extends TestCase
+class SubProviderMetadataTest extends TestCase
 {
 
     /**
@@ -71,81 +71,45 @@ class KnownAddressTest extends TestCase
     }
 
     /**
-     * Test "KnownAddress"
+     * Test "SubProviderMetadata"
      */
-    public function testKnownAddress()
+    public function testSubProviderMetadata()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "line1"
+     * Test attribute "id"
      */
-    public function testPropertyLine1()
+    public function testPropertyId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "line2"
+     * Test attribute "name"
      */
-    public function testPropertyLine2()
+    public function testPropertyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "line3"
+     * Test attribute "description"
      */
-    public function testPropertyLine3()
+    public function testPropertyDescription()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "logo_url"
      */
-    public function testPropertyCity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "subdivision"
-     */
-    public function testPropertySubdivision()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
+    public function testPropertyLogoUrl()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

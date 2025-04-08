@@ -379,7 +379,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets done
      *
-     * @param bool $done Whether the Session is in a terminal / final state.                If this is `true`, inspect the value of `Success` to determine whether the Session was successful.
+     * @param bool $done Whether the Session is in a terminal / final state.              If this is `true`, inspect the value of `Success` to determine whether the Session was successful.
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets success
      *
-     * @param bool $success Whether the Session has completed successfully.                If this is `false`, the Session is either not yet done, or has failed. Inspect `Done` and `ErrorCode` for more information.  If this is `true`, the Session has completed successfully.
+     * @param bool $success Whether the Session has completed successfully.              If this is `false`, the Session is either not yet done, or has failed. Inspect `Done` and `ErrorCode` for more information. If this is `true`, the Session has completed successfully.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets error_code
      *
-     * @param \Trinsic\Api\Model\SessionErrorCode|null $error_code The reason for the Session's failure.                Only present if `Success` is `false`.
+     * @param \Trinsic\Api\Model\SessionErrorCode|null $error_code The reason for the Session's failure.              Only present if `Success` is `false`.
      *
      * @return self
      */

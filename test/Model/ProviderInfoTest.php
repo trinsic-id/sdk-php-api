@@ -105,13 +105,4 @@ class ProviderInfoTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "child_provider_ids"
-     */
-    public function testPropertyChildProviderIds()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

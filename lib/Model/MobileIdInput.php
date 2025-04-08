@@ -1,6 +1,6 @@
 <?php
 /**
- * KnownIdentityData
+ * MobileIdInput
  *
  * PHP version 7.4
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * KnownIdentityData Class Doc Comment
+ * MobileIdInput Class Doc Comment
  *
  * @category Class
- * @description Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
+class MobileIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'KnownIdentityData';
+    protected static $openAPIModelName = 'MobileIdInput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +57,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person' => '\Trinsic\Api\Model\KnownPersonData'
+        'mobile_id_phone_number' => 'string',
+        'mobile_id_national_identity_number' => 'string',
+        'mobile_id_language' => '\Trinsic\Api\Model\Language'
     ];
 
     /**
@@ -69,7 +70,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'person' => null
+        'mobile_id_phone_number' => null,
+        'mobile_id_national_identity_number' => null,
+        'mobile_id_language' => null
     ];
 
     /**
@@ -78,7 +81,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'person' => true
+        'mobile_id_phone_number' => true,
+        'mobile_id_national_identity_number' => true,
+        'mobile_id_language' => true
     ];
 
     /**
@@ -167,7 +172,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'person' => 'person'
+        'mobile_id_phone_number' => 'mobileIdPhoneNumber',
+        'mobile_id_national_identity_number' => 'mobileIdNationalIdentityNumber',
+        'mobile_id_language' => 'mobileIdLanguage'
     ];
 
     /**
@@ -176,7 +183,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'person' => 'setPerson'
+        'mobile_id_phone_number' => 'setMobileIdPhoneNumber',
+        'mobile_id_national_identity_number' => 'setMobileIdNationalIdentityNumber',
+        'mobile_id_language' => 'setMobileIdLanguage'
     ];
 
     /**
@@ -185,7 +194,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'person' => 'getPerson'
+        'mobile_id_phone_number' => 'getMobileIdPhoneNumber',
+        'mobile_id_national_identity_number' => 'getMobileIdNationalIdentityNumber',
+        'mobile_id_language' => 'getMobileIdLanguage'
     ];
 
     /**
@@ -245,7 +256,9 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('person', $data ?? [], null);
+        $this->setIfExists('mobile_id_phone_number', $data ?? [], null);
+        $this->setIfExists('mobile_id_national_identity_number', $data ?? [], null);
+        $this->setIfExists('mobile_id_language', $data ?? [], null);
     }
 
     /**
@@ -291,35 +304,103 @@ class KnownIdentityData implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets person
+     * Gets mobile_id_phone_number
      *
-     * @return \Trinsic\Api\Model\KnownPersonData|null
+     * @return string|null
      */
-    public function getPerson()
+    public function getMobileIdPhoneNumber()
     {
-        return $this->container['person'];
+        return $this->container['mobile_id_phone_number'];
     }
 
     /**
-     * Sets person
+     * Sets mobile_id_phone_number
      *
-     * @param \Trinsic\Api\Model\KnownPersonData|null $person Known identity data specific to the person being verified
+     * @param string|null $mobile_id_phone_number The user's phone number in E.164 format
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setMobileIdPhoneNumber($mobile_id_phone_number)
     {
-        if (is_null($person)) {
-            array_push($this->openAPINullablesSetToNull, 'person');
+        if (is_null($mobile_id_phone_number)) {
+            array_push($this->openAPINullablesSetToNull, 'mobile_id_phone_number');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('person', $nullablesSetToNull);
+            $index = array_search('mobile_id_phone_number', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['person'] = $person;
+        $this->container['mobile_id_phone_number'] = $mobile_id_phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_id_national_identity_number
+     *
+     * @return string|null
+     */
+    public function getMobileIdNationalIdentityNumber()
+    {
+        return $this->container['mobile_id_national_identity_number'];
+    }
+
+    /**
+     * Sets mobile_id_national_identity_number
+     *
+     * @param string|null $mobile_id_national_identity_number The user's National ID number
+     *
+     * @return self
+     */
+    public function setMobileIdNationalIdentityNumber($mobile_id_national_identity_number)
+    {
+        if (is_null($mobile_id_national_identity_number)) {
+            array_push($this->openAPINullablesSetToNull, 'mobile_id_national_identity_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mobile_id_national_identity_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['mobile_id_national_identity_number'] = $mobile_id_national_identity_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_id_language
+     *
+     * @return \Trinsic\Api\Model\Language|null
+     */
+    public function getMobileIdLanguage()
+    {
+        return $this->container['mobile_id_language'];
+    }
+
+    /**
+     * Sets mobile_id_language
+     *
+     * @param \Trinsic\Api\Model\Language|null $mobile_id_language The user's language -- LIT, EST, ENG, or RUS
+     *
+     * @return self
+     */
+    public function setMobileIdLanguage($mobile_id_language)
+    {
+        if (is_null($mobile_id_language)) {
+            array_push($this->openAPINullablesSetToNull, 'mobile_id_language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mobile_id_language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['mobile_id_language'] = $mobile_id_language;
 
         return $this;
     }

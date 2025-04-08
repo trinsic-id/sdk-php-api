@@ -59,7 +59,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'redirect_url' => 'string',
         'providers' => 'string[]',
-        'known_identity_data' => '\Trinsic\Api\Model\KnownIdentityData'
+        'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo'
     ];
 
     /**
@@ -72,7 +72,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPIFormats = [
         'redirect_url' => null,
         'providers' => null,
-        'known_identity_data' => null
+        'recommendation_info' => null
     ];
 
     /**
@@ -83,7 +83,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'redirect_url' => true,
         'providers' => true,
-        'known_identity_data' => true
+        'recommendation_info' => true
     ];
 
     /**
@@ -174,7 +174,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $attributeMap = [
         'redirect_url' => 'redirectUrl',
         'providers' => 'providers',
-        'known_identity_data' => 'knownIdentityData'
+        'recommendation_info' => 'recommendationInfo'
     ];
 
     /**
@@ -185,7 +185,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $setters = [
         'redirect_url' => 'setRedirectUrl',
         'providers' => 'setProviders',
-        'known_identity_data' => 'setKnownIdentityData'
+        'recommendation_info' => 'setRecommendationInfo'
     ];
 
     /**
@@ -196,7 +196,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $getters = [
         'redirect_url' => 'getRedirectUrl',
         'providers' => 'getProviders',
-        'known_identity_data' => 'getKnownIdentityData'
+        'recommendation_info' => 'getRecommendationInfo'
     ];
 
     /**
@@ -258,7 +258,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->setIfExists('redirect_url', $data ?? [], null);
         $this->setIfExists('providers', $data ?? [], null);
-        $this->setIfExists('known_identity_data', $data ?? [], null);
+        $this->setIfExists('recommendation_info', $data ?? [], null);
     }
 
     /**
@@ -316,7 +316,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets redirect_url
      *
-     * @param string|null $redirect_url The URL to redirect the user to after the widget session is complete.                *Note*: this should NOT be set if you intend to use Trinsic's Web UI SDK to launch the Widget  as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
+     * @param string|null $redirect_url The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic's Web UI SDK to launch the Widget as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
      *
      * @return self
      */
@@ -372,35 +372,35 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets known_identity_data
+     * Gets recommendation_info
      *
-     * @return \Trinsic\Api\Model\KnownIdentityData|null
+     * @return \Trinsic\Api\Model\RecommendationInfo|null
      */
-    public function getKnownIdentityData()
+    public function getRecommendationInfo()
     {
-        return $this->container['known_identity_data'];
+        return $this->container['recommendation_info'];
     }
 
     /**
-     * Sets known_identity_data
+     * Sets recommendation_info
      *
-     * @param \Trinsic\Api\Model\KnownIdentityData|null $known_identity_data Known identity data of an individual being verified.                Provide this to Trinsic during Session creation to enable improved identity provider selection recommendations.
+     * @param \Trinsic\Api\Model\RecommendationInfo|null $recommendation_info Data that you already know about the user being verified.   This data is used to improve the user experience during provider selection, by surfacing the most relevant providers first.
      *
      * @return self
      */
-    public function setKnownIdentityData($known_identity_data)
+    public function setRecommendationInfo($recommendation_info)
     {
-        if (is_null($known_identity_data)) {
-            array_push($this->openAPINullablesSetToNull, 'known_identity_data');
+        if (is_null($recommendation_info)) {
+            array_push($this->openAPINullablesSetToNull, 'recommendation_info');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('known_identity_data', $nullablesSetToNull);
+            $index = array_search('recommendation_info', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['known_identity_data'] = $known_identity_data;
+        $this->container['recommendation_info'] = $recommendation_info;
 
         return $this;
     }

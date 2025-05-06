@@ -402,8 +402,8 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_by = Created; // \Trinsic\Api\Model\SessionOrdering | The field by which sessions should be ordered
-$order_direction = Descending; // \Trinsic\Api\Model\OrderDirection
+$order_by = Created; // \TrinsicApiModelSessionOrdering | The field by which sessions should be ordered
+$order_direction = Descending; // \TrinsicApiModelOrderDirection
 $page_size = 50; // int | The number of items to return per page -- must be between `1` and `50`
 $page = 1; // int | The page number to return -- starts at `1`
 
@@ -419,8 +419,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_by** | [**\Trinsic\Api\Model\SessionOrdering**](../Model/.md)| The field by which sessions should be ordered | [optional] |
-| **order_direction** | [**\Trinsic\Api\Model\OrderDirection**](../Model/.md)|  | [optional] |
+| **order_by** | [**\TrinsicApiModelSessionOrdering**](../Model/.md)| The field by which sessions should be ordered | [optional] |
+| **order_direction** | [**\TrinsicApiModelOrderDirection**](../Model/.md)|  | [optional] |
 | **page_size** | **int**| The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; | [optional] |
 | **page** | **int**| The page number to return -- starts at &#x60;1&#x60; | [optional] |
 

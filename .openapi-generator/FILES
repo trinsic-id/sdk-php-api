@@ -7,6 +7,7 @@ composer.json
 docs/Api/AttachmentsApi.md
 docs/Api/NetworkApi.md
 docs/Api/SessionsApi.md
+docs/Api/WellKnownApi.md
 docs/Model/AadhaarInput.md
 docs/Model/Address.md
 docs/Model/AttachmentAccessKeys.md
@@ -50,6 +51,7 @@ docs/Model/PhilippineQRInput.md
 docs/Model/ProblemDetails.md
 docs/Model/ProviderAttachments.md
 docs/Model/ProviderContract.md
+docs/Model/ProviderHealth.md
 docs/Model/ProviderInfo.md
 docs/Model/ProviderInformation.md
 docs/Model/ProviderInput.md
@@ -75,8 +77,10 @@ git_push.sh
 lib/Api/AttachmentsApi.php
 lib/Api/NetworkApi.php
 lib/Api/SessionsApi.php
+lib/Api/WellKnownApi.php
 lib/ApiException.php
 lib/Configuration.php
+lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/AadhaarInput.php
 lib/Model/Address.php
@@ -122,6 +126,7 @@ lib/Model/PhilippineQRInput.php
 lib/Model/ProblemDetails.php
 lib/Model/ProviderAttachments.php
 lib/Model/ProviderContract.php
+lib/Model/ProviderHealth.php
 lib/Model/ProviderInfo.php
 lib/Model/ProviderInformation.php
 lib/Model/ProviderInput.php
@@ -148,6 +153,7 @@ phpunit.xml.dist
 test/Api/AttachmentsApiTest.php
 test/Api/NetworkApiTest.php
 test/Api/SessionsApiTest.php
+test/Api/WellKnownApiTest.php
 test/Model/AadhaarInputTest.php
 test/Model/AddressTest.php
 test/Model/AttachmentAccessKeysTest.php
@@ -191,6 +197,7 @@ test/Model/PhilippineQRInputTest.php
 test/Model/ProblemDetailsTest.php
 test/Model/ProviderAttachmentsTest.php
 test/Model/ProviderContractTest.php
+test/Model/ProviderHealthTest.php
 test/Model/ProviderInfoTest.php
 test/Model/ProviderInformationTest.php
 test/Model/ProviderInputTest.php

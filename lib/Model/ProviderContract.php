@@ -72,7 +72,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => 'bool',
         'supports_advanced_provider_sessions' => 'bool',
         'sub_providers' => '\Trinsic\Api\Model\SubProviderMetadata[]',
-        'status' => '\Trinsic\Api\Model\ProviderHealth'
+        'health' => '\Trinsic\Api\Model\ProviderHealth'
     ];
 
     /**
@@ -98,7 +98,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => null,
         'supports_advanced_provider_sessions' => null,
         'sub_providers' => null,
-        'status' => null
+        'health' => null
     ];
 
     /**
@@ -122,7 +122,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => false,
         'supports_advanced_provider_sessions' => false,
         'sub_providers' => true,
-        'status' => false
+        'health' => false
     ];
 
     /**
@@ -226,7 +226,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => 'hasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'supportsAdvancedProviderSessions',
         'sub_providers' => 'subProviders',
-        'status' => 'status'
+        'health' => 'health'
     ];
 
     /**
@@ -250,7 +250,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => 'setHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'setSupportsAdvancedProviderSessions',
         'sub_providers' => 'setSubProviders',
-        'status' => 'setStatus'
+        'health' => 'setHealth'
     ];
 
     /**
@@ -274,7 +274,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'has_trinsic_interface' => 'getHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'getSupportsAdvancedProviderSessions',
         'sub_providers' => 'getSubProviders',
-        'status' => 'getStatus'
+        'health' => 'getHealth'
     ];
 
     /**
@@ -349,7 +349,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('has_trinsic_interface', $data ?? [], null);
         $this->setIfExists('supports_advanced_provider_sessions', $data ?? [], null);
         $this->setIfExists('sub_providers', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('health', $data ?? [], null);
     }
 
     /**
@@ -421,8 +421,8 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['supports_advanced_provider_sessions'] === null) {
             $invalidProperties[] = "'supports_advanced_provider_sessions' can't be null";
         }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['health'] === null) {
+            $invalidProperties[] = "'health' can't be null";
         }
         return $invalidProperties;
     }
@@ -852,28 +852,28 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets status
+     * Gets health
      *
      * @return \Trinsic\Api\Model\ProviderHealth
      */
-    public function getStatus()
+    public function getHealth()
     {
-        return $this->container['status'];
+        return $this->container['health'];
     }
 
     /**
-     * Sets status
+     * Sets health
      *
-     * @param \Trinsic\Api\Model\ProviderHealth $status The current status of the provider and if it is available to launch. If the status is disabled, there is an issue that prevents a provider being able to launch a session.
+     * @param \Trinsic\Api\Model\ProviderHealth $health The health for an integration to be able to successfully perform a verification session.
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setHealth($health)
     {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        if (is_null($health)) {
+            throw new \InvalidArgumentException('non-nullable health cannot be null');
         }
-        $this->container['status'] = $status;
+        $this->container['health'] = $health;
 
         return $this;
     }

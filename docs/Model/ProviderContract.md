@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **has_trinsic_interface** | **bool** | Whether there exists a Trinsic-hosted UI for this Provider.              This is &#x60;true&#x60; for any Provider which is not a simple, OIDC-like redirect flow. |
 **supports_advanced_provider_sessions** | **bool** | Whether this Provider can be fully whitelabeled/OEMed through the Advanced Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Advanced Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function. |
 **sub_providers** | [**\Trinsic\Api\Model\SubProviderMetadata[]**](SubProviderMetadata.md) | Metadata about the sub-providers which are available for this Provider.              For example, Italy&#39;s SPID is a Provider which aggregates access to multiple sub-providers. | [optional]
-**status** | [**\Trinsic\Api\Model\ProviderHealth**](ProviderHealth.md) | The current status of the provider and if it is available to launch. If the status is disabled, there is an issue that prevents a provider being able to launch a session. |
+**health** | [**\Trinsic\Api\Model\ProviderHealth**](ProviderHealth.md) | The health for an integration to be able to successfully perform a verification session. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

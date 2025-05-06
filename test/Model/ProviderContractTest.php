@@ -215,9 +215,9 @@ class ProviderContractTest extends TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "health"
      */
-    public function testPropertyStatus()
+    public function testPropertyHealth()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

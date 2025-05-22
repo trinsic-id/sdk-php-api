@@ -1,6 +1,6 @@
 <?php
 /**
- * BangladeshNationalIdInputTest
+ * BangladeshNidInputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BangladeshNationalIdInputTest Class Doc Comment
+ * BangladeshNidInputTest Class Doc Comment
  *
  * @category    Class
- * @description BangladeshNationalIdInput
+ * @description BangladeshNidInput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class BangladeshNationalIdInputTest extends TestCase
+class BangladeshNidInputTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class BangladeshNationalIdInputTest extends TestCase
     }
 
     /**
-     * Test "BangladeshNationalIdInput"
+     * Test "BangladeshNidInput"
      */
-    public function testBangladeshNationalIdInput()
+    public function testBangladeshNidInput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -107,9 +107,18 @@ class BangladeshNationalIdInputTest extends TestCase
     }
 
     /**
-     * Test attribute "photo_base64"
+     * Test attribute "photo_byes"
      */
-    public function testPropertyPhotoBase64()
+    public function testPropertyPhotoByes()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "photo_image_mime_type"
+     */
+    public function testPropertyPhotoImageMimeType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

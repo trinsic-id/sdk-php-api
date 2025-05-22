@@ -137,7 +137,7 @@ class AttachmentsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\GetAttachmentResponse|string|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\GetAttachmentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function getAttachment($get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
     {
@@ -155,7 +155,7 @@ class AttachmentsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\GetAttachmentResponse|string|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\GetAttachmentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAttachmentWithHttpInfo($get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
     {
@@ -191,13 +191,19 @@ class AttachmentsApi
                         $request,
                         $response,
                     );
-                case 503:
+                case 400:
                     return $this->handleResponseWithDataType(
-                        'string',
+                        '\Trinsic\Api\Model\ProblemDetails',
                         $request,
                         $response,
                     );
-                case 400:
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -241,15 +247,23 @@ class AttachmentsApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 503:
+                case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'string',
+                        '\Trinsic\Api\Model\ProblemDetails',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 400:
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -371,7 +385,7 @@ class AttachmentsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );

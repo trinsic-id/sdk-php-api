@@ -63,7 +63,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'kenya_nid' => '\Trinsic\Api\Model\KenyaNidInput',
         'nigeria_nin' => '\Trinsic\Api\Model\NigeriaNinInput',
         'aadhaar' => '\Trinsic\Api\Model\AadhaarInput',
-        'bangladesh_national_id' => '\Trinsic\Api\Model\BangladeshNationalIdInput',
+        'bangladesh_national_id' => '\Trinsic\Api\Model\BangladeshNidInput',
         'brazil_cpf_check' => '\Trinsic\Api\Model\BrazilCpfCheckInput',
         'brazil_digital_cnh' => '\Trinsic\Api\Model\BrazilDigitalCnhInput',
         'philippine_match' => '\Trinsic\Api\Model\PhilippineMatchInput',
@@ -608,7 +608,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bangladesh_national_id
      *
-     * @return \Trinsic\Api\Model\BangladeshNationalIdInput|null
+     * @return \Trinsic\Api\Model\BangladeshNidInput|null
      */
     public function getBangladeshNationalId()
     {
@@ -618,7 +618,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bangladesh_national_id
      *
-     * @param \Trinsic\Api\Model\BangladeshNationalIdInput|null $bangladesh_national_id Input for the `bangladesh-nid` provider
+     * @param \Trinsic\Api\Model\BangladeshNidInput|null $bangladesh_national_id Input for the `bangladesh-nid` provider
      *
      * @return self
      */

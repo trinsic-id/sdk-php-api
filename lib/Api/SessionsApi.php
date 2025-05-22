@@ -169,7 +169,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function cancelSession($session_id, string $contentType = self::contentTypes['cancelSession'][0])
     {
@@ -187,7 +187,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CancelSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSessionWithHttpInfo($session_id, string $contentType = self::contentTypes['cancelSession'][0])
     {
@@ -224,6 +224,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -268,6 +280,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -403,7 +431,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -469,7 +497,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function createAdvancedProviderSession($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
     {
@@ -487,7 +515,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAdvancedProviderSessionWithHttpInfo($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
     {
@@ -524,6 +552,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -568,6 +608,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -689,7 +745,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -762,7 +818,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\CreateHostedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\CreateHostedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function createHostedProviderSession($create_hosted_provider_session_request = null, string $contentType = self::contentTypes['createHostedProviderSession'][0])
     {
@@ -780,7 +836,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\CreateHostedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CreateHostedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function createHostedProviderSessionWithHttpInfo($create_hosted_provider_session_request = null, string $contentType = self::contentTypes['createHostedProviderSession'][0])
     {
@@ -817,6 +873,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -861,6 +929,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -982,7 +1066,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -1055,7 +1139,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\CreateWidgetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\CreateWidgetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function createWidgetSession($create_widget_session_request = null, string $contentType = self::contentTypes['createWidgetSession'][0])
     {
@@ -1073,7 +1157,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\CreateWidgetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CreateWidgetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWidgetSessionWithHttpInfo($create_widget_session_request = null, string $contentType = self::contentTypes['createWidgetSession'][0])
     {
@@ -1110,6 +1194,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -1154,6 +1250,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -1275,7 +1387,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -1348,7 +1460,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function getSession($session_id, string $contentType = self::contentTypes['getSession'][0])
     {
@@ -1366,7 +1478,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\GetSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionWithHttpInfo($session_id, string $contentType = self::contentTypes['getSession'][0])
     {
@@ -1403,6 +1515,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -1447,6 +1571,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -1582,7 +1722,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -1649,7 +1789,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\GetSessionResultResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\GetSessionResultResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function getSessionResult($session_id, $get_session_result_request = null, string $contentType = self::contentTypes['getSessionResult'][0])
     {
@@ -1668,7 +1808,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\GetSessionResultResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\GetSessionResultResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionResultWithHttpInfo($session_id, $get_session_result_request = null, string $contentType = self::contentTypes['getSessionResult'][0])
     {
@@ -1705,6 +1845,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -1749,6 +1901,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -1888,7 +2056,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -1964,7 +2132,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function listSessions($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
@@ -1985,7 +2153,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSessionsWithHttpInfo($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
@@ -2022,6 +2190,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -2066,6 +2246,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -2247,7 +2443,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -2370,6 +2566,22 @@ class SessionsApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -2485,7 +2697,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -2552,7 +2764,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function refreshStepContent($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
@@ -2571,7 +2783,7 @@ class SessionsApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function refreshStepContentWithHttpInfo($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
@@ -2608,6 +2820,18 @@ class SessionsApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -2652,6 +2876,22 @@ class SessionsApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -2791,7 +3031,7 @@ class SessionsApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );

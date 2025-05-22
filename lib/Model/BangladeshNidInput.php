@@ -1,6 +1,6 @@
 <?php
 /**
- * BangladeshNationalIdInput
+ * BangladeshNidInput
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * BangladeshNationalIdInput Class Doc Comment
+ * BangladeshNidInput Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'BangladeshNationalIdInput';
+    protected static $openAPIModelName = 'BangladeshNidInput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => 'string',
         'date_of_birth' => '\DateTime',
         'name' => 'string',
-        'photo_base64' => 'string'
+        'photo_byes' => 'string',
+        'photo_image_mime_type' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => null,
         'date_of_birth' => 'date',
         'name' => null,
-        'photo_base64' => null
+        'photo_byes' => 'byte',
+        'photo_image_mime_type' => null
     ];
 
     /**
@@ -86,7 +88,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => true,
         'date_of_birth' => true,
         'name' => true,
-        'photo_base64' => true
+        'photo_byes' => true,
+        'photo_image_mime_type' => true
     ];
 
     /**
@@ -178,7 +181,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => 'nationalIdNumber',
         'date_of_birth' => 'dateOfBirth',
         'name' => 'name',
-        'photo_base64' => 'photoBase64'
+        'photo_byes' => 'photoByes',
+        'photo_image_mime_type' => 'photoImageMimeType'
     ];
 
     /**
@@ -190,7 +194,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => 'setNationalIdNumber',
         'date_of_birth' => 'setDateOfBirth',
         'name' => 'setName',
-        'photo_base64' => 'setPhotoBase64'
+        'photo_byes' => 'setPhotoByes',
+        'photo_image_mime_type' => 'setPhotoImageMimeType'
     ];
 
     /**
@@ -202,7 +207,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         'national_id_number' => 'getNationalIdNumber',
         'date_of_birth' => 'getDateOfBirth',
         'name' => 'getName',
-        'photo_base64' => 'getPhotoBase64'
+        'photo_byes' => 'getPhotoByes',
+        'photo_image_mime_type' => 'getPhotoImageMimeType'
     ];
 
     /**
@@ -265,7 +271,8 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('national_id_number', $data ?? [], null);
         $this->setIfExists('date_of_birth', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('photo_base64', $data ?? [], null);
+        $this->setIfExists('photo_byes', $data ?? [], null);
+        $this->setIfExists('photo_image_mime_type', $data ?? [], null);
     }
 
     /**
@@ -413,35 +420,69 @@ class BangladeshNationalIdInput implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets photo_base64
+     * Gets photo_byes
      *
      * @return string|null
      */
-    public function getPhotoBase64()
+    public function getPhotoByes()
     {
-        return $this->container['photo_base64'];
+        return $this->container['photo_byes'];
     }
 
     /**
-     * Sets photo_base64
+     * Sets photo_byes
      *
-     * @param string|null $photo_base64 The base64-encoded bytes of the photo collected from the user
+     * @param string|null $photo_byes The raw bytes of the photo file collected from the user.
      *
      * @return self
      */
-    public function setPhotoBase64($photo_base64)
+    public function setPhotoByes($photo_byes)
     {
-        if (is_null($photo_base64)) {
-            array_push($this->openAPINullablesSetToNull, 'photo_base64');
+        if (is_null($photo_byes)) {
+            array_push($this->openAPINullablesSetToNull, 'photo_byes');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('photo_base64', $nullablesSetToNull);
+            $index = array_search('photo_byes', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['photo_base64'] = $photo_base64;
+        $this->container['photo_byes'] = $photo_byes;
+
+        return $this;
+    }
+
+    /**
+     * Gets photo_image_mime_type
+     *
+     * @return string|null
+     */
+    public function getPhotoImageMimeType()
+    {
+        return $this->container['photo_image_mime_type'];
+    }
+
+    /**
+     * Sets photo_image_mime_type
+     *
+     * @param string|null $photo_image_mime_type The MIME Type of the file contained in `PhotoByes`.              Must be one of `image/jpeg`, or `image/png`.
+     *
+     * @return self
+     */
+    public function setPhotoImageMimeType($photo_image_mime_type)
+    {
+        if (is_null($photo_image_mime_type)) {
+            array_push($this->openAPINullablesSetToNull, 'photo_image_mime_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('photo_image_mime_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['photo_image_mime_type'] = $photo_image_mime_type;
 
         return $this;
     }

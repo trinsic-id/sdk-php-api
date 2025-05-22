@@ -337,7 +337,7 @@ class HttpValidationProblemDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets type
      *
-     * @param string|null $type type
+     * @param string|null $type A URI reference that identifies the problem type.
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class HttpValidationProblemDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets title
      *
-     * @param string|null $title title
+     * @param string|null $title A short, human-readable summary of the error.
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class HttpValidationProblemDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets status
      *
-     * @param int|null $status status
+     * @param int|null $status The HTTP status code returned for the request.
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class HttpValidationProblemDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets detail
      *
-     * @param string|null $detail detail
+     * @param string|null $detail A human-readable explanation specific of the problem.
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class HttpValidationProblemDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets instance
      *
-     * @param string|null $instance instance
+     * @param string|null $instance A URI reference that identifies the specific occurrence of the problem.
      *
      * @return self
      */

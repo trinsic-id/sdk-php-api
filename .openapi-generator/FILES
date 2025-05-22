@@ -7,11 +7,10 @@ composer.json
 docs/Api/AttachmentsApi.md
 docs/Api/NetworkApi.md
 docs/Api/SessionsApi.md
-docs/Api/WellKnownApi.md
 docs/Model/AadhaarInput.md
 docs/Model/Address.md
 docs/Model/AttachmentAccessKeys.md
-docs/Model/BangladeshNationalIdInput.md
+docs/Model/BangladeshNidInput.md
 docs/Model/BrazilCpfCheckInput.md
 docs/Model/BrazilDigitalCnhInput.md
 docs/Model/CancelSessionResponse.md
@@ -77,7 +76,6 @@ git_push.sh
 lib/Api/AttachmentsApi.php
 lib/Api/NetworkApi.php
 lib/Api/SessionsApi.php
-lib/Api/WellKnownApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/FormDataProcessor.php
@@ -85,7 +83,7 @@ lib/HeaderSelector.php
 lib/Model/AadhaarInput.php
 lib/Model/Address.php
 lib/Model/AttachmentAccessKeys.php
-lib/Model/BangladeshNationalIdInput.php
+lib/Model/BangladeshNidInput.php
 lib/Model/BrazilCpfCheckInput.php
 lib/Model/BrazilDigitalCnhInput.php
 lib/Model/CancelSessionResponse.php
@@ -153,11 +151,10 @@ phpunit.xml.dist
 test/Api/AttachmentsApiTest.php
 test/Api/NetworkApiTest.php
 test/Api/SessionsApiTest.php
-test/Api/WellKnownApiTest.php
 test/Model/AadhaarInputTest.php
 test/Model/AddressTest.php
 test/Model/AttachmentAccessKeysTest.php
-test/Model/BangladeshNationalIdInputTest.php
+test/Model/BangladeshNidInputTest.php
 test/Model/BrazilCpfCheckInputTest.php
 test/Model/BrazilDigitalCnhInputTest.php
 test/Model/CancelSessionResponseTest.php

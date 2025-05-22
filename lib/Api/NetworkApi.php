@@ -142,7 +142,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function listProviderContracts(string $contentType = self::contentTypes['listProviderContracts'][0])
     {
@@ -159,7 +159,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProviderContractsWithHttpInfo(string $contentType = self::contentTypes['listProviderContracts'][0])
     {
@@ -196,6 +196,18 @@ class NetworkApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -240,6 +252,22 @@ class NetworkApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -357,7 +385,7 @@ class NetworkApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -422,7 +450,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function listProviders(string $contentType = self::contentTypes['listProviders'][0])
     {
@@ -439,7 +467,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProvidersWithHttpInfo(string $contentType = self::contentTypes['listProviders'][0])
     {
@@ -476,6 +504,18 @@ class NetworkApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -520,6 +560,22 @@ class NetworkApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -637,7 +693,7 @@ class NetworkApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );
@@ -703,7 +759,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\RecommendResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\RecommendResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
     public function recommendProviders($recommend_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
     {
@@ -721,7 +777,7 @@ class NetworkApi
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\RecommendResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\RecommendResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function recommendProvidersWithHttpInfo($recommend_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
     {
@@ -758,6 +814,18 @@ class NetworkApi
                         $response,
                     );
                 case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
                     return $this->handleResponseWithDataType(
                         '\Trinsic\Api\Model\ProblemDetails',
                         $request,
@@ -802,6 +870,22 @@ class NetworkApi
                     $e->setResponseObject($data);
                     throw $e;
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Trinsic\Api\Model\ProblemDetails',
@@ -923,7 +1007,7 @@ class NetworkApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['text/plain', 'application/json', 'text/json', ],
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
             $contentType,
             $multipart
         );

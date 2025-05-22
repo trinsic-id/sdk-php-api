@@ -77,7 +77,7 @@ class RefreshStepContentRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'results_access_key' => true
+        'results_access_key' => false
     ];
 
     /**
@@ -274,6 +274,13 @@ class RefreshStepContentRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
+        if ($this->container['results_access_key'] === null) {
+            $invalidProperties[] = "'results_access_key' can't be null";
+        }
+        if ((mb_strlen($this->container['results_access_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'results_access_key', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -292,7 +299,7 @@ class RefreshStepContentRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets results_access_key
      *
-     * @return string|null
+     * @return string
      */
     public function getResultsAccessKey()
     {
@@ -302,22 +309,20 @@ class RefreshStepContentRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets results_access_key
      *
-     * @param string|null $results_access_key The `ResultsAccessKey` returned when the Session was created
+     * @param string $results_access_key The `ResultsAccessKey` returned when the Session was created
      *
      * @return self
      */
     public function setResultsAccessKey($results_access_key)
     {
         if (is_null($results_access_key)) {
-            array_push($this->openAPINullablesSetToNull, 'results_access_key');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('results_access_key', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable results_access_key cannot be null');
         }
+
+        if ((mb_strlen($results_access_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $results_access_key when calling RefreshStepContentRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['results_access_key'] = $results_access_key;
 
         return $this;

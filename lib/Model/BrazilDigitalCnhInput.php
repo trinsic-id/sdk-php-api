@@ -375,7 +375,7 @@ class BrazilDigitalCnhInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets digital_cnh_file
      *
-     * @param string|null $digital_cnh_file The raw bytes of the digital CNH file collected from the user.              TODO: Lucas or JP help me describe these below vvvvvvvv This can be: - An image containing a physical or digital QR code - A PDF file exported from the CNH app - Some scary third thing?
+     * @param string|null $digital_cnh_file The raw bytes of the digital CNH file collected from the user.
      *
      * @return self
      */

@@ -59,6 +59,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
+        'subtext' => 'string',
         'description' => 'string',
         'logo_url' => 'string',
         'available' => 'bool',
@@ -71,6 +72,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'bool',
         'has_trinsic_interface' => 'bool',
         'supports_advanced_provider_sessions' => 'bool',
+        'available_fields' => '\Trinsic\Api\Model\ContractField[]',
         'sub_providers' => '\Trinsic\Api\Model\SubProviderMetadata[]',
         'health' => '\Trinsic\Api\Model\ProviderHealth'
     ];
@@ -85,6 +87,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'subtext' => null,
         'description' => null,
         'logo_url' => null,
         'available' => null,
@@ -97,6 +100,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => null,
         'has_trinsic_interface' => null,
         'supports_advanced_provider_sessions' => null,
+        'available_fields' => null,
         'sub_providers' => null,
         'health' => null
     ];
@@ -109,6 +113,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
+        'subtext' => false,
         'description' => false,
         'logo_url' => false,
         'available' => false,
@@ -121,6 +126,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => false,
         'has_trinsic_interface' => false,
         'supports_advanced_provider_sessions' => false,
+        'available_fields' => true,
         'sub_providers' => true,
         'health' => false
     ];
@@ -213,6 +219,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'subtext' => 'subtext',
         'description' => 'description',
         'logo_url' => 'logoUrl',
         'available' => 'available',
@@ -225,6 +232,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'requiresInput',
         'has_trinsic_interface' => 'hasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'supportsAdvancedProviderSessions',
+        'available_fields' => 'availableFields',
         'sub_providers' => 'subProviders',
         'health' => 'health'
     ];
@@ -237,6 +245,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'subtext' => 'setSubtext',
         'description' => 'setDescription',
         'logo_url' => 'setLogoUrl',
         'available' => 'setAvailable',
@@ -249,6 +258,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'setRequiresInput',
         'has_trinsic_interface' => 'setHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'setSupportsAdvancedProviderSessions',
+        'available_fields' => 'setAvailableFields',
         'sub_providers' => 'setSubProviders',
         'health' => 'setHealth'
     ];
@@ -261,6 +271,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'subtext' => 'getSubtext',
         'description' => 'getDescription',
         'logo_url' => 'getLogoUrl',
         'available' => 'getAvailable',
@@ -273,6 +284,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'getRequiresInput',
         'has_trinsic_interface' => 'getHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'getSupportsAdvancedProviderSessions',
+        'available_fields' => 'getAvailableFields',
         'sub_providers' => 'getSubProviders',
         'health' => 'getHealth'
     ];
@@ -336,6 +348,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('subtext', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('logo_url', $data ?? [], null);
         $this->setIfExists('available', $data ?? [], null);
@@ -348,6 +361,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('requires_input', $data ?? [], null);
         $this->setIfExists('has_trinsic_interface', $data ?? [], null);
         $this->setIfExists('supports_advanced_provider_sessions', $data ?? [], null);
+        $this->setIfExists('available_fields', $data ?? [], null);
         $this->setIfExists('sub_providers', $data ?? [], null);
         $this->setIfExists('health', $data ?? [], null);
     }
@@ -384,6 +398,9 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['subtext'] === null) {
+            $invalidProperties[] = "'subtext' can't be null";
         }
         if ($this->container['description'] === null) {
             $invalidProperties[] = "'description' can't be null";
@@ -494,9 +511,37 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets subtext
+     *
+     * @return string
+     */
+    public function getSubtext()
+    {
+        return $this->container['subtext'];
+    }
+
+    /**
+     * Sets subtext
+     *
+     * @param string $subtext The Provider's subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+     *
+     * @return self
+     */
+    public function setSubtext($subtext)
+    {
+        if (is_null($subtext)) {
+            throw new \InvalidArgumentException('non-nullable subtext cannot be null');
+        }
+        $this->container['subtext'] = $subtext;
+
+        return $this;
+    }
+
+    /**
      * Gets description
      *
      * @return string
+     * @deprecated
      */
     public function getDescription()
     {
@@ -509,6 +554,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param string $description The Provider's description as it appears in Trinsic's Widget.              This is flavor text, not a full, human-readable description of the provider.
      *
      * @return self
+     * @deprecated
      */
     public function setDescription($description)
     {
@@ -695,7 +741,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets results_may_be_delayed_after_redirect
      *
-     * @param bool $results_may_be_delayed_after_redirect If `true`, then the results for this Provider may not be available immediately after the user is redirected back to your application. In this case, the `GetSessionResults` API must be called until results are available.              This is an uncommon scenario, and typically only applies to Providers which use a biometric check or traditional document scan.
+     * @param bool $results_may_be_delayed_after_redirect If `true`, then the results for this Provider may not be available immediately after the user is redirected back to your application. In this case, the `GetSessionResults` API must be called until results are available.              This is an uncommon scenario, and only applies to Providers which cannot guarantee the availability of results immediately after the user is redirected back to your application.
      *
      * @return self
      */
@@ -813,6 +859,40 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable supports_advanced_provider_sessions cannot be null');
         }
         $this->container['supports_advanced_provider_sessions'] = $supports_advanced_provider_sessions;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_fields
+     *
+     * @return \Trinsic\Api\Model\ContractField[]|null
+     */
+    public function getAvailableFields()
+    {
+        return $this->container['available_fields'];
+    }
+
+    /**
+     * Sets available_fields
+     *
+     * @param \Trinsic\Api\Model\ContractField[]|null $available_fields Information about the fields that this Provider will return in verification results.
+     *
+     * @return self
+     */
+    public function setAvailableFields($available_fields)
+    {
+        if (is_null($available_fields)) {
+            array_push($this->openAPINullablesSetToNull, 'available_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('available_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['available_fields'] = $available_fields;
 
         return $this;
     }

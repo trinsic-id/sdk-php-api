@@ -446,15 +446,16 @@ class NetworkApi
      *
      * List Providers
      *
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function listProviders(string $contentType = self::contentTypes['listProviders'][0])
+    public function listProviders($health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        list($response) = $this->listProvidersWithHttpInfo($contentType);
+        list($response) = $this->listProvidersWithHttpInfo($health, $contentType);
         return $response;
     }
 
@@ -463,15 +464,16 @@ class NetworkApi
      *
      * List Providers
      *
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProvidersWithHttpInfo(string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersWithHttpInfo($health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        $request = $this->listProvidersRequest($contentType);
+        $request = $this->listProvidersRequest($health, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -603,14 +605,15 @@ class NetworkApi
      *
      * List Providers
      *
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProvidersAsync(string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersAsync($health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        return $this->listProvidersAsyncWithHttpInfo($contentType)
+        return $this->listProvidersAsyncWithHttpInfo($health, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -623,15 +626,16 @@ class NetworkApi
      *
      * List Providers
      *
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProvidersAsyncWithHttpInfo(string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersAsyncWithHttpInfo($health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
         $returnType = '\Trinsic\Api\Model\ListProvidersResponse';
-        $request = $this->listProvidersRequest($contentType);
+        $request = $this->listProvidersRequest($health, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -672,13 +676,15 @@ class NetworkApi
     /**
      * Create request for operation 'listProviders'
      *
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listProvidersRequest(string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersRequest($health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
+
 
 
         $resourcePath = '/api/v1/network/providers';
@@ -688,6 +694,15 @@ class NetworkApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $health,
+            'health', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 

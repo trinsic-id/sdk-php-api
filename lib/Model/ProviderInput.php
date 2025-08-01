@@ -414,7 +414,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets indonesia_nik
      *
-     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik Input for the `f-indonesia-nik` provider
+     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik Input for the `indonesia-nik-lookup` provider
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mexico_curp
      *
-     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp Input for the `f-mexico-curp` provider
+     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp Input for the `mexico-curp-lookup` provider
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets south_africa_nid
      *
-     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid Input for the `f-south-africa-nid` provider
+     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid Input for the `south-africa-nid-lookup` provider
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kenya_nid
      *
-     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid Input for the `f-kenya-nid` provider
+     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid Input for the `kenya-nid-lookup` provider
      *
      * @return self
      */
@@ -550,7 +550,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nigeria_nin
      *
-     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin Input for the `f-nigeria-nin` provider
+     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin Input for the `nigeria-nin-lookup` provider
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets aadhaar
      *
-     * @param \Trinsic\Api\Model\AadhaarInput|null $aadhaar Input for the `f-india-aadhaar-match` provider
+     * @param \Trinsic\Api\Model\AadhaarInput|null $aadhaar Input for the `india-digilocker-aadhaar-match` provider
      *
      * @return self
      */
@@ -652,7 +652,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brazil_cpf_check
      *
-     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_check Input for the `g-brazil-cpf` provider
+     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_check Input for the `brazil-cpf-lookup` provider
      *
      * @return self
      */
@@ -686,7 +686,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets brazil_digital_cnh
      *
-     * @param \Trinsic\Api\Model\BrazilDigitalCnhInput|null $brazil_digital_cnh Input for the `g-brazil-digital-cnh` provider
+     * @param \Trinsic\Api\Model\BrazilDigitalCnhInput|null $brazil_digital_cnh Input for the `brazil-digital-cnh` provider
      *
      * @return self
      */
@@ -720,7 +720,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets philippine_match
      *
-     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippine_match Input for the `b-philsys-biometric` provider
+     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippine_match Input for the `philippines-philsys-match` provider
      *
      * @return self
      */
@@ -754,7 +754,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets philippine_qr
      *
-     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippine_qr Input for the `b-philippine-qr-digital-national-id` and `b-philippine-qr-ephill-id` providers
+     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippine_qr Input for the `philippines-digital-national-id-qr` and `philippines-physical-national-id-qr` providers
      *
      * @return self
      */
@@ -856,7 +856,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets idin
      *
-     * @param \Trinsic\Api\Model\IdinInput|null $idin Input for the `idin` provider
+     * @param \Trinsic\Api\Model\IdinInput|null $idin Input for the `netherlands-idin` provider
      *
      * @return self
      */
@@ -890,7 +890,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets spid
      *
-     * @param \Trinsic\Api\Model\SpidInput|null $spid Input for the `spid` provider
+     * @param \Trinsic\Api\Model\SpidInput|null $spid Input for the `italy-spid` provider
      *
      * @return self
      */

@@ -385,6 +385,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
      * Gets provider_input
      *
      * @return \Trinsic\Api\Model\ProviderInput|null
+     * @deprecated
      */
     public function getProviderInput()
     {
@@ -394,9 +395,10 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets provider_input
      *
-     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.
+     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.   <b>Deprecated:</b> In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Advanced Session endpoint instead.
      *
      * @return self
+     * @deprecated
      */
     public function setProviderInput($provider_input)
     {

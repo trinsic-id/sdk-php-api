@@ -98,6 +98,15 @@ class SubProviderMetadataTest extends TestCase
     }
 
     /**
+     * Test attribute "subtext"
+     */
+    public function testPropertySubtext()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "description"
      */
     public function testPropertyDescription()

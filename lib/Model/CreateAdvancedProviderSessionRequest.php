@@ -58,10 +58,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'provider' => 'string',
-        'provider_input' => '\Trinsic\Api\Model\ProviderInput',
         'redirect_url' => 'string',
         'capabilities' => '\Trinsic\Api\Model\IntegrationCapability[]',
-        'fallback_to_hosted_ui' => 'bool'
+        'fallback_to_hosted_ui' => 'bool',
+        'provider_input' => '\Trinsic\Api\Model\ProviderInput'
     ];
 
     /**
@@ -73,10 +73,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'provider' => null,
-        'provider_input' => null,
         'redirect_url' => null,
         'capabilities' => null,
-        'fallback_to_hosted_ui' => null
+        'fallback_to_hosted_ui' => null,
+        'provider_input' => null
     ];
 
     /**
@@ -86,10 +86,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       */
     protected static array $openAPINullables = [
         'provider' => false,
-        'provider_input' => true,
         'redirect_url' => true,
         'capabilities' => false,
-        'fallback_to_hosted_ui' => true
+        'fallback_to_hosted_ui' => true,
+        'provider_input' => true
     ];
 
     /**
@@ -179,10 +179,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'provider' => 'provider',
-        'provider_input' => 'providerInput',
         'redirect_url' => 'redirectUrl',
         'capabilities' => 'capabilities',
-        'fallback_to_hosted_ui' => 'fallbackToHostedUI'
+        'fallback_to_hosted_ui' => 'fallbackToHostedUI',
+        'provider_input' => 'providerInput'
     ];
 
     /**
@@ -192,10 +192,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'provider' => 'setProvider',
-        'provider_input' => 'setProviderInput',
         'redirect_url' => 'setRedirectUrl',
         'capabilities' => 'setCapabilities',
-        'fallback_to_hosted_ui' => 'setFallbackToHostedUi'
+        'fallback_to_hosted_ui' => 'setFallbackToHostedUi',
+        'provider_input' => 'setProviderInput'
     ];
 
     /**
@@ -205,10 +205,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'provider' => 'getProvider',
-        'provider_input' => 'getProviderInput',
         'redirect_url' => 'getRedirectUrl',
         'capabilities' => 'getCapabilities',
-        'fallback_to_hosted_ui' => 'getFallbackToHostedUi'
+        'fallback_to_hosted_ui' => 'getFallbackToHostedUi',
+        'provider_input' => 'getProviderInput'
     ];
 
     /**
@@ -269,10 +269,10 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
     public function __construct(?array $data = null)
     {
         $this->setIfExists('provider', $data ?? [], null);
-        $this->setIfExists('provider_input', $data ?? [], null);
         $this->setIfExists('redirect_url', $data ?? [], null);
         $this->setIfExists('capabilities', $data ?? [], null);
         $this->setIfExists('fallback_to_hosted_ui', $data ?? [], null);
+        $this->setIfExists('provider_input', $data ?? [], null);
     }
 
     /**
@@ -359,40 +359,6 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
         }
 
         $this->container['provider'] = $provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets provider_input
-     *
-     * @return \Trinsic\Api\Model\ProviderInput|null
-     */
-    public function getProviderInput()
-    {
-        return $this->container['provider_input'];
-    }
-
-    /**
-     * Sets provider_input
-     *
-     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.
-     *
-     * @return self
-     */
-    public function setProviderInput($provider_input)
-    {
-        if (is_null($provider_input)) {
-            array_push($this->openAPINullablesSetToNull, 'provider_input');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('provider_input', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['provider_input'] = $provider_input;
 
         return $this;
     }
@@ -493,6 +459,40 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
             }
         }
         $this->container['fallback_to_hosted_ui'] = $fallback_to_hosted_ui;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider_input
+     *
+     * @return \Trinsic\Api\Model\ProviderInput|null
+     */
+    public function getProviderInput()
+    {
+        return $this->container['provider_input'];
+    }
+
+    /**
+     * Sets provider_input
+     *
+     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.
+     *
+     * @return self
+     */
+    public function setProviderInput($provider_input)
+    {
+        if (is_null($provider_input)) {
+            array_push($this->openAPINullablesSetToNull, 'provider_input');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('provider_input', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['provider_input'] = $provider_input;
 
         return $this;
     }

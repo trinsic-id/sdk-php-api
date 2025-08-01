@@ -50,6 +50,8 @@ class DocumentType
 
     public const ID_CARD = 'IdCard';
 
+    public const OTHER = 'Other';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -60,7 +62,8 @@ class DocumentType
             self::PASSPORT,
             self::DRIVERS_LICENSE,
             self::NATIONAL_ID,
-            self::ID_CARD
+            self::ID_CARD,
+            self::OTHER
         ];
     }
 }

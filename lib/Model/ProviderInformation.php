@@ -57,9 +57,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
+        'name' => 'string',
+        'logo_url' => 'string',
+        'subtext' => 'string',
         'provider_id' => 'string',
         'provider_display_name' => 'string',
-        'provider_logo' => 'string'
+        'provider_logo' => 'string',
+        'health' => 'string',
+        'sub_providers' => '\Trinsic\Api\Model\SubProviderMetadata[]'
     ];
 
     /**
@@ -70,9 +76,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'name' => null,
+        'logo_url' => null,
+        'subtext' => null,
         'provider_id' => null,
         'provider_display_name' => null,
-        'provider_logo' => null
+        'provider_logo' => null,
+        'health' => null,
+        'sub_providers' => null
     ];
 
     /**
@@ -81,9 +93,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'id' => false,
+        'name' => false,
+        'logo_url' => false,
+        'subtext' => false,
         'provider_id' => false,
         'provider_display_name' => false,
-        'provider_logo' => false
+        'provider_logo' => false,
+        'health' => false,
+        'sub_providers' => true
     ];
 
     /**
@@ -172,9 +190,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'name' => 'name',
+        'logo_url' => 'logoUrl',
+        'subtext' => 'subtext',
         'provider_id' => 'providerId',
         'provider_display_name' => 'providerDisplayName',
-        'provider_logo' => 'providerLogo'
+        'provider_logo' => 'providerLogo',
+        'health' => 'health',
+        'sub_providers' => 'subProviders'
     ];
 
     /**
@@ -183,9 +207,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'name' => 'setName',
+        'logo_url' => 'setLogoUrl',
+        'subtext' => 'setSubtext',
         'provider_id' => 'setProviderId',
         'provider_display_name' => 'setProviderDisplayName',
-        'provider_logo' => 'setProviderLogo'
+        'provider_logo' => 'setProviderLogo',
+        'health' => 'setHealth',
+        'sub_providers' => 'setSubProviders'
     ];
 
     /**
@@ -194,9 +224,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'name' => 'getName',
+        'logo_url' => 'getLogoUrl',
+        'subtext' => 'getSubtext',
         'provider_id' => 'getProviderId',
         'provider_display_name' => 'getProviderDisplayName',
-        'provider_logo' => 'getProviderLogo'
+        'provider_logo' => 'getProviderLogo',
+        'health' => 'getHealth',
+        'sub_providers' => 'getSubProviders'
     ];
 
     /**
@@ -256,9 +292,15 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('logo_url', $data ?? [], null);
+        $this->setIfExists('subtext', $data ?? [], null);
         $this->setIfExists('provider_id', $data ?? [], null);
         $this->setIfExists('provider_display_name', $data ?? [], null);
         $this->setIfExists('provider_logo', $data ?? [], null);
+        $this->setIfExists('health', $data ?? [], null);
+        $this->setIfExists('sub_providers', $data ?? [], null);
     }
 
     /**
@@ -288,6 +330,18 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['logo_url'] === null) {
+            $invalidProperties[] = "'logo_url' can't be null";
+        }
+        if ($this->container['subtext'] === null) {
+            $invalidProperties[] = "'subtext' can't be null";
+        }
         if ($this->container['provider_id'] === null) {
             $invalidProperties[] = "'provider_id' can't be null";
         }
@@ -296,6 +350,9 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['provider_logo'] === null) {
             $invalidProperties[] = "'provider_logo' can't be null";
+        }
+        if ($this->container['health'] === null) {
+            $invalidProperties[] = "'health' can't be null";
         }
         return $invalidProperties;
     }
@@ -313,9 +370,118 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id The ID of the provider
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name The friendly, human-readable name of the provider
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_url
+     *
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->container['logo_url'];
+    }
+
+    /**
+     * Sets logo_url
+     *
+     * @param string $logo_url A URL pointing to the provider's logo
+     *
+     * @return self
+     */
+    public function setLogoUrl($logo_url)
+    {
+        if (is_null($logo_url)) {
+            throw new \InvalidArgumentException('non-nullable logo_url cannot be null');
+        }
+        $this->container['logo_url'] = $logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets subtext
+     *
+     * @return string
+     */
+    public function getSubtext()
+    {
+        return $this->container['subtext'];
+    }
+
+    /**
+     * Sets subtext
+     *
+     * @param string $subtext The Provider's subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
+     *
+     * @return self
+     */
+    public function setSubtext($subtext)
+    {
+        if (is_null($subtext)) {
+            throw new \InvalidArgumentException('non-nullable subtext cannot be null');
+        }
+        $this->container['subtext'] = $subtext;
+
+        return $this;
+    }
+
+    /**
      * Gets provider_id
      *
      * @return string
+     * @deprecated
      */
     public function getProviderId()
     {
@@ -325,9 +491,10 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets provider_id
      *
-     * @param string $provider_id provider_id
+     * @param string $provider_id The ID of the provider
      *
      * @return self
+     * @deprecated
      */
     public function setProviderId($provider_id)
     {
@@ -343,6 +510,7 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * Gets provider_display_name
      *
      * @return string
+     * @deprecated
      */
     public function getProviderDisplayName()
     {
@@ -352,9 +520,10 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets provider_display_name
      *
-     * @param string $provider_display_name provider_display_name
+     * @param string $provider_display_name The friendly, human-readable name of the provider
      *
      * @return self
+     * @deprecated
      */
     public function setProviderDisplayName($provider_display_name)
     {
@@ -370,6 +539,7 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * Gets provider_logo
      *
      * @return string
+     * @deprecated
      */
     public function getProviderLogo()
     {
@@ -379,9 +549,10 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets provider_logo
      *
-     * @param string $provider_logo provider_logo
+     * @param string $provider_logo A URL pointing to the provider's logo
      *
      * @return self
+     * @deprecated
      */
     public function setProviderLogo($provider_logo)
     {
@@ -389,6 +560,67 @@ class ProviderInformation implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable provider_logo cannot be null');
         }
         $this->container['provider_logo'] = $provider_logo;
+
+        return $this;
+    }
+
+    /**
+     * Gets health
+     *
+     * @return string
+     */
+    public function getHealth()
+    {
+        return $this->container['health'];
+    }
+
+    /**
+     * Sets health
+     *
+     * @param string $health The current health status of the provider
+     *
+     * @return self
+     */
+    public function setHealth($health)
+    {
+        if (is_null($health)) {
+            throw new \InvalidArgumentException('non-nullable health cannot be null');
+        }
+        $this->container['health'] = $health;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_providers
+     *
+     * @return \Trinsic\Api\Model\SubProviderMetadata[]|null
+     */
+    public function getSubProviders()
+    {
+        return $this->container['sub_providers'];
+    }
+
+    /**
+     * Sets sub_providers
+     *
+     * @param \Trinsic\Api\Model\SubProviderMetadata[]|null $sub_providers Metadata about the sub-providers which are available for this Provider.              For example, Italy's SPID is a Provider which aggregates access to multiple sub-providers.
+     *
+     * @return self
+     */
+    public function setSubProviders($sub_providers)
+    {
+        if (is_null($sub_providers)) {
+            array_push($this->openAPINullablesSetToNull, 'sub_providers');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sub_providers', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['sub_providers'] = $sub_providers;
 
         return $this;
     }

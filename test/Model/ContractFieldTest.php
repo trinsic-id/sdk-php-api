@@ -1,6 +1,6 @@
 <?php
 /**
- * ProviderInfoTest
+ * ContractFieldTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProviderInfoTest Class Doc Comment
+ * ContractFieldTest Class Doc Comment
  *
  * @category    Class
- * @description A provider that can be specified when creating a &#x60;Session&#x60;
+ * @description Information about a field that a Provider will return in verification results.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ProviderInfoTest extends TestCase
+class ContractFieldTest extends TestCase
 {
 
     /**
@@ -71,18 +71,9 @@ class ProviderInfoTest extends TestCase
     }
 
     /**
-     * Test "ProviderInfo"
+     * Test "ContractField"
      */
-    public function testProviderInfo()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testContractField()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -98,45 +89,9 @@ class ProviderInfoTest extends TestCase
     }
 
     /**
-     * Test attribute "logo_url"
+     * Test attribute "outputted"
      */
-    public function testPropertyLogoUrl()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "subtext"
-     */
-    public function testPropertySubtext()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "health"
-     */
-    public function testPropertyHealth()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sub_providers"
-     */
-    public function testPropertySubProviders()
+    public function testPropertyOutputted()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

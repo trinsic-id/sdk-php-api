@@ -80,6 +80,42 @@ class ProviderInformationTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "logo_url"
+     */
+    public function testPropertyLogoUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "subtext"
+     */
+    public function testPropertySubtext()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "provider_id"
      */
     public function testPropertyProviderId()
@@ -101,6 +137,24 @@ class ProviderInformationTest extends TestCase
      * Test attribute "provider_logo"
      */
     public function testPropertyProviderLogo()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "health"
+     */
+    public function testPropertyHealth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sub_providers"
+     */
+    public function testPropertySubProviders()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

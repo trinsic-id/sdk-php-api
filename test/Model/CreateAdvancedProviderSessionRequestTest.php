@@ -89,15 +89,6 @@ class CreateAdvancedProviderSessionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "provider_input"
-     */
-    public function testPropertyProviderInput()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "redirect_url"
      */
     public function testPropertyRedirectUrl()
@@ -119,6 +110,15 @@ class CreateAdvancedProviderSessionRequestTest extends TestCase
      * Test attribute "fallback_to_hosted_ui"
      */
     public function testPropertyFallbackToHostedUi()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "provider_input"
+     */
+    public function testPropertyProviderInput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

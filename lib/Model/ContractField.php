@@ -1,6 +1,6 @@
 <?php
 /**
- * Session
+ * ContractField
  *
  * PHP version 8.1
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * Session Class Doc Comment
+ * ContractField Class Doc Comment
  *
  * @category Class
+ * @description Information about a field that a Provider will return in verification results.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Session implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Session';
+    protected static $openAPIModelName = 'ContractField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +58,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'done' => 'bool',
-        'success' => 'bool',
-        'error_code' => '\Trinsic\Api\Model\SessionErrorCode',
-        'created' => 'int',
-        'updated' => 'int'
+        'name' => 'string',
+        'outputted' => '\Trinsic\Api\Model\FieldAvailability'
     ];
 
     /**
@@ -73,12 +70,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'done' => null,
-        'success' => null,
-        'error_code' => null,
-        'created' => 'int64',
-        'updated' => 'int64'
+        'name' => null,
+        'outputted' => null
     ];
 
     /**
@@ -87,12 +80,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'done' => false,
-        'success' => false,
-        'error_code' => true,
-        'created' => false,
-        'updated' => false
+        'name' => false,
+        'outputted' => false
     ];
 
     /**
@@ -181,12 +170,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'done' => 'done',
-        'success' => 'success',
-        'error_code' => 'errorCode',
-        'created' => 'created',
-        'updated' => 'updated'
+        'name' => 'name',
+        'outputted' => 'outputted'
     ];
 
     /**
@@ -195,12 +180,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'done' => 'setDone',
-        'success' => 'setSuccess',
-        'error_code' => 'setErrorCode',
-        'created' => 'setCreated',
-        'updated' => 'setUpdated'
+        'name' => 'setName',
+        'outputted' => 'setOutputted'
     ];
 
     /**
@@ -209,12 +190,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'done' => 'getDone',
-        'success' => 'getSuccess',
-        'error_code' => 'getErrorCode',
-        'created' => 'getCreated',
-        'updated' => 'getUpdated'
+        'name' => 'getName',
+        'outputted' => 'getOutputted'
     ];
 
     /**
@@ -274,12 +251,8 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('done', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('error_code', $data ?? [], null);
-        $this->setIfExists('created', $data ?? [], null);
-        $this->setIfExists('updated', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('outputted', $data ?? [], null);
     }
 
     /**
@@ -309,20 +282,11 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['done'] === null) {
-            $invalidProperties[] = "'done' can't be null";
-        }
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
-        }
-        if ($this->container['created'] === null) {
-            $invalidProperties[] = "'created' can't be null";
-        }
-        if ($this->container['updated'] === null) {
-            $invalidProperties[] = "'updated' can't be null";
+        if ($this->container['outputted'] === null) {
+            $invalidProperties[] = "'outputted' can't be null";
         }
         return $invalidProperties;
     }
@@ -340,170 +304,55 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets name
      *
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->container['id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets id
+     * Sets name
      *
-     * @param string $id id
+     * @param string $name The name of the field as it appears in verification results.
      *
      * @return self
      */
-    public function setId($id)
+    public function setName($name)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets done
+     * Gets outputted
      *
-     * @return bool
+     * @return \Trinsic\Api\Model\FieldAvailability
      */
-    public function getDone()
+    public function getOutputted()
     {
-        return $this->container['done'];
+        return $this->container['outputted'];
     }
 
     /**
-     * Sets done
+     * Sets outputted
      *
-     * @param bool $done Whether the Session is in a terminal / final state.              If this is `true`, inspect the value of `Success` to determine whether the Session was successful.
+     * @param \Trinsic\Api\Model\FieldAvailability $outputted Indicates when this field will be present in verification results.
      *
      * @return self
      */
-    public function setDone($done)
+    public function setOutputted($outputted)
     {
-        if (is_null($done)) {
-            throw new \InvalidArgumentException('non-nullable done cannot be null');
+        if (is_null($outputted)) {
+            throw new \InvalidArgumentException('non-nullable outputted cannot be null');
         }
-        $this->container['done'] = $done;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success Whether the Session has completed successfully.              If this is `false`, the Session is either not yet done, or has failed. Inspect `Done` and `ErrorCode` for more information. If this is `true`, the Session has completed successfully.
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_code
-     *
-     * @return \Trinsic\Api\Model\SessionErrorCode|null
-     */
-    public function getErrorCode()
-    {
-        return $this->container['error_code'];
-    }
-
-    /**
-     * Sets error_code
-     *
-     * @param \Trinsic\Api\Model\SessionErrorCode|null $error_code The reason for the Session's failure.              Only present if `Success` is `false`.
-     *
-     * @return self
-     */
-    public function setErrorCode($error_code)
-    {
-        if (is_null($error_code)) {
-            array_push($this->openAPINullablesSetToNull, 'error_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('error_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['error_code'] = $error_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
-     *
-     * @return int
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param int $created The unix timestamp, in seconds, when this session was created
-     *
-     * @return self
-     */
-    public function setCreated($created)
-    {
-        if (is_null($created)) {
-            throw new \InvalidArgumentException('non-nullable created cannot be null');
-        }
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     *
-     * @return int
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     *
-     * @param int $updated The unix timestamp, in seconds, when this session's data was last updated
-     *
-     * @return self
-     */
-    public function setUpdated($updated)
-    {
-        if (is_null($updated)) {
-            throw new \InvalidArgumentException('non-nullable updated cannot be null');
-        }
-        $this->container['updated'] = $updated;
+        $this->container['outputted'] = $outputted;
 
         return $this;
     }

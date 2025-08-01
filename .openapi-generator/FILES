@@ -14,6 +14,7 @@ docs/Model/BangladeshNidInput.md
 docs/Model/BrazilCpfCheckInput.md
 docs/Model/BrazilDigitalCnhInput.md
 docs/Model/CancelSessionResponse.md
+docs/Model/ContractField.md
 docs/Model/CreateAdvancedProviderSessionRequest.md
 docs/Model/CreateAdvancedProviderSessionResponse.md
 docs/Model/CreateHostedProviderSessionRequest.md
@@ -23,6 +24,7 @@ docs/Model/CreateWidgetSessionResponse.md
 docs/Model/DocumentData.md
 docs/Model/DocumentScanAttachments.md
 docs/Model/DocumentType.md
+docs/Model/FieldAvailability.md
 docs/Model/GetAttachmentRequest.md
 docs/Model/GetAttachmentResponse.md
 docs/Model/GetSessionResponse.md
@@ -87,6 +89,7 @@ lib/Model/BangladeshNidInput.php
 lib/Model/BrazilCpfCheckInput.php
 lib/Model/BrazilDigitalCnhInput.php
 lib/Model/CancelSessionResponse.php
+lib/Model/ContractField.php
 lib/Model/CreateAdvancedProviderSessionRequest.php
 lib/Model/CreateAdvancedProviderSessionResponse.php
 lib/Model/CreateHostedProviderSessionRequest.php
@@ -96,6 +99,7 @@ lib/Model/CreateWidgetSessionResponse.php
 lib/Model/DocumentData.php
 lib/Model/DocumentScanAttachments.php
 lib/Model/DocumentType.php
+lib/Model/FieldAvailability.php
 lib/Model/GetAttachmentRequest.php
 lib/Model/GetAttachmentResponse.php
 lib/Model/GetSessionResponse.php
@@ -158,6 +162,7 @@ test/Model/BangladeshNidInputTest.php
 test/Model/BrazilCpfCheckInputTest.php
 test/Model/BrazilDigitalCnhInputTest.php
 test/Model/CancelSessionResponseTest.php
+test/Model/ContractFieldTest.php
 test/Model/CreateAdvancedProviderSessionRequestTest.php
 test/Model/CreateAdvancedProviderSessionResponseTest.php
 test/Model/CreateHostedProviderSessionRequestTest.php
@@ -167,6 +172,7 @@ test/Model/CreateWidgetSessionResponseTest.php
 test/Model/DocumentDataTest.php
 test/Model/DocumentScanAttachmentsTest.php
 test/Model/DocumentTypeTest.php
+test/Model/FieldAvailabilityTest.php
 test/Model/GetAttachmentRequestTest.php
 test/Model/GetAttachmentResponseTest.php
 test/Model/GetSessionResponseTest.php

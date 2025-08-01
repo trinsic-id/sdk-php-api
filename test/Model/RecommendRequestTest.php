@@ -87,4 +87,13 @@ class RecommendRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "health"
+     */
+    public function testPropertyHealth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

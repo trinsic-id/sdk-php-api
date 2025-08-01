@@ -69,7 +69,7 @@ This endpoint does not need any parameter.
 ## `listProviders()`
 
 ```php
-listProviders(): \Trinsic\Api\Model\ListProvidersResponse
+listProviders($health): \Trinsic\Api\Model\ListProvidersResponse
 ```
 
 List Providers
@@ -93,9 +93,10 @@ $apiInstance = new Trinsic\Api\Api\NetworkApi(
     new GuzzleHttp\Client(),
     $config
 );
+$health = 'health_example'; // string | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
 
 try {
-    $result = $apiInstance->listProviders();
+    $result = $apiInstance->listProviders($health);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkApi->listProviders: ', $e->getMessage(), PHP_EOL;
@@ -104,7 +105,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **health** | **string**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 
@@ -131,7 +134,7 @@ recommendProviders($recommend_request): \Trinsic\Api\Model\RecommendResponse
 
 Recommend Providers
 
-Generate provider recommendations based on the given signals (phone number, countries, states).
+Generate provider recommendations based on signals about the user's location (phone number, countries, states).
 
 ### Example
 

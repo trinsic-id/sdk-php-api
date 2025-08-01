@@ -57,7 +57,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo'
+        'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo',
+        'health' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recommendation_info' => null
+        'recommendation_info' => null,
+        'health' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'recommendation_info' => true
+        'recommendation_info' => true,
+        'health' => true
     ];
 
     /**
@@ -166,7 +169,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'recommendation_info' => 'recommendationInfo'
+        'recommendation_info' => 'recommendationInfo',
+        'health' => 'health'
     ];
 
     /**
@@ -175,7 +179,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'recommendation_info' => 'setRecommendationInfo'
+        'recommendation_info' => 'setRecommendationInfo',
+        'health' => 'setHealth'
     ];
 
     /**
@@ -184,7 +189,8 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'recommendation_info' => 'getRecommendationInfo'
+        'recommendation_info' => 'getRecommendationInfo',
+        'health' => 'getHealth'
     ];
 
     /**
@@ -245,6 +251,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('recommendation_info', $data ?? [], null);
+        $this->setIfExists('health', $data ?? [], null);
     }
 
     /**
@@ -319,6 +326,40 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['recommendation_info'] = $recommendation_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets health
+     *
+     * @return string|null
+     */
+    public function getHealth()
+    {
+        return $this->container['health'];
+    }
+
+    /**
+     * Sets health
+     *
+     * @param string|null $health Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"online\".
+     *
+     * @return self
+     */
+    public function setHealth($health)
+    {
+        if (is_null($health)) {
+            array_push($this->openAPINullablesSetToNull, 'health');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('health', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['health'] = $health;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * IntegrationCapability
+ * FieldAvailability
  *
  * PHP version 8.1
  *
@@ -30,31 +30,24 @@ namespace Trinsic\Api\Model;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * IntegrationCapability Class Doc Comment
+ * FieldAvailability Class Doc Comment
  *
  * @category Class
+ * @description Indicates when a field will be available in verification results.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class IntegrationCapability
+class FieldAvailability
 {
     /**
      * Possible values of this enum
      */
-    public const LAUNCH_BROWSER = 'LaunchBrowser';
+    public const NEVER = 'Never';
 
-    public const DEEPLINK_TO_MOBILE = 'DeeplinkToMobile';
+    public const SOMETIMES = 'Sometimes';
 
-    public const SHOW_CONTENT = 'ShowContent';
-
-    public const REFRESH_STEP_CONTENT = 'RefreshStepContent';
-
-    public const CAPTURE_REDIRECT = 'CaptureRedirect';
-
-    public const POLL_RESULT = 'PollResult';
-
-    public const POLL_AFTER_REDIRECT = 'PollAfterRedirect';
+    public const ALWAYS = 'Always';
 
     /**
      * Gets allowable values of the enum
@@ -63,13 +56,9 @@ class IntegrationCapability
     public static function getAllowableEnumValues()
     {
         return [
-            self::LAUNCH_BROWSER,
-            self::DEEPLINK_TO_MOBILE,
-            self::SHOW_CONTENT,
-            self::REFRESH_STEP_CONTENT,
-            self::CAPTURE_REDIRECT,
-            self::POLL_RESULT,
-            self::POLL_AFTER_REDIRECT
+            self::NEVER,
+            self::SOMETIMES,
+            self::ALWAYS
         ];
     }
 }

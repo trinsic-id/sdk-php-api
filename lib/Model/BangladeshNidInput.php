@@ -85,9 +85,9 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'national_id_number' => true,
-        'date_of_birth' => true,
-        'name' => true,
+        'national_id_number' => false,
+        'date_of_birth' => false,
+        'name' => false,
         'photo_byes' => true,
         'photo_image_mime_type' => true
     ];
@@ -302,6 +302,31 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['national_id_number'] === null) {
+            $invalidProperties[] = "'national_id_number' can't be null";
+        }
+        if ((mb_strlen($this->container['national_id_number']) > 17)) {
+            $invalidProperties[] = "invalid value for 'national_id_number', the character length must be smaller than or equal to 17.";
+        }
+
+        if ((mb_strlen($this->container['national_id_number']) < 10)) {
+            $invalidProperties[] = "invalid value for 'national_id_number', the character length must be bigger than or equal to 10.";
+        }
+
+        if ($this->container['date_of_birth'] === null) {
+            $invalidProperties[] = "'date_of_birth' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((mb_strlen($this->container['name']) > 80)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 80.";
+        }
+
+        if ((mb_strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -320,7 +345,7 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets national_id_number
      *
-     * @return string|null
+     * @return string
      */
     public function getNationalIdNumber()
     {
@@ -330,22 +355,22 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets national_id_number
      *
-     * @param string|null $national_id_number The user's Bangladesh National ID number.
+     * @param string $national_id_number The user's Bangladesh National ID number.
      *
      * @return self
      */
     public function setNationalIdNumber($national_id_number)
     {
         if (is_null($national_id_number)) {
-            array_push($this->openAPINullablesSetToNull, 'national_id_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('national_id_number', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable national_id_number cannot be null');
         }
+        if ((mb_strlen($national_id_number) > 17)) {
+            throw new \InvalidArgumentException('invalid length for $national_id_number when calling BangladeshNidInput., must be smaller than or equal to 17.');
+        }
+        if ((mb_strlen($national_id_number) < 10)) {
+            throw new \InvalidArgumentException('invalid length for $national_id_number when calling BangladeshNidInput., must be bigger than or equal to 10.');
+        }
+
         $this->container['national_id_number'] = $national_id_number;
 
         return $this;
@@ -354,7 +379,7 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets date_of_birth
      *
-     * @return \DateTime|null
+     * @return \DateTime
      */
     public function getDateOfBirth()
     {
@@ -364,21 +389,14 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets date_of_birth
      *
-     * @param \DateTime|null $date_of_birth The user's date of birth, in `YYYY-MM-DD` format
+     * @param \DateTime $date_of_birth The user's date of birth, in `YYYY-MM-DD` format
      *
      * @return self
      */
     public function setDateOfBirth($date_of_birth)
     {
         if (is_null($date_of_birth)) {
-            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_of_birth', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable date_of_birth cannot be null');
         }
         $this->container['date_of_birth'] = $date_of_birth;
 
@@ -388,7 +406,7 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -398,22 +416,22 @@ class BangladeshNidInput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets name
      *
-     * @param string|null $name The user's full name
+     * @param string $name The user's full name
      *
      * @return self
      */
     public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
+        if ((mb_strlen($name) > 80)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling BangladeshNidInput., must be smaller than or equal to 80.');
+        }
+        if ((mb_strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling BangladeshNidInput., must be bigger than or equal to 1.');
+        }
+
         $this->container['name'] = $name;
 
         return $this;

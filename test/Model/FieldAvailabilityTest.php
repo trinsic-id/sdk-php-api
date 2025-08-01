@@ -1,6 +1,6 @@
 <?php
 /**
- * SmartIdInputTest
+ * FieldAvailabilityTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SmartIdInputTest Class Doc Comment
+ * FieldAvailabilityTest Class Doc Comment
  *
  * @category    Class
- * @description SmartIdInput
+ * @description Indicates when a field will be available in verification results.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SmartIdInputTest extends TestCase
+class FieldAvailabilityTest extends TestCase
 {
 
     /**
@@ -71,27 +71,9 @@ class SmartIdInputTest extends TestCase
     }
 
     /**
-     * Test "SmartIdInput"
+     * Test "FieldAvailability"
      */
-    public function testSmartIdInput()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "smart_id_document_number"
-     */
-    public function testPropertySmartIdDocumentNumber()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "smart_id_number"
-     */
-    public function testPropertySmartIdNumber()
+    public function testFieldAvailability()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

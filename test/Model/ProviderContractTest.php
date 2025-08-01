@@ -98,6 +98,15 @@ class ProviderContractTest extends TestCase
     }
 
     /**
+     * Test attribute "subtext"
+     */
+    public function testPropertySubtext()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "description"
      */
     public function testPropertyDescription()
@@ -200,6 +209,15 @@ class ProviderContractTest extends TestCase
      * Test attribute "supports_advanced_provider_sessions"
      */
     public function testPropertySupportsAdvancedProviderSessions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "available_fields"
+     */
+    public function testPropertyAvailableFields()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

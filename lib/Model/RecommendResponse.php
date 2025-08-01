@@ -325,7 +325,7 @@ class RecommendResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets recognized
      *
-     * @param \Trinsic\Api\Model\ProviderInformation[] $recognized The list of providers that were recognized in Trinsic's network. These are providers that already verified this user
+     * @param \Trinsic\Api\Model\ProviderInformation[] $recognized The providers which the user is known to have a credential with.
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class RecommendResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets relevant
      *
-     * @param \Trinsic\Api\Model\ProviderInformation[] $relevant The list of providers that although not recognized, are relevant to the user's identity. The user may have been verified by these providers
+     * @param \Trinsic\Api\Model\ProviderInformation[] $relevant The providers which the user is deemed sufficiently likely to have a credential with.
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class RecommendResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets remainder
      *
-     * @param \Trinsic\Api\Model\ProviderInformation[] $remainder The list of providers that are not recognized and are not relevant to the user's identity
+     * @param \Trinsic\Api\Model\ProviderInformation[] $remainder The providers which the user is unlikely to have a credential with.              This includes all providers available to your app which were not included in the Recognized or Relevant lists.
      *
      * @return self
      */

@@ -57,7 +57,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'smart_id_document_number' => 'string'
+        'smart_id_document_number' => 'string',
+        'smart_id_number' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'smart_id_document_number' => null
+        'smart_id_document_number' => null,
+        'smart_id_number' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'smart_id_document_number' => true
+        'smart_id_document_number' => true,
+        'smart_id_number' => true
     ];
 
     /**
@@ -166,7 +169,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'smart_id_document_number' => 'smartIdDocumentNumber'
+        'smart_id_document_number' => 'smartIdDocumentNumber',
+        'smart_id_number' => 'smartIdNumber'
     ];
 
     /**
@@ -175,7 +179,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'smart_id_document_number' => 'setSmartIdDocumentNumber'
+        'smart_id_document_number' => 'setSmartIdDocumentNumber',
+        'smart_id_number' => 'setSmartIdNumber'
     ];
 
     /**
@@ -184,7 +189,8 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'smart_id_document_number' => 'getSmartIdDocumentNumber'
+        'smart_id_document_number' => 'getSmartIdDocumentNumber',
+        'smart_id_number' => 'getSmartIdNumber'
     ];
 
     /**
@@ -245,6 +251,7 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('smart_id_document_number', $data ?? [], null);
+        $this->setIfExists('smart_id_number', $data ?? [], null);
     }
 
     /**
@@ -293,6 +300,7 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets smart_id_document_number
      *
      * @return string|null
+     * @deprecated
      */
     public function getSmartIdDocumentNumber()
     {
@@ -305,6 +313,7 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param string|null $smart_id_document_number The user's Smart ID Document Number
      *
      * @return self
+     * @deprecated
      */
     public function setSmartIdDocumentNumber($smart_id_document_number)
     {
@@ -319,6 +328,40 @@ class SmartIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['smart_id_document_number'] = $smart_id_document_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets smart_id_number
+     *
+     * @return string|null
+     */
+    public function getSmartIdNumber()
+    {
+        return $this->container['smart_id_number'];
+    }
+
+    /**
+     * Sets smart_id_number
+     *
+     * @param string|null $smart_id_number The user's Smart ID ETSI number or document number.
+     *
+     * @return self
+     */
+    public function setSmartIdNumber($smart_id_number)
+    {
+        if (is_null($smart_id_number)) {
+            array_push($this->openAPINullablesSetToNull, 'smart_id_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('smart_id_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['smart_id_number'] = $smart_id_number;
 
         return $this;
     }

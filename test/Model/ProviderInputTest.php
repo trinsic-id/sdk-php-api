@@ -89,6 +89,15 @@ class ProviderInputTest extends TestCase
     }
 
     /**
+     * Test attribute "indonesia_dukcapil_biometric_match"
+     */
+    public function testPropertyIndonesiaDukcapilBiometricMatch()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "mexico_curp"
      */
     public function testPropertyMexicoCurp()

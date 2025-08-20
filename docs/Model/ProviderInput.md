@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **indonesia_nik** | [**\Trinsic\Api\Model\IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider | [optional]
-**indonesia_dukcapil_biometric_match** | [**\Trinsic\Api\Model\IndonesiaDukcapilBiometricMatchInput**](IndonesiaDukcapilBiometricMatchInput.md) | Input for the &#x60;indonesia-dukcapil-biometric-match&#x60; provider | [optional]
+**indonesia_dukcapil_match** | [**\Trinsic\Api\Model\IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider | [optional]
 **mexico_curp** | [**\Trinsic\Api\Model\MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider | [optional]
 **south_africa_nid** | [**\Trinsic\Api\Model\SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider | [optional]
 **kenya_nid** | [**\Trinsic\Api\Model\KenyaNidInput**](KenyaNidInput.md) | Input for the &#x60;kenya-nid-lookup&#x60; provider | [optional]

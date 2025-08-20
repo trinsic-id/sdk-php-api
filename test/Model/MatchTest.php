@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityDataTest
+ * MatchTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * IdentityDataTest Class Doc Comment
+ * MatchTest Class Doc Comment
  *
  * @category    Class
- * @description IdentityData
+ * @description Match
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class IdentityDataTest extends TestCase
+class MatchTest extends TestCase
 {
 
     /**
@@ -71,63 +71,27 @@ class IdentityDataTest extends TestCase
     }
 
     /**
-     * Test "IdentityData"
+     * Test "Match"
      */
-    public function testIdentityData()
+    public function testMatch()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "originating_provider_id"
+     * Test attribute "probability_value"
      */
-    public function testPropertyOriginatingProviderId()
+    public function testPropertyProbabilityValue()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "originating_sub_provider_id"
+     * Test attribute "boolean_value"
      */
-    public function testPropertyOriginatingSubProviderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "person"
-     */
-    public function testPropertyPerson()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document"
-     */
-    public function testPropertyDocument()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "match"
-     */
-    public function testPropertyMatch()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "attachment_access_keys"
-     */
-    public function testPropertyAttachmentAccessKeys()
+    public function testPropertyBooleanValue()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

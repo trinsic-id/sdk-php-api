@@ -1,6 +1,6 @@
 <?php
 /**
- * IndonesiaDukcapilBiometricMatchInputTest
+ * IndonesiaDukcapilMatchInputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * IndonesiaDukcapilBiometricMatchInputTest Class Doc Comment
+ * IndonesiaDukcapilMatchInputTest Class Doc Comment
  *
  * @category    Class
- * @description IndonesiaDukcapilBiometricMatchInput
+ * @description IndonesiaDukcapilMatchInput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class IndonesiaDukcapilBiometricMatchInputTest extends TestCase
+class IndonesiaDukcapilMatchInputTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class IndonesiaDukcapilBiometricMatchInputTest extends TestCase
     }
 
     /**
-     * Test "IndonesiaDukcapilBiometricMatchInput"
+     * Test "IndonesiaDukcapilMatchInput"
      */
-    public function testIndonesiaDukcapilBiometricMatchInput()
+    public function testIndonesiaDukcapilMatchInput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

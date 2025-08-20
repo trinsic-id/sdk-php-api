@@ -1,6 +1,6 @@
 <?php
 /**
- * IndonesiaDukcapilBiometricMatchInput
+ * IndonesiaDukcapilMatchInput
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * IndonesiaDukcapilBiometricMatchInput Class Doc Comment
+ * IndonesiaDukcapilMatchInput Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class IndonesiaDukcapilBiometricMatchInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class IndonesiaDukcapilMatchInput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class IndonesiaDukcapilBiometricMatchInput implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IndonesiaDukcapilBiometricMatchInput';
+    protected static $openAPIModelName = 'IndonesiaDukcapilMatchInput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -521,7 +521,7 @@ class IndonesiaDukcapilBiometricMatchInput implements ModelInterface, ArrayAcces
     /**
      * Sets selfie_image
      *
-     * @param string|null $selfie_image The raw bytes of the selfie image of the individual.              Must be JPEG format; 1MB maximum.
+     * @param string|null $selfie_image The raw bytes of the selfie image of the individual.              Must be JPEG or PNG format; 10MB maximum.
      *
      * @return self
      */

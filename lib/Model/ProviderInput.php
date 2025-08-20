@@ -58,7 +58,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'indonesia_nik' => '\Trinsic\Api\Model\IndonesiaNikInput',
-        'indonesia_dukcapil_biometric_match' => '\Trinsic\Api\Model\IndonesiaDukcapilBiometricMatchInput',
+        'indonesia_dukcapil_match' => '\Trinsic\Api\Model\IndonesiaDukcapilMatchInput',
         'mexico_curp' => '\Trinsic\Api\Model\MexicoCurpInput',
         'south_africa_nid' => '\Trinsic\Api\Model\SouthAfricaNidInput',
         'kenya_nid' => '\Trinsic\Api\Model\KenyaNidInput',
@@ -86,7 +86,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'indonesia_nik' => null,
-        'indonesia_dukcapil_biometric_match' => null,
+        'indonesia_dukcapil_match' => null,
         'mexico_curp' => null,
         'south_africa_nid' => null,
         'kenya_nid' => null,
@@ -112,7 +112,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'indonesia_nik' => true,
-        'indonesia_dukcapil_biometric_match' => true,
+        'indonesia_dukcapil_match' => true,
         'mexico_curp' => true,
         'south_africa_nid' => true,
         'kenya_nid' => true,
@@ -218,7 +218,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'indonesia_nik' => 'indonesiaNik',
-        'indonesia_dukcapil_biometric_match' => 'indonesiaDukcapilBiometricMatch',
+        'indonesia_dukcapil_match' => 'indonesiaDukcapilMatch',
         'mexico_curp' => 'mexicoCurp',
         'south_africa_nid' => 'southAfricaNid',
         'kenya_nid' => 'kenyaNid',
@@ -244,7 +244,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'indonesia_nik' => 'setIndonesiaNik',
-        'indonesia_dukcapil_biometric_match' => 'setIndonesiaDukcapilBiometricMatch',
+        'indonesia_dukcapil_match' => 'setIndonesiaDukcapilMatch',
         'mexico_curp' => 'setMexicoCurp',
         'south_africa_nid' => 'setSouthAfricaNid',
         'kenya_nid' => 'setKenyaNid',
@@ -270,7 +270,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'indonesia_nik' => 'getIndonesiaNik',
-        'indonesia_dukcapil_biometric_match' => 'getIndonesiaDukcapilBiometricMatch',
+        'indonesia_dukcapil_match' => 'getIndonesiaDukcapilMatch',
         'mexico_curp' => 'getMexicoCurp',
         'south_africa_nid' => 'getSouthAfricaNid',
         'kenya_nid' => 'getKenyaNid',
@@ -347,7 +347,7 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('indonesia_nik', $data ?? [], null);
-        $this->setIfExists('indonesia_dukcapil_biometric_match', $data ?? [], null);
+        $this->setIfExists('indonesia_dukcapil_match', $data ?? [], null);
         $this->setIfExists('mexico_curp', $data ?? [], null);
         $this->setIfExists('south_africa_nid', $data ?? [], null);
         $this->setIfExists('kenya_nid', $data ?? [], null);
@@ -443,35 +443,35 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets indonesia_dukcapil_biometric_match
+     * Gets indonesia_dukcapil_match
      *
-     * @return \Trinsic\Api\Model\IndonesiaDukcapilBiometricMatchInput|null
+     * @return \Trinsic\Api\Model\IndonesiaDukcapilMatchInput|null
      */
-    public function getIndonesiaDukcapilBiometricMatch()
+    public function getIndonesiaDukcapilMatch()
     {
-        return $this->container['indonesia_dukcapil_biometric_match'];
+        return $this->container['indonesia_dukcapil_match'];
     }
 
     /**
-     * Sets indonesia_dukcapil_biometric_match
+     * Sets indonesia_dukcapil_match
      *
-     * @param \Trinsic\Api\Model\IndonesiaDukcapilBiometricMatchInput|null $indonesia_dukcapil_biometric_match Input for the `indonesia-dukcapil-biometric-match` provider
+     * @param \Trinsic\Api\Model\IndonesiaDukcapilMatchInput|null $indonesia_dukcapil_match Input for the `indonesia-dukcapil-match` provider
      *
      * @return self
      */
-    public function setIndonesiaDukcapilBiometricMatch($indonesia_dukcapil_biometric_match)
+    public function setIndonesiaDukcapilMatch($indonesia_dukcapil_match)
     {
-        if (is_null($indonesia_dukcapil_biometric_match)) {
-            array_push($this->openAPINullablesSetToNull, 'indonesia_dukcapil_biometric_match');
+        if (is_null($indonesia_dukcapil_match)) {
+            array_push($this->openAPINullablesSetToNull, 'indonesia_dukcapil_match');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('indonesia_dukcapil_biometric_match', $nullablesSetToNull);
+            $index = array_search('indonesia_dukcapil_match', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['indonesia_dukcapil_biometric_match'] = $indonesia_dukcapil_biometric_match;
+        $this->container['indonesia_dukcapil_match'] = $indonesia_dukcapil_match;
 
         return $this;
     }

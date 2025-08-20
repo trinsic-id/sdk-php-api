@@ -33,7 +33,7 @@ docs/Model/GetSessionResultResponse.md
 docs/Model/HttpValidationProblemDetails.md
 docs/Model/IdentityData.md
 docs/Model/IdinInput.md
-docs/Model/IndonesiaDukcapilBiometricMatchInput.md
+docs/Model/IndonesiaDukcapilMatchInput.md
 docs/Model/IndonesiaNikInput.md
 docs/Model/IntegrationCapability.md
 docs/Model/IntegrationLaunchMethod.md
@@ -43,6 +43,8 @@ docs/Model/Language.md
 docs/Model/ListProviderContractsResponse.md
 docs/Model/ListProvidersResponse.md
 docs/Model/ListSessionsResponse.md
+docs/Model/Match.md
+docs/Model/MatchData.md
 docs/Model/MexicoCurpInput.md
 docs/Model/MobileIdInput.md
 docs/Model/NigeriaNinInput.md
@@ -109,7 +111,7 @@ lib/Model/GetSessionResultResponse.php
 lib/Model/HttpValidationProblemDetails.php
 lib/Model/IdentityData.php
 lib/Model/IdinInput.php
-lib/Model/IndonesiaDukcapilBiometricMatchInput.php
+lib/Model/IndonesiaDukcapilMatchInput.php
 lib/Model/IndonesiaNikInput.php
 lib/Model/IntegrationCapability.php
 lib/Model/IntegrationLaunchMethod.php
@@ -119,6 +121,8 @@ lib/Model/Language.php
 lib/Model/ListProviderContractsResponse.php
 lib/Model/ListProvidersResponse.php
 lib/Model/ListSessionsResponse.php
+lib/Model/Match.php
+lib/Model/MatchData.php
 lib/Model/MexicoCurpInput.php
 lib/Model/MobileIdInput.php
 lib/Model/ModelInterface.php
@@ -183,7 +187,7 @@ test/Model/GetSessionResultResponseTest.php
 test/Model/HttpValidationProblemDetailsTest.php
 test/Model/IdentityDataTest.php
 test/Model/IdinInputTest.php
-test/Model/IndonesiaDukcapilBiometricMatchInputTest.php
+test/Model/IndonesiaDukcapilMatchInputTest.php
 test/Model/IndonesiaNikInputTest.php
 test/Model/IntegrationCapabilityTest.php
 test/Model/IntegrationLaunchMethodTest.php
@@ -193,6 +197,8 @@ test/Model/LanguageTest.php
 test/Model/ListProviderContractsResponseTest.php
 test/Model/ListProvidersResponseTest.php
 test/Model/ListSessionsResponseTest.php
+test/Model/MatchDataTest.php
+test/Model/MatchTest.php
 test/Model/MexicoCurpInputTest.php
 test/Model/MobileIdInputTest.php
 test/Model/NigeriaNinInputTest.php

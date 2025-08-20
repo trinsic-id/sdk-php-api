@@ -89,9 +89,9 @@ class ProviderInputTest extends TestCase
     }
 
     /**
-     * Test attribute "indonesia_dukcapil_biometric_match"
+     * Test attribute "indonesia_dukcapil_match"
      */
-    public function testPropertyIndonesiaDukcapilBiometricMatch()
+    public function testPropertyIndonesiaDukcapilMatch()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

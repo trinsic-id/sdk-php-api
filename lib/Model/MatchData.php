@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityData
+ * MatchData
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * IdentityData Class Doc Comment
+ * MatchData Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
+class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IdentityData';
+    protected static $openAPIModelName = 'MatchData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'originating_provider_id' => 'string',
-        'originating_sub_provider_id' => 'string',
-        'person' => '\Trinsic\Api\Model\PersonData',
-        'document' => '\Trinsic\Api\Model\DocumentData',
-        'match' => '\Trinsic\Api\Model\MatchData',
-        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys'
+        'national_id_number' => '\Trinsic\Api\Model\Match',
+        'full_name' => '\Trinsic\Api\Model\Match',
+        'given_name' => '\Trinsic\Api\Model\Match',
+        'middle_name' => '\Trinsic\Api\Model\Match',
+        'family_name' => '\Trinsic\Api\Model\Match',
+        'sex' => '\Trinsic\Api\Model\Match',
+        'date_of_birth' => '\Trinsic\Api\Model\Match',
+        'face_match' => '\Trinsic\Api\Model\Match',
+        'liveness' => '\Trinsic\Api\Model\Match',
+        'image_authenticity' => '\Trinsic\Api\Model\Match'
     ];
 
     /**
@@ -73,12 +77,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'originating_provider_id' => null,
-        'originating_sub_provider_id' => null,
-        'person' => null,
-        'document' => null,
-        'match' => null,
-        'attachment_access_keys' => null
+        'national_id_number' => null,
+        'full_name' => null,
+        'given_name' => null,
+        'middle_name' => null,
+        'family_name' => null,
+        'sex' => null,
+        'date_of_birth' => null,
+        'face_match' => null,
+        'liveness' => null,
+        'image_authenticity' => null
     ];
 
     /**
@@ -87,12 +95,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'originating_provider_id' => true,
-        'originating_sub_provider_id' => true,
-        'person' => true,
-        'document' => true,
-        'match' => true,
-        'attachment_access_keys' => true
+        'national_id_number' => true,
+        'full_name' => true,
+        'given_name' => true,
+        'middle_name' => true,
+        'family_name' => true,
+        'sex' => true,
+        'date_of_birth' => true,
+        'face_match' => true,
+        'liveness' => true,
+        'image_authenticity' => true
     ];
 
     /**
@@ -181,12 +193,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'originating_provider_id' => 'originatingProviderId',
-        'originating_sub_provider_id' => 'originatingSubProviderId',
-        'person' => 'person',
-        'document' => 'document',
-        'match' => 'match',
-        'attachment_access_keys' => 'attachmentAccessKeys'
+        'national_id_number' => 'nationalIdNumber',
+        'full_name' => 'fullName',
+        'given_name' => 'givenName',
+        'middle_name' => 'middleName',
+        'family_name' => 'familyName',
+        'sex' => 'sex',
+        'date_of_birth' => 'dateOfBirth',
+        'face_match' => 'faceMatch',
+        'liveness' => 'liveness',
+        'image_authenticity' => 'imageAuthenticity'
     ];
 
     /**
@@ -195,12 +211,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'originating_provider_id' => 'setOriginatingProviderId',
-        'originating_sub_provider_id' => 'setOriginatingSubProviderId',
-        'person' => 'setPerson',
-        'document' => 'setDocument',
-        'match' => 'setMatch',
-        'attachment_access_keys' => 'setAttachmentAccessKeys'
+        'national_id_number' => 'setNationalIdNumber',
+        'full_name' => 'setFullName',
+        'given_name' => 'setGivenName',
+        'middle_name' => 'setMiddleName',
+        'family_name' => 'setFamilyName',
+        'sex' => 'setSex',
+        'date_of_birth' => 'setDateOfBirth',
+        'face_match' => 'setFaceMatch',
+        'liveness' => 'setLiveness',
+        'image_authenticity' => 'setImageAuthenticity'
     ];
 
     /**
@@ -209,12 +229,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'originating_provider_id' => 'getOriginatingProviderId',
-        'originating_sub_provider_id' => 'getOriginatingSubProviderId',
-        'person' => 'getPerson',
-        'document' => 'getDocument',
-        'match' => 'getMatch',
-        'attachment_access_keys' => 'getAttachmentAccessKeys'
+        'national_id_number' => 'getNationalIdNumber',
+        'full_name' => 'getFullName',
+        'given_name' => 'getGivenName',
+        'middle_name' => 'getMiddleName',
+        'family_name' => 'getFamilyName',
+        'sex' => 'getSex',
+        'date_of_birth' => 'getDateOfBirth',
+        'face_match' => 'getFaceMatch',
+        'liveness' => 'getLiveness',
+        'image_authenticity' => 'getImageAuthenticity'
     ];
 
     /**
@@ -274,12 +298,16 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('originating_provider_id', $data ?? [], null);
-        $this->setIfExists('originating_sub_provider_id', $data ?? [], null);
-        $this->setIfExists('person', $data ?? [], null);
-        $this->setIfExists('document', $data ?? [], null);
-        $this->setIfExists('match', $data ?? [], null);
-        $this->setIfExists('attachment_access_keys', $data ?? [], null);
+        $this->setIfExists('national_id_number', $data ?? [], null);
+        $this->setIfExists('full_name', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('middle_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('sex', $data ?? [], null);
+        $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('face_match', $data ?? [], null);
+        $this->setIfExists('liveness', $data ?? [], null);
+        $this->setIfExists('image_authenticity', $data ?? [], null);
     }
 
     /**
@@ -325,205 +353,341 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets originating_provider_id
+     * Gets national_id_number
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getOriginatingProviderId()
+    public function getNationalIdNumber()
     {
-        return $this->container['originating_provider_id'];
+        return $this->container['national_id_number'];
     }
 
     /**
-     * Sets originating_provider_id
+     * Sets national_id_number
      *
-     * @param string|null $originating_provider_id originating_provider_id
+     * @param \Trinsic\Api\Model\Match|null $national_id_number national_id_number
      *
      * @return self
      */
-    public function setOriginatingProviderId($originating_provider_id)
+    public function setNationalIdNumber($national_id_number)
     {
-        if (is_null($originating_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'originating_provider_id');
+        if (is_null($national_id_number)) {
+            array_push($this->openAPINullablesSetToNull, 'national_id_number');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('originating_provider_id', $nullablesSetToNull);
+            $index = array_search('national_id_number', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['originating_provider_id'] = $originating_provider_id;
+        $this->container['national_id_number'] = $national_id_number;
 
         return $this;
     }
 
     /**
-     * Gets originating_sub_provider_id
+     * Gets full_name
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getOriginatingSubProviderId()
+    public function getFullName()
     {
-        return $this->container['originating_sub_provider_id'];
+        return $this->container['full_name'];
     }
 
     /**
-     * Sets originating_sub_provider_id
+     * Sets full_name
      *
-     * @param string|null $originating_sub_provider_id originating_sub_provider_id
+     * @param \Trinsic\Api\Model\Match|null $full_name full_name
      *
      * @return self
      */
-    public function setOriginatingSubProviderId($originating_sub_provider_id)
+    public function setFullName($full_name)
     {
-        if (is_null($originating_sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'originating_sub_provider_id');
+        if (is_null($full_name)) {
+            array_push($this->openAPINullablesSetToNull, 'full_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('originating_sub_provider_id', $nullablesSetToNull);
+            $index = array_search('full_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['originating_sub_provider_id'] = $originating_sub_provider_id;
+        $this->container['full_name'] = $full_name;
 
         return $this;
     }
 
     /**
-     * Gets person
+     * Gets given_name
      *
-     * @return \Trinsic\Api\Model\PersonData|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getPerson()
+    public function getGivenName()
     {
-        return $this->container['person'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets person
+     * Sets given_name
      *
-     * @param \Trinsic\Api\Model\PersonData|null $person person
+     * @param \Trinsic\Api\Model\Match|null $given_name given_name
      *
      * @return self
      */
-    public function setPerson($person)
+    public function setGivenName($given_name)
     {
-        if (is_null($person)) {
-            array_push($this->openAPINullablesSetToNull, 'person');
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('person', $nullablesSetToNull);
+            $index = array_search('given_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['person'] = $person;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets document
+     * Gets middle_name
      *
-     * @return \Trinsic\Api\Model\DocumentData|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getDocument()
+    public function getMiddleName()
     {
-        return $this->container['document'];
+        return $this->container['middle_name'];
     }
 
     /**
-     * Sets document
+     * Sets middle_name
      *
-     * @param \Trinsic\Api\Model\DocumentData|null $document document
+     * @param \Trinsic\Api\Model\Match|null $middle_name middle_name
      *
      * @return self
      */
-    public function setDocument($document)
+    public function setMiddleName($middle_name)
     {
-        if (is_null($document)) {
-            array_push($this->openAPINullablesSetToNull, 'document');
+        if (is_null($middle_name)) {
+            array_push($this->openAPINullablesSetToNull, 'middle_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('document', $nullablesSetToNull);
+            $index = array_search('middle_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['document'] = $document;
+        $this->container['middle_name'] = $middle_name;
 
         return $this;
     }
 
     /**
-     * Gets match
+     * Gets family_name
      *
-     * @return \Trinsic\Api\Model\MatchData|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getMatch()
+    public function getFamilyName()
     {
-        return $this->container['match'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets match
+     * Sets family_name
      *
-     * @param \Trinsic\Api\Model\MatchData|null $match match
+     * @param \Trinsic\Api\Model\Match|null $family_name family_name
      *
      * @return self
      */
-    public function setMatch($match)
+    public function setFamilyName($family_name)
     {
-        if (is_null($match)) {
-            array_push($this->openAPINullablesSetToNull, 'match');
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('match', $nullablesSetToNull);
+            $index = array_search('family_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['match'] = $match;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets attachment_access_keys
+     * Gets sex
      *
-     * @return \Trinsic\Api\Model\AttachmentAccessKeys|null
+     * @return \Trinsic\Api\Model\Match|null
      */
-    public function getAttachmentAccessKeys()
+    public function getSex()
     {
-        return $this->container['attachment_access_keys'];
+        return $this->container['sex'];
     }
 
     /**
-     * Sets attachment_access_keys
+     * Sets sex
      *
-     * @param \Trinsic\Api\Model\AttachmentAccessKeys|null $attachment_access_keys attachment_access_keys
+     * @param \Trinsic\Api\Model\Match|null $sex sex
      *
      * @return self
      */
-    public function setAttachmentAccessKeys($attachment_access_keys)
+    public function setSex($sex)
     {
-        if (is_null($attachment_access_keys)) {
-            array_push($this->openAPINullablesSetToNull, 'attachment_access_keys');
+        if (is_null($sex)) {
+            array_push($this->openAPINullablesSetToNull, 'sex');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attachment_access_keys', $nullablesSetToNull);
+            $index = array_search('sex', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['attachment_access_keys'] = $attachment_access_keys;
+        $this->container['sex'] = $sex;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_birth
+     *
+     * @return \Trinsic\Api\Model\Match|null
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['date_of_birth'];
+    }
+
+    /**
+     * Sets date_of_birth
+     *
+     * @param \Trinsic\Api\Model\Match|null $date_of_birth date_of_birth
+     *
+     * @return self
+     */
+    public function setDateOfBirth($date_of_birth)
+    {
+        if (is_null($date_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['date_of_birth'] = $date_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets face_match
+     *
+     * @return \Trinsic\Api\Model\Match|null
+     */
+    public function getFaceMatch()
+    {
+        return $this->container['face_match'];
+    }
+
+    /**
+     * Sets face_match
+     *
+     * @param \Trinsic\Api\Model\Match|null $face_match face_match
+     *
+     * @return self
+     */
+    public function setFaceMatch($face_match)
+    {
+        if (is_null($face_match)) {
+            array_push($this->openAPINullablesSetToNull, 'face_match');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('face_match', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['face_match'] = $face_match;
+
+        return $this;
+    }
+
+    /**
+     * Gets liveness
+     *
+     * @return \Trinsic\Api\Model\Match|null
+     */
+    public function getLiveness()
+    {
+        return $this->container['liveness'];
+    }
+
+    /**
+     * Sets liveness
+     *
+     * @param \Trinsic\Api\Model\Match|null $liveness liveness
+     *
+     * @return self
+     */
+    public function setLiveness($liveness)
+    {
+        if (is_null($liveness)) {
+            array_push($this->openAPINullablesSetToNull, 'liveness');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('liveness', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['liveness'] = $liveness;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_authenticity
+     *
+     * @return \Trinsic\Api\Model\Match|null
+     */
+    public function getImageAuthenticity()
+    {
+        return $this->container['image_authenticity'];
+    }
+
+    /**
+     * Sets image_authenticity
+     *
+     * @param \Trinsic\Api\Model\Match|null $image_authenticity image_authenticity
+     *
+     * @return self
+     */
+    public function setImageAuthenticity($image_authenticity)
+    {
+        if (is_null($image_authenticity)) {
+            array_push($this->openAPINullablesSetToNull, 'image_authenticity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('image_authenticity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['image_authenticity'] = $image_authenticity;
 
         return $this;
     }

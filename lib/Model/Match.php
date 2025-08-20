@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityData
+ * Match
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * IdentityData Class Doc Comment
+ * Match Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
+class Match implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'IdentityData';
+    protected static $openAPIModelName = 'Match';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'originating_provider_id' => 'string',
-        'originating_sub_provider_id' => 'string',
-        'person' => '\Trinsic\Api\Model\PersonData',
-        'document' => '\Trinsic\Api\Model\DocumentData',
-        'match' => '\Trinsic\Api\Model\MatchData',
-        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys'
+        'probability_value' => 'float',
+        'boolean_value' => 'bool'
     ];
 
     /**
@@ -73,12 +69,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'originating_provider_id' => null,
-        'originating_sub_provider_id' => null,
-        'person' => null,
-        'document' => null,
-        'match' => null,
-        'attachment_access_keys' => null
+        'probability_value' => 'double',
+        'boolean_value' => null
     ];
 
     /**
@@ -87,12 +79,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'originating_provider_id' => true,
-        'originating_sub_provider_id' => true,
-        'person' => true,
-        'document' => true,
-        'match' => true,
-        'attachment_access_keys' => true
+        'probability_value' => true,
+        'boolean_value' => true
     ];
 
     /**
@@ -181,12 +169,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'originating_provider_id' => 'originatingProviderId',
-        'originating_sub_provider_id' => 'originatingSubProviderId',
-        'person' => 'person',
-        'document' => 'document',
-        'match' => 'match',
-        'attachment_access_keys' => 'attachmentAccessKeys'
+        'probability_value' => 'probabilityValue',
+        'boolean_value' => 'booleanValue'
     ];
 
     /**
@@ -195,12 +179,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'originating_provider_id' => 'setOriginatingProviderId',
-        'originating_sub_provider_id' => 'setOriginatingSubProviderId',
-        'person' => 'setPerson',
-        'document' => 'setDocument',
-        'match' => 'setMatch',
-        'attachment_access_keys' => 'setAttachmentAccessKeys'
+        'probability_value' => 'setProbabilityValue',
+        'boolean_value' => 'setBooleanValue'
     ];
 
     /**
@@ -209,12 +189,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'originating_provider_id' => 'getOriginatingProviderId',
-        'originating_sub_provider_id' => 'getOriginatingSubProviderId',
-        'person' => 'getPerson',
-        'document' => 'getDocument',
-        'match' => 'getMatch',
-        'attachment_access_keys' => 'getAttachmentAccessKeys'
+        'probability_value' => 'getProbabilityValue',
+        'boolean_value' => 'getBooleanValue'
     ];
 
     /**
@@ -274,12 +250,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('originating_provider_id', $data ?? [], null);
-        $this->setIfExists('originating_sub_provider_id', $data ?? [], null);
-        $this->setIfExists('person', $data ?? [], null);
-        $this->setIfExists('document', $data ?? [], null);
-        $this->setIfExists('match', $data ?? [], null);
-        $this->setIfExists('attachment_access_keys', $data ?? [], null);
+        $this->setIfExists('probability_value', $data ?? [], null);
+        $this->setIfExists('boolean_value', $data ?? [], null);
     }
 
     /**
@@ -325,205 +297,69 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets originating_provider_id
+     * Gets probability_value
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getOriginatingProviderId()
+    public function getProbabilityValue()
     {
-        return $this->container['originating_provider_id'];
+        return $this->container['probability_value'];
     }
 
     /**
-     * Sets originating_provider_id
+     * Sets probability_value
      *
-     * @param string|null $originating_provider_id originating_provider_id
+     * @param float|null $probability_value probability_value
      *
      * @return self
      */
-    public function setOriginatingProviderId($originating_provider_id)
+    public function setProbabilityValue($probability_value)
     {
-        if (is_null($originating_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'originating_provider_id');
+        if (is_null($probability_value)) {
+            array_push($this->openAPINullablesSetToNull, 'probability_value');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('originating_provider_id', $nullablesSetToNull);
+            $index = array_search('probability_value', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['originating_provider_id'] = $originating_provider_id;
+        $this->container['probability_value'] = $probability_value;
 
         return $this;
     }
 
     /**
-     * Gets originating_sub_provider_id
+     * Gets boolean_value
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getOriginatingSubProviderId()
+    public function getBooleanValue()
     {
-        return $this->container['originating_sub_provider_id'];
+        return $this->container['boolean_value'];
     }
 
     /**
-     * Sets originating_sub_provider_id
+     * Sets boolean_value
      *
-     * @param string|null $originating_sub_provider_id originating_sub_provider_id
+     * @param bool|null $boolean_value boolean_value
      *
      * @return self
      */
-    public function setOriginatingSubProviderId($originating_sub_provider_id)
+    public function setBooleanValue($boolean_value)
     {
-        if (is_null($originating_sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'originating_sub_provider_id');
+        if (is_null($boolean_value)) {
+            array_push($this->openAPINullablesSetToNull, 'boolean_value');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('originating_sub_provider_id', $nullablesSetToNull);
+            $index = array_search('boolean_value', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['originating_sub_provider_id'] = $originating_sub_provider_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets person
-     *
-     * @return \Trinsic\Api\Model\PersonData|null
-     */
-    public function getPerson()
-    {
-        return $this->container['person'];
-    }
-
-    /**
-     * Sets person
-     *
-     * @param \Trinsic\Api\Model\PersonData|null $person person
-     *
-     * @return self
-     */
-    public function setPerson($person)
-    {
-        if (is_null($person)) {
-            array_push($this->openAPINullablesSetToNull, 'person');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('person', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['person'] = $person;
-
-        return $this;
-    }
-
-    /**
-     * Gets document
-     *
-     * @return \Trinsic\Api\Model\DocumentData|null
-     */
-    public function getDocument()
-    {
-        return $this->container['document'];
-    }
-
-    /**
-     * Sets document
-     *
-     * @param \Trinsic\Api\Model\DocumentData|null $document document
-     *
-     * @return self
-     */
-    public function setDocument($document)
-    {
-        if (is_null($document)) {
-            array_push($this->openAPINullablesSetToNull, 'document');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('document', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['document'] = $document;
-
-        return $this;
-    }
-
-    /**
-     * Gets match
-     *
-     * @return \Trinsic\Api\Model\MatchData|null
-     */
-    public function getMatch()
-    {
-        return $this->container['match'];
-    }
-
-    /**
-     * Sets match
-     *
-     * @param \Trinsic\Api\Model\MatchData|null $match match
-     *
-     * @return self
-     */
-    public function setMatch($match)
-    {
-        if (is_null($match)) {
-            array_push($this->openAPINullablesSetToNull, 'match');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('match', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['match'] = $match;
-
-        return $this;
-    }
-
-    /**
-     * Gets attachment_access_keys
-     *
-     * @return \Trinsic\Api\Model\AttachmentAccessKeys|null
-     */
-    public function getAttachmentAccessKeys()
-    {
-        return $this->container['attachment_access_keys'];
-    }
-
-    /**
-     * Sets attachment_access_keys
-     *
-     * @param \Trinsic\Api\Model\AttachmentAccessKeys|null $attachment_access_keys attachment_access_keys
-     *
-     * @return self
-     */
-    public function setAttachmentAccessKeys($attachment_access_keys)
-    {
-        if (is_null($attachment_access_keys)) {
-            array_push($this->openAPINullablesSetToNull, 'attachment_access_keys');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attachment_access_keys', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['attachment_access_keys'] = $attachment_access_keys;
+        $this->container['boolean_value'] = $boolean_value;
 
         return $this;
     }

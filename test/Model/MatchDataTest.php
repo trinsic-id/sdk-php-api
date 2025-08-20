@@ -1,6 +1,6 @@
 <?php
 /**
- * IdentityDataTest
+ * MatchDataTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * IdentityDataTest Class Doc Comment
+ * MatchDataTest Class Doc Comment
  *
  * @category    Class
- * @description IdentityData
+ * @description MatchData
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class IdentityDataTest extends TestCase
+class MatchDataTest extends TestCase
 {
 
     /**
@@ -71,63 +71,99 @@ class IdentityDataTest extends TestCase
     }
 
     /**
-     * Test "IdentityData"
+     * Test "MatchData"
      */
-    public function testIdentityData()
+    public function testMatchData()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "originating_provider_id"
+     * Test attribute "national_id_number"
      */
-    public function testPropertyOriginatingProviderId()
+    public function testPropertyNationalIdNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "originating_sub_provider_id"
+     * Test attribute "full_name"
      */
-    public function testPropertyOriginatingSubProviderId()
+    public function testPropertyFullName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "person"
+     * Test attribute "given_name"
      */
-    public function testPropertyPerson()
+    public function testPropertyGivenName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document"
+     * Test attribute "middle_name"
      */
-    public function testPropertyDocument()
+    public function testPropertyMiddleName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "match"
+     * Test attribute "family_name"
      */
-    public function testPropertyMatch()
+    public function testPropertyFamilyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "attachment_access_keys"
+     * Test attribute "sex"
      */
-    public function testPropertyAttachmentAccessKeys()
+    public function testPropertySex()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_of_birth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "face_match"
+     */
+    public function testPropertyFaceMatch()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "liveness"
+     */
+    public function testPropertyLiveness()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "image_authenticity"
+     */
+    public function testPropertyImageAuthenticity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

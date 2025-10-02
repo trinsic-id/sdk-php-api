@@ -72,6 +72,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'bool',
         'has_trinsic_interface' => 'bool',
         'supports_advanced_provider_sessions' => 'bool',
+        'supports_direct_provider_sessions' => 'bool',
         'available_fields' => '\Trinsic\Api\Model\ContractField[]',
         'sub_providers' => '\Trinsic\Api\Model\SubProviderMetadata[]',
         'health' => '\Trinsic\Api\Model\ProviderHealth'
@@ -100,6 +101,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => null,
         'has_trinsic_interface' => null,
         'supports_advanced_provider_sessions' => null,
+        'supports_direct_provider_sessions' => null,
         'available_fields' => null,
         'sub_providers' => null,
         'health' => null
@@ -126,6 +128,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => false,
         'has_trinsic_interface' => false,
         'supports_advanced_provider_sessions' => false,
+        'supports_direct_provider_sessions' => false,
         'available_fields' => true,
         'sub_providers' => true,
         'health' => false
@@ -232,6 +235,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'requiresInput',
         'has_trinsic_interface' => 'hasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'supportsAdvancedProviderSessions',
+        'supports_direct_provider_sessions' => 'supportsDirectProviderSessions',
         'available_fields' => 'availableFields',
         'sub_providers' => 'subProviders',
         'health' => 'health'
@@ -258,6 +262,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'setRequiresInput',
         'has_trinsic_interface' => 'setHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'setSupportsAdvancedProviderSessions',
+        'supports_direct_provider_sessions' => 'setSupportsDirectProviderSessions',
         'available_fields' => 'setAvailableFields',
         'sub_providers' => 'setSubProviders',
         'health' => 'setHealth'
@@ -284,6 +289,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'requires_input' => 'getRequiresInput',
         'has_trinsic_interface' => 'getHasTrinsicInterface',
         'supports_advanced_provider_sessions' => 'getSupportsAdvancedProviderSessions',
+        'supports_direct_provider_sessions' => 'getSupportsDirectProviderSessions',
         'available_fields' => 'getAvailableFields',
         'sub_providers' => 'getSubProviders',
         'health' => 'getHealth'
@@ -361,6 +367,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('requires_input', $data ?? [], null);
         $this->setIfExists('has_trinsic_interface', $data ?? [], null);
         $this->setIfExists('supports_advanced_provider_sessions', $data ?? [], null);
+        $this->setIfExists('supports_direct_provider_sessions', $data ?? [], null);
         $this->setIfExists('available_fields', $data ?? [], null);
         $this->setIfExists('sub_providers', $data ?? [], null);
         $this->setIfExists('health', $data ?? [], null);
@@ -437,6 +444,9 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['supports_advanced_provider_sessions'] === null) {
             $invalidProperties[] = "'supports_advanced_provider_sessions' can't be null";
+        }
+        if ($this->container['supports_direct_provider_sessions'] === null) {
+            $invalidProperties[] = "'supports_direct_provider_sessions' can't be null";
         }
         if ($this->container['health'] === null) {
             $invalidProperties[] = "'health' can't be null";
@@ -687,7 +697,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets launch_method
      *
-     * @param \Trinsic\Api\Model\IntegrationLaunchMethod $launch_method Relevant only to Advanced Provider Sessions.              The `LaunchMethod` which must be supported to launch the Provider Session in Advanced Provider Sessions.
+     * @param \Trinsic\Api\Model\IntegrationLaunchMethod $launch_method Relevant only to Direct Provider Sessions.              The `LaunchMethod` which must be supported to launch the Provider Session in Direct Provider Sessions.
      *
      * @return self
      */
@@ -714,7 +724,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets collection_method
      *
-     * @param \Trinsic\Api\Model\ResultCollectionMethod $collection_method Relevant only to Advanced Provider Sessions.              The `CollectionMethod` which must be supported to launch the Provider Session in Advanced Provider Sessions.
+     * @param \Trinsic\Api\Model\ResultCollectionMethod $collection_method Relevant only to Direct Provider Sessions.              The `CollectionMethod` which must be supported to launch the Provider Session in Direct Provider Sessions.
      *
      * @return self
      */
@@ -768,7 +778,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets has_refreshable_content
      *
-     * @param bool $has_refreshable_content Relevant only to Advanced Provider Sessions.              Whether the Provider requires the `RefreshStepContent` capability.              For example, Samsung Wallet's deep links expire every 30 seconds, and must be refreshed periodically for a resilient user flow.
+     * @param bool $has_refreshable_content Relevant only to Direct Provider Sessions.              Whether the Provider requires the `RefreshStepContent` capability.              For example, Samsung Wallet's deep links expire every 30 seconds, and must be refreshed periodically for a resilient user flow.
      *
      * @return self
      */
@@ -795,7 +805,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets requires_input
      *
-     * @param bool $requires_input Relevant to Hosted Provider Sessions and Advanced Provider Sessions.              If `true`, this Provider requires provider-specific input on Session creation. If this input is not provided, Trinsic's Hosted UI will be invoked to collect the input from the user.
+     * @param bool $requires_input Relevant to Hosted Provider Sessions and Direct Provider Sessions.              If `true`, this Provider requires provider-specific input on Session creation. If this input is not provided, Trinsic's Hosted UI will be invoked to collect the input from the user.
      *
      * @return self
      */
@@ -840,6 +850,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets supports_advanced_provider_sessions
      *
      * @return bool
+     * @deprecated
      */
     public function getSupportsAdvancedProviderSessions()
     {
@@ -849,9 +860,10 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supports_advanced_provider_sessions
      *
-     * @param bool $supports_advanced_provider_sessions Whether this Provider can be fully whitelabeled/OEMed through the Advanced Provider Sessions API.              If `false`, the Provider may still be launched through Advanced Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
+     * @param bool $supports_advanced_provider_sessions Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If `false`, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
      *
      * @return self
+     * @deprecated
      */
     public function setSupportsAdvancedProviderSessions($supports_advanced_provider_sessions)
     {
@@ -859,6 +871,33 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable supports_advanced_provider_sessions cannot be null');
         }
         $this->container['supports_advanced_provider_sessions'] = $supports_advanced_provider_sessions;
+
+        return $this;
+    }
+
+    /**
+     * Gets supports_direct_provider_sessions
+     *
+     * @return bool
+     */
+    public function getSupportsDirectProviderSessions()
+    {
+        return $this->container['supports_direct_provider_sessions'];
+    }
+
+    /**
+     * Sets supports_direct_provider_sessions
+     *
+     * @param bool $supports_direct_provider_sessions Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If `false`, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function.
+     *
+     * @return self
+     */
+    public function setSupportsDirectProviderSessions($supports_direct_provider_sessions)
+    {
+        if (is_null($supports_direct_provider_sessions)) {
+            throw new \InvalidArgumentException('non-nullable supports_direct_provider_sessions cannot be null');
+        }
+        $this->container['supports_direct_provider_sessions'] = $supports_direct_provider_sessions;
 
         return $this;
     }

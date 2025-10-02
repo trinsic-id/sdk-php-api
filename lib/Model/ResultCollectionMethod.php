@@ -46,6 +46,8 @@ class ResultCollectionMethod
 
     public const CAPTURE_REDIRECT = 'CaptureRedirect';
 
+    public const SUBMIT_NATIVE_CHALLENGE_RESPONSE = 'SubmitNativeChallengeResponse';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -54,7 +56,8 @@ class ResultCollectionMethod
     {
         return [
             self::POLL_RESULT,
-            self::CAPTURE_REDIRECT
+            self::CAPTURE_REDIRECT,
+            self::SUBMIT_NATIVE_CHALLENGE_RESPONSE
         ];
     }
 }

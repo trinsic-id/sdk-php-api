@@ -80,6 +80,15 @@ class CreateWidgetSessionRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "verification_profile_id"
+     */
+    public function testPropertyVerificationProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "redirect_url"
      */
     public function testPropertyRedirectUrl()

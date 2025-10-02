@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateAdvancedProviderSessionRequest
+ * MdlCertificateData
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateAdvancedProviderSessionRequest Class Doc Comment
+ * MdlCertificateData Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class MdlCertificateData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateAdvancedProviderSessionRequest';
+    protected static $openAPIModelName = 'MdlCertificateData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'provider' => 'string',
-        'redirect_url' => 'string',
-        'capabilities' => '\Trinsic\Api\Model\IntegrationCapability[]',
-        'fallback_to_hosted_ui' => 'bool',
-        'provider_input' => '\Trinsic\Api\Model\ProviderInput'
+        'serial_number' => 'string',
+        'common_name' => 'string',
+        'state_or_province_name' => 'string',
+        'not_before' => '\DateTime',
+        'not_after' => '\DateTime'
     ];
 
     /**
@@ -72,11 +72,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'provider' => null,
-        'redirect_url' => null,
-        'capabilities' => null,
-        'fallback_to_hosted_ui' => null,
-        'provider_input' => null
+        'serial_number' => null,
+        'common_name' => null,
+        'state_or_province_name' => null,
+        'not_before' => 'date-time',
+        'not_after' => 'date-time'
     ];
 
     /**
@@ -85,11 +85,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'provider' => false,
-        'redirect_url' => true,
-        'capabilities' => false,
-        'fallback_to_hosted_ui' => true,
-        'provider_input' => true
+        'serial_number' => false,
+        'common_name' => false,
+        'state_or_province_name' => false,
+        'not_before' => false,
+        'not_after' => false
     ];
 
     /**
@@ -178,11 +178,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'provider' => 'provider',
-        'redirect_url' => 'redirectUrl',
-        'capabilities' => 'capabilities',
-        'fallback_to_hosted_ui' => 'fallbackToHostedUI',
-        'provider_input' => 'providerInput'
+        'serial_number' => 'serialNumber',
+        'common_name' => 'commonName',
+        'state_or_province_name' => 'stateOrProvinceName',
+        'not_before' => 'notBefore',
+        'not_after' => 'notAfter'
     ];
 
     /**
@@ -191,11 +191,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'provider' => 'setProvider',
-        'redirect_url' => 'setRedirectUrl',
-        'capabilities' => 'setCapabilities',
-        'fallback_to_hosted_ui' => 'setFallbackToHostedUi',
-        'provider_input' => 'setProviderInput'
+        'serial_number' => 'setSerialNumber',
+        'common_name' => 'setCommonName',
+        'state_or_province_name' => 'setStateOrProvinceName',
+        'not_before' => 'setNotBefore',
+        'not_after' => 'setNotAfter'
     ];
 
     /**
@@ -204,11 +204,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'provider' => 'getProvider',
-        'redirect_url' => 'getRedirectUrl',
-        'capabilities' => 'getCapabilities',
-        'fallback_to_hosted_ui' => 'getFallbackToHostedUi',
-        'provider_input' => 'getProviderInput'
+        'serial_number' => 'getSerialNumber',
+        'common_name' => 'getCommonName',
+        'state_or_province_name' => 'getStateOrProvinceName',
+        'not_before' => 'getNotBefore',
+        'not_after' => 'getNotAfter'
     ];
 
     /**
@@ -268,11 +268,11 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('provider', $data ?? [], null);
-        $this->setIfExists('redirect_url', $data ?? [], null);
-        $this->setIfExists('capabilities', $data ?? [], null);
-        $this->setIfExists('fallback_to_hosted_ui', $data ?? [], null);
-        $this->setIfExists('provider_input', $data ?? [], null);
+        $this->setIfExists('serial_number', $data ?? [], null);
+        $this->setIfExists('common_name', $data ?? [], null);
+        $this->setIfExists('state_or_province_name', $data ?? [], null);
+        $this->setIfExists('not_before', $data ?? [], null);
+        $this->setIfExists('not_after', $data ?? [], null);
     }
 
     /**
@@ -302,20 +302,21 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['provider'] === null) {
-            $invalidProperties[] = "'provider' can't be null";
+        if ($this->container['serial_number'] === null) {
+            $invalidProperties[] = "'serial_number' can't be null";
         }
-        if ((mb_strlen($this->container['provider']) < 1)) {
-            $invalidProperties[] = "invalid value for 'provider', the character length must be bigger than or equal to 1.";
+        if ($this->container['common_name'] === null) {
+            $invalidProperties[] = "'common_name' can't be null";
         }
-
-        if ($this->container['capabilities'] === null) {
-            $invalidProperties[] = "'capabilities' can't be null";
+        if ($this->container['state_or_province_name'] === null) {
+            $invalidProperties[] = "'state_or_province_name' can't be null";
         }
-        if ((count($this->container['capabilities']) < 1)) {
-            $invalidProperties[] = "invalid value for 'capabilities', number of items must be greater than or equal to 1.";
+        if ($this->container['not_before'] === null) {
+            $invalidProperties[] = "'not_before' can't be null";
         }
-
+        if ($this->container['not_after'] === null) {
+            $invalidProperties[] = "'not_after' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -332,167 +333,136 @@ class CreateAdvancedProviderSessionRequest implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets provider
+     * Gets serial_number
      *
      * @return string
      */
-    public function getProvider()
+    public function getSerialNumber()
     {
-        return $this->container['provider'];
+        return $this->container['serial_number'];
     }
 
     /**
-     * Sets provider
+     * Sets serial_number
      *
-     * @param string $provider The ID of the provider to launch
+     * @param string $serial_number The serial number of the certificate
      *
      * @return self
      */
-    public function setProvider($provider)
+    public function setSerialNumber($serial_number)
     {
-        if (is_null($provider)) {
-            throw new \InvalidArgumentException('non-nullable provider cannot be null');
+        if (is_null($serial_number)) {
+            throw new \InvalidArgumentException('non-nullable serial_number cannot be null');
         }
-
-        if ((mb_strlen($provider) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling CreateAdvancedProviderSessionRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['provider'] = $provider;
+        $this->container['serial_number'] = $serial_number;
 
         return $this;
     }
 
     /**
-     * Gets redirect_url
+     * Gets common_name
      *
-     * @return string|null
+     * @return string
      */
-    public function getRedirectUrl()
+    public function getCommonName()
     {
-        return $this->container['redirect_url'];
+        return $this->container['common_name'];
     }
 
     /**
-     * Sets redirect_url
+     * Sets common_name
      *
-     * @param string|null $redirect_url The Redirect URL to which the user should be sent after the session is complete.              This field is required for providers which employ a redirect-based flow.
+     * @param string $common_name The common name (CN) of the certificate
      *
      * @return self
      */
-    public function setRedirectUrl($redirect_url)
+    public function setCommonName($common_name)
     {
-        if (is_null($redirect_url)) {
-            array_push($this->openAPINullablesSetToNull, 'redirect_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redirect_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($common_name)) {
+            throw new \InvalidArgumentException('non-nullable common_name cannot be null');
         }
-        $this->container['redirect_url'] = $redirect_url;
+        $this->container['common_name'] = $common_name;
 
         return $this;
     }
 
     /**
-     * Gets capabilities
+     * Gets state_or_province_name
      *
-     * @return \Trinsic\Api\Model\IntegrationCapability[]
+     * @return string
      */
-    public function getCapabilities()
+    public function getStateOrProvinceName()
     {
-        return $this->container['capabilities'];
+        return $this->container['state_or_province_name'];
     }
 
     /**
-     * Sets capabilities
+     * Sets state_or_province_name
      *
-     * @param \Trinsic\Api\Model\IntegrationCapability[] $capabilities The list of capabilities your integration supports. Capabilities are the core of Trinsic's whitelabel-with-optional-fallback offering.              Most capabilities align with either an `IntegrationLaunchMethod` or an `IntegrationCollectionMethod`. The exception being refresh content to support updating the content of the launch method.              For example, to support a basic redirect-based flow, you must include the `LaunchRedirect` and `CaptureRedirect` capabilities. To support a mobile deeplink / polling flow, you must include the `DeeplinkToMobile` and `PollForResults` capabilities.              If `FallbackToHostedUi` is `true`, Trinsic will automatically fall back to a Trinsic-hosted UI to cover any gaps in your integration's capabilities. If `FallbackToHostedUi` is `false`, gaps in your integration's capabilities will result in an error during Session creation.              Read more on how to integrate at <a href=\"https://docs.trinsic.id/docs/advanced-provider-sessions\">the guide on Advanced Provider Sessions</a>
+     * @param string $state_or_province_name The state or province name (ST) of the certificate.              May be an empty string for certificates which are not state-specific (e.g., Google Wallet's ID Pass certificates).
      *
      * @return self
      */
-    public function setCapabilities($capabilities)
+    public function setStateOrProvinceName($state_or_province_name)
     {
-        if (is_null($capabilities)) {
-            throw new \InvalidArgumentException('non-nullable capabilities cannot be null');
+        if (is_null($state_or_province_name)) {
+            throw new \InvalidArgumentException('non-nullable state_or_province_name cannot be null');
         }
-
-
-        if ((count($capabilities) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $capabilities when calling CreateAdvancedProviderSessionRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['capabilities'] = $capabilities;
+        $this->container['state_or_province_name'] = $state_or_province_name;
 
         return $this;
     }
 
     /**
-     * Gets fallback_to_hosted_ui
+     * Gets not_before
      *
-     * @return bool|null
+     * @return \DateTime
      */
-    public function getFallbackToHostedUi()
+    public function getNotBefore()
     {
-        return $this->container['fallback_to_hosted_ui'];
+        return $this->container['not_before'];
     }
 
     /**
-     * Sets fallback_to_hosted_ui
+     * Sets not_before
      *
-     * @param bool|null $fallback_to_hosted_ui Whether the session should fall back to a Trinsic-hosted UI in certain instances.              Specifically, fallback will occur if any of the following are true: - You attempted to launch a provider which requires a capability you did not express support for     - In this case, Trinsic's hosted UI will perform the necessary capability - You attempted to launch a provider which requires input, and the input was either not provided or incomplete     - In this case, Trinsic's hosted UI will collect the necessary input from the user              If fallback occurs, the session's NextStep will always be LaunchBrowser, and the CollectionMethod will always be CaptureRedirect.              If this field is set to `true`, you must also: 1. Set the `RedirectUrl` field to a non-empty value 2. Include the `LaunchBrowser` and `CaptureRedirect` capabilities in the `Capabilities` field
+     * @param \DateTime $not_before The date before which this certificate is not valid.
      *
      * @return self
      */
-    public function setFallbackToHostedUi($fallback_to_hosted_ui)
+    public function setNotBefore($not_before)
     {
-        if (is_null($fallback_to_hosted_ui)) {
-            array_push($this->openAPINullablesSetToNull, 'fallback_to_hosted_ui');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fallback_to_hosted_ui', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($not_before)) {
+            throw new \InvalidArgumentException('non-nullable not_before cannot be null');
         }
-        $this->container['fallback_to_hosted_ui'] = $fallback_to_hosted_ui;
+        $this->container['not_before'] = $not_before;
 
         return $this;
     }
 
     /**
-     * Gets provider_input
+     * Gets not_after
      *
-     * @return \Trinsic\Api\Model\ProviderInput|null
+     * @return \DateTime
      */
-    public function getProviderInput()
+    public function getNotAfter()
     {
-        return $this->container['provider_input'];
+        return $this->container['not_after'];
     }
 
     /**
-     * Sets provider_input
+     * Sets not_after
      *
-     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.
+     * @param \DateTime $not_after The date after which this certificate is not valid.
      *
      * @return self
      */
-    public function setProviderInput($provider_input)
+    public function setNotAfter($not_after)
     {
-        if (is_null($provider_input)) {
-            array_push($this->openAPINullablesSetToNull, 'provider_input');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('provider_input', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($not_after)) {
+            throw new \InvalidArgumentException('non-nullable not_after cannot be null');
         }
-        $this->container['provider_input'] = $provider_input;
+        $this->container['not_after'] = $not_after;
 
         return $this;
     }

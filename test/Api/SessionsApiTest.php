@@ -84,12 +84,12 @@ class SessionsApiTest extends TestCase
     }
 
     /**
-     * Test case for createAdvancedProviderSession
+     * Test case for createDirectProviderSession
      *
-     * Create Advanced Provider Session.
+     * Create Direct Provider Session.
      *
      */
-    public function testCreateAdvancedProviderSession()
+    public function testCreateDirectProviderSession()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -174,6 +174,18 @@ class SessionsApiTest extends TestCase
      *
      */
     public function testRefreshStepContent()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for submitNativeChallengeResponse
+     *
+     * Submit Native Challenge Response.
+     *
+     */
+    public function testSubmitNativeChallengeResponse()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

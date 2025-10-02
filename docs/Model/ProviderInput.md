@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **mobile_id** | [**\Trinsic\Api\Model\MobileIdInput**](MobileIdInput.md) | Input for the &#x60;mobile-id&#x60; provider | [optional]
 **idin** | [**\Trinsic\Api\Model\IdinInput**](IdinInput.md) | Input for the &#x60;netherlands-idin&#x60; provider | [optional]
 **spid** | [**\Trinsic\Api\Model\SpidInput**](SpidInput.md) | Input for the &#x60;italy-spid&#x60; provider | [optional]
+**google_wallet** | [**\Trinsic\Api\Model\GoogleWalletInput**](GoogleWalletInput.md) | Input for the &#x60;google-wallet&#x60; provider | [optional]
+**apple_wallet** | [**\Trinsic\Api\Model\AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider | [optional]
 **trinsic_test_database_lookup** | [**\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider | [optional]
 **trinsic_test_sub_providers** | [**\Trinsic\Api\Model\TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider | [optional]
 

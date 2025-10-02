@@ -58,6 +58,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'provider' => 'string',
+        'verification_profile_id' => 'string',
         'redirect_url' => 'string',
         'provider_input' => '\Trinsic\Api\Model\ProviderInput'
     ];
@@ -71,6 +72,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'provider' => null,
+        'verification_profile_id' => 'uuid',
         'redirect_url' => null,
         'provider_input' => null
     ];
@@ -82,6 +84,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'provider' => false,
+        'verification_profile_id' => false,
         'redirect_url' => false,
         'provider_input' => true
     ];
@@ -173,6 +176,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'provider' => 'provider',
+        'verification_profile_id' => 'verificationProfileId',
         'redirect_url' => 'redirectUrl',
         'provider_input' => 'providerInput'
     ];
@@ -184,6 +188,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'provider' => 'setProvider',
+        'verification_profile_id' => 'setVerificationProfileId',
         'redirect_url' => 'setRedirectUrl',
         'provider_input' => 'setProviderInput'
     ];
@@ -195,6 +200,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'provider' => 'getProvider',
+        'verification_profile_id' => 'getVerificationProfileId',
         'redirect_url' => 'getRedirectUrl',
         'provider_input' => 'getProviderInput'
     ];
@@ -257,6 +263,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
     public function __construct(?array $data = null)
     {
         $this->setIfExists('provider', $data ?? [], null);
+        $this->setIfExists('verification_profile_id', $data ?? [], null);
         $this->setIfExists('redirect_url', $data ?? [], null);
         $this->setIfExists('provider_input', $data ?? [], null);
     }
@@ -295,6 +302,9 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'provider', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['verification_profile_id'] === null) {
+            $invalidProperties[] = "'verification_profile_id' can't be null";
+        }
         if ($this->container['redirect_url'] === null) {
             $invalidProperties[] = "'redirect_url' can't be null";
         }
@@ -350,6 +360,33 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Gets verification_profile_id
+     *
+     * @return string
+     */
+    public function getVerificationProfileId()
+    {
+        return $this->container['verification_profile_id'];
+    }
+
+    /**
+     * Sets verification_profile_id
+     *
+     * @param string $verification_profile_id The ID of the Verification Profile to use for this session.
+     *
+     * @return self
+     */
+    public function setVerificationProfileId($verification_profile_id)
+    {
+        if (is_null($verification_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable verification_profile_id cannot be null');
+        }
+        $this->container['verification_profile_id'] = $verification_profile_id;
+
+        return $this;
+    }
+
+    /**
      * Gets redirect_url
      *
      * @return string
@@ -395,7 +432,7 @@ class CreateHostedProviderSessionRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets provider_input
      *
-     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.   <b>Deprecated:</b> In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Advanced Session endpoint instead.
+     * @param \Trinsic\Api\Model\ProviderInput|null $provider_input Provider-specific input for those providers which require it.   <b>Deprecated:</b> In the future, Hosted Provider Sessions will not accept input on creation, and will instead always redirect the user to a hosted interface to collect input. If you need to collect input from the user yourself, please use the Create Direct Session endpoint instead.
      *
      * @return self
      * @deprecated

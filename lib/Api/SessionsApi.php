@@ -77,7 +77,7 @@ class SessionsApi
         'cancelSession' => [
             'application/json',
         ],
-        'createAdvancedProviderSession' => [
+        'createDirectProviderSession' => [
             'application/json',
             'text/json',
             'application/*+json',
@@ -107,6 +107,11 @@ class SessionsApi
             'application/json',
         ],
         'refreshStepContent' => [
+            'application/json',
+            'text/json',
+            'application/*+json',
+        ],
+        'submitNativeChallengeResponse' => [
             'application/json',
             'text/json',
             'application/*+json',
@@ -488,38 +493,38 @@ class SessionsApi
     }
 
     /**
-     * Operation createAdvancedProviderSession
+     * Operation createDirectProviderSession
      *
-     * Create Advanced Provider Session
+     * Create Direct Provider Session
      *
-     * @param  \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest|null $create_advanced_provider_session_request create_advanced_provider_session_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvancedProviderSession'] to see the possible values for this operation
+     * @param  \Trinsic\Api\Model\CreateDirectProviderSessionRequest|null $create_direct_provider_session_request create_direct_provider_session_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectProviderSession'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     * @return \Trinsic\Api\Model\CreateDirectProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function createAdvancedProviderSession($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
+    public function createDirectProviderSession($create_direct_provider_session_request = null, string $contentType = self::contentTypes['createDirectProviderSession'][0])
     {
-        list($response) = $this->createAdvancedProviderSessionWithHttpInfo($create_advanced_provider_session_request, $contentType);
+        list($response) = $this->createDirectProviderSessionWithHttpInfo($create_direct_provider_session_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation createAdvancedProviderSessionWithHttpInfo
+     * Operation createDirectProviderSessionWithHttpInfo
      *
-     * Create Advanced Provider Session
+     * Create Direct Provider Session
      *
-     * @param  \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest|null $create_advanced_provider_session_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvancedProviderSession'] to see the possible values for this operation
+     * @param  \Trinsic\Api\Model\CreateDirectProviderSessionRequest|null $create_direct_provider_session_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectProviderSession'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Trinsic\Api\Model\CreateDirectProviderSessionResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAdvancedProviderSessionWithHttpInfo($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
+    public function createDirectProviderSessionWithHttpInfo($create_direct_provider_session_request = null, string $contentType = self::contentTypes['createDirectProviderSession'][0])
     {
-        $request = $this->createAdvancedProviderSessionRequest($create_advanced_provider_session_request, $contentType);
+        $request = $this->createDirectProviderSessionRequest($create_direct_provider_session_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -547,7 +552,7 @@ class SessionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse',
+                        '\Trinsic\Api\Model\CreateDirectProviderSessionResponse',
                         $request,
                         $response,
                     );
@@ -593,7 +598,7 @@ class SessionsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse',
+                '\Trinsic\Api\Model\CreateDirectProviderSessionResponse',
                 $request,
                 $response,
             );
@@ -602,7 +607,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse',
+                        '\Trinsic\Api\Model\CreateDirectProviderSessionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -647,19 +652,19 @@ class SessionsApi
     }
 
     /**
-     * Operation createAdvancedProviderSessionAsync
+     * Operation createDirectProviderSessionAsync
      *
-     * Create Advanced Provider Session
+     * Create Direct Provider Session
      *
-     * @param  \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest|null $create_advanced_provider_session_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvancedProviderSession'] to see the possible values for this operation
+     * @param  \Trinsic\Api\Model\CreateDirectProviderSessionRequest|null $create_direct_provider_session_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectProviderSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvancedProviderSessionAsync($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
+    public function createDirectProviderSessionAsync($create_direct_provider_session_request = null, string $contentType = self::contentTypes['createDirectProviderSession'][0])
     {
-        return $this->createAdvancedProviderSessionAsyncWithHttpInfo($create_advanced_provider_session_request, $contentType)
+        return $this->createDirectProviderSessionAsyncWithHttpInfo($create_direct_provider_session_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -668,20 +673,20 @@ class SessionsApi
     }
 
     /**
-     * Operation createAdvancedProviderSessionAsyncWithHttpInfo
+     * Operation createDirectProviderSessionAsyncWithHttpInfo
      *
-     * Create Advanced Provider Session
+     * Create Direct Provider Session
      *
-     * @param  \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest|null $create_advanced_provider_session_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvancedProviderSession'] to see the possible values for this operation
+     * @param  \Trinsic\Api\Model\CreateDirectProviderSessionRequest|null $create_direct_provider_session_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectProviderSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvancedProviderSessionAsyncWithHttpInfo($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
+    public function createDirectProviderSessionAsyncWithHttpInfo($create_direct_provider_session_request = null, string $contentType = self::contentTypes['createDirectProviderSession'][0])
     {
-        $returnType = '\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse';
-        $request = $this->createAdvancedProviderSessionRequest($create_advanced_provider_session_request, $contentType);
+        $returnType = '\Trinsic\Api\Model\CreateDirectProviderSessionResponse';
+        $request = $this->createDirectProviderSessionRequest($create_direct_provider_session_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -720,20 +725,20 @@ class SessionsApi
     }
 
     /**
-     * Create request for operation 'createAdvancedProviderSession'
+     * Create request for operation 'createDirectProviderSession'
      *
-     * @param  \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest|null $create_advanced_provider_session_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvancedProviderSession'] to see the possible values for this operation
+     * @param  \Trinsic\Api\Model\CreateDirectProviderSessionRequest|null $create_direct_provider_session_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDirectProviderSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAdvancedProviderSessionRequest($create_advanced_provider_session_request = null, string $contentType = self::contentTypes['createAdvancedProviderSession'][0])
+    public function createDirectProviderSessionRequest($create_direct_provider_session_request = null, string $contentType = self::contentTypes['createDirectProviderSession'][0])
     {
 
 
 
-        $resourcePath = '/api/v1/sessions/provider/advanced';
+        $resourcePath = '/api/v1/sessions/provider/direct';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -751,12 +756,12 @@ class SessionsApi
         );
 
         // for model (json/xml)
-        if (isset($create_advanced_provider_session_request)) {
+        if (isset($create_direct_provider_session_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_advanced_provider_session_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_direct_provider_session_request));
             } else {
-                $httpBody = $create_advanced_provider_session_request;
+                $httpBody = $create_direct_provider_session_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2124,6 +2129,7 @@ class SessionsApi
      *
      * List Sessions
      *
+     * @param  string $verification_profile_id verification_profile_id (required)
      * @param  \TrinsicApiModelSessionOrdering|null $order_by The field by which sessions should be ordered (optional)
      * @param  \TrinsicApiModelOrderDirection|null $order_direction order_direction (optional)
      * @param  int|null $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
@@ -2134,9 +2140,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function listSessions($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
+    public function listSessions($verification_profile_id, $order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
-        list($response) = $this->listSessionsWithHttpInfo($order_by, $order_direction, $page_size, $page, $contentType);
+        list($response) = $this->listSessionsWithHttpInfo($verification_profile_id, $order_by, $order_direction, $page_size, $page, $contentType);
         return $response;
     }
 
@@ -2145,6 +2151,7 @@ class SessionsApi
      *
      * List Sessions
      *
+     * @param  string $verification_profile_id (required)
      * @param  \TrinsicApiModelSessionOrdering|null $order_by The field by which sessions should be ordered (optional)
      * @param  \TrinsicApiModelOrderDirection|null $order_direction (optional)
      * @param  int|null $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
@@ -2155,9 +2162,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\ListSessionsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listSessionsWithHttpInfo($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
+    public function listSessionsWithHttpInfo($verification_profile_id, $order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
-        $request = $this->listSessionsRequest($order_by, $order_direction, $page_size, $page, $contentType);
+        $request = $this->listSessionsRequest($verification_profile_id, $order_by, $order_direction, $page_size, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2289,6 +2296,7 @@ class SessionsApi
      *
      * List Sessions
      *
+     * @param  string $verification_profile_id (required)
      * @param  \TrinsicApiModelSessionOrdering|null $order_by The field by which sessions should be ordered (optional)
      * @param  \TrinsicApiModelOrderDirection|null $order_direction (optional)
      * @param  int|null $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
@@ -2298,9 +2306,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSessionsAsync($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
+    public function listSessionsAsync($verification_profile_id, $order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
-        return $this->listSessionsAsyncWithHttpInfo($order_by, $order_direction, $page_size, $page, $contentType)
+        return $this->listSessionsAsyncWithHttpInfo($verification_profile_id, $order_by, $order_direction, $page_size, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2313,6 +2321,7 @@ class SessionsApi
      *
      * List Sessions
      *
+     * @param  string $verification_profile_id (required)
      * @param  \TrinsicApiModelSessionOrdering|null $order_by The field by which sessions should be ordered (optional)
      * @param  \TrinsicApiModelOrderDirection|null $order_direction (optional)
      * @param  int|null $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
@@ -2322,10 +2331,10 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSessionsAsyncWithHttpInfo($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
+    public function listSessionsAsyncWithHttpInfo($verification_profile_id, $order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
         $returnType = '\Trinsic\Api\Model\ListSessionsResponse';
-        $request = $this->listSessionsRequest($order_by, $order_direction, $page_size, $page, $contentType);
+        $request = $this->listSessionsRequest($verification_profile_id, $order_by, $order_direction, $page_size, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2366,6 +2375,7 @@ class SessionsApi
     /**
      * Create request for operation 'listSessions'
      *
+     * @param  string $verification_profile_id (required)
      * @param  \TrinsicApiModelSessionOrdering|null $order_by The field by which sessions should be ordered (optional)
      * @param  \TrinsicApiModelOrderDirection|null $order_direction (optional)
      * @param  int|null $page_size The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; (optional)
@@ -2375,8 +2385,15 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listSessionsRequest($order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
+    public function listSessionsRequest($verification_profile_id, $order_by = null, $order_direction = null, $page_size = null, $page = null, string $contentType = self::contentTypes['listSessions'][0])
     {
+
+        // verify the required parameter 'verification_profile_id' is set
+        if ($verification_profile_id === null || (is_array($verification_profile_id) && count($verification_profile_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $verification_profile_id when calling listSessions'
+            );
+        }
 
 
 
@@ -2395,7 +2412,7 @@ class SessionsApi
         }
         
 
-        $resourcePath = '/api/v1/sessions/list';
+        $resourcePath = '/api/v1/verification-profiles/{verificationProfileId}/sessions';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2440,6 +2457,14 @@ class SessionsApi
         ) ?? []);
 
 
+        // path params
+        if ($verification_profile_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'verificationProfileId' . '}',
+                ObjectSerializer::toPathValue($verification_profile_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -3043,6 +3068,347 @@ class SessionsApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refresh_step_content_request));
             } else {
                 $httpBody = $refresh_step_content_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation submitNativeChallengeResponse
+     *
+     * Submit Native Challenge Response
+     *
+     * @param  string $acceptance_session_id acceptance_session_id (required)
+     * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request submit_native_challenge_response_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     */
+    public function submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    {
+        list($response) = $this->submitNativeChallengeResponseWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation submitNativeChallengeResponseWithHttpInfo
+     *
+     * Submit Native Challenge Response
+     *
+     * @param  string $acceptance_session_id (required)
+     * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function submitNativeChallengeResponseWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    {
+        $request = $this->submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation submitNativeChallengeResponseAsync
+     *
+     * Submit Native Challenge Response
+     *
+     * @param  string $acceptance_session_id (required)
+     * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitNativeChallengeResponseAsync($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    {
+        return $this->submitNativeChallengeResponseAsyncWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation submitNativeChallengeResponseAsyncWithHttpInfo
+     *
+     * Submit Native Challenge Response
+     *
+     * @param  string $acceptance_session_id (required)
+     * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitNativeChallengeResponseAsyncWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    {
+        $returnType = '\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse';
+        $request = $this->submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'submitNativeChallengeResponse'
+     *
+     * @param  string $acceptance_session_id (required)
+     * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    {
+
+        // verify the required parameter 'acceptance_session_id' is set
+        if ($acceptance_session_id === null || (is_array($acceptance_session_id) && count($acceptance_session_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $acceptance_session_id when calling submitNativeChallengeResponse'
+            );
+        }
+
+
+
+        $resourcePath = '/api/v1/sessions/{acceptanceSessionId}/native-challenge/submit';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($acceptance_session_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'acceptanceSessionId' . '}',
+                ObjectSerializer::toPathValue($acceptance_session_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($submit_native_challenge_response_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($submit_native_challenge_response_request));
+            } else {
+                $httpBody = $submit_native_challenge_response_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

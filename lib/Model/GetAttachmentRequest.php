@@ -57,7 +57,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'attachment_access_key' => 'string'
+        'attachment_access_key' => 'string',
+        'session_id' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'attachment_access_key' => null
+        'attachment_access_key' => null,
+        'session_id' => 'uuid'
     ];
 
     /**
@@ -77,7 +79,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'attachment_access_key' => false
+        'attachment_access_key' => false,
+        'session_id' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'attachment_access_key' => 'attachmentAccessKey'
+        'attachment_access_key' => 'attachmentAccessKey',
+        'session_id' => 'sessionId'
     ];
 
     /**
@@ -175,7 +179,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'attachment_access_key' => 'setAttachmentAccessKey'
+        'attachment_access_key' => 'setAttachmentAccessKey',
+        'session_id' => 'setSessionId'
     ];
 
     /**
@@ -184,7 +189,8 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'attachment_access_key' => 'getAttachmentAccessKey'
+        'attachment_access_key' => 'getAttachmentAccessKey',
+        'session_id' => 'getSessionId'
     ];
 
     /**
@@ -245,6 +251,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(?array $data = null)
     {
         $this->setIfExists('attachment_access_key', $data ?? [], null);
+        $this->setIfExists('session_id', $data ?? [], null);
     }
 
     /**
@@ -281,6 +288,9 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'attachment_access_key', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['session_id'] === null) {
+            $invalidProperties[] = "'session_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -324,6 +334,33 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         }
 
         $this->container['attachment_access_key'] = $attachment_access_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets session_id
+     *
+     * @return string
+     */
+    public function getSessionId()
+    {
+        return $this->container['session_id'];
+    }
+
+    /**
+     * Sets session_id
+     *
+     * @param string $session_id The ID of the Acceptance Session for which the Attachment is being requested.
+     *
+     * @return self
+     */
+    public function setSessionId($session_id)
+    {
+        if (is_null($session_id)) {
+            throw new \InvalidArgumentException('non-nullable session_id cannot be null');
+        }
+        $this->container['session_id'] = $session_id;
 
         return $this;
     }

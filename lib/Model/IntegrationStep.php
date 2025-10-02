@@ -35,7 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * IntegrationStep Class Doc Comment
  *
  * @category Class
- * @description A step to perform in the process of executing an Advanced Provider Session
+ * @description A step to perform in the process of executing an Direct Provider Session
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

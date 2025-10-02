@@ -80,6 +80,15 @@ class RecommendRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "verification_profile_id"
+     */
+    public function testPropertyVerificationProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "recommendation_info"
      */
     public function testPropertyRecommendationInfo()

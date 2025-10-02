@@ -73,6 +73,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => '\Trinsic\Api\Model\MobileIdInput',
         'idin' => '\Trinsic\Api\Model\IdinInput',
         'spid' => '\Trinsic\Api\Model\SpidInput',
+        'google_wallet' => '\Trinsic\Api\Model\GoogleWalletInput',
+        'apple_wallet' => '\Trinsic\Api\Model\AppleWalletInput',
         'trinsic_test_database_lookup' => '\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput',
         'trinsic_test_sub_providers' => '\Trinsic\Api\Model\TrinsicTestSubProvidersInput'
     ];
@@ -101,6 +103,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => null,
         'idin' => null,
         'spid' => null,
+        'google_wallet' => null,
+        'apple_wallet' => null,
         'trinsic_test_database_lookup' => null,
         'trinsic_test_sub_providers' => null
     ];
@@ -127,6 +131,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => true,
         'idin' => true,
         'spid' => true,
+        'google_wallet' => true,
+        'apple_wallet' => true,
         'trinsic_test_database_lookup' => true,
         'trinsic_test_sub_providers' => true
     ];
@@ -233,6 +239,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => 'mobileId',
         'idin' => 'idin',
         'spid' => 'spid',
+        'google_wallet' => 'googleWallet',
+        'apple_wallet' => 'appleWallet',
         'trinsic_test_database_lookup' => 'trinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'trinsicTestSubProviders'
     ];
@@ -259,6 +267,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => 'setMobileId',
         'idin' => 'setIdin',
         'spid' => 'setSpid',
+        'google_wallet' => 'setGoogleWallet',
+        'apple_wallet' => 'setAppleWallet',
         'trinsic_test_database_lookup' => 'setTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'setTrinsicTestSubProviders'
     ];
@@ -285,6 +295,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'mobile_id' => 'getMobileId',
         'idin' => 'getIdin',
         'spid' => 'getSpid',
+        'google_wallet' => 'getGoogleWallet',
+        'apple_wallet' => 'getAppleWallet',
         'trinsic_test_database_lookup' => 'getTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'getTrinsicTestSubProviders'
     ];
@@ -362,6 +374,8 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('mobile_id', $data ?? [], null);
         $this->setIfExists('idin', $data ?? [], null);
         $this->setIfExists('spid', $data ?? [], null);
+        $this->setIfExists('google_wallet', $data ?? [], null);
+        $this->setIfExists('apple_wallet', $data ?? [], null);
         $this->setIfExists('trinsic_test_database_lookup', $data ?? [], null);
         $this->setIfExists('trinsic_test_sub_providers', $data ?? [], null);
     }
@@ -948,6 +962,74 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['spid'] = $spid;
+
+        return $this;
+    }
+
+    /**
+     * Gets google_wallet
+     *
+     * @return \Trinsic\Api\Model\GoogleWalletInput|null
+     */
+    public function getGoogleWallet()
+    {
+        return $this->container['google_wallet'];
+    }
+
+    /**
+     * Sets google_wallet
+     *
+     * @param \Trinsic\Api\Model\GoogleWalletInput|null $google_wallet Input for the `google-wallet` provider
+     *
+     * @return self
+     */
+    public function setGoogleWallet($google_wallet)
+    {
+        if (is_null($google_wallet)) {
+            array_push($this->openAPINullablesSetToNull, 'google_wallet');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('google_wallet', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['google_wallet'] = $google_wallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets apple_wallet
+     *
+     * @return \Trinsic\Api\Model\AppleWalletInput|null
+     */
+    public function getAppleWallet()
+    {
+        return $this->container['apple_wallet'];
+    }
+
+    /**
+     * Sets apple_wallet
+     *
+     * @param \Trinsic\Api\Model\AppleWalletInput|null $apple_wallet Input for the `apple-wallet` provider
+     *
+     * @return self
+     */
+    public function setAppleWallet($apple_wallet)
+    {
+        if (is_null($apple_wallet)) {
+            array_push($this->openAPINullablesSetToNull, 'apple_wallet');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('apple_wallet', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['apple_wallet'] = $apple_wallet;
 
         return $this;
     }

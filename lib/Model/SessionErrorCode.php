@@ -62,6 +62,10 @@ class SessionErrorCode
 
     public const ASSURANCE_LEVEL_NOT_MET = 'AssuranceLevelNotMet';
 
+    public const SECURITY_VALIDATION_FAILED = 'SecurityValidationFailed';
+
+    public const INVALID_RESPONSE = 'InvalidResponse';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -78,7 +82,9 @@ class SessionErrorCode
             self::INVALID_IMAGE,
             self::INAUTHENTIC,
             self::UNSUPPORTED_DOCUMENT,
-            self::ASSURANCE_LEVEL_NOT_MET
+            self::ASSURANCE_LEVEL_NOT_MET,
+            self::SECURITY_VALIDATION_FAILED,
+            self::INVALID_RESPONSE
         ];
     }
 }

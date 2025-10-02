@@ -4,15 +4,15 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**listProviderContracts()**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/providers/contracts | List Provider Contracts |
-| [**listProviders()**](NetworkApi.md#listProviders) | **GET** /api/v1/network/providers | List Providers |
+| [**listProviderContracts()**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
+| [**listProviders()**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
 | [**recommendProviders()**](NetworkApi.md#recommendProviders) | **POST** /api/v1/network/recommend | Recommend Providers |
 
 
 ## `listProviderContracts()`
 
 ```php
-listProviderContracts(): \Trinsic\Api\Model\ListProviderContractsResponse
+listProviderContracts($verification_profile_id): \Trinsic\Api\Model\ListProviderContractsResponse
 ```
 
 List Provider Contracts
@@ -36,9 +36,10 @@ $apiInstance = new Trinsic\Api\Api\NetworkApi(
     new GuzzleHttp\Client(),
     $config
 );
+$verification_profile_id = 'verification_profile_id_example'; // string
 
 try {
-    $result = $apiInstance->listProviderContracts();
+    $result = $apiInstance->listProviderContracts($verification_profile_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkApi->listProviderContracts: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +48,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **verification_profile_id** | **string**|  | |
 
 ### Return type
 
@@ -69,12 +72,10 @@ This endpoint does not need any parameter.
 ## `listProviders()`
 
 ```php
-listProviders($health): \Trinsic\Api\Model\ListProvidersResponse
+listProviders($verification_profile_id, $health): \Trinsic\Api\Model\ListProvidersResponse
 ```
 
-List Providers
 
-List all identity providers available for use
 
 ### Example
 
@@ -93,10 +94,11 @@ $apiInstance = new Trinsic\Api\Api\NetworkApi(
     new GuzzleHttp\Client(),
     $config
 );
-$health = 'health_example'; // string | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
+$verification_profile_id = 'verification_profile_id_example'; // string
+$health = 'health_example'; // string
 
 try {
-    $result = $apiInstance->listProviders($health);
+    $result = $apiInstance->listProviders($verification_profile_id, $health);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkApi->listProviders: ', $e->getMessage(), PHP_EOL;
@@ -107,7 +109,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **health** | **string**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
+| **verification_profile_id** | **string**|  | |
+| **health** | **string**|  | [optional] |
 
 ### Return type
 

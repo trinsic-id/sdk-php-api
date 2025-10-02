@@ -5,14 +5,15 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**cancelSession()**](SessionsApi.md#cancelSession) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
-| [**createAdvancedProviderSession()**](SessionsApi.md#createAdvancedProviderSession) | **POST** /api/v1/sessions/provider/advanced | Create Advanced Provider Session |
+| [**createDirectProviderSession()**](SessionsApi.md#createDirectProviderSession) | **POST** /api/v1/sessions/provider/direct | Create Direct Provider Session |
 | [**createHostedProviderSession()**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
 | [**createWidgetSession()**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
 | [**getSession()**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult()**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
-| [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/sessions/list | List Sessions |
+| [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
 | [**redactSession()**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**refreshStepContent()**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
+| [**submitNativeChallengeResponse()**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
 
 
 ## `cancelSession()`
@@ -75,13 +76,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `createAdvancedProviderSession()`
+## `createDirectProviderSession()`
 
 ```php
-createAdvancedProviderSession($create_advanced_provider_session_request): \Trinsic\Api\Model\CreateAdvancedProviderSessionResponse
+createDirectProviderSession($create_direct_provider_session_request): \Trinsic\Api\Model\CreateDirectProviderSessionResponse
 ```
 
-Create Advanced Provider Session
+Create Direct Provider Session
 
 Verify a user's identity with a specific provider, handling additional user interaction in your own UI.   Signal which kinds of user interactions your UI can handle using the `Capabilities` field.   If `FallbackToHostedUi` is `true`, Trinsic's hosted UI will automatically be invoked to handle any capabilities you do not support.
 
@@ -102,13 +103,13 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_advanced_provider_session_request = new \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest(); // \Trinsic\Api\Model\CreateAdvancedProviderSessionRequest
+$create_direct_provider_session_request = new \Trinsic\Api\Model\CreateDirectProviderSessionRequest(); // \Trinsic\Api\Model\CreateDirectProviderSessionRequest
 
 try {
-    $result = $apiInstance->createAdvancedProviderSession($create_advanced_provider_session_request);
+    $result = $apiInstance->createDirectProviderSession($create_direct_provider_session_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SessionsApi->createAdvancedProviderSession: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SessionsApi->createDirectProviderSession: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -116,11 +117,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_advanced_provider_session_request** | [**\Trinsic\Api\Model\CreateAdvancedProviderSessionRequest**](../Model/CreateAdvancedProviderSessionRequest.md)|  | [optional] |
+| **create_direct_provider_session_request** | [**\Trinsic\Api\Model\CreateDirectProviderSessionRequest**](../Model/CreateDirectProviderSessionRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\Trinsic\Api\Model\CreateAdvancedProviderSessionResponse**](../Model/CreateAdvancedProviderSessionResponse.md)
+[**\Trinsic\Api\Model\CreateDirectProviderSessionResponse**](../Model/CreateDirectProviderSessionResponse.md)
 
 ### Authorization
 
@@ -378,12 +379,12 @@ try {
 ## `listSessions()`
 
 ```php
-listSessions($order_by, $order_direction, $page_size, $page): \Trinsic\Api\Model\ListSessionsResponse
+listSessions($verification_profile_id, $order_by, $order_direction, $page_size, $page): \Trinsic\Api\Model\ListSessionsResponse
 ```
 
 List Sessions
 
-List Sessions created by your account
+List Sessions created for a specific Verification Profile
 
 ### Example
 
@@ -402,13 +403,14 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$verification_profile_id = 'verification_profile_id_example'; // string
 $order_by = Created; // \TrinsicApiModelSessionOrdering | The field by which sessions should be ordered
 $order_direction = Descending; // \TrinsicApiModelOrderDirection
 $page_size = 50; // int | The number of items to return per page -- must be between `1` and `50`
 $page = 1; // int | The page number to return -- starts at `1`
 
 try {
-    $result = $apiInstance->listSessions($order_by, $order_direction, $page_size, $page);
+    $result = $apiInstance->listSessions($verification_profile_id, $order_by, $order_direction, $page_size, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SessionsApi->listSessions: ', $e->getMessage(), PHP_EOL;
@@ -419,6 +421,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **verification_profile_id** | **string**|  | |
 | **order_by** | [**\TrinsicApiModelSessionOrdering**](../Model/.md)| The field by which sessions should be ordered | [optional] |
 | **order_direction** | [**\TrinsicApiModelOrderDirection**](../Model/.md)|  | [optional] |
 | **page_size** | **int**| The number of items to return per page -- must be between &#x60;1&#x60; and &#x60;50&#x60; | [optional] |
@@ -508,7 +511,7 @@ refreshStepContent($acceptance_session_id, $refresh_step_content_request): \Trin
 
 Refresh Step Content
 
-Refreshes the content of a Step for an Advanced Provider Session.
+Refreshes the content of a Step for a Direct Provider Session.
 
 ### Example
 
@@ -548,6 +551,68 @@ try {
 ### Return type
 
 [**\Trinsic\Api\Model\RefreshStepContentResponse**](../Model/RefreshStepContentResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `submitNativeChallengeResponse()`
+
+```php
+submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request): \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse
+```
+
+Submit Native Challenge Response
+
+Submits the response from a Native Challenge (e.g., mDL exchange via DC API) and processes the results.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$acceptance_session_id = 'acceptance_session_id_example'; // string
+$submit_native_challenge_response_request = new \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest(); // \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest
+
+try {
+    $result = $apiInstance->submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->submitNativeChallengeResponse: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **acceptance_session_id** | **string**|  | |
+| **submit_native_challenge_response_request** | [**\Trinsic\Api\Model\SubmitNativeChallengeResponseRequest**](../Model/SubmitNativeChallengeResponseRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse**](../Model/SubmitNativeChallengeResponseResponse.md)
 
 ### Authorization
 

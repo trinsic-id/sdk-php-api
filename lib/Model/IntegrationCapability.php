@@ -56,6 +56,8 @@ class IntegrationCapability
 
     public const POLL_AFTER_REDIRECT = 'PollAfterRedirect';
 
+    public const NATIVE_CHALLENGE = 'NativeChallenge';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -69,7 +71,8 @@ class IntegrationCapability
             self::REFRESH_STEP_CONTENT,
             self::CAPTURE_REDIRECT,
             self::POLL_RESULT,
-            self::POLL_AFTER_REDIRECT
+            self::POLL_AFTER_REDIRECT,
+            self::NATIVE_CHALLENGE
         ];
     }
 }

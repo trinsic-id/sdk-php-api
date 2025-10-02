@@ -215,6 +215,15 @@ class ProviderContractTest extends TestCase
     }
 
     /**
+     * Test attribute "supports_direct_provider_sessions"
+     */
+    public function testPropertySupportsDirectProviderSessions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "available_fields"
      */
     public function testPropertyAvailableFields()

@@ -138,15 +138,16 @@ class NetworkApi
      *
      * List Provider Contracts
      *
+     * @param  string $verification_profile_id verification_profile_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviderContracts'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function listProviderContracts(string $contentType = self::contentTypes['listProviderContracts'][0])
+    public function listProviderContracts($verification_profile_id, string $contentType = self::contentTypes['listProviderContracts'][0])
     {
-        list($response) = $this->listProviderContractsWithHttpInfo($contentType);
+        list($response) = $this->listProviderContractsWithHttpInfo($verification_profile_id, $contentType);
         return $response;
     }
 
@@ -155,15 +156,16 @@ class NetworkApi
      *
      * List Provider Contracts
      *
+     * @param  string $verification_profile_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviderContracts'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\ListProviderContractsResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProviderContractsWithHttpInfo(string $contentType = self::contentTypes['listProviderContracts'][0])
+    public function listProviderContractsWithHttpInfo($verification_profile_id, string $contentType = self::contentTypes['listProviderContracts'][0])
     {
-        $request = $this->listProviderContractsRequest($contentType);
+        $request = $this->listProviderContractsRequest($verification_profile_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -295,14 +297,15 @@ class NetworkApi
      *
      * List Provider Contracts
      *
+     * @param  string $verification_profile_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviderContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProviderContractsAsync(string $contentType = self::contentTypes['listProviderContracts'][0])
+    public function listProviderContractsAsync($verification_profile_id, string $contentType = self::contentTypes['listProviderContracts'][0])
     {
-        return $this->listProviderContractsAsyncWithHttpInfo($contentType)
+        return $this->listProviderContractsAsyncWithHttpInfo($verification_profile_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -315,15 +318,16 @@ class NetworkApi
      *
      * List Provider Contracts
      *
+     * @param  string $verification_profile_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviderContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProviderContractsAsyncWithHttpInfo(string $contentType = self::contentTypes['listProviderContracts'][0])
+    public function listProviderContractsAsyncWithHttpInfo($verification_profile_id, string $contentType = self::contentTypes['listProviderContracts'][0])
     {
         $returnType = '\Trinsic\Api\Model\ListProviderContractsResponse';
-        $request = $this->listProviderContractsRequest($contentType);
+        $request = $this->listProviderContractsRequest($verification_profile_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -364,16 +368,24 @@ class NetworkApi
     /**
      * Create request for operation 'listProviderContracts'
      *
+     * @param  string $verification_profile_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviderContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listProviderContractsRequest(string $contentType = self::contentTypes['listProviderContracts'][0])
+    public function listProviderContractsRequest($verification_profile_id, string $contentType = self::contentTypes['listProviderContracts'][0])
     {
 
+        // verify the required parameter 'verification_profile_id' is set
+        if ($verification_profile_id === null || (is_array($verification_profile_id) && count($verification_profile_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $verification_profile_id when calling listProviderContracts'
+            );
+        }
 
-        $resourcePath = '/api/v1/network/providers/contracts';
+
+        $resourcePath = '/api/v1/network/{verificationProfileId}/providers/contracts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -382,6 +394,14 @@ class NetworkApi
 
 
 
+        // path params
+        if ($verification_profile_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'verificationProfileId' . '}',
+                ObjectSerializer::toPathValue($verification_profile_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -444,36 +464,34 @@ class NetworkApi
     /**
      * Operation listProviders
      *
-     * List Providers
-     *
-     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+     * @param  string $verification_profile_id verification_profile_id (required)
+     * @param  string|null $health health (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function listProviders($health = null, string $contentType = self::contentTypes['listProviders'][0])
+    public function listProviders($verification_profile_id, $health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        list($response) = $this->listProvidersWithHttpInfo($health, $contentType);
+        list($response) = $this->listProvidersWithHttpInfo($verification_profile_id, $health, $contentType);
         return $response;
     }
 
     /**
      * Operation listProvidersWithHttpInfo
      *
-     * List Providers
-     *
-     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+     * @param  string $verification_profile_id (required)
+     * @param  string|null $health (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\ListProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProvidersWithHttpInfo($health = null, string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersWithHttpInfo($verification_profile_id, $health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        $request = $this->listProvidersRequest($health, $contentType);
+        $request = $this->listProvidersRequest($verification_profile_id, $health, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -603,17 +621,16 @@ class NetworkApi
     /**
      * Operation listProvidersAsync
      *
-     * List Providers
-     *
-     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+     * @param  string $verification_profile_id (required)
+     * @param  string|null $health (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProvidersAsync($health = null, string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersAsync($verification_profile_id, $health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
-        return $this->listProvidersAsyncWithHttpInfo($health, $contentType)
+        return $this->listProvidersAsyncWithHttpInfo($verification_profile_id, $health, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -624,18 +641,17 @@ class NetworkApi
     /**
      * Operation listProvidersAsyncWithHttpInfo
      *
-     * List Providers
-     *
-     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+     * @param  string $verification_profile_id (required)
+     * @param  string|null $health (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProvidersAsyncWithHttpInfo($health = null, string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersAsyncWithHttpInfo($verification_profile_id, $health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
         $returnType = '\Trinsic\Api\Model\ListProvidersResponse';
-        $request = $this->listProvidersRequest($health, $contentType);
+        $request = $this->listProvidersRequest($verification_profile_id, $health, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -676,18 +692,26 @@ class NetworkApi
     /**
      * Create request for operation 'listProviders'
      *
-     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
+     * @param  string $verification_profile_id (required)
+     * @param  string|null $health (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listProvidersRequest($health = null, string $contentType = self::contentTypes['listProviders'][0])
+    public function listProvidersRequest($verification_profile_id, $health = null, string $contentType = self::contentTypes['listProviders'][0])
     {
 
+        // verify the required parameter 'verification_profile_id' is set
+        if ($verification_profile_id === null || (is_array($verification_profile_id) && count($verification_profile_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $verification_profile_id when calling listProviders'
+            );
+        }
 
 
-        $resourcePath = '/api/v1/network/providers';
+
+        $resourcePath = '/api/v1/network/{verificationProfileId}/providers';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -705,6 +729,14 @@ class NetworkApi
         ) ?? []);
 
 
+        // path params
+        if ($verification_profile_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'verificationProfileId' . '}',
+                ObjectSerializer::toPathValue($verification_profile_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(

@@ -87,4 +87,13 @@ class GetAttachmentRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "session_id"
+     */
+    public function testPropertySessionId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

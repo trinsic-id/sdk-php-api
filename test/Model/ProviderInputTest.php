@@ -224,6 +224,24 @@ class ProviderInputTest extends TestCase
     }
 
     /**
+     * Test attribute "google_wallet"
+     */
+    public function testPropertyGoogleWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "apple_wallet"
+     */
+    public function testPropertyAppleWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "trinsic_test_database_lookup"
      */
     public function testPropertyTrinsicTestDatabaseLookup()

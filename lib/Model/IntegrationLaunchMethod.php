@@ -50,6 +50,8 @@ class IntegrationLaunchMethod
 
     public const SHOW_CONTENT = 'ShowContent';
 
+    public const PERFORM_NATIVE_CHALLENGE = 'PerformNativeChallenge';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -60,7 +62,8 @@ class IntegrationLaunchMethod
             self::LAUNCH_BROWSER,
             self::NONE,
             self::DEEPLINK_TO_MOBILE,
-            self::SHOW_CONTENT
+            self::SHOW_CONTENT,
+            self::PERFORM_NATIVE_CHALLENGE
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateAdvancedProviderSessionRequestTest
+ * AppleWalletInputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateAdvancedProviderSessionRequestTest Class Doc Comment
+ * AppleWalletInputTest Class Doc Comment
  *
  * @category    Class
- * @description CreateAdvancedProviderSessionRequest
+ * @description AppleWalletInput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CreateAdvancedProviderSessionRequestTest extends TestCase
+class AppleWalletInputTest extends TestCase
 {
 
     /**
@@ -71,54 +71,18 @@ class CreateAdvancedProviderSessionRequestTest extends TestCase
     }
 
     /**
-     * Test "CreateAdvancedProviderSessionRequest"
+     * Test "AppleWalletInput"
      */
-    public function testCreateAdvancedProviderSessionRequest()
+    public function testAppleWalletInput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "provider"
+     * Test attribute "exchange_mechanism"
      */
-    public function testPropertyProvider()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "redirect_url"
-     */
-    public function testPropertyRedirectUrl()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "capabilities"
-     */
-    public function testPropertyCapabilities()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fallback_to_hosted_ui"
-     */
-    public function testPropertyFallbackToHostedUi()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "provider_input"
-     */
-    public function testPropertyProviderInput()
+    public function testPropertyExchangeMechanism()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

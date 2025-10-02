@@ -57,6 +57,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
+        'verification_profile_id' => 'string',
         'redirect_url' => 'string',
         'providers' => 'string[]',
         'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo'
@@ -70,6 +71,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'verification_profile_id' => 'uuid',
         'redirect_url' => null,
         'providers' => null,
         'recommendation_info' => null
@@ -81,6 +83,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'verification_profile_id' => false,
         'redirect_url' => true,
         'providers' => true,
         'recommendation_info' => true
@@ -172,6 +175,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
+        'verification_profile_id' => 'verificationProfileId',
         'redirect_url' => 'redirectUrl',
         'providers' => 'providers',
         'recommendation_info' => 'recommendationInfo'
@@ -183,6 +187,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
+        'verification_profile_id' => 'setVerificationProfileId',
         'redirect_url' => 'setRedirectUrl',
         'providers' => 'setProviders',
         'recommendation_info' => 'setRecommendationInfo'
@@ -194,6 +199,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
+        'verification_profile_id' => 'getVerificationProfileId',
         'redirect_url' => 'getRedirectUrl',
         'providers' => 'getProviders',
         'recommendation_info' => 'getRecommendationInfo'
@@ -256,6 +262,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('verification_profile_id', $data ?? [], null);
         $this->setIfExists('redirect_url', $data ?? [], null);
         $this->setIfExists('providers', $data ?? [], null);
         $this->setIfExists('recommendation_info', $data ?? [], null);
@@ -288,6 +295,9 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
+        if ($this->container['verification_profile_id'] === null) {
+            $invalidProperties[] = "'verification_profile_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -304,6 +314,33 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
+     * Gets verification_profile_id
+     *
+     * @return string
+     */
+    public function getVerificationProfileId()
+    {
+        return $this->container['verification_profile_id'];
+    }
+
+    /**
+     * Sets verification_profile_id
+     *
+     * @param string $verification_profile_id The ID of the Verification Profile to use for this session.
+     *
+     * @return self
+     */
+    public function setVerificationProfileId($verification_profile_id)
+    {
+        if (is_null($verification_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable verification_profile_id cannot be null');
+        }
+        $this->container['verification_profile_id'] = $verification_profile_id;
+
+        return $this;
+    }
+
+    /**
      * Gets redirect_url
      *
      * @return string|null
@@ -316,7 +353,7 @@ class CreateWidgetSessionRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets redirect_url
      *
-     * @param string|null $redirect_url The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic's Web UI SDK to launch the Widget as an embedded iFrame or popup; in that case, session resolution is handled by our SDK, not via redirect.
+     * @param string|null $redirect_url The URL to redirect the user to after the widget session is complete.              *Note*: this should NOT be set if you intend to use Trinsic's Web UI SDK to launch the Widget as a popup; in that case, session resolution is handled by our SDK, not via redirect.
      *
      * @return self
      */

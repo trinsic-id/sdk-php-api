@@ -57,6 +57,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'verification_profile_id' => 'string',
         'recommendation_info' => '\Trinsic\Api\Model\RecommendationInfo',
         'health' => 'string'
     ];
@@ -69,6 +70,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'verification_profile_id' => 'uuid',
         'recommendation_info' => null,
         'health' => null
     ];
@@ -79,6 +81,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'verification_profile_id' => false,
         'recommendation_info' => true,
         'health' => true
     ];
@@ -169,6 +172,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'verification_profile_id' => 'verificationProfileId',
         'recommendation_info' => 'recommendationInfo',
         'health' => 'health'
     ];
@@ -179,6 +183,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'verification_profile_id' => 'setVerificationProfileId',
         'recommendation_info' => 'setRecommendationInfo',
         'health' => 'setHealth'
     ];
@@ -189,6 +194,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'verification_profile_id' => 'getVerificationProfileId',
         'recommendation_info' => 'getRecommendationInfo',
         'health' => 'getHealth'
     ];
@@ -250,6 +256,7 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('verification_profile_id', $data ?? [], null);
         $this->setIfExists('recommendation_info', $data ?? [], null);
         $this->setIfExists('health', $data ?? [], null);
     }
@@ -281,6 +288,9 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['verification_profile_id'] === null) {
+            $invalidProperties[] = "'verification_profile_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -295,6 +305,33 @@ class RecommendRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets verification_profile_id
+     *
+     * @return string
+     */
+    public function getVerificationProfileId()
+    {
+        return $this->container['verification_profile_id'];
+    }
+
+    /**
+     * Sets verification_profile_id
+     *
+     * @param string $verification_profile_id The ID of the VerificationProfile to use for this recommendation.
+     *
+     * @return self
+     */
+    public function setVerificationProfileId($verification_profile_id)
+    {
+        if (is_null($verification_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable verification_profile_id cannot be null');
+        }
+        $this->container['verification_profile_id'] = $verification_profile_id;
+
+        return $this;
+    }
 
     /**
      * Gets recommendation_info

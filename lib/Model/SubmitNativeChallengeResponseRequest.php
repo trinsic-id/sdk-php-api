@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateAdvancedProviderSessionResponse
+ * SubmitNativeChallengeResponseRequest
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * CreateAdvancedProviderSessionResponse Class Doc Comment
+ * SubmitNativeChallengeResponseRequest Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubmitNativeChallengeResponseRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateAdvancedProviderSessionResponse';
+    protected static $openAPIModelName = 'SubmitNativeChallengeResponseRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'session_id' => 'string',
-        'result_collection' => '\Trinsic\Api\Model\ResultCollection',
-        'next_step' => '\Trinsic\Api\Model\IntegrationStep'
+        'results_access_key' => 'string',
+        'response_token' => 'string'
     ];
 
     /**
@@ -70,9 +69,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'session_id' => 'uuid',
-        'result_collection' => null,
-        'next_step' => null
+        'results_access_key' => null,
+        'response_token' => null
     ];
 
     /**
@@ -81,9 +79,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'session_id' => false,
-        'result_collection' => false,
-        'next_step' => false
+        'results_access_key' => false,
+        'response_token' => false
     ];
 
     /**
@@ -172,9 +169,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'session_id' => 'sessionId',
-        'result_collection' => 'resultCollection',
-        'next_step' => 'nextStep'
+        'results_access_key' => 'resultsAccessKey',
+        'response_token' => 'responseToken'
     ];
 
     /**
@@ -183,9 +179,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'session_id' => 'setSessionId',
-        'result_collection' => 'setResultCollection',
-        'next_step' => 'setNextStep'
+        'results_access_key' => 'setResultsAccessKey',
+        'response_token' => 'setResponseToken'
     ];
 
     /**
@@ -194,9 +189,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'session_id' => 'getSessionId',
-        'result_collection' => 'getResultCollection',
-        'next_step' => 'getNextStep'
+        'results_access_key' => 'getResultsAccessKey',
+        'response_token' => 'getResponseToken'
     ];
 
     /**
@@ -256,9 +250,8 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('session_id', $data ?? [], null);
-        $this->setIfExists('result_collection', $data ?? [], null);
-        $this->setIfExists('next_step', $data ?? [], null);
+        $this->setIfExists('results_access_key', $data ?? [], null);
+        $this->setIfExists('response_token', $data ?? [], null);
     }
 
     /**
@@ -288,15 +281,20 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['session_id'] === null) {
-            $invalidProperties[] = "'session_id' can't be null";
+        if ($this->container['results_access_key'] === null) {
+            $invalidProperties[] = "'results_access_key' can't be null";
         }
-        if ($this->container['result_collection'] === null) {
-            $invalidProperties[] = "'result_collection' can't be null";
+        if ((mb_strlen($this->container['results_access_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'results_access_key', the character length must be bigger than or equal to 1.";
         }
-        if ($this->container['next_step'] === null) {
-            $invalidProperties[] = "'next_step' can't be null";
+
+        if ($this->container['response_token'] === null) {
+            $invalidProperties[] = "'response_token' can't be null";
         }
+        if ((mb_strlen($this->container['response_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'response_token', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -313,82 +311,65 @@ class CreateAdvancedProviderSessionResponse implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets session_id
+     * Gets results_access_key
      *
      * @return string
      */
-    public function getSessionId()
+    public function getResultsAccessKey()
     {
-        return $this->container['session_id'];
+        return $this->container['results_access_key'];
     }
 
     /**
-     * Sets session_id
+     * Sets results_access_key
      *
-     * @param string $session_id The ID of the newly-created Acceptance Session
+     * @param string $results_access_key The Results Access Key for the Session in question
      *
      * @return self
      */
-    public function setSessionId($session_id)
+    public function setResultsAccessKey($results_access_key)
     {
-        if (is_null($session_id)) {
-            throw new \InvalidArgumentException('non-nullable session_id cannot be null');
+        if (is_null($results_access_key)) {
+            throw new \InvalidArgumentException('non-nullable results_access_key cannot be null');
         }
-        $this->container['session_id'] = $session_id;
+
+        if ((mb_strlen($results_access_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $results_access_key when calling SubmitNativeChallengeResponseRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['results_access_key'] = $results_access_key;
 
         return $this;
     }
 
     /**
-     * Gets result_collection
+     * Gets response_token
      *
-     * @return \Trinsic\Api\Model\ResultCollection
+     * @return string
      */
-    public function getResultCollection()
+    public function getResponseToken()
     {
-        return $this->container['result_collection'];
+        return $this->container['response_token'];
     }
 
     /**
-     * Sets result_collection
+     * Sets response_token
      *
-     * @param \Trinsic\Api\Model\ResultCollection $result_collection The method by which you must collect the results of the Acceptance Session.
+     * @param string $response_token The response token retrieved from a Trinsic UI SDK's performMdlExchange() call.
      *
      * @return self
      */
-    public function setResultCollection($result_collection)
+    public function setResponseToken($response_token)
     {
-        if (is_null($result_collection)) {
-            throw new \InvalidArgumentException('non-nullable result_collection cannot be null');
+        if (is_null($response_token)) {
+            throw new \InvalidArgumentException('non-nullable response_token cannot be null');
         }
-        $this->container['result_collection'] = $result_collection;
 
-        return $this;
-    }
-
-    /**
-     * Gets next_step
-     *
-     * @return \Trinsic\Api\Model\IntegrationStep
-     */
-    public function getNextStep()
-    {
-        return $this->container['next_step'];
-    }
-
-    /**
-     * Sets next_step
-     *
-     * @param \Trinsic\Api\Model\IntegrationStep $next_step The next step you must take to launch the user into the integration
-     *
-     * @return self
-     */
-    public function setNextStep($next_step)
-    {
-        if (is_null($next_step)) {
-            throw new \InvalidArgumentException('non-nullable next_step cannot be null');
+        if ((mb_strlen($response_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $response_token when calling SubmitNativeChallengeResponseRequest., must be bigger than or equal to 1.');
         }
-        $this->container['next_step'] = $next_step;
+
+        $this->container['response_token'] = $response_token;
 
         return $this;
     }

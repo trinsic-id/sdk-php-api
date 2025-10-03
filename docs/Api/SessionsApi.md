@@ -12,8 +12,8 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | [**getSessionResult()**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
 | [**redactSession()**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
-| [**refreshStepContent()**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{acceptanceSessionId}/step/refresh | Refresh Step Content |
-| [**submitNativeChallengeResponse()**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{acceptanceSessionId}/native-challenge/submit | Submit Native Challenge Response |
+| [**refreshStepContent()**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{sessionId}/step/refresh | Refresh Step Content |
+| [**submitNativeChallengeResponse()**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{sessionId}/native-challenge/submit | Submit Native Challenge Response |
 
 
 ## `cancelSession()`
@@ -506,7 +506,7 @@ void (empty response body)
 ## `refreshStepContent()`
 
 ```php
-refreshStepContent($acceptance_session_id, $refresh_step_content_request): \Trinsic\Api\Model\RefreshStepContentResponse
+refreshStepContent($session_id, $refresh_step_content_request): \Trinsic\Api\Model\RefreshStepContentResponse
 ```
 
 Refresh Step Content
@@ -530,11 +530,11 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$acceptance_session_id = 'acceptance_session_id_example'; // string
+$session_id = 'session_id_example'; // string
 $refresh_step_content_request = new \Trinsic\Api\Model\RefreshStepContentRequest(); // \Trinsic\Api\Model\RefreshStepContentRequest
 
 try {
-    $result = $apiInstance->refreshStepContent($acceptance_session_id, $refresh_step_content_request);
+    $result = $apiInstance->refreshStepContent($session_id, $refresh_step_content_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SessionsApi->refreshStepContent: ', $e->getMessage(), PHP_EOL;
@@ -545,7 +545,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **acceptance_session_id** | **string**|  | |
+| **session_id** | **string**|  | |
 | **refresh_step_content_request** | [**\Trinsic\Api\Model\RefreshStepContentRequest**](../Model/RefreshStepContentRequest.md)|  | [optional] |
 
 ### Return type
@@ -568,7 +568,7 @@ try {
 ## `submitNativeChallengeResponse()`
 
 ```php
-submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request): \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse
+submitNativeChallengeResponse($session_id, $submit_native_challenge_response_request): \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse
 ```
 
 Submit Native Challenge Response
@@ -592,11 +592,11 @@ $apiInstance = new Trinsic\Api\Api\SessionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$acceptance_session_id = 'acceptance_session_id_example'; // string
+$session_id = 'session_id_example'; // string
 $submit_native_challenge_response_request = new \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest(); // \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest
 
 try {
-    $result = $apiInstance->submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request);
+    $result = $apiInstance->submitNativeChallengeResponse($session_id, $submit_native_challenge_response_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SessionsApi->submitNativeChallengeResponse: ', $e->getMessage(), PHP_EOL;
@@ -607,7 +607,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **acceptance_session_id** | **string**|  | |
+| **session_id** | **string**|  | |
 | **submit_native_challenge_response_request** | [**\Trinsic\Api\Model\SubmitNativeChallengeResponseRequest**](../Model/SubmitNativeChallengeResponseRequest.md)|  | [optional] |
 
 ### Return type

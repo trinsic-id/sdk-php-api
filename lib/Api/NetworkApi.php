@@ -464,8 +464,10 @@ class NetworkApi
     /**
      * Operation listProviders
      *
+     * List Providers
+     *
      * @param  string $verification_profile_id verification_profile_id (required)
-     * @param  string|null $health health (optional)
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
@@ -481,8 +483,10 @@ class NetworkApi
     /**
      * Operation listProvidersWithHttpInfo
      *
+     * List Providers
+     *
      * @param  string $verification_profile_id (required)
-     * @param  string|null $health (optional)
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
@@ -621,8 +625,10 @@ class NetworkApi
     /**
      * Operation listProvidersAsync
      *
+     * List Providers
+     *
      * @param  string $verification_profile_id (required)
-     * @param  string|null $health (optional)
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -641,8 +647,10 @@ class NetworkApi
     /**
      * Operation listProvidersAsyncWithHttpInfo
      *
+     * List Providers
+     *
      * @param  string $verification_profile_id (required)
-     * @param  string|null $health (optional)
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -693,7 +701,7 @@ class NetworkApi
      * Create request for operation 'listProviders'
      *
      * @param  string $verification_profile_id (required)
-     * @param  string|null $health (optional)
+     * @param  string|null $health Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

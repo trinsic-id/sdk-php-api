@@ -5,7 +5,7 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**listProviderContracts()**](NetworkApi.md#listProviderContracts) | **GET** /api/v1/network/{verificationProfileId}/providers/contracts | List Provider Contracts |
-| [**listProviders()**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers |  |
+| [**listProviders()**](NetworkApi.md#listProviders) | **GET** /api/v1/network/{verificationProfileId}/providers | List Providers |
 | [**recommendProviders()**](NetworkApi.md#recommendProviders) | **POST** /api/v1/network/recommend | Recommend Providers |
 
 
@@ -75,7 +75,9 @@ try {
 listProviders($verification_profile_id, $health): \Trinsic\Api\Model\ListProvidersResponse
 ```
 
+List Providers
 
+List all identity providers available for use
 
 ### Example
 
@@ -95,7 +97,7 @@ $apiInstance = new Trinsic\Api\Api\NetworkApi(
     $config
 );
 $verification_profile_id = 'verification_profile_id_example'; // string
-$health = 'health_example'; // string
+$health = 'health_example'; // string | Filter providers by health status. Valid values: \"online\", \"offline\", \"all\". Defaults to \"all\".
 
 try {
     $result = $apiInstance->listProviders($verification_profile_id, $health);
@@ -110,7 +112,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **verification_profile_id** | **string**|  | |
-| **health** | **string**|  | [optional] |
+| **health** | **string**| Filter providers by health status. Valid values: \&quot;online\&quot;, \&quot;offline\&quot;, \&quot;all\&quot;. Defaults to \&quot;all\&quot;. | [optional] |
 
 ### Return type
 

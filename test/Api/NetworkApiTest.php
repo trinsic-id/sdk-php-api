@@ -86,7 +86,7 @@ class NetworkApiTest extends TestCase
     /**
      * Test case for listProviders
      *
-     * .
+     * List Providers.
      *
      */
     public function testListProviders()

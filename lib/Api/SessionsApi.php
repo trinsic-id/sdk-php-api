@@ -2783,7 +2783,7 @@ class SessionsApi
      *
      * Refresh Step Content
      *
-     * @param  string $acceptance_session_id acceptance_session_id (required)
+     * @param  string $session_id session_id (required)
      * @param  \Trinsic\Api\Model\RefreshStepContentRequest|null $refresh_step_content_request refresh_step_content_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshStepContent'] to see the possible values for this operation
      *
@@ -2791,9 +2791,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function refreshStepContent($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
+    public function refreshStepContent($session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
-        list($response) = $this->refreshStepContentWithHttpInfo($acceptance_session_id, $refresh_step_content_request, $contentType);
+        list($response) = $this->refreshStepContentWithHttpInfo($session_id, $refresh_step_content_request, $contentType);
         return $response;
     }
 
@@ -2802,7 +2802,7 @@ class SessionsApi
      *
      * Refresh Step Content
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\RefreshStepContentRequest|null $refresh_step_content_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshStepContent'] to see the possible values for this operation
      *
@@ -2810,9 +2810,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\RefreshStepContentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function refreshStepContentWithHttpInfo($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
+    public function refreshStepContentWithHttpInfo($session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
-        $request = $this->refreshStepContentRequest($acceptance_session_id, $refresh_step_content_request, $contentType);
+        $request = $this->refreshStepContentRequest($session_id, $refresh_step_content_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2944,16 +2944,16 @@ class SessionsApi
      *
      * Refresh Step Content
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\RefreshStepContentRequest|null $refresh_step_content_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshStepContent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refreshStepContentAsync($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
+    public function refreshStepContentAsync($session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
-        return $this->refreshStepContentAsyncWithHttpInfo($acceptance_session_id, $refresh_step_content_request, $contentType)
+        return $this->refreshStepContentAsyncWithHttpInfo($session_id, $refresh_step_content_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2966,17 +2966,17 @@ class SessionsApi
      *
      * Refresh Step Content
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\RefreshStepContentRequest|null $refresh_step_content_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshStepContent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refreshStepContentAsyncWithHttpInfo($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
+    public function refreshStepContentAsyncWithHttpInfo($session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
         $returnType = '\Trinsic\Api\Model\RefreshStepContentResponse';
-        $request = $this->refreshStepContentRequest($acceptance_session_id, $refresh_step_content_request, $contentType);
+        $request = $this->refreshStepContentRequest($session_id, $refresh_step_content_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3017,26 +3017,26 @@ class SessionsApi
     /**
      * Create request for operation 'refreshStepContent'
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\RefreshStepContentRequest|null $refresh_step_content_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshStepContent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function refreshStepContentRequest($acceptance_session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
+    public function refreshStepContentRequest($session_id, $refresh_step_content_request = null, string $contentType = self::contentTypes['refreshStepContent'][0])
     {
 
-        // verify the required parameter 'acceptance_session_id' is set
-        if ($acceptance_session_id === null || (is_array($acceptance_session_id) && count($acceptance_session_id) === 0)) {
+        // verify the required parameter 'session_id' is set
+        if ($session_id === null || (is_array($session_id) && count($session_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $acceptance_session_id when calling refreshStepContent'
+                'Missing the required parameter $session_id when calling refreshStepContent'
             );
         }
 
 
 
-        $resourcePath = '/api/v1/sessions/{acceptanceSessionId}/step/refresh';
+        $resourcePath = '/api/v1/sessions/{sessionId}/step/refresh';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3046,10 +3046,10 @@ class SessionsApi
 
 
         // path params
-        if ($acceptance_session_id !== null) {
+        if ($session_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'acceptanceSessionId' . '}',
-                ObjectSerializer::toPathValue($acceptance_session_id),
+                '{' . 'sessionId' . '}',
+                ObjectSerializer::toPathValue($session_id),
                 $resourcePath
             );
         }
@@ -3124,7 +3124,7 @@ class SessionsApi
      *
      * Submit Native Challenge Response
      *
-     * @param  string $acceptance_session_id acceptance_session_id (required)
+     * @param  string $session_id session_id (required)
      * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request submit_native_challenge_response_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
      *
@@ -3132,9 +3132,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function submitNativeChallengeResponse($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    public function submitNativeChallengeResponse($session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
     {
-        list($response) = $this->submitNativeChallengeResponseWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+        list($response) = $this->submitNativeChallengeResponseWithHttpInfo($session_id, $submit_native_challenge_response_request, $contentType);
         return $response;
     }
 
@@ -3143,7 +3143,7 @@ class SessionsApi
      *
      * Submit Native Challenge Response
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
      *
@@ -3151,9 +3151,9 @@ class SessionsApi
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\SubmitNativeChallengeResponseResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function submitNativeChallengeResponseWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    public function submitNativeChallengeResponseWithHttpInfo($session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
     {
-        $request = $this->submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+        $request = $this->submitNativeChallengeResponseRequest($session_id, $submit_native_challenge_response_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3285,16 +3285,16 @@ class SessionsApi
      *
      * Submit Native Challenge Response
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function submitNativeChallengeResponseAsync($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    public function submitNativeChallengeResponseAsync($session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
     {
-        return $this->submitNativeChallengeResponseAsyncWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request, $contentType)
+        return $this->submitNativeChallengeResponseAsyncWithHttpInfo($session_id, $submit_native_challenge_response_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3307,17 +3307,17 @@ class SessionsApi
      *
      * Submit Native Challenge Response
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function submitNativeChallengeResponseAsyncWithHttpInfo($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    public function submitNativeChallengeResponseAsyncWithHttpInfo($session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
     {
         $returnType = '\Trinsic\Api\Model\SubmitNativeChallengeResponseResponse';
-        $request = $this->submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request, $contentType);
+        $request = $this->submitNativeChallengeResponseRequest($session_id, $submit_native_challenge_response_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3358,26 +3358,26 @@ class SessionsApi
     /**
      * Create request for operation 'submitNativeChallengeResponse'
      *
-     * @param  string $acceptance_session_id (required)
+     * @param  string $session_id (required)
      * @param  \Trinsic\Api\Model\SubmitNativeChallengeResponseRequest|null $submit_native_challenge_response_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitNativeChallengeResponse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function submitNativeChallengeResponseRequest($acceptance_session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
+    public function submitNativeChallengeResponseRequest($session_id, $submit_native_challenge_response_request = null, string $contentType = self::contentTypes['submitNativeChallengeResponse'][0])
     {
 
-        // verify the required parameter 'acceptance_session_id' is set
-        if ($acceptance_session_id === null || (is_array($acceptance_session_id) && count($acceptance_session_id) === 0)) {
+        // verify the required parameter 'session_id' is set
+        if ($session_id === null || (is_array($session_id) && count($session_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $acceptance_session_id when calling submitNativeChallengeResponse'
+                'Missing the required parameter $session_id when calling submitNativeChallengeResponse'
             );
         }
 
 
 
-        $resourcePath = '/api/v1/sessions/{acceptanceSessionId}/native-challenge/submit';
+        $resourcePath = '/api/v1/sessions/{sessionId}/native-challenge/submit';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3387,10 +3387,10 @@ class SessionsApi
 
 
         // path params
-        if ($acceptance_session_id !== null) {
+        if ($session_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'acceptanceSessionId' . '}',
-                ObjectSerializer::toPathValue($acceptance_session_id),
+                '{' . 'sessionId' . '}',
+                ObjectSerializer::toPathValue($session_id),
                 $resourcePath
             );
         }

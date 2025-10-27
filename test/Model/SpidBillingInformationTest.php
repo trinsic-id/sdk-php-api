@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInputTest
+ * SpidBillingInformationTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SpidInputTest Class Doc Comment
+ * SpidBillingInformationTest Class Doc Comment
  *
  * @category    Class
- * @description SpidInput
+ * @description Billing information for a SPID Verification.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SpidInputTest extends TestCase
+class SpidBillingInformationTest extends TestCase
 {
 
     /**
@@ -71,27 +71,36 @@ class SpidInputTest extends TestCase
     }
 
     /**
-     * Test "SpidInput"
+     * Test "SpidBillingInformation"
      */
-    public function testSpidInput()
+    public function testSpidBillingInformation()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sub_provider_id"
+     * Test attribute "is_billable"
      */
-    public function testPropertySubProviderId()
+    public function testPropertyIsBillable()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "billing_tracking_secret"
+     * Test attribute "verification_type"
      */
-    public function testPropertyBillingTrackingSecret()
+    public function testPropertyVerificationType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "verification_level"
+     */
+    public function testPropertyVerificationLevel()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -74,6 +74,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => 'bool',
         'supports_direct_provider_sessions' => 'bool',
         'available_fields' => '\Trinsic\Api\Model\ContractField[]',
+        'available_identifiers' => '\Trinsic\Api\Model\ContractIdentifierField[]',
         'sub_providers' => '\Trinsic\Api\Model\SubProviderMetadata[]',
         'health' => '\Trinsic\Api\Model\ProviderHealth'
     ];
@@ -103,6 +104,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => null,
         'supports_direct_provider_sessions' => null,
         'available_fields' => null,
+        'available_identifiers' => null,
         'sub_providers' => null,
         'health' => null
     ];
@@ -130,6 +132,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => false,
         'supports_direct_provider_sessions' => false,
         'available_fields' => true,
+        'available_identifiers' => true,
         'sub_providers' => true,
         'health' => false
     ];
@@ -237,6 +240,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => 'supportsAdvancedProviderSessions',
         'supports_direct_provider_sessions' => 'supportsDirectProviderSessions',
         'available_fields' => 'availableFields',
+        'available_identifiers' => 'availableIdentifiers',
         'sub_providers' => 'subProviders',
         'health' => 'health'
     ];
@@ -264,6 +268,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => 'setSupportsAdvancedProviderSessions',
         'supports_direct_provider_sessions' => 'setSupportsDirectProviderSessions',
         'available_fields' => 'setAvailableFields',
+        'available_identifiers' => 'setAvailableIdentifiers',
         'sub_providers' => 'setSubProviders',
         'health' => 'setHealth'
     ];
@@ -291,6 +296,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'supports_advanced_provider_sessions' => 'getSupportsAdvancedProviderSessions',
         'supports_direct_provider_sessions' => 'getSupportsDirectProviderSessions',
         'available_fields' => 'getAvailableFields',
+        'available_identifiers' => 'getAvailableIdentifiers',
         'sub_providers' => 'getSubProviders',
         'health' => 'getHealth'
     ];
@@ -369,6 +375,7 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('supports_advanced_provider_sessions', $data ?? [], null);
         $this->setIfExists('supports_direct_provider_sessions', $data ?? [], null);
         $this->setIfExists('available_fields', $data ?? [], null);
+        $this->setIfExists('available_identifiers', $data ?? [], null);
         $this->setIfExists('sub_providers', $data ?? [], null);
         $this->setIfExists('health', $data ?? [], null);
     }
@@ -932,6 +939,40 @@ class ProviderContract implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['available_fields'] = $available_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_identifiers
+     *
+     * @return \Trinsic\Api\Model\ContractIdentifierField[]|null
+     */
+    public function getAvailableIdentifiers()
+    {
+        return $this->container['available_identifiers'];
+    }
+
+    /**
+     * Sets available_identifiers
+     *
+     * @param \Trinsic\Api\Model\ContractIdentifierField[]|null $available_identifiers Information about the identifiers this Provider returns in verification results.
+     *
+     * @return self
+     */
+    public function setAvailableIdentifiers($available_identifiers)
+    {
+        if (is_null($available_identifiers)) {
+            array_push($this->openAPINullablesSetToNull, 'available_identifiers');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('available_identifiers', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['available_identifiers'] = $available_identifiers;
 
         return $this;
     }

@@ -132,4 +132,22 @@ class IdentityDataTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "provider_output"
+     */
+    public function testPropertyProviderOutput()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "identifiers"
+     */
+    public function testPropertyIdentifiers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

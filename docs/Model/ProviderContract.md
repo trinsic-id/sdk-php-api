@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **supports_advanced_provider_sessions** | **bool** | Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function. |
 **supports_direct_provider_sessions** | **bool** | Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function. |
 **available_fields** | [**\Trinsic\Api\Model\ContractField[]**](ContractField.md) | Information about the fields that this Provider will return in verification results. | [optional]
+**available_identifiers** | [**\Trinsic\Api\Model\ContractIdentifierField[]**](ContractIdentifierField.md) | Information about the identifiers this Provider returns in verification results. | [optional]
 **sub_providers** | [**\Trinsic\Api\Model\SubProviderMetadata[]**](SubProviderMetadata.md) | Metadata about the sub-providers which are available for this Provider.              For example, Italy&#39;s SPID is a Provider which aggregates access to multiple sub-providers. | [optional]
 **health** | [**\Trinsic\Api\Model\ProviderHealth**](ProviderHealth.md) | The health for an integration to be able to successfully perform a verification session. |
 

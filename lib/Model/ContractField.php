@@ -59,6 +59,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'scope' => 'string',
         'outputted' => '\Trinsic\Api\Model\FieldAvailability'
     ];
 
@@ -71,6 +72,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'scope' => null,
         'outputted' => null
     ];
 
@@ -81,6 +83,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'name' => false,
+        'scope' => false,
         'outputted' => false
     ];
 
@@ -171,6 +174,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'scope' => 'scope',
         'outputted' => 'outputted'
     ];
 
@@ -181,6 +185,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
+        'scope' => 'setScope',
         'outputted' => 'setOutputted'
     ];
 
@@ -191,6 +196,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
+        'scope' => 'getScope',
         'outputted' => 'getOutputted'
     ];
 
@@ -252,6 +258,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('scope', $data ?? [], null);
         $this->setIfExists('outputted', $data ?? [], null);
     }
 
@@ -285,6 +292,9 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if ($this->container['scope'] === null) {
+            $invalidProperties[] = "'scope' can't be null";
+        }
         if ($this->container['outputted'] === null) {
             $invalidProperties[] = "'outputted' can't be null";
         }
@@ -307,6 +317,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets name
      *
      * @return string
+     * @deprecated
      */
     public function getName()
     {
@@ -319,6 +330,7 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param string $name The name of the field as it appears in verification results.
      *
      * @return self
+     * @deprecated
      */
     public function setName($name)
     {
@@ -326,6 +338,33 @@ class ContractField implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets scope
+     *
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->container['scope'];
+    }
+
+    /**
+     * Sets scope
+     *
+     * @param string $scope The scope of the field as it appears in verification results.
+     *
+     * @return self
+     */
+    public function setScope($scope)
+    {
+        if (is_null($scope)) {
+            throw new \InvalidArgumentException('non-nullable scope cannot be null');
+        }
+        $this->container['scope'] = $scope;
 
         return $this;
     }

@@ -233,6 +233,15 @@ class ProviderContractTest extends TestCase
     }
 
     /**
+     * Test attribute "available_identifiers"
+     */
+    public function testPropertyAvailableIdentifiers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sub_providers"
      */
     public function testPropertySubProviders()

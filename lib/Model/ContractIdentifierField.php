@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * ContractIdentifierField
  *
  * PHP version 8.1
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * ContractIdentifierField Class Doc Comment
  *
  * @category Class
+ * @description Information about an identifier a Provider returns in verification results.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContractIdentifierField implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'ContractIdentifierField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'scope' => 'string',
+        'outputted' => '\Trinsic\Api\Model\FieldAvailability',
+        'description' => 'string'
     ];
 
     /**
@@ -69,8 +71,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'scope' => null,
+        'outputted' => null,
+        'description' => null
     ];
 
     /**
@@ -79,8 +82,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'scope' => false,
+        'outputted' => false,
+        'description' => false
     ];
 
     /**
@@ -169,8 +173,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'scope' => 'scope',
+        'outputted' => 'outputted',
+        'description' => 'description'
     ];
 
     /**
@@ -179,8 +184,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'scope' => 'setScope',
+        'outputted' => 'setOutputted',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -189,8 +195,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'scope' => 'getScope',
+        'outputted' => 'getOutputted',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -250,8 +257,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('scope', $data ?? [], null);
+        $this->setIfExists('outputted', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
     }
 
     /**
@@ -281,6 +289,15 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['scope'] === null) {
+            $invalidProperties[] = "'scope' can't be null";
+        }
+        if ($this->container['outputted'] === null) {
+            $invalidProperties[] = "'outputted' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,69 +314,82 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets scope
      *
-     * @return string|null
+     * @return string
      */
-    public function getSubProviderId()
+    public function getScope()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['scope'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets scope
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param string $scope The scope of the identifier as it appears in verification results.
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setScope($scope)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($scope)) {
+            throw new \InvalidArgumentException('non-nullable scope cannot be null');
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['scope'] = $scope;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets outputted
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\FieldAvailability
      */
-    public function getBillingTrackingSecret()
+    public function getOutputted()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['outputted'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets outputted
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param \Trinsic\Api\Model\FieldAvailability $outputted Indicates when this field will be present in verification results.
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setOutputted($outputted)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($outputted)) {
+            throw new \InvalidArgumentException('non-nullable outputted cannot be null');
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['outputted'] = $outputted;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description A human-readable description of the identifier, written by Trinsic.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
+        }
+        $this->container['description'] = $description;
 
         return $this;
     }

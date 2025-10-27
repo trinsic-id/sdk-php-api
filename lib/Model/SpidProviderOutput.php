@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * SpidProviderOutput
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * SpidProviderOutput Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'SpidProviderOutput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'billing_information' => '\Trinsic\Api\Model\SpidBillingInformation',
+        'fiscal_number' => 'string',
+        'spid_code' => 'string',
+        'iva_code' => 'string',
+        'spid_credential_expiration_date' => '\DateTime'
     ];
 
     /**
@@ -69,8 +72,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'billing_information' => null,
+        'fiscal_number' => null,
+        'spid_code' => null,
+        'iva_code' => null,
+        'spid_credential_expiration_date' => 'date'
     ];
 
     /**
@@ -79,8 +85,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'billing_information' => true,
+        'fiscal_number' => true,
+        'spid_code' => true,
+        'iva_code' => true,
+        'spid_credential_expiration_date' => true
     ];
 
     /**
@@ -169,8 +178,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'billing_information' => 'billingInformation',
+        'fiscal_number' => 'fiscalNumber',
+        'spid_code' => 'spidCode',
+        'iva_code' => 'ivaCode',
+        'spid_credential_expiration_date' => 'spidCredentialExpirationDate'
     ];
 
     /**
@@ -179,8 +191,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'billing_information' => 'setBillingInformation',
+        'fiscal_number' => 'setFiscalNumber',
+        'spid_code' => 'setSpidCode',
+        'iva_code' => 'setIvaCode',
+        'spid_credential_expiration_date' => 'setSpidCredentialExpirationDate'
     ];
 
     /**
@@ -189,8 +204,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'billing_information' => 'getBillingInformation',
+        'fiscal_number' => 'getFiscalNumber',
+        'spid_code' => 'getSpidCode',
+        'iva_code' => 'getIvaCode',
+        'spid_credential_expiration_date' => 'getSpidCredentialExpirationDate'
     ];
 
     /**
@@ -250,8 +268,11 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('billing_information', $data ?? [], null);
+        $this->setIfExists('fiscal_number', $data ?? [], null);
+        $this->setIfExists('spid_code', $data ?? [], null);
+        $this->setIfExists('iva_code', $data ?? [], null);
+        $this->setIfExists('spid_credential_expiration_date', $data ?? [], null);
     }
 
     /**
@@ -297,69 +318,171 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets billing_information
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\SpidBillingInformation|null
      */
-    public function getSubProviderId()
+    public function getBillingInformation()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['billing_information'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets billing_information
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param \Trinsic\Api\Model\SpidBillingInformation|null $billing_information Information about the billable status of this SPID Verification.              Present only if your account has period-based billing enabled for SPID. Contact Trinsic to enable this.
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setBillingInformation($billing_information)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
+        if (is_null($billing_information)) {
+            array_push($this->openAPINullablesSetToNull, 'billing_information');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
+            $index = array_search('billing_information', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['billing_information'] = $billing_information;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets fiscal_number
      *
      * @return string|null
      */
-    public function getBillingTrackingSecret()
+    public function getFiscalNumber()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['fiscal_number'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets fiscal_number
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param string|null $fiscal_number Fiscal tax number for the subject.
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setFiscalNumber($fiscal_number)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
+        if (is_null($fiscal_number)) {
+            array_push($this->openAPINullablesSetToNull, 'fiscal_number');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
+            $index = array_search('fiscal_number', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['fiscal_number'] = $fiscal_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets spid_code
+     *
+     * @return string|null
+     */
+    public function getSpidCode()
+    {
+        return $this->container['spid_code'];
+    }
+
+    /**
+     * Sets spid_code
+     *
+     * @param string|null $spid_code Unique user identifier contained within the SPID identity.
+     *
+     * @return self
+     */
+    public function setSpidCode($spid_code)
+    {
+        if (is_null($spid_code)) {
+            array_push($this->openAPINullablesSetToNull, 'spid_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('spid_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['spid_code'] = $spid_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets iva_code
+     *
+     * @return string|null
+     */
+    public function getIvaCode()
+    {
+        return $this->container['iva_code'];
+    }
+
+    /**
+     * Sets iva_code
+     *
+     * @param string|null $iva_code VAT number for the subject.
+     *
+     * @return self
+     */
+    public function setIvaCode($iva_code)
+    {
+        if (is_null($iva_code)) {
+            array_push($this->openAPINullablesSetToNull, 'iva_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('iva_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['iva_code'] = $iva_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets spid_credential_expiration_date
+     *
+     * @return \DateTime|null
+     */
+    public function getSpidCredentialExpirationDate()
+    {
+        return $this->container['spid_credential_expiration_date'];
+    }
+
+    /**
+     * Sets spid_credential_expiration_date
+     *
+     * @param \DateTime|null $spid_credential_expiration_date Expiration date of the user's SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
+     *
+     * @return self
+     */
+    public function setSpidCredentialExpirationDate($spid_credential_expiration_date)
+    {
+        if (is_null($spid_credential_expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'spid_credential_expiration_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('spid_credential_expiration_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['spid_credential_expiration_date'] = $spid_credential_expiration_date;
 
         return $this;
     }

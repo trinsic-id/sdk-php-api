@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * ListVerificationProfilesResponse
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * ListVerificationProfilesResponse Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class ListVerificationProfilesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'ListVerificationProfilesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'verification_profiles' => '\Trinsic\Api\Model\VerificationProfileResponse[]',
+        'more' => 'bool'
     ];
 
     /**
@@ -69,8 +69,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'verification_profiles' => null,
+        'more' => null
     ];
 
     /**
@@ -79,8 +79,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'verification_profiles' => false,
+        'more' => false
     ];
 
     /**
@@ -169,8 +169,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'verification_profiles' => 'verificationProfiles',
+        'more' => 'more'
     ];
 
     /**
@@ -179,8 +179,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'verification_profiles' => 'setVerificationProfiles',
+        'more' => 'setMore'
     ];
 
     /**
@@ -189,8 +189,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'verification_profiles' => 'getVerificationProfiles',
+        'more' => 'getMore'
     ];
 
     /**
@@ -250,8 +250,8 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('verification_profiles', $data ?? [], null);
+        $this->setIfExists('more', $data ?? [], null);
     }
 
     /**
@@ -281,6 +281,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['verification_profiles'] === null) {
+            $invalidProperties[] = "'verification_profiles' can't be null";
+        }
+        if ($this->container['more'] === null) {
+            $invalidProperties[] = "'more' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,69 +303,55 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets verification_profiles
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\VerificationProfileResponse[]
      */
-    public function getSubProviderId()
+    public function getVerificationProfiles()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['verification_profiles'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets verification_profiles
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param \Trinsic\Api\Model\VerificationProfileResponse[] $verification_profiles verification_profiles
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setVerificationProfiles($verification_profiles)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($verification_profiles)) {
+            throw new \InvalidArgumentException('non-nullable verification_profiles cannot be null');
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['verification_profiles'] = $verification_profiles;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets more
      *
-     * @return string|null
+     * @return bool
      */
-    public function getBillingTrackingSecret()
+    public function getMore()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['more'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets more
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param bool $more Whether there are additional pages of verification profiles to retrieve
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setMore($more)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($more)) {
+            throw new \InvalidArgumentException('non-nullable more cannot be null');
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['more'] = $more;
 
         return $this;
     }

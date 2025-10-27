@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInputTest
+ * IdentifierTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SpidInputTest Class Doc Comment
+ * IdentifierTest Class Doc Comment
  *
  * @category    Class
- * @description SpidInput
+ * @description Identifier
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SpidInputTest extends TestCase
+class IdentifierTest extends TestCase
 {
 
     /**
@@ -71,27 +71,36 @@ class SpidInputTest extends TestCase
     }
 
     /**
-     * Test "SpidInput"
+     * Test "Identifier"
      */
-    public function testSpidInput()
+    public function testIdentifier()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sub_provider_id"
+     * Test attribute "identifier"
      */
-    public function testPropertySubProviderId()
+    public function testPropertyIdentifier()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "billing_tracking_secret"
+     * Test attribute "scope"
      */
-    public function testPropertyBillingTrackingSecret()
+    public function testPropertyScope()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

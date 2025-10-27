@@ -62,7 +62,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => '\Trinsic\Api\Model\PersonData',
         'document' => '\Trinsic\Api\Model\DocumentData',
         'match' => '\Trinsic\Api\Model\MatchData',
-        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys'
+        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys',
+        'provider_output' => '\Trinsic\Api\Model\ProviderOutput',
+        'identifiers' => '\Trinsic\Api\Model\Identifier[]'
     ];
 
     /**
@@ -78,7 +80,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => null,
         'document' => null,
         'match' => null,
-        'attachment_access_keys' => null
+        'attachment_access_keys' => null,
+        'provider_output' => null,
+        'identifiers' => null
     ];
 
     /**
@@ -92,7 +96,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => true,
         'document' => true,
         'match' => true,
-        'attachment_access_keys' => true
+        'attachment_access_keys' => true,
+        'provider_output' => true,
+        'identifiers' => false
     ];
 
     /**
@@ -186,7 +192,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'person',
         'document' => 'document',
         'match' => 'match',
-        'attachment_access_keys' => 'attachmentAccessKeys'
+        'attachment_access_keys' => 'attachmentAccessKeys',
+        'provider_output' => 'providerOutput',
+        'identifiers' => 'identifiers'
     ];
 
     /**
@@ -200,7 +208,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'setPerson',
         'document' => 'setDocument',
         'match' => 'setMatch',
-        'attachment_access_keys' => 'setAttachmentAccessKeys'
+        'attachment_access_keys' => 'setAttachmentAccessKeys',
+        'provider_output' => 'setProviderOutput',
+        'identifiers' => 'setIdentifiers'
     ];
 
     /**
@@ -214,7 +224,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'getPerson',
         'document' => 'getDocument',
         'match' => 'getMatch',
-        'attachment_access_keys' => 'getAttachmentAccessKeys'
+        'attachment_access_keys' => 'getAttachmentAccessKeys',
+        'provider_output' => 'getProviderOutput',
+        'identifiers' => 'getIdentifiers'
     ];
 
     /**
@@ -280,6 +292,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('document', $data ?? [], null);
         $this->setIfExists('match', $data ?? [], null);
         $this->setIfExists('attachment_access_keys', $data ?? [], null);
+        $this->setIfExists('provider_output', $data ?? [], null);
+        $this->setIfExists('identifiers', $data ?? [], null);
     }
 
     /**
@@ -309,6 +323,9 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['identifiers'] === null) {
+            $invalidProperties[] = "'identifiers' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -524,6 +541,67 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['attachment_access_keys'] = $attachment_access_keys;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider_output
+     *
+     * @return \Trinsic\Api\Model\ProviderOutput|null
+     */
+    public function getProviderOutput()
+    {
+        return $this->container['provider_output'];
+    }
+
+    /**
+     * Sets provider_output
+     *
+     * @param \Trinsic\Api\Model\ProviderOutput|null $provider_output provider_output
+     *
+     * @return self
+     */
+    public function setProviderOutput($provider_output)
+    {
+        if (is_null($provider_output)) {
+            array_push($this->openAPINullablesSetToNull, 'provider_output');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('provider_output', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['provider_output'] = $provider_output;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifiers
+     *
+     * @return \Trinsic\Api\Model\Identifier[]
+     */
+    public function getIdentifiers()
+    {
+        return $this->container['identifiers'];
+    }
+
+    /**
+     * Sets identifiers
+     *
+     * @param \Trinsic\Api\Model\Identifier[] $identifiers identifiers
+     *
+     * @return self
+     */
+    public function setIdentifiers($identifiers)
+    {
+        if (is_null($identifiers)) {
+            throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
+        }
+        $this->container['identifiers'] = $identifiers;
 
         return $this;
     }

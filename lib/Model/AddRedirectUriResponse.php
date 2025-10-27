@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * AddRedirectUriResponse
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * AddRedirectUriResponse Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddRedirectUriResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'AddRedirectUriResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'id' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'id' => 'uuid'
     ];
 
     /**
@@ -79,8 +77,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'id' => false
     ];
 
     /**
@@ -169,8 +166,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'id' => 'id'
     ];
 
     /**
@@ -179,8 +175,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'id' => 'setId'
     ];
 
     /**
@@ -189,8 +184,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'id' => 'getId'
     ];
 
     /**
@@ -250,8 +244,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -281,6 +274,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,69 +293,28 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets id
      *
-     * @return string|null
+     * @return string
      */
-    public function getSubProviderId()
+    public function getId()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets id
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param string $id id
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setId($id)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets billing_tracking_secret
-     *
-     * @return string|null
-     */
-    public function getBillingTrackingSecret()
-    {
-        return $this->container['billing_tracking_secret'];
-    }
-
-    /**
-     * Sets billing_tracking_secret
-     *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
-     *
-     * @return self
-     */
-    public function setBillingTrackingSecret($billing_tracking_secret)
-    {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['id'] = $id;
 
         return $this;
     }

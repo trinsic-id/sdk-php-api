@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * SpidBillingInformation
  *
  * PHP version 8.1
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * SpidBillingInformation Class Doc Comment
  *
  * @category Class
+ * @description Billing information for a SPID Verification.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class SpidBillingInformation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'SpidBillingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'is_billable' => 'bool',
+        'verification_type' => 'string',
+        'verification_level' => 'int'
     ];
 
     /**
@@ -69,8 +71,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'is_billable' => null,
+        'verification_type' => null,
+        'verification_level' => 'int32'
     ];
 
     /**
@@ -79,8 +82,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'is_billable' => false,
+        'verification_type' => false,
+        'verification_level' => false
     ];
 
     /**
@@ -169,8 +173,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'is_billable' => 'isBillable',
+        'verification_type' => 'verificationType',
+        'verification_level' => 'verificationLevel'
     ];
 
     /**
@@ -179,8 +184,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'is_billable' => 'setIsBillable',
+        'verification_type' => 'setVerificationType',
+        'verification_level' => 'setVerificationLevel'
     ];
 
     /**
@@ -189,8 +195,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'is_billable' => 'getIsBillable',
+        'verification_type' => 'getVerificationType',
+        'verification_level' => 'getVerificationLevel'
     ];
 
     /**
@@ -250,8 +257,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('is_billable', $data ?? [], null);
+        $this->setIfExists('verification_type', $data ?? [], null);
+        $this->setIfExists('verification_level', $data ?? [], null);
     }
 
     /**
@@ -281,6 +289,15 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['is_billable'] === null) {
+            $invalidProperties[] = "'is_billable' can't be null";
+        }
+        if ($this->container['verification_type'] === null) {
+            $invalidProperties[] = "'verification_type' can't be null";
+        }
+        if ($this->container['verification_level'] === null) {
+            $invalidProperties[] = "'verification_level' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,69 +314,82 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets is_billable
      *
-     * @return string|null
+     * @return bool
      */
-    public function getSubProviderId()
+    public function getIsBillable()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['is_billable'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets is_billable
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param bool $is_billable Whether this SPID verification has resulted in a billable event.
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setIsBillable($is_billable)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($is_billable)) {
+            throw new \InvalidArgumentException('non-nullable is_billable cannot be null');
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['is_billable'] = $is_billable;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets verification_type
      *
-     * @return string|null
+     * @return string
      */
-    public function getBillingTrackingSecret()
+    public function getVerificationType()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['verification_type'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets verification_type
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param string $verification_type The billable verification type for this SPID verification.              Possible values: \"Authentication\" | \"Registration\"
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setVerificationType($verification_type)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($verification_type)) {
+            throw new \InvalidArgumentException('non-nullable verification_type cannot be null');
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['verification_type'] = $verification_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets verification_level
+     *
+     * @return int
+     */
+    public function getVerificationLevel()
+    {
+        return $this->container['verification_level'];
+    }
+
+    /**
+     * Sets verification_level
+     *
+     * @param int $verification_level The billable verification level for this SPID verification.              Possible values: 1 | 2 | 3
+     *
+     * @return self
+     */
+    public function setVerificationLevel($verification_level)
+    {
+        if (is_null($verification_level)) {
+            throw new \InvalidArgumentException('non-nullable verification_level cannot be null');
+        }
+        $this->container['verification_level'] = $verification_level;
 
         return $this;
     }

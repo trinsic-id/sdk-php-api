@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInputTest
+ * EnvironmentRedirectUrisAddRequestTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SpidInputTest Class Doc Comment
+ * EnvironmentRedirectUrisAddRequestTest Class Doc Comment
  *
  * @category    Class
- * @description SpidInput
+ * @description EnvironmentRedirectUrisAddRequest
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SpidInputTest extends TestCase
+class EnvironmentRedirectUrisAddRequestTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class SpidInputTest extends TestCase
     }
 
     /**
-     * Test "SpidInput"
+     * Test "EnvironmentRedirectUrisAddRequest"
      */
-    public function testSpidInput()
+    public function testEnvironmentRedirectUrisAddRequest()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sub_provider_id"
+     * Test attribute "uri"
      */
-    public function testPropertySubProviderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "billing_tracking_secret"
-     */
-    public function testPropertyBillingTrackingSecret()
+    public function testPropertyUri()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

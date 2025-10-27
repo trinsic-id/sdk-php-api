@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * ProviderOutput
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * ProviderOutput Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'ProviderOutput';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'italy_spid' => '\Trinsic\Api\Model\SpidProviderOutput',
+        'mexico_curp_lookup' => '\Trinsic\Api\Model\MexicoCurpProviderOutput',
+        'ethiopia_fayda' => '\Trinsic\Api\Model\FaydaProviderOutput'
     ];
 
     /**
@@ -69,8 +70,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'italy_spid' => null,
+        'mexico_curp_lookup' => null,
+        'ethiopia_fayda' => null
     ];
 
     /**
@@ -79,8 +81,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'italy_spid' => true,
+        'mexico_curp_lookup' => true,
+        'ethiopia_fayda' => true
     ];
 
     /**
@@ -169,8 +172,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'italy_spid' => 'italy-spid',
+        'mexico_curp_lookup' => 'mexico-curp-lookup',
+        'ethiopia_fayda' => 'ethiopia-fayda'
     ];
 
     /**
@@ -179,8 +183,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'italy_spid' => 'setItalySpid',
+        'mexico_curp_lookup' => 'setMexicoCurpLookup',
+        'ethiopia_fayda' => 'setEthiopiaFayda'
     ];
 
     /**
@@ -189,8 +194,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'italy_spid' => 'getItalySpid',
+        'mexico_curp_lookup' => 'getMexicoCurpLookup',
+        'ethiopia_fayda' => 'getEthiopiaFayda'
     ];
 
     /**
@@ -250,8 +256,9 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('italy_spid', $data ?? [], null);
+        $this->setIfExists('mexico_curp_lookup', $data ?? [], null);
+        $this->setIfExists('ethiopia_fayda', $data ?? [], null);
     }
 
     /**
@@ -297,69 +304,103 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets italy_spid
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\SpidProviderOutput|null
      */
-    public function getSubProviderId()
+    public function getItalySpid()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['italy_spid'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets italy_spid
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param \Trinsic\Api\Model\SpidProviderOutput|null $italy_spid italy_spid
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setItalySpid($italy_spid)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
+        if (is_null($italy_spid)) {
+            array_push($this->openAPINullablesSetToNull, 'italy_spid');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
+            $index = array_search('italy_spid', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['italy_spid'] = $italy_spid;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets mexico_curp_lookup
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\MexicoCurpProviderOutput|null
      */
-    public function getBillingTrackingSecret()
+    public function getMexicoCurpLookup()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['mexico_curp_lookup'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets mexico_curp_lookup
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param \Trinsic\Api\Model\MexicoCurpProviderOutput|null $mexico_curp_lookup mexico_curp_lookup
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setMexicoCurpLookup($mexico_curp_lookup)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
+        if (is_null($mexico_curp_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'mexico_curp_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
+            $index = array_search('mexico_curp_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['mexico_curp_lookup'] = $mexico_curp_lookup;
+
+        return $this;
+    }
+
+    /**
+     * Gets ethiopia_fayda
+     *
+     * @return \Trinsic\Api\Model\FaydaProviderOutput|null
+     */
+    public function getEthiopiaFayda()
+    {
+        return $this->container['ethiopia_fayda'];
+    }
+
+    /**
+     * Sets ethiopia_fayda
+     *
+     * @param \Trinsic\Api\Model\FaydaProviderOutput|null $ethiopia_fayda ethiopia_fayda
+     *
+     * @return self
+     */
+    public function setEthiopiaFayda($ethiopia_fayda)
+    {
+        if (is_null($ethiopia_fayda)) {
+            array_push($this->openAPINullablesSetToNull, 'ethiopia_fayda');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ethiopia_fayda', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ethiopia_fayda'] = $ethiopia_fayda;
 
         return $this;
     }

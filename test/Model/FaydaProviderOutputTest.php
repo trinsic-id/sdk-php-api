@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInputTest
+ * FaydaProviderOutputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SpidInputTest Class Doc Comment
+ * FaydaProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description SpidInput
+ * @description FaydaProviderOutput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SpidInputTest extends TestCase
+class FaydaProviderOutputTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class SpidInputTest extends TestCase
     }
 
     /**
-     * Test "SpidInput"
+     * Test "FaydaProviderOutput"
      */
-    public function testSpidInput()
+    public function testFaydaProviderOutput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sub_provider_id"
+     * Test attribute "sub"
      */
-    public function testPropertySubProviderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "billing_tracking_secret"
-     */
-    public function testPropertyBillingTrackingSecret()
+    public function testPropertySub()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

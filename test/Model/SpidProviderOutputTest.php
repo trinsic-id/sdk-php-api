@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInputTest
+ * SpidProviderOutputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SpidInputTest Class Doc Comment
+ * SpidProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description SpidInput
+ * @description SpidProviderOutput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SpidInputTest extends TestCase
+class SpidProviderOutputTest extends TestCase
 {
 
     /**
@@ -71,27 +71,54 @@ class SpidInputTest extends TestCase
     }
 
     /**
-     * Test "SpidInput"
+     * Test "SpidProviderOutput"
      */
-    public function testSpidInput()
+    public function testSpidProviderOutput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sub_provider_id"
+     * Test attribute "billing_information"
      */
-    public function testPropertySubProviderId()
+    public function testPropertyBillingInformation()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "billing_tracking_secret"
+     * Test attribute "fiscal_number"
      */
-    public function testPropertyBillingTrackingSecret()
+    public function testPropertyFiscalNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "spid_code"
+     */
+    public function testPropertySpidCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iva_code"
+     */
+    public function testPropertyIvaCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "spid_credential_expiration_date"
+     */
+    public function testPropertySpidCredentialExpirationDate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

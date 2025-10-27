@@ -1,6 +1,6 @@
 <?php
 /**
- * SpidInput
+ * VerificationProfileResponse
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * SpidInput Class Doc Comment
+ * VerificationProfileResponse Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpidInput';
+    protected static $openAPIModelName = 'VerificationProfileResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_provider_id' => 'string',
-        'billing_tracking_secret' => 'string'
+        'id' => 'string',
+        'alias' => 'string',
+        'brand_name' => 'string',
+        'logo_url' => 'string',
+        'primary_color' => 'string',
+        'enabled_providers' => 'string[]'
     ];
 
     /**
@@ -69,8 +73,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_provider_id' => null,
-        'billing_tracking_secret' => null
+        'id' => 'uuid',
+        'alias' => null,
+        'brand_name' => null,
+        'logo_url' => null,
+        'primary_color' => null,
+        'enabled_providers' => null
     ];
 
     /**
@@ -79,8 +87,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub_provider_id' => true,
-        'billing_tracking_secret' => true
+        'id' => false,
+        'alias' => false,
+        'brand_name' => false,
+        'logo_url' => false,
+        'primary_color' => false,
+        'enabled_providers' => false
     ];
 
     /**
@@ -169,8 +181,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_provider_id' => 'subProviderId',
-        'billing_tracking_secret' => 'billingTrackingSecret'
+        'id' => 'id',
+        'alias' => 'alias',
+        'brand_name' => 'brandName',
+        'logo_url' => 'logoUrl',
+        'primary_color' => 'primaryColor',
+        'enabled_providers' => 'enabledProviders'
     ];
 
     /**
@@ -179,8 +195,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'sub_provider_id' => 'setSubProviderId',
-        'billing_tracking_secret' => 'setBillingTrackingSecret'
+        'id' => 'setId',
+        'alias' => 'setAlias',
+        'brand_name' => 'setBrandName',
+        'logo_url' => 'setLogoUrl',
+        'primary_color' => 'setPrimaryColor',
+        'enabled_providers' => 'setEnabledProviders'
     ];
 
     /**
@@ -189,8 +209,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'sub_provider_id' => 'getSubProviderId',
-        'billing_tracking_secret' => 'getBillingTrackingSecret'
+        'id' => 'getId',
+        'alias' => 'getAlias',
+        'brand_name' => 'getBrandName',
+        'logo_url' => 'getLogoUrl',
+        'primary_color' => 'getPrimaryColor',
+        'enabled_providers' => 'getEnabledProviders'
     ];
 
     /**
@@ -250,8 +274,12 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sub_provider_id', $data ?? [], null);
-        $this->setIfExists('billing_tracking_secret', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('alias', $data ?? [], null);
+        $this->setIfExists('brand_name', $data ?? [], null);
+        $this->setIfExists('logo_url', $data ?? [], null);
+        $this->setIfExists('primary_color', $data ?? [], null);
+        $this->setIfExists('enabled_providers', $data ?? [], null);
     }
 
     /**
@@ -281,6 +309,24 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['alias'] === null) {
+            $invalidProperties[] = "'alias' can't be null";
+        }
+        if ($this->container['brand_name'] === null) {
+            $invalidProperties[] = "'brand_name' can't be null";
+        }
+        if ($this->container['logo_url'] === null) {
+            $invalidProperties[] = "'logo_url' can't be null";
+        }
+        if ($this->container['primary_color'] === null) {
+            $invalidProperties[] = "'primary_color' can't be null";
+        }
+        if ($this->container['enabled_providers'] === null) {
+            $invalidProperties[] = "'enabled_providers' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,69 +343,163 @@ class SpidInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets sub_provider_id
+     * Gets id
      *
-     * @return string|null
+     * @return string
      */
-    public function getSubProviderId()
+    public function getId()
     {
-        return $this->container['sub_provider_id'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets sub_provider_id
+     * Sets id
      *
-     * @param string|null $sub_provider_id The ID of the specific IDP to invoke within SPID.              If not specified, the user will be prompted to select an IDP.
+     * @param string $id The ID of the verification profile
      *
      * @return self
      */
-    public function setSubProviderId($sub_provider_id)
+    public function setId($id)
     {
-        if (is_null($sub_provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sub_provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sub_provider_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-        $this->container['sub_provider_id'] = $sub_provider_id;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets billing_tracking_secret
+     * Gets alias
      *
-     * @return string|null
+     * @return string
      */
-    public function getBillingTrackingSecret()
+    public function getAlias()
     {
-        return $this->container['billing_tracking_secret'];
+        return $this->container['alias'];
     }
 
     /**
-     * Sets billing_tracking_secret
+     * Sets alias
      *
-     * @param string|null $billing_tracking_secret Only applicable if period-based billing is enabled for your Verification Profile. Contact Trinsic to enable this.              A secret UTF-8 string between 32 and 64 characters in length, used to enable privacy-preserving tracking of unique user verifications during a billing period.              WARNING: This value must NOT change during the course of a billing period for a given Verification Profile, or double-billing may occur. If multiple Verification Profiles are configured to use the same Trinsic-managed SPID Service Provider, the same Billing Tracking Secret must be provided across all such Verification Profiles.
+     * @param string $alias An alias of the verification profile shown to developers and administrators.
      *
      * @return self
      */
-    public function setBillingTrackingSecret($billing_tracking_secret)
+    public function setAlias($alias)
     {
-        if (is_null($billing_tracking_secret)) {
-            array_push($this->openAPINullablesSetToNull, 'billing_tracking_secret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billing_tracking_secret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($alias)) {
+            throw new \InvalidArgumentException('non-nullable alias cannot be null');
         }
-        $this->container['billing_tracking_secret'] = $billing_tracking_secret;
+        $this->container['alias'] = $alias;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_name
+     *
+     * @return string
+     */
+    public function getBrandName()
+    {
+        return $this->container['brand_name'];
+    }
+
+    /**
+     * Sets brand_name
+     *
+     * @param string $brand_name The brand name of the verification profile shown to end-users.
+     *
+     * @return self
+     */
+    public function setBrandName($brand_name)
+    {
+        if (is_null($brand_name)) {
+            throw new \InvalidArgumentException('non-nullable brand_name cannot be null');
+        }
+        $this->container['brand_name'] = $brand_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_url
+     *
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->container['logo_url'];
+    }
+
+    /**
+     * Sets logo_url
+     *
+     * @param string $logo_url The URL of the verification profile's logo.
+     *
+     * @return self
+     */
+    public function setLogoUrl($logo_url)
+    {
+        if (is_null($logo_url)) {
+            throw new \InvalidArgumentException('non-nullable logo_url cannot be null');
+        }
+        $this->container['logo_url'] = $logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_color
+     *
+     * @return string
+     */
+    public function getPrimaryColor()
+    {
+        return $this->container['primary_color'];
+    }
+
+    /**
+     * Sets primary_color
+     *
+     * @param string $primary_color The primary color of the verification profile.
+     *
+     * @return self
+     */
+    public function setPrimaryColor($primary_color)
+    {
+        if (is_null($primary_color)) {
+            throw new \InvalidArgumentException('non-nullable primary_color cannot be null');
+        }
+        $this->container['primary_color'] = $primary_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled_providers
+     *
+     * @return string[]
+     */
+    public function getEnabledProviders()
+    {
+        return $this->container['enabled_providers'];
+    }
+
+    /**
+     * Sets enabled_providers
+     *
+     * @param string[] $enabled_providers The providers that are currently enabled for the verification profile.
+     *
+     * @return self
+     */
+    public function setEnabledProviders($enabled_providers)
+    {
+        if (is_null($enabled_providers)) {
+            throw new \InvalidArgumentException('non-nullable enabled_providers cannot be null');
+        }
+        $this->container['enabled_providers'] = $enabled_providers;
 
         return $this;
     }

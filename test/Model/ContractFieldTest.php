@@ -89,6 +89,15 @@ class ContractFieldTest extends TestCase
     }
 
     /**
+     * Test attribute "scope"
+     */
+    public function testPropertyScope()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "outputted"
      */
     public function testPropertyOutputted()

@@ -533,7 +533,7 @@ class KenyaNidInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets national_id_number
      *
-     * @param string $national_id_number The user's South Kenya National ID number
+     * @param string $national_id_number The user's Kenya National ID number
      *
      * @return self
      */

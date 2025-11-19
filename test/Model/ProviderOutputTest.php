@@ -105,4 +105,22 @@ class ProviderOutputTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "philippines_physical_national_id_qr"
+     */
+    public function testPropertyPhilippinesPhysicalNationalIdQr()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "philippines_digital_national_id_qr"
+     */
+    public function testPropertyPhilippinesDigitalNationalIdQr()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

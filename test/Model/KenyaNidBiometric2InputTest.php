@@ -1,6 +1,6 @@
 <?php
 /**
- * AttachmentAccessKeysTest
+ * KenyaNidBiometric2InputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AttachmentAccessKeysTest Class Doc Comment
+ * KenyaNidBiometric2InputTest Class Doc Comment
  *
  * @category    Class
- * @description AttachmentAccessKeys
+ * @description KenyaNidBiometric2Input
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AttachmentAccessKeysTest extends TestCase
+class KenyaNidBiometric2InputTest extends TestCase
 {
 
     /**
@@ -71,63 +71,36 @@ class AttachmentAccessKeysTest extends TestCase
     }
 
     /**
-     * Test "AttachmentAccessKeys"
+     * Test "KenyaNidBiometric2Input"
      */
-    public function testAttachmentAccessKeys()
+    public function testKenyaNidBiometric2Input()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "selfie"
+     * Test attribute "id_number"
      */
-    public function testPropertySelfie()
+    public function testPropertyIdNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document_front"
+     * Test attribute "liveness_images"
      */
-    public function testPropertyDocumentFront()
+    public function testPropertyLivenessImages()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "document_back"
+     * Test attribute "test_selfie"
      */
-    public function testPropertyDocumentBack()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_portrait"
-     */
-    public function testPropertyDocumentPortrait()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_signature"
-     */
-    public function testPropertyDocumentSignature()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "provider"
-     */
-    public function testPropertyProvider()
+    public function testPropertyTestSelfie()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

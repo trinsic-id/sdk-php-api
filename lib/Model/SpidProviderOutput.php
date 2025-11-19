@@ -58,10 +58,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'billing_information' => '\Trinsic\Api\Model\SpidBillingInformation',
-        'fiscal_number' => 'string',
+        'identity_provider_entity_id' => 'string',
         'spid_code' => 'string',
+        'spid_credential_expiration_date' => '\DateTime',
+        'place_of_birth' => 'string',
+        'county_of_birth' => 'string',
+        'raw_id_card' => 'string',
+        'email' => 'string',
+        'digital_address' => 'string',
+        'fiscal_number' => 'string',
         'iva_code' => 'string',
-        'spid_credential_expiration_date' => '\DateTime'
+        'company_name' => 'string',
+        'company_fiscal_number' => 'string',
+        'registered_office' => 'string'
     ];
 
     /**
@@ -73,10 +82,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'billing_information' => null,
-        'fiscal_number' => null,
+        'identity_provider_entity_id' => null,
         'spid_code' => null,
+        'spid_credential_expiration_date' => 'date',
+        'place_of_birth' => null,
+        'county_of_birth' => null,
+        'raw_id_card' => null,
+        'email' => null,
+        'digital_address' => null,
+        'fiscal_number' => null,
         'iva_code' => null,
-        'spid_credential_expiration_date' => 'date'
+        'company_name' => null,
+        'company_fiscal_number' => null,
+        'registered_office' => null
     ];
 
     /**
@@ -86,10 +104,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'billing_information' => true,
+        'identity_provider_entity_id' => false,
+        'spid_code' => false,
+        'spid_credential_expiration_date' => true,
+        'place_of_birth' => true,
+        'county_of_birth' => true,
+        'raw_id_card' => true,
+        'email' => true,
+        'digital_address' => true,
         'fiscal_number' => true,
-        'spid_code' => true,
         'iva_code' => true,
-        'spid_credential_expiration_date' => true
+        'company_name' => true,
+        'company_fiscal_number' => true,
+        'registered_office' => true
     ];
 
     /**
@@ -179,10 +206,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'billing_information' => 'billingInformation',
-        'fiscal_number' => 'fiscalNumber',
+        'identity_provider_entity_id' => 'identityProviderEntityId',
         'spid_code' => 'spidCode',
+        'spid_credential_expiration_date' => 'spidCredentialExpirationDate',
+        'place_of_birth' => 'placeOfBirth',
+        'county_of_birth' => 'countyOfBirth',
+        'raw_id_card' => 'rawIdCard',
+        'email' => 'email',
+        'digital_address' => 'digitalAddress',
+        'fiscal_number' => 'fiscalNumber',
         'iva_code' => 'ivaCode',
-        'spid_credential_expiration_date' => 'spidCredentialExpirationDate'
+        'company_name' => 'companyName',
+        'company_fiscal_number' => 'companyFiscalNumber',
+        'registered_office' => 'registeredOffice'
     ];
 
     /**
@@ -192,10 +228,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'billing_information' => 'setBillingInformation',
-        'fiscal_number' => 'setFiscalNumber',
+        'identity_provider_entity_id' => 'setIdentityProviderEntityId',
         'spid_code' => 'setSpidCode',
+        'spid_credential_expiration_date' => 'setSpidCredentialExpirationDate',
+        'place_of_birth' => 'setPlaceOfBirth',
+        'county_of_birth' => 'setCountyOfBirth',
+        'raw_id_card' => 'setRawIdCard',
+        'email' => 'setEmail',
+        'digital_address' => 'setDigitalAddress',
+        'fiscal_number' => 'setFiscalNumber',
         'iva_code' => 'setIvaCode',
-        'spid_credential_expiration_date' => 'setSpidCredentialExpirationDate'
+        'company_name' => 'setCompanyName',
+        'company_fiscal_number' => 'setCompanyFiscalNumber',
+        'registered_office' => 'setRegisteredOffice'
     ];
 
     /**
@@ -205,10 +250,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'billing_information' => 'getBillingInformation',
-        'fiscal_number' => 'getFiscalNumber',
+        'identity_provider_entity_id' => 'getIdentityProviderEntityId',
         'spid_code' => 'getSpidCode',
+        'spid_credential_expiration_date' => 'getSpidCredentialExpirationDate',
+        'place_of_birth' => 'getPlaceOfBirth',
+        'county_of_birth' => 'getCountyOfBirth',
+        'raw_id_card' => 'getRawIdCard',
+        'email' => 'getEmail',
+        'digital_address' => 'getDigitalAddress',
+        'fiscal_number' => 'getFiscalNumber',
         'iva_code' => 'getIvaCode',
-        'spid_credential_expiration_date' => 'getSpidCredentialExpirationDate'
+        'company_name' => 'getCompanyName',
+        'company_fiscal_number' => 'getCompanyFiscalNumber',
+        'registered_office' => 'getRegisteredOffice'
     ];
 
     /**
@@ -269,10 +323,19 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(?array $data = null)
     {
         $this->setIfExists('billing_information', $data ?? [], null);
-        $this->setIfExists('fiscal_number', $data ?? [], null);
+        $this->setIfExists('identity_provider_entity_id', $data ?? [], null);
         $this->setIfExists('spid_code', $data ?? [], null);
-        $this->setIfExists('iva_code', $data ?? [], null);
         $this->setIfExists('spid_credential_expiration_date', $data ?? [], null);
+        $this->setIfExists('place_of_birth', $data ?? [], null);
+        $this->setIfExists('county_of_birth', $data ?? [], null);
+        $this->setIfExists('raw_id_card', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('digital_address', $data ?? [], null);
+        $this->setIfExists('fiscal_number', $data ?? [], null);
+        $this->setIfExists('iva_code', $data ?? [], null);
+        $this->setIfExists('company_name', $data ?? [], null);
+        $this->setIfExists('company_fiscal_number', $data ?? [], null);
+        $this->setIfExists('registered_office', $data ?? [], null);
     }
 
     /**
@@ -302,6 +365,12 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['identity_provider_entity_id'] === null) {
+            $invalidProperties[] = "'identity_provider_entity_id' can't be null";
+        }
+        if ($this->container['spid_code'] === null) {
+            $invalidProperties[] = "'spid_code' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -352,6 +421,264 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Gets identity_provider_entity_id
+     *
+     * @return string
+     */
+    public function getIdentityProviderEntityId()
+    {
+        return $this->container['identity_provider_entity_id'];
+    }
+
+    /**
+     * Sets identity_provider_entity_id
+     *
+     * @param string $identity_provider_entity_id The SPID Entity ID of the Identity Provider which issued the SPID identity.              This is an HTTPS URI which uniquely identifies the IdP within the SPID federation.              A normalized / simplified representation of this value is present in the `originatingSubProviderId` field in Trinsic's normalized data model.
+     *
+     * @return self
+     */
+    public function setIdentityProviderEntityId($identity_provider_entity_id)
+    {
+        if (is_null($identity_provider_entity_id)) {
+            throw new \InvalidArgumentException('non-nullable identity_provider_entity_id cannot be null');
+        }
+        $this->container['identity_provider_entity_id'] = $identity_provider_entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets spid_code
+     *
+     * @return string
+     */
+    public function getSpidCode()
+    {
+        return $this->container['spid_code'];
+    }
+
+    /**
+     * Sets spid_code
+     *
+     * @param string $spid_code The identifier of the user's SPID credential.              This uniquely identifies the credential within the SPID federation.
+     *
+     * @return self
+     */
+    public function setSpidCode($spid_code)
+    {
+        if (is_null($spid_code)) {
+            throw new \InvalidArgumentException('non-nullable spid_code cannot be null');
+        }
+        $this->container['spid_code'] = $spid_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets spid_credential_expiration_date
+     *
+     * @return \DateTime|null
+     */
+    public function getSpidCredentialExpirationDate()
+    {
+        return $this->container['spid_credential_expiration_date'];
+    }
+
+    /**
+     * Sets spid_credential_expiration_date
+     *
+     * @param \DateTime|null $spid_credential_expiration_date Expiration date of the user's SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
+     *
+     * @return self
+     */
+    public function setSpidCredentialExpirationDate($spid_credential_expiration_date)
+    {
+        if (is_null($spid_credential_expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'spid_credential_expiration_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('spid_credential_expiration_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['spid_credential_expiration_date'] = $spid_credential_expiration_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets place_of_birth
+     *
+     * @return string|null
+     */
+    public function getPlaceOfBirth()
+    {
+        return $this->container['place_of_birth'];
+    }
+
+    /**
+     * Sets place_of_birth
+     *
+     * @param string|null $place_of_birth The user's place of birth.
+     *
+     * @return self
+     */
+    public function setPlaceOfBirth($place_of_birth)
+    {
+        if (is_null($place_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'place_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('place_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['place_of_birth'] = $place_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets county_of_birth
+     *
+     * @return string|null
+     */
+    public function getCountyOfBirth()
+    {
+        return $this->container['county_of_birth'];
+    }
+
+    /**
+     * Sets county_of_birth
+     *
+     * @param string|null $county_of_birth The user's county of birth.
+     *
+     * @return self
+     */
+    public function setCountyOfBirth($county_of_birth)
+    {
+        if (is_null($county_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'county_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('county_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['county_of_birth'] = $county_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets raw_id_card
+     *
+     * @return string|null
+     */
+    public function getRawIdCard()
+    {
+        return $this->container['raw_id_card'];
+    }
+
+    /**
+     * Sets raw_id_card
+     *
+     * @param string|null $raw_id_card The raw, space-separated string value for the \"IdCard\" field from the SPID identity.              Trinsic additionally parses this field and uses it to populate the `Document` object in the normalized data model.
+     *
+     * @return self
+     */
+    public function setRawIdCard($raw_id_card)
+    {
+        if (is_null($raw_id_card)) {
+            array_push($this->openAPINullablesSetToNull, 'raw_id_card');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('raw_id_card', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['raw_id_card'] = $raw_id_card;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email The email address of the user.
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        if (is_null($email)) {
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets digital_address
+     *
+     * @return string|null
+     */
+    public function getDigitalAddress()
+    {
+        return $this->container['digital_address'];
+    }
+
+    /**
+     * Sets digital_address
+     *
+     * @param string|null $digital_address The digital address of the user.
+     *
+     * @return self
+     */
+    public function setDigitalAddress($digital_address)
+    {
+        if (is_null($digital_address)) {
+            array_push($this->openAPINullablesSetToNull, 'digital_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('digital_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['digital_address'] = $digital_address;
+
+        return $this;
+    }
+
+    /**
      * Gets fiscal_number
      *
      * @return string|null
@@ -381,40 +708,6 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['fiscal_number'] = $fiscal_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets spid_code
-     *
-     * @return string|null
-     */
-    public function getSpidCode()
-    {
-        return $this->container['spid_code'];
-    }
-
-    /**
-     * Sets spid_code
-     *
-     * @param string|null $spid_code Unique user identifier contained within the SPID identity.
-     *
-     * @return self
-     */
-    public function setSpidCode($spid_code)
-    {
-        if (is_null($spid_code)) {
-            array_push($this->openAPINullablesSetToNull, 'spid_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('spid_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['spid_code'] = $spid_code;
 
         return $this;
     }
@@ -454,35 +747,103 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets spid_credential_expiration_date
+     * Gets company_name
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getSpidCredentialExpirationDate()
+    public function getCompanyName()
     {
-        return $this->container['spid_credential_expiration_date'];
+        return $this->container['company_name'];
     }
 
     /**
-     * Sets spid_credential_expiration_date
+     * Sets company_name
      *
-     * @param \DateTime|null $spid_credential_expiration_date Expiration date of the user's SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
+     * @param string|null $company_name The name of the company which the user is associated with.
      *
      * @return self
      */
-    public function setSpidCredentialExpirationDate($spid_credential_expiration_date)
+    public function setCompanyName($company_name)
     {
-        if (is_null($spid_credential_expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'spid_credential_expiration_date');
+        if (is_null($company_name)) {
+            array_push($this->openAPINullablesSetToNull, 'company_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('spid_credential_expiration_date', $nullablesSetToNull);
+            $index = array_search('company_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['spid_credential_expiration_date'] = $spid_credential_expiration_date;
+        $this->container['company_name'] = $company_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_fiscal_number
+     *
+     * @return string|null
+     */
+    public function getCompanyFiscalNumber()
+    {
+        return $this->container['company_fiscal_number'];
+    }
+
+    /**
+     * Sets company_fiscal_number
+     *
+     * @param string|null $company_fiscal_number The fiscal tax number of the company which the user is associated with.
+     *
+     * @return self
+     */
+    public function setCompanyFiscalNumber($company_fiscal_number)
+    {
+        if (is_null($company_fiscal_number)) {
+            array_push($this->openAPINullablesSetToNull, 'company_fiscal_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('company_fiscal_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['company_fiscal_number'] = $company_fiscal_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets registered_office
+     *
+     * @return string|null
+     */
+    public function getRegisteredOffice()
+    {
+        return $this->container['registered_office'];
+    }
+
+    /**
+     * Sets registered_office
+     *
+     * @param string|null $registered_office The registered office address of the company which the user is associated with.
+     *
+     * @return self
+     */
+    public function setRegisteredOffice($registered_office)
+    {
+        if (is_null($registered_office)) {
+            array_push($this->openAPINullablesSetToNull, 'registered_office');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('registered_office', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['registered_office'] = $registered_office;
 
         return $this;
     }

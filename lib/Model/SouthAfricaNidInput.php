@@ -446,7 +446,7 @@ class SouthAfricaNidInput implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets national_id_number
      *
-     * @param string $national_id_number The user's South African National ID number
+     * @param string $national_id_number The user's National ID number
      *
      * @return self
      */

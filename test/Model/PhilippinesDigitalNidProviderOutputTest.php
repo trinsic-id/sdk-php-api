@@ -1,6 +1,6 @@
 <?php
 /**
- * AttachmentAccessKeysTest
+ * PhilippinesDigitalNidProviderOutputTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace Trinsic\Api\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AttachmentAccessKeysTest Class Doc Comment
+ * PhilippinesDigitalNidProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description AttachmentAccessKeys
+ * @description PhilippinesDigitalNidProviderOutput
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AttachmentAccessKeysTest extends TestCase
+class PhilippinesDigitalNidProviderOutputTest extends TestCase
 {
 
     /**
@@ -71,63 +71,18 @@ class AttachmentAccessKeysTest extends TestCase
     }
 
     /**
-     * Test "AttachmentAccessKeys"
+     * Test "PhilippinesDigitalNidProviderOutput"
      */
-    public function testAttachmentAccessKeys()
+    public function testPhilippinesDigitalNidProviderOutput()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "selfie"
+     * Test attribute "philsys_card_number"
      */
-    public function testPropertySelfie()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_front"
-     */
-    public function testPropertyDocumentFront()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_back"
-     */
-    public function testPropertyDocumentBack()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_portrait"
-     */
-    public function testPropertyDocumentPortrait()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "document_signature"
-     */
-    public function testPropertyDocumentSignature()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "provider"
-     */
-    public function testPropertyProvider()
+    public function testPropertyPhilsysCardNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

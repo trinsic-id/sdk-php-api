@@ -1,6 +1,6 @@
 <?php
 /**
- * ProviderOutput
+ * KenyaNidLookup2Input
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * ProviderOutput Class Doc Comment
+ * KenyaNidLookup2Input Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
+class KenyaNidLookup2Input implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ProviderOutput';
+    protected static $openAPIModelName = 'KenyaNidLookup2Input';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'italy_spid' => '\Trinsic\Api\Model\SpidProviderOutput',
-        'mexico_curp_lookup' => '\Trinsic\Api\Model\MexicoCurpProviderOutput',
-        'ethiopia_fayda' => '\Trinsic\Api\Model\FaydaProviderOutput',
-        'philippines_physical_national_id_qr' => '\Trinsic\Api\Model\PhilippinesPhysicalNidProviderOutput',
-        'philippines_digital_national_id_qr' => '\Trinsic\Api\Model\PhilippinesDigitalNidProviderOutput'
+        'id_number' => 'string'
     ];
 
     /**
@@ -72,11 +68,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'italy_spid' => null,
-        'mexico_curp_lookup' => null,
-        'ethiopia_fayda' => null,
-        'philippines_physical_national_id_qr' => null,
-        'philippines_digital_national_id_qr' => null
+        'id_number' => null
     ];
 
     /**
@@ -85,11 +77,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'italy_spid' => true,
-        'mexico_curp_lookup' => true,
-        'ethiopia_fayda' => true,
-        'philippines_physical_national_id_qr' => true,
-        'philippines_digital_national_id_qr' => true
+        'id_number' => true
     ];
 
     /**
@@ -178,11 +166,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'italy_spid' => 'italy-spid',
-        'mexico_curp_lookup' => 'mexico-curp-lookup',
-        'ethiopia_fayda' => 'ethiopia-fayda',
-        'philippines_physical_national_id_qr' => 'philippines-physical-national-id-qr',
-        'philippines_digital_national_id_qr' => 'philippines-digital-national-id-qr'
+        'id_number' => 'idNumber'
     ];
 
     /**
@@ -191,11 +175,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'italy_spid' => 'setItalySpid',
-        'mexico_curp_lookup' => 'setMexicoCurpLookup',
-        'ethiopia_fayda' => 'setEthiopiaFayda',
-        'philippines_physical_national_id_qr' => 'setPhilippinesPhysicalNationalIdQr',
-        'philippines_digital_national_id_qr' => 'setPhilippinesDigitalNationalIdQr'
+        'id_number' => 'setIdNumber'
     ];
 
     /**
@@ -204,11 +184,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'italy_spid' => 'getItalySpid',
-        'mexico_curp_lookup' => 'getMexicoCurpLookup',
-        'ethiopia_fayda' => 'getEthiopiaFayda',
-        'philippines_physical_national_id_qr' => 'getPhilippinesPhysicalNationalIdQr',
-        'philippines_digital_national_id_qr' => 'getPhilippinesDigitalNationalIdQr'
+        'id_number' => 'getIdNumber'
     ];
 
     /**
@@ -268,11 +244,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('italy_spid', $data ?? [], null);
-        $this->setIfExists('mexico_curp_lookup', $data ?? [], null);
-        $this->setIfExists('ethiopia_fayda', $data ?? [], null);
-        $this->setIfExists('philippines_physical_national_id_qr', $data ?? [], null);
-        $this->setIfExists('philippines_digital_national_id_qr', $data ?? [], null);
+        $this->setIfExists('id_number', $data ?? [], null);
     }
 
     /**
@@ -318,171 +290,35 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets italy_spid
+     * Gets id_number
      *
-     * @return \Trinsic\Api\Model\SpidProviderOutput|null
+     * @return string|null
      */
-    public function getItalySpid()
+    public function getIdNumber()
     {
-        return $this->container['italy_spid'];
+        return $this->container['id_number'];
     }
 
     /**
-     * Sets italy_spid
+     * Sets id_number
      *
-     * @param \Trinsic\Api\Model\SpidProviderOutput|null $italy_spid italy_spid
+     * @param string|null $id_number The user's National ID number
      *
      * @return self
      */
-    public function setItalySpid($italy_spid)
+    public function setIdNumber($id_number)
     {
-        if (is_null($italy_spid)) {
-            array_push($this->openAPINullablesSetToNull, 'italy_spid');
+        if (is_null($id_number)) {
+            array_push($this->openAPINullablesSetToNull, 'id_number');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('italy_spid', $nullablesSetToNull);
+            $index = array_search('id_number', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['italy_spid'] = $italy_spid;
-
-        return $this;
-    }
-
-    /**
-     * Gets mexico_curp_lookup
-     *
-     * @return \Trinsic\Api\Model\MexicoCurpProviderOutput|null
-     */
-    public function getMexicoCurpLookup()
-    {
-        return $this->container['mexico_curp_lookup'];
-    }
-
-    /**
-     * Sets mexico_curp_lookup
-     *
-     * @param \Trinsic\Api\Model\MexicoCurpProviderOutput|null $mexico_curp_lookup mexico_curp_lookup
-     *
-     * @return self
-     */
-    public function setMexicoCurpLookup($mexico_curp_lookup)
-    {
-        if (is_null($mexico_curp_lookup)) {
-            array_push($this->openAPINullablesSetToNull, 'mexico_curp_lookup');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('mexico_curp_lookup', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['mexico_curp_lookup'] = $mexico_curp_lookup;
-
-        return $this;
-    }
-
-    /**
-     * Gets ethiopia_fayda
-     *
-     * @return \Trinsic\Api\Model\FaydaProviderOutput|null
-     */
-    public function getEthiopiaFayda()
-    {
-        return $this->container['ethiopia_fayda'];
-    }
-
-    /**
-     * Sets ethiopia_fayda
-     *
-     * @param \Trinsic\Api\Model\FaydaProviderOutput|null $ethiopia_fayda ethiopia_fayda
-     *
-     * @return self
-     */
-    public function setEthiopiaFayda($ethiopia_fayda)
-    {
-        if (is_null($ethiopia_fayda)) {
-            array_push($this->openAPINullablesSetToNull, 'ethiopia_fayda');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ethiopia_fayda', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ethiopia_fayda'] = $ethiopia_fayda;
-
-        return $this;
-    }
-
-    /**
-     * Gets philippines_physical_national_id_qr
-     *
-     * @return \Trinsic\Api\Model\PhilippinesPhysicalNidProviderOutput|null
-     */
-    public function getPhilippinesPhysicalNationalIdQr()
-    {
-        return $this->container['philippines_physical_national_id_qr'];
-    }
-
-    /**
-     * Sets philippines_physical_national_id_qr
-     *
-     * @param \Trinsic\Api\Model\PhilippinesPhysicalNidProviderOutput|null $philippines_physical_national_id_qr philippines_physical_national_id_qr
-     *
-     * @return self
-     */
-    public function setPhilippinesPhysicalNationalIdQr($philippines_physical_national_id_qr)
-    {
-        if (is_null($philippines_physical_national_id_qr)) {
-            array_push($this->openAPINullablesSetToNull, 'philippines_physical_national_id_qr');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('philippines_physical_national_id_qr', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['philippines_physical_national_id_qr'] = $philippines_physical_national_id_qr;
-
-        return $this;
-    }
-
-    /**
-     * Gets philippines_digital_national_id_qr
-     *
-     * @return \Trinsic\Api\Model\PhilippinesDigitalNidProviderOutput|null
-     */
-    public function getPhilippinesDigitalNationalIdQr()
-    {
-        return $this->container['philippines_digital_national_id_qr'];
-    }
-
-    /**
-     * Sets philippines_digital_national_id_qr
-     *
-     * @param \Trinsic\Api\Model\PhilippinesDigitalNidProviderOutput|null $philippines_digital_national_id_qr philippines_digital_national_id_qr
-     *
-     * @return self
-     */
-    public function setPhilippinesDigitalNationalIdQr($philippines_digital_national_id_qr)
-    {
-        if (is_null($philippines_digital_national_id_qr)) {
-            array_push($this->openAPINullablesSetToNull, 'philippines_digital_national_id_qr');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('philippines_digital_national_id_qr', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['philippines_digital_national_id_qr'] = $philippines_digital_national_id_qr;
+        $this->container['id_number'] = $id_number;
 
         return $this;
     }

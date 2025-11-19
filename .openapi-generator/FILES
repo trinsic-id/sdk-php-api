@@ -54,7 +54,10 @@ docs/Model/IndonesiaNikInput.md
 docs/Model/IntegrationCapability.md
 docs/Model/IntegrationLaunchMethod.md
 docs/Model/IntegrationStep.md
+docs/Model/KenyaNidBiometric2Input.md
 docs/Model/KenyaNidInput.md
+docs/Model/KenyaNidLookup2Input.md
+docs/Model/KenyaNidMatch2Input.md
 docs/Model/Language.md
 docs/Model/ListEnvironmentRedirectUrisResponse.md
 docs/Model/ListProviderContractsResponse.md
@@ -75,6 +78,8 @@ docs/Model/OrderDirection.md
 docs/Model/PersonData.md
 docs/Model/PhilippineMatchInput.md
 docs/Model/PhilippineQRInput.md
+docs/Model/PhilippinesDigitalNidProviderOutput.md
+docs/Model/PhilippinesPhysicalNidProviderOutput.md
 docs/Model/ProblemDetails.md
 docs/Model/ProviderAttachments.md
 docs/Model/ProviderContract.md
@@ -95,8 +100,10 @@ docs/Model/Session.md
 docs/Model/SessionErrorCode.md
 docs/Model/SessionOrdering.md
 docs/Model/Sex.md
+docs/Model/SexV1.md
 docs/Model/SmartIdInput.md
 docs/Model/SouthAfricaNidInput.md
+docs/Model/SouthAfricaNidLookup2Input.md
 docs/Model/SpidBillingInformation.md
 docs/Model/SpidInput.md
 docs/Model/SpidProviderOutput.md
@@ -162,7 +169,10 @@ lib/Model/IndonesiaNikInput.php
 lib/Model/IntegrationCapability.php
 lib/Model/IntegrationLaunchMethod.php
 lib/Model/IntegrationStep.php
+lib/Model/KenyaNidBiometric2Input.php
 lib/Model/KenyaNidInput.php
+lib/Model/KenyaNidLookup2Input.php
+lib/Model/KenyaNidMatch2Input.php
 lib/Model/Language.php
 lib/Model/ListEnvironmentRedirectUrisResponse.php
 lib/Model/ListProviderContractsResponse.php
@@ -184,6 +194,8 @@ lib/Model/OrderDirection.php
 lib/Model/PersonData.php
 lib/Model/PhilippineMatchInput.php
 lib/Model/PhilippineQRInput.php
+lib/Model/PhilippinesDigitalNidProviderOutput.php
+lib/Model/PhilippinesPhysicalNidProviderOutput.php
 lib/Model/ProblemDetails.php
 lib/Model/ProviderAttachments.php
 lib/Model/ProviderContract.php
@@ -204,8 +216,10 @@ lib/Model/Session.php
 lib/Model/SessionErrorCode.php
 lib/Model/SessionOrdering.php
 lib/Model/Sex.php
+lib/Model/SexV1.php
 lib/Model/SmartIdInput.php
 lib/Model/SouthAfricaNidInput.php
+lib/Model/SouthAfricaNidLookup2Input.php
 lib/Model/SpidBillingInformation.php
 lib/Model/SpidInput.php
 lib/Model/SpidProviderOutput.php
@@ -268,7 +282,10 @@ test/Model/IndonesiaNikInputTest.php
 test/Model/IntegrationCapabilityTest.php
 test/Model/IntegrationLaunchMethodTest.php
 test/Model/IntegrationStepTest.php
+test/Model/KenyaNidBiometric2InputTest.php
 test/Model/KenyaNidInputTest.php
+test/Model/KenyaNidLookup2InputTest.php
+test/Model/KenyaNidMatch2InputTest.php
 test/Model/LanguageTest.php
 test/Model/ListEnvironmentRedirectUrisResponseTest.php
 test/Model/ListProviderContractsResponseTest.php
@@ -289,6 +306,8 @@ test/Model/OrderDirectionTest.php
 test/Model/PersonDataTest.php
 test/Model/PhilippineMatchInputTest.php
 test/Model/PhilippineQRInputTest.php
+test/Model/PhilippinesDigitalNidProviderOutputTest.php
+test/Model/PhilippinesPhysicalNidProviderOutputTest.php
 test/Model/ProblemDetailsTest.php
 test/Model/ProviderAttachmentsTest.php
 test/Model/ProviderContractTest.php
@@ -309,8 +328,10 @@ test/Model/SessionErrorCodeTest.php
 test/Model/SessionOrderingTest.php
 test/Model/SessionTest.php
 test/Model/SexTest.php
+test/Model/SexV1Test.php
 test/Model/SmartIdInputTest.php
 test/Model/SouthAfricaNidInputTest.php
+test/Model/SouthAfricaNidLookup2InputTest.php
 test/Model/SpidBillingInformationTest.php
 test/Model/SpidInputTest.php
 test/Model/SpidProviderOutputTest.php

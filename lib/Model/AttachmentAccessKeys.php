@@ -61,6 +61,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => 'string',
         'document_back' => 'string',
         'document_portrait' => 'string',
+        'document_signature' => 'string',
         'provider' => '\Trinsic\Api\Model\ProviderAttachments'
     ];
 
@@ -76,6 +77,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => null,
         'document_back' => null,
         'document_portrait' => null,
+        'document_signature' => null,
         'provider' => null
     ];
 
@@ -89,6 +91,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => true,
         'document_back' => true,
         'document_portrait' => true,
+        'document_signature' => true,
         'provider' => false
     ];
 
@@ -182,6 +185,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => 'documentFront',
         'document_back' => 'documentBack',
         'document_portrait' => 'documentPortrait',
+        'document_signature' => 'documentSignature',
         'provider' => 'provider'
     ];
 
@@ -195,6 +199,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => 'setDocumentFront',
         'document_back' => 'setDocumentBack',
         'document_portrait' => 'setDocumentPortrait',
+        'document_signature' => 'setDocumentSignature',
         'provider' => 'setProvider'
     ];
 
@@ -208,6 +213,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         'document_front' => 'getDocumentFront',
         'document_back' => 'getDocumentBack',
         'document_portrait' => 'getDocumentPortrait',
+        'document_signature' => 'getDocumentSignature',
         'provider' => 'getProvider'
     ];
 
@@ -272,6 +278,7 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('document_front', $data ?? [], null);
         $this->setIfExists('document_back', $data ?? [], null);
         $this->setIfExists('document_portrait', $data ?? [], null);
+        $this->setIfExists('document_signature', $data ?? [], null);
         $this->setIfExists('provider', $data ?? [], null);
     }
 
@@ -452,6 +459,40 @@ class AttachmentAccessKeys implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
         $this->container['document_portrait'] = $document_portrait;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_signature
+     *
+     * @return string|null
+     */
+    public function getDocumentSignature()
+    {
+        return $this->container['document_signature'];
+    }
+
+    /**
+     * Sets document_signature
+     *
+     * @param string|null $document_signature document_signature
+     *
+     * @return self
+     */
+    public function setDocumentSignature($document_signature)
+    {
+        if (is_null($document_signature)) {
+            array_push($this->openAPINullablesSetToNull, 'document_signature');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('document_signature', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['document_signature'] = $document_signature;
 
         return $this;
     }

@@ -4,11 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**kenya_biometric2** | [**\Trinsic\Api\Model\KenyaNidBiometric2Input**](KenyaNidBiometric2Input.md) | Input for the &#x60;kenya-nid-match-biometric-2&#x60; provider | [optional]
 **indonesia_nik** | [**\Trinsic\Api\Model\IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider | [optional]
 **indonesia_dukcapil_match** | [**\Trinsic\Api\Model\IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider | [optional]
 **mexico_curp** | [**\Trinsic\Api\Model\MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider | [optional]
 **south_africa_nid** | [**\Trinsic\Api\Model\SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider | [optional]
 **kenya_nid** | [**\Trinsic\Api\Model\KenyaNidInput**](KenyaNidInput.md) | Input for the &#x60;kenya-nid-lookup&#x60; provider | [optional]
+**kenya_nid_match2** | [**\Trinsic\Api\Model\KenyaNidMatch2Input**](KenyaNidMatch2Input.md) | Input for the &#x60;kenya-nid-match-2&#x60; provider | [optional]
+**kenya_nid_lookup2** | [**\Trinsic\Api\Model\KenyaNidLookup2Input**](KenyaNidLookup2Input.md) | Input for the &#x60;kenya-nid-lookup-2&#x60; provider | [optional]
+**south_africa_nid_lookup2** | [**\Trinsic\Api\Model\SouthAfricaNidLookup2Input**](SouthAfricaNidLookup2Input.md) | Input for the &#x60;south-africa-nid-lookup-2&#x60; provider | [optional]
 **nigeria_nin** | [**\Trinsic\Api\Model\NigeriaNinInput**](NigeriaNinInput.md) | Input for the &#x60;nigeria-nin-lookup&#x60; provider | [optional]
 **aadhaar** | [**\Trinsic\Api\Model\AadhaarInput**](AadhaarInput.md) | Input for the &#x60;india-digilocker-aadhaar-match&#x60; provider | [optional]
 **bangladesh_national_id** | [**\Trinsic\Api\Model\BangladeshNidInput**](BangladeshNidInput.md) | Input for the &#x60;bangladesh-nid&#x60; provider | [optional]

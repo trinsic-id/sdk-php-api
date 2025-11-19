@@ -89,9 +89,9 @@ class SpidProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "fiscal_number"
+     * Test attribute "identity_provider_entity_id"
      */
-    public function testPropertyFiscalNumber()
+    public function testPropertyIdentityProviderEntityId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -107,6 +107,69 @@ class SpidProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "spid_credential_expiration_date"
+     */
+    public function testPropertySpidCredentialExpirationDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "place_of_birth"
+     */
+    public function testPropertyPlaceOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "county_of_birth"
+     */
+    public function testPropertyCountyOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "raw_id_card"
+     */
+    public function testPropertyRawIdCard()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "digital_address"
+     */
+    public function testPropertyDigitalAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fiscal_number"
+     */
+    public function testPropertyFiscalNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iva_code"
      */
     public function testPropertyIvaCode()
@@ -116,9 +179,27 @@ class SpidProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "spid_credential_expiration_date"
+     * Test attribute "company_name"
      */
-    public function testPropertySpidCredentialExpirationDate()
+    public function testPropertyCompanyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "company_fiscal_number"
+     */
+    public function testPropertyCompanyFiscalNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "registered_office"
+     */
+    public function testPropertyRegisteredOffice()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

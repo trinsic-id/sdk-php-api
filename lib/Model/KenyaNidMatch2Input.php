@@ -1,6 +1,6 @@
 <?php
 /**
- * NigeriaNinInput
+ * KenyaNidMatch2Input
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Trinsic\Api\ObjectSerializer;
 
 /**
- * NigeriaNinInput Class Doc Comment
+ * KenyaNidMatch2Input Class Doc Comment
  *
  * @category Class
  * @package  Trinsic\Api
@@ -40,7 +40,7 @@ use \Trinsic\Api\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
+class KenyaNidMatch2Input implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NigeriaNinInput';
+    protected static $openAPIModelName = 'KenyaNidMatch2Input';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'first_name' => 'string',
+        'id_number' => 'string',
+        'given_name' => 'string',
+        'family_name' => 'string',
         'middle_name' => 'string',
-        'last_name' => 'string',
-        'phone_number' => 'string',
         'date_of_birth' => '\DateTime',
-        'gender' => 'string',
-        'national_id_number' => 'string'
+        'sex' => '\Trinsic\Api\Model\SexV1'
     ];
 
     /**
@@ -74,13 +73,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'first_name' => null,
+        'id_number' => null,
+        'given_name' => null,
+        'family_name' => null,
         'middle_name' => null,
-        'last_name' => null,
-        'phone_number' => null,
         'date_of_birth' => 'date',
-        'gender' => null,
-        'national_id_number' => null
+        'sex' => null
     ];
 
     /**
@@ -89,13 +87,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'first_name' => false,
+        'id_number' => true,
+        'given_name' => true,
+        'family_name' => true,
         'middle_name' => true,
-        'last_name' => false,
-        'phone_number' => true,
-        'date_of_birth' => false,
-        'gender' => true,
-        'national_id_number' => false
+        'date_of_birth' => true,
+        'sex' => true
     ];
 
     /**
@@ -184,13 +181,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'first_name' => 'firstName',
+        'id_number' => 'idNumber',
+        'given_name' => 'givenName',
+        'family_name' => 'familyName',
         'middle_name' => 'middleName',
-        'last_name' => 'lastName',
-        'phone_number' => 'phoneNumber',
         'date_of_birth' => 'dateOfBirth',
-        'gender' => 'gender',
-        'national_id_number' => 'nationalIdNumber'
+        'sex' => 'sex'
     ];
 
     /**
@@ -199,13 +195,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'first_name' => 'setFirstName',
+        'id_number' => 'setIdNumber',
+        'given_name' => 'setGivenName',
+        'family_name' => 'setFamilyName',
         'middle_name' => 'setMiddleName',
-        'last_name' => 'setLastName',
-        'phone_number' => 'setPhoneNumber',
         'date_of_birth' => 'setDateOfBirth',
-        'gender' => 'setGender',
-        'national_id_number' => 'setNationalIdNumber'
+        'sex' => 'setSex'
     ];
 
     /**
@@ -214,13 +209,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'first_name' => 'getFirstName',
+        'id_number' => 'getIdNumber',
+        'given_name' => 'getGivenName',
+        'family_name' => 'getFamilyName',
         'middle_name' => 'getMiddleName',
-        'last_name' => 'getLastName',
-        'phone_number' => 'getPhoneNumber',
         'date_of_birth' => 'getDateOfBirth',
-        'gender' => 'getGender',
-        'national_id_number' => 'getNationalIdNumber'
+        'sex' => 'getSex'
     ];
 
     /**
@@ -280,13 +274,12 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('first_name', $data ?? [], null);
+        $this->setIfExists('id_number', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
         $this->setIfExists('middle_name', $data ?? [], null);
-        $this->setIfExists('last_name', $data ?? [], null);
-        $this->setIfExists('phone_number', $data ?? [], null);
         $this->setIfExists('date_of_birth', $data ?? [], null);
-        $this->setIfExists('gender', $data ?? [], null);
-        $this->setIfExists('national_id_number', $data ?? [], null);
+        $this->setIfExists('sex', $data ?? [], null);
     }
 
     /**
@@ -316,38 +309,6 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['first_name'] === null) {
-            $invalidProperties[] = "'first_name' can't be null";
-        }
-        if ((mb_strlen($this->container['first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'first_name', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['last_name'] === null) {
-            $invalidProperties[] = "'last_name' can't be null";
-        }
-        if ((mb_strlen($this->container['last_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'last_name', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['date_of_birth'] === null) {
-            $invalidProperties[] = "'date_of_birth' can't be null";
-        }
-        if ($this->container['national_id_number'] === null) {
-            $invalidProperties[] = "'national_id_number' can't be null";
-        }
-        if ((mb_strlen($this->container['national_id_number']) > 11)) {
-            $invalidProperties[] = "invalid value for 'national_id_number', the character length must be smaller than or equal to 11.";
-        }
-
-        if ((mb_strlen($this->container['national_id_number']) < 11)) {
-            $invalidProperties[] = "invalid value for 'national_id_number', the character length must be bigger than or equal to 11.";
-        }
-
-        if (!preg_match("/^\\d*$/", $this->container['national_id_number'])) {
-            $invalidProperties[] = "invalid value for 'national_id_number', must be conform to the pattern /^\\d*$/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -364,33 +325,103 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets first_name
+     * Gets id_number
      *
-     * @return string
+     * @return string|null
      */
-    public function getFirstName()
+    public function getIdNumber()
     {
-        return $this->container['first_name'];
+        return $this->container['id_number'];
     }
 
     /**
-     * Sets first_name
+     * Sets id_number
      *
-     * @param string $first_name The user's first name as it appears in their National ID
+     * @param string|null $id_number The user's Kenyan National ID number
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setIdNumber($id_number)
     {
-        if (is_null($first_name)) {
-            throw new \InvalidArgumentException('non-nullable first_name cannot be null');
+        if (is_null($id_number)) {
+            array_push($this->openAPINullablesSetToNull, 'id_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
+        $this->container['id_number'] = $id_number;
 
-        if ((mb_strlen($first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $first_name when calling NigeriaNinInput., must be bigger than or equal to 1.');
+        return $this;
+    }
+
+    /**
+     * Gets given_name
+     *
+     * @return string|null
+     */
+    public function getGivenName()
+    {
+        return $this->container['given_name'];
+    }
+
+    /**
+     * Sets given_name
+     *
+     * @param string|null $given_name The user's first name as it appears in their National ID
+     *
+     * @return self
+     */
+    public function setGivenName($given_name)
+    {
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('given_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
+        $this->container['given_name'] = $given_name;
 
-        $this->container['first_name'] = $first_name;
+        return $this;
+    }
+
+    /**
+     * Gets family_name
+     *
+     * @return string|null
+     */
+    public function getFamilyName()
+    {
+        return $this->container['family_name'];
+    }
+
+    /**
+     * Sets family_name
+     *
+     * @param string|null $family_name The user's last name as it appears in their National ID
+     *
+     * @return self
+     */
+    public function setFamilyName($family_name)
+    {
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('family_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
@@ -430,75 +461,9 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets last_name
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     *
-     * @param string $last_name The user's last name as it appears in their National ID (optional)
-     *
-     * @return self
-     */
-    public function setLastName($last_name)
-    {
-        if (is_null($last_name)) {
-            throw new \InvalidArgumentException('non-nullable last_name cannot be null');
-        }
-
-        if ((mb_strlen($last_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $last_name when calling NigeriaNinInput., must be bigger than or equal to 1.');
-        }
-
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string|null
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string|null $phone_number The user's phone number (optional)
-     *
-     * @return self
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        if (is_null($phone_number)) {
-            array_push($this->openAPINullablesSetToNull, 'phone_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone_number', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
      * Gets date_of_birth
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDateOfBirth()
     {
@@ -508,14 +473,21 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date_of_birth
      *
-     * @param \DateTime $date_of_birth The user's date of birth, in `YYYY-MM-DD` format
+     * @param \DateTime|null $date_of_birth The user's date of birth, in `YYYY-MM-DD` format
      *
      * @return self
      */
     public function setDateOfBirth($date_of_birth)
     {
         if (is_null($date_of_birth)) {
-            throw new \InvalidArgumentException('non-nullable date_of_birth cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_of_birth'] = $date_of_birth;
 
@@ -523,72 +495,35 @@ class NigeriaNinInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets gender
+     * Gets sex
      *
-     * @return string|null
+     * @return \Trinsic\Api\Model\SexV1|null
      */
-    public function getGender()
+    public function getSex()
     {
-        return $this->container['gender'];
+        return $this->container['sex'];
     }
 
     /**
-     * Sets gender
+     * Sets sex
      *
-     * @param string|null $gender The user's gender as it appears in their National ID (e.g., male, female)
+     * @param \Trinsic\Api\Model\SexV1|null $sex The user's sex as it appears in their National ID
      *
      * @return self
      */
-    public function setGender($gender)
+    public function setSex($sex)
     {
-        if (is_null($gender)) {
-            array_push($this->openAPINullablesSetToNull, 'gender');
+        if (is_null($sex)) {
+            array_push($this->openAPINullablesSetToNull, 'sex');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gender', $nullablesSetToNull);
+            $index = array_search('sex', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Gets national_id_number
-     *
-     * @return string
-     */
-    public function getNationalIdNumber()
-    {
-        return $this->container['national_id_number'];
-    }
-
-    /**
-     * Sets national_id_number
-     *
-     * @param string $national_id_number The user's National ID number
-     *
-     * @return self
-     */
-    public function setNationalIdNumber($national_id_number)
-    {
-        if (is_null($national_id_number)) {
-            throw new \InvalidArgumentException('non-nullable national_id_number cannot be null');
-        }
-        if ((mb_strlen($national_id_number) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $national_id_number when calling NigeriaNinInput., must be smaller than or equal to 11.');
-        }
-        if ((mb_strlen($national_id_number) < 11)) {
-            throw new \InvalidArgumentException('invalid length for $national_id_number when calling NigeriaNinInput., must be bigger than or equal to 11.');
-        }
-        if ((!preg_match("/^\\d*$/", ObjectSerializer::toString($national_id_number)))) {
-            throw new \InvalidArgumentException("invalid value for \$national_id_number when calling NigeriaNinInput., must conform to the pattern /^\\d*$/.");
-        }
-
-        $this->container['national_id_number'] = $national_id_number;
+        $this->container['sex'] = $sex;
 
         return $this;
     }

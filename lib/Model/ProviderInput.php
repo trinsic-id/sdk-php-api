@@ -57,11 +57,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'kenya_biometric2' => '\Trinsic\Api\Model\KenyaNidBiometric2Input',
         'indonesia_nik' => '\Trinsic\Api\Model\IndonesiaNikInput',
         'indonesia_dukcapil_match' => '\Trinsic\Api\Model\IndonesiaDukcapilMatchInput',
         'mexico_curp' => '\Trinsic\Api\Model\MexicoCurpInput',
         'south_africa_nid' => '\Trinsic\Api\Model\SouthAfricaNidInput',
         'kenya_nid' => '\Trinsic\Api\Model\KenyaNidInput',
+        'kenya_nid_match2' => '\Trinsic\Api\Model\KenyaNidMatch2Input',
+        'kenya_nid_lookup2' => '\Trinsic\Api\Model\KenyaNidLookup2Input',
+        'south_africa_nid_lookup2' => '\Trinsic\Api\Model\SouthAfricaNidLookup2Input',
         'nigeria_nin' => '\Trinsic\Api\Model\NigeriaNinInput',
         'aadhaar' => '\Trinsic\Api\Model\AadhaarInput',
         'bangladesh_national_id' => '\Trinsic\Api\Model\BangladeshNidInput',
@@ -87,11 +91,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'kenya_biometric2' => null,
         'indonesia_nik' => null,
         'indonesia_dukcapil_match' => null,
         'mexico_curp' => null,
         'south_africa_nid' => null,
         'kenya_nid' => null,
+        'kenya_nid_match2' => null,
+        'kenya_nid_lookup2' => null,
+        'south_africa_nid_lookup2' => null,
         'nigeria_nin' => null,
         'aadhaar' => null,
         'bangladesh_national_id' => null,
@@ -115,11 +123,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'kenya_biometric2' => true,
         'indonesia_nik' => true,
         'indonesia_dukcapil_match' => true,
         'mexico_curp' => true,
         'south_africa_nid' => true,
         'kenya_nid' => true,
+        'kenya_nid_match2' => true,
+        'kenya_nid_lookup2' => true,
+        'south_africa_nid_lookup2' => true,
         'nigeria_nin' => true,
         'aadhaar' => true,
         'bangladesh_national_id' => true,
@@ -223,11 +235,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'kenya_biometric2' => 'kenyaBiometric2',
         'indonesia_nik' => 'indonesiaNik',
         'indonesia_dukcapil_match' => 'indonesiaDukcapilMatch',
         'mexico_curp' => 'mexicoCurp',
         'south_africa_nid' => 'southAfricaNid',
         'kenya_nid' => 'kenyaNid',
+        'kenya_nid_match2' => 'kenyaNidMatch2',
+        'kenya_nid_lookup2' => 'kenyaNidLookup2',
+        'south_africa_nid_lookup2' => 'southAfricaNidLookup2',
         'nigeria_nin' => 'nigeriaNin',
         'aadhaar' => 'aadhaar',
         'bangladesh_national_id' => 'bangladeshNationalId',
@@ -251,11 +267,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'kenya_biometric2' => 'setKenyaBiometric2',
         'indonesia_nik' => 'setIndonesiaNik',
         'indonesia_dukcapil_match' => 'setIndonesiaDukcapilMatch',
         'mexico_curp' => 'setMexicoCurp',
         'south_africa_nid' => 'setSouthAfricaNid',
         'kenya_nid' => 'setKenyaNid',
+        'kenya_nid_match2' => 'setKenyaNidMatch2',
+        'kenya_nid_lookup2' => 'setKenyaNidLookup2',
+        'south_africa_nid_lookup2' => 'setSouthAfricaNidLookup2',
         'nigeria_nin' => 'setNigeriaNin',
         'aadhaar' => 'setAadhaar',
         'bangladesh_national_id' => 'setBangladeshNationalId',
@@ -279,11 +299,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'kenya_biometric2' => 'getKenyaBiometric2',
         'indonesia_nik' => 'getIndonesiaNik',
         'indonesia_dukcapil_match' => 'getIndonesiaDukcapilMatch',
         'mexico_curp' => 'getMexicoCurp',
         'south_africa_nid' => 'getSouthAfricaNid',
         'kenya_nid' => 'getKenyaNid',
+        'kenya_nid_match2' => 'getKenyaNidMatch2',
+        'kenya_nid_lookup2' => 'getKenyaNidLookup2',
+        'south_africa_nid_lookup2' => 'getSouthAfricaNidLookup2',
         'nigeria_nin' => 'getNigeriaNin',
         'aadhaar' => 'getAadhaar',
         'bangladesh_national_id' => 'getBangladeshNationalId',
@@ -358,11 +382,15 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('kenya_biometric2', $data ?? [], null);
         $this->setIfExists('indonesia_nik', $data ?? [], null);
         $this->setIfExists('indonesia_dukcapil_match', $data ?? [], null);
         $this->setIfExists('mexico_curp', $data ?? [], null);
         $this->setIfExists('south_africa_nid', $data ?? [], null);
         $this->setIfExists('kenya_nid', $data ?? [], null);
+        $this->setIfExists('kenya_nid_match2', $data ?? [], null);
+        $this->setIfExists('kenya_nid_lookup2', $data ?? [], null);
+        $this->setIfExists('south_africa_nid_lookup2', $data ?? [], null);
         $this->setIfExists('nigeria_nin', $data ?? [], null);
         $this->setIfExists('aadhaar', $data ?? [], null);
         $this->setIfExists('bangladesh_national_id', $data ?? [], null);
@@ -421,6 +449,40 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets kenya_biometric2
+     *
+     * @return \Trinsic\Api\Model\KenyaNidBiometric2Input|null
+     */
+    public function getKenyaBiometric2()
+    {
+        return $this->container['kenya_biometric2'];
+    }
+
+    /**
+     * Sets kenya_biometric2
+     *
+     * @param \Trinsic\Api\Model\KenyaNidBiometric2Input|null $kenya_biometric2 Input for the `kenya-nid-match-biometric-2` provider
+     *
+     * @return self
+     */
+    public function setKenyaBiometric2($kenya_biometric2)
+    {
+        if (is_null($kenya_biometric2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_biometric2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('kenya_biometric2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['kenya_biometric2'] = $kenya_biometric2;
+
+        return $this;
+    }
 
     /**
      * Gets indonesia_nik
@@ -588,6 +650,108 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['kenya_nid'] = $kenya_nid;
+
+        return $this;
+    }
+
+    /**
+     * Gets kenya_nid_match2
+     *
+     * @return \Trinsic\Api\Model\KenyaNidMatch2Input|null
+     */
+    public function getKenyaNidMatch2()
+    {
+        return $this->container['kenya_nid_match2'];
+    }
+
+    /**
+     * Sets kenya_nid_match2
+     *
+     * @param \Trinsic\Api\Model\KenyaNidMatch2Input|null $kenya_nid_match2 Input for the `kenya-nid-match-2` provider
+     *
+     * @return self
+     */
+    public function setKenyaNidMatch2($kenya_nid_match2)
+    {
+        if (is_null($kenya_nid_match2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_match2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('kenya_nid_match2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['kenya_nid_match2'] = $kenya_nid_match2;
+
+        return $this;
+    }
+
+    /**
+     * Gets kenya_nid_lookup2
+     *
+     * @return \Trinsic\Api\Model\KenyaNidLookup2Input|null
+     */
+    public function getKenyaNidLookup2()
+    {
+        return $this->container['kenya_nid_lookup2'];
+    }
+
+    /**
+     * Sets kenya_nid_lookup2
+     *
+     * @param \Trinsic\Api\Model\KenyaNidLookup2Input|null $kenya_nid_lookup2 Input for the `kenya-nid-lookup-2` provider
+     *
+     * @return self
+     */
+    public function setKenyaNidLookup2($kenya_nid_lookup2)
+    {
+        if (is_null($kenya_nid_lookup2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_lookup2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('kenya_nid_lookup2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['kenya_nid_lookup2'] = $kenya_nid_lookup2;
+
+        return $this;
+    }
+
+    /**
+     * Gets south_africa_nid_lookup2
+     *
+     * @return \Trinsic\Api\Model\SouthAfricaNidLookup2Input|null
+     */
+    public function getSouthAfricaNidLookup2()
+    {
+        return $this->container['south_africa_nid_lookup2'];
+    }
+
+    /**
+     * Sets south_africa_nid_lookup2
+     *
+     * @param \Trinsic\Api\Model\SouthAfricaNidLookup2Input|null $south_africa_nid_lookup2 Input for the `south-africa-nid-lookup-2` provider
+     *
+     * @return self
+     */
+    public function setSouthAfricaNidLookup2($south_africa_nid_lookup2)
+    {
+        if (is_null($south_africa_nid_lookup2)) {
+            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_lookup2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('south_africa_nid_lookup2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['south_africa_nid_lookup2'] = $south_africa_nid_lookup2;
 
         return $this;
     }

@@ -8,9 +8,11 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | [**createDirectProviderSession()**](SessionsApi.md#createDirectProviderSession) | **POST** /api/v1/sessions/provider/direct | Create Direct Provider Session |
 | [**createHostedProviderSession()**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
 | [**createWidgetSession()**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
+| [**getAttachment()**](SessionsApi.md#getAttachment) | **POST** /api/v1/sessions/{sessionId}/attachments/{attachmentId}/get | Get Attachment |
 | [**getSession()**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult()**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
 | [**listSessions()**](SessionsApi.md#listSessions) | **GET** /api/v1/verification-profiles/{verificationProfileId}/sessions | List Sessions |
+| [**recommendProviders()**](SessionsApi.md#recommendProviders) | **POST** /api/v1/sessions/providers/recommend | Recommend Providers |
 | [**redactSession()**](SessionsApi.md#redactSession) | **POST** /api/v1/sessions/{sessionId}/redact | Redact Session |
 | [**refreshStepContent()**](SessionsApi.md#refreshStepContent) | **POST** /api/v1/sessions/{sessionId}/step/refresh | Refresh Step Content |
 | [**submitNativeChallengeResponse()**](SessionsApi.md#submitNativeChallengeResponse) | **POST** /api/v1/sessions/{sessionId}/native-challenge/submit | Submit Native Challenge Response |
@@ -256,6 +258,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAttachment()`
+
+```php
+getAttachment($session_id, $attachment_id, $get_attachment_request): \Trinsic\Api\Model\GetAttachmentResponse
+```
+
+Get Attachment
+
+Fetch an Attachment's contents.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$session_id = 'session_id_example'; // string | The ID of the Session to fetch the Attachment from
+$attachment_id = 'attachment_id_example'; // string | The ID of the Attachment to fetch
+$get_attachment_request = new \Trinsic\Api\Model\GetAttachmentRequest(); // \Trinsic\Api\Model\GetAttachmentRequest
+
+try {
+    $result = $apiInstance->getAttachment($session_id, $attachment_id, $get_attachment_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->getAttachment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**| The ID of the Session to fetch the Attachment from | |
+| **attachment_id** | **string**| The ID of the Attachment to fetch | |
+| **get_attachment_request** | [**\Trinsic\Api\Model\GetAttachmentRequest**](../Model/GetAttachmentRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\GetAttachmentResponse**](../Model/GetAttachmentResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getSession()`
 
 ```php
@@ -444,6 +510,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `recommendProviders()`
+
+```php
+recommendProviders($recommend_providers_request): \Trinsic\Api\Model\RecommendProvidersResponse
+```
+
+Recommend Providers
+
+Recommend providers for a specific user session. You can filter based on health (default=online) and specify country and subdivision information. Trinsic will use the phone number and IP address, if provided, to deduce the country and subdivision of the user and use that info for filtering the providers.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\SessionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$recommend_providers_request = new \Trinsic\Api\Model\RecommendProvidersRequest(); // \Trinsic\Api\Model\RecommendProvidersRequest
+
+try {
+    $result = $apiInstance->recommendProviders($recommend_providers_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionsApi->recommendProviders: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **recommend_providers_request** | [**\Trinsic\Api\Model\RecommendProvidersRequest**](../Model/RecommendProvidersRequest.md)|  | [optional] |
+
+### Return type
+
+[**\Trinsic\Api\Model\RecommendProvidersResponse**](../Model/RecommendProvidersResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `text/json`, `application/*+json`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `redactSession()`
 
 ```php
@@ -452,7 +578,7 @@ redactSession($session_id)
 
 Redact Session
 
-Redact a Session, removing all identity data from Trinsic's servers. Every application has a redaction period that dictates how long we will hold on to your users' PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
+Redact a Session, removing all identity data from Trinsic's servers. Every verification profile has a redaction period that dictates how long we will hold on to your users' PII data. Once a session falls outside the redaction cutoff date, all PII will automatically be removed from that session. You can utilize this endpoint to redact a session immediately.
 
 ### Example
 

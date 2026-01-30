@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * MexicoCurpProviderOutput Class Doc Comment
  *
  * @category Class
+ * @description Exposed properties for the &#x60;mexico-curp-lookup&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

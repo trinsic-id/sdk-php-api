@@ -287,6 +287,10 @@ class RedirectUriResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['uri'] === null) {
             $invalidProperties[] = "'uri' can't be null";
         }
+        if ((mb_strlen($this->container['uri']) < 1)) {
+            $invalidProperties[] = "invalid value for 'uri', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -351,6 +355,11 @@ class RedirectUriResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         if (is_null($uri)) {
             throw new \InvalidArgumentException('non-nullable uri cannot be null');
         }
+
+        if ((mb_strlen($uri) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $uri when calling RedirectUriResponse., must be bigger than or equal to 1.');
+        }
+
         $this->container['uri'] = $uri;
 
         return $this;

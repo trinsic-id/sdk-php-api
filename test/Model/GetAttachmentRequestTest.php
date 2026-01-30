@@ -80,18 +80,9 @@ class GetAttachmentRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "attachment_access_key"
+     * Test attribute "results_access_key"
      */
-    public function testPropertyAttachmentAccessKey()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "session_id"
-     */
-    public function testPropertySessionId()
+    public function testPropertyResultsAccessKey()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

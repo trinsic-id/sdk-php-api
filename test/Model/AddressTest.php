@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * AddressTest Class Doc Comment
  *
  * @category    Class
- * @description Address
+ * @description Address information for an individual
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

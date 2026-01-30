@@ -57,8 +57,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'attachment_access_key' => 'string',
-        'session_id' => 'string'
+        'results_access_key' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'attachment_access_key' => null,
-        'session_id' => 'uuid'
+        'results_access_key' => null
     ];
 
     /**
@@ -79,8 +77,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'attachment_access_key' => false,
-        'session_id' => false
+        'results_access_key' => false
     ];
 
     /**
@@ -169,8 +166,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'attachment_access_key' => 'attachmentAccessKey',
-        'session_id' => 'sessionId'
+        'results_access_key' => 'resultsAccessKey'
     ];
 
     /**
@@ -179,8 +175,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'attachment_access_key' => 'setAttachmentAccessKey',
-        'session_id' => 'setSessionId'
+        'results_access_key' => 'setResultsAccessKey'
     ];
 
     /**
@@ -189,8 +184,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'attachment_access_key' => 'getAttachmentAccessKey',
-        'session_id' => 'getSessionId'
+        'results_access_key' => 'getResultsAccessKey'
     ];
 
     /**
@@ -250,8 +244,7 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('attachment_access_key', $data ?? [], null);
-        $this->setIfExists('session_id', $data ?? [], null);
+        $this->setIfExists('results_access_key', $data ?? [], null);
     }
 
     /**
@@ -281,16 +274,13 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['attachment_access_key'] === null) {
-            $invalidProperties[] = "'attachment_access_key' can't be null";
+        if ($this->container['results_access_key'] === null) {
+            $invalidProperties[] = "'results_access_key' can't be null";
         }
-        if ((mb_strlen($this->container['attachment_access_key']) < 1)) {
-            $invalidProperties[] = "invalid value for 'attachment_access_key', the character length must be bigger than or equal to 1.";
+        if ((mb_strlen($this->container['results_access_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'results_access_key', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['session_id'] === null) {
-            $invalidProperties[] = "'session_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -307,60 +297,33 @@ class GetAttachmentRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets attachment_access_key
+     * Gets results_access_key
      *
      * @return string
      */
-    public function getAttachmentAccessKey()
+    public function getResultsAccessKey()
     {
-        return $this->container['attachment_access_key'];
+        return $this->container['results_access_key'];
     }
 
     /**
-     * Sets attachment_access_key
+     * Sets results_access_key
      *
-     * @param string $attachment_access_key The Attachment Access Key to exchange for the raw file contents of the related Attachment
+     * @param string $results_access_key The Results Access Key for the Session associated with the Attachment being retrieved.              This is returned during Session creation.
      *
      * @return self
      */
-    public function setAttachmentAccessKey($attachment_access_key)
+    public function setResultsAccessKey($results_access_key)
     {
-        if (is_null($attachment_access_key)) {
-            throw new \InvalidArgumentException('non-nullable attachment_access_key cannot be null');
+        if (is_null($results_access_key)) {
+            throw new \InvalidArgumentException('non-nullable results_access_key cannot be null');
         }
 
-        if ((mb_strlen($attachment_access_key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $attachment_access_key when calling GetAttachmentRequest., must be bigger than or equal to 1.');
+        if ((mb_strlen($results_access_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $results_access_key when calling GetAttachmentRequest., must be bigger than or equal to 1.');
         }
 
-        $this->container['attachment_access_key'] = $attachment_access_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets session_id
-     *
-     * @return string
-     */
-    public function getSessionId()
-    {
-        return $this->container['session_id'];
-    }
-
-    /**
-     * Sets session_id
-     *
-     * @param string $session_id The ID of the Acceptance Session for which the Attachment is being requested.
-     *
-     * @return self
-     */
-    public function setSessionId($session_id)
-    {
-        if (is_null($session_id)) {
-            throw new \InvalidArgumentException('non-nullable session_id cannot be null');
-        }
-        $this->container['session_id'] = $session_id;
+        $this->container['results_access_key'] = $results_access_key;
 
         return $this;
     }

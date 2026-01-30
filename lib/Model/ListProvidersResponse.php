@@ -57,7 +57,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'providers' => '\Trinsic\Api\Model\ProviderInfo[]'
+        'providers' => '\Trinsic\Api\Model\Provider[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets providers
      *
-     * @return \Trinsic\Api\Model\ProviderInfo[]
+     * @return \Trinsic\Api\Model\Provider[]
      */
     public function getProviders()
     {
@@ -305,7 +305,7 @@ class ListProvidersResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets providers
      *
-     * @param \Trinsic\Api\Model\ProviderInfo[] $providers The list of identity providers available to your account
+     * @param \Trinsic\Api\Model\Provider[] $providers The list of providers available to this organization
      *
      * @return self
      */

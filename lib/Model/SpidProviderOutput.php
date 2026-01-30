@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * SpidProviderOutput Class Doc Comment
  *
  * @category Class
+ * @description Exposed properties for the &#x60;italy-spid&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,10 +62,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => 'string',
         'spid_code' => 'string',
         'spid_credential_expiration_date' => '\DateTime',
+        'raw_id_card' => 'string',
+        'given_name' => 'string',
+        'family_name' => 'string',
+        'date_of_birth' => '\DateTime',
+        'gender' => 'string',
         'place_of_birth' => 'string',
         'county_of_birth' => 'string',
-        'raw_id_card' => 'string',
+        'domicile_street_address' => 'string',
+        'domicile_postal_code' => 'string',
+        'domicile_municipality' => 'string',
+        'domicile_province' => 'string',
+        'domicile_nation' => 'string',
         'email' => 'string',
+        'mobile_phone' => 'string',
         'digital_address' => 'string',
         'fiscal_number' => 'string',
         'iva_code' => 'string',
@@ -85,10 +96,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => null,
         'spid_code' => null,
         'spid_credential_expiration_date' => 'date',
+        'raw_id_card' => null,
+        'given_name' => null,
+        'family_name' => null,
+        'date_of_birth' => 'date',
+        'gender' => null,
         'place_of_birth' => null,
         'county_of_birth' => null,
-        'raw_id_card' => null,
+        'domicile_street_address' => null,
+        'domicile_postal_code' => null,
+        'domicile_municipality' => null,
+        'domicile_province' => null,
+        'domicile_nation' => null,
         'email' => null,
+        'mobile_phone' => null,
         'digital_address' => null,
         'fiscal_number' => null,
         'iva_code' => null,
@@ -107,10 +128,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => false,
         'spid_code' => false,
         'spid_credential_expiration_date' => true,
+        'raw_id_card' => true,
+        'given_name' => true,
+        'family_name' => true,
+        'date_of_birth' => true,
+        'gender' => true,
         'place_of_birth' => true,
         'county_of_birth' => true,
-        'raw_id_card' => true,
+        'domicile_street_address' => true,
+        'domicile_postal_code' => true,
+        'domicile_municipality' => true,
+        'domicile_province' => true,
+        'domicile_nation' => true,
         'email' => true,
+        'mobile_phone' => true,
         'digital_address' => true,
         'fiscal_number' => true,
         'iva_code' => true,
@@ -209,10 +240,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => 'identityProviderEntityId',
         'spid_code' => 'spidCode',
         'spid_credential_expiration_date' => 'spidCredentialExpirationDate',
+        'raw_id_card' => 'rawIdCard',
+        'given_name' => 'givenName',
+        'family_name' => 'familyName',
+        'date_of_birth' => 'dateOfBirth',
+        'gender' => 'gender',
         'place_of_birth' => 'placeOfBirth',
         'county_of_birth' => 'countyOfBirth',
-        'raw_id_card' => 'rawIdCard',
+        'domicile_street_address' => 'domicileStreetAddress',
+        'domicile_postal_code' => 'domicilePostalCode',
+        'domicile_municipality' => 'domicileMunicipality',
+        'domicile_province' => 'domicileProvince',
+        'domicile_nation' => 'domicileNation',
         'email' => 'email',
+        'mobile_phone' => 'mobilePhone',
         'digital_address' => 'digitalAddress',
         'fiscal_number' => 'fiscalNumber',
         'iva_code' => 'ivaCode',
@@ -231,10 +272,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => 'setIdentityProviderEntityId',
         'spid_code' => 'setSpidCode',
         'spid_credential_expiration_date' => 'setSpidCredentialExpirationDate',
+        'raw_id_card' => 'setRawIdCard',
+        'given_name' => 'setGivenName',
+        'family_name' => 'setFamilyName',
+        'date_of_birth' => 'setDateOfBirth',
+        'gender' => 'setGender',
         'place_of_birth' => 'setPlaceOfBirth',
         'county_of_birth' => 'setCountyOfBirth',
-        'raw_id_card' => 'setRawIdCard',
+        'domicile_street_address' => 'setDomicileStreetAddress',
+        'domicile_postal_code' => 'setDomicilePostalCode',
+        'domicile_municipality' => 'setDomicileMunicipality',
+        'domicile_province' => 'setDomicileProvince',
+        'domicile_nation' => 'setDomicileNation',
         'email' => 'setEmail',
+        'mobile_phone' => 'setMobilePhone',
         'digital_address' => 'setDigitalAddress',
         'fiscal_number' => 'setFiscalNumber',
         'iva_code' => 'setIvaCode',
@@ -253,10 +304,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         'identity_provider_entity_id' => 'getIdentityProviderEntityId',
         'spid_code' => 'getSpidCode',
         'spid_credential_expiration_date' => 'getSpidCredentialExpirationDate',
+        'raw_id_card' => 'getRawIdCard',
+        'given_name' => 'getGivenName',
+        'family_name' => 'getFamilyName',
+        'date_of_birth' => 'getDateOfBirth',
+        'gender' => 'getGender',
         'place_of_birth' => 'getPlaceOfBirth',
         'county_of_birth' => 'getCountyOfBirth',
-        'raw_id_card' => 'getRawIdCard',
+        'domicile_street_address' => 'getDomicileStreetAddress',
+        'domicile_postal_code' => 'getDomicilePostalCode',
+        'domicile_municipality' => 'getDomicileMunicipality',
+        'domicile_province' => 'getDomicileProvince',
+        'domicile_nation' => 'getDomicileNation',
         'email' => 'getEmail',
+        'mobile_phone' => 'getMobilePhone',
         'digital_address' => 'getDigitalAddress',
         'fiscal_number' => 'getFiscalNumber',
         'iva_code' => 'getIvaCode',
@@ -326,10 +387,20 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('identity_provider_entity_id', $data ?? [], null);
         $this->setIfExists('spid_code', $data ?? [], null);
         $this->setIfExists('spid_credential_expiration_date', $data ?? [], null);
+        $this->setIfExists('raw_id_card', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('place_of_birth', $data ?? [], null);
         $this->setIfExists('county_of_birth', $data ?? [], null);
-        $this->setIfExists('raw_id_card', $data ?? [], null);
+        $this->setIfExists('domicile_street_address', $data ?? [], null);
+        $this->setIfExists('domicile_postal_code', $data ?? [], null);
+        $this->setIfExists('domicile_municipality', $data ?? [], null);
+        $this->setIfExists('domicile_province', $data ?? [], null);
+        $this->setIfExists('domicile_nation', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('mobile_phone', $data ?? [], null);
         $this->setIfExists('digital_address', $data ?? [], null);
         $this->setIfExists('fiscal_number', $data ?? [], null);
         $this->setIfExists('iva_code', $data ?? [], null);
@@ -460,7 +531,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets spid_code
      *
-     * @param string $spid_code The identifier of the user's SPID credential.              This uniquely identifies the credential within the SPID federation.
+     * @param string $spid_code The identifier of the SPID credential, uniquely identifying it within the SPID federation.              The format of this string is specific to each individual Identity Provider.
      *
      * @return self
      */
@@ -487,7 +558,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets spid_credential_expiration_date
      *
-     * @param \DateTime|null $spid_credential_expiration_date Expiration date of the user's SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
+     * @param \DateTime|null $spid_credential_expiration_date Expiration date of the SPID credential.              This is not the same as the expiration date of the underlying identity document (such as a passport) which was used to create the SPID identity.
      *
      * @return self
      */
@@ -509,6 +580,176 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Gets raw_id_card
+     *
+     * @return string|null
+     */
+    public function getRawIdCard()
+    {
+        return $this->container['raw_id_card'];
+    }
+
+    /**
+     * Sets raw_id_card
+     *
+     * @param string|null $raw_id_card The raw, space-separated string value for the \"IdCard\" field from the SPID credential.              Trinsic additionally parses this field and uses it to populate the `Document` object in the normalized data model.
+     *
+     * @return self
+     */
+    public function setRawIdCard($raw_id_card)
+    {
+        if (is_null($raw_id_card)) {
+            array_push($this->openAPINullablesSetToNull, 'raw_id_card');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('raw_id_card', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['raw_id_card'] = $raw_id_card;
+
+        return $this;
+    }
+
+    /**
+     * Gets given_name
+     *
+     * @return string|null
+     */
+    public function getGivenName()
+    {
+        return $this->container['given_name'];
+    }
+
+    /**
+     * Sets given_name
+     *
+     * @param string|null $given_name The individual's first / given name(s)
+     *
+     * @return self
+     */
+    public function setGivenName($given_name)
+    {
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('given_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['given_name'] = $given_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets family_name
+     *
+     * @return string|null
+     */
+    public function getFamilyName()
+    {
+        return $this->container['family_name'];
+    }
+
+    /**
+     * Sets family_name
+     *
+     * @param string|null $family_name The individual's last / family name(s)
+     *
+     * @return self
+     */
+    public function setFamilyName($family_name)
+    {
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('family_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['family_name'] = $family_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_birth
+     *
+     * @return \DateTime|null
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['date_of_birth'];
+    }
+
+    /**
+     * Sets date_of_birth
+     *
+     * @param \DateTime|null $date_of_birth The date of birth of the individual
+     *
+     * @return self
+     */
+    public function setDateOfBirth($date_of_birth)
+    {
+        if (is_null($date_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['date_of_birth'] = $date_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     *
+     * @return string|null
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     *
+     * @param string|null $gender The gender of the individual.              Possible values: \"M\" | \"F\"
+     *
+     * @return self
+     */
+    public function setGender($gender)
+    {
+        if (is_null($gender)) {
+            array_push($this->openAPINullablesSetToNull, 'gender');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gender', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
      * Gets place_of_birth
      *
      * @return string|null
@@ -521,7 +762,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets place_of_birth
      *
-     * @param string|null $place_of_birth The user's place of birth.
+     * @param string|null $place_of_birth The individual's place of birth.              This is a 4-digit Belfiore Code identifying either the municipality of birth (for births in Italy) or a foreign country (for births outside Italy).
      *
      * @return self
      */
@@ -555,7 +796,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets county_of_birth
      *
-     * @param string|null $county_of_birth The user's county of birth.
+     * @param string|null $county_of_birth The individual's county (province) of birth, abbreviated.              For foreign births, this is \"EE\".
      *
      * @return self
      */
@@ -577,35 +818,171 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets raw_id_card
+     * Gets domicile_street_address
      *
      * @return string|null
      */
-    public function getRawIdCard()
+    public function getDomicileStreetAddress()
     {
-        return $this->container['raw_id_card'];
+        return $this->container['domicile_street_address'];
     }
 
     /**
-     * Sets raw_id_card
+     * Sets domicile_street_address
      *
-     * @param string|null $raw_id_card The raw, space-separated string value for the \"IdCard\" field from the SPID identity.              Trinsic additionally parses this field and uses it to populate the `Document` object in the normalized data model.
+     * @param string|null $domicile_street_address The street address of the individual's residence.              This includes street name, street type, and house number, in the standard format for the given state.
      *
      * @return self
      */
-    public function setRawIdCard($raw_id_card)
+    public function setDomicileStreetAddress($domicile_street_address)
     {
-        if (is_null($raw_id_card)) {
-            array_push($this->openAPINullablesSetToNull, 'raw_id_card');
+        if (is_null($domicile_street_address)) {
+            array_push($this->openAPINullablesSetToNull, 'domicile_street_address');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('raw_id_card', $nullablesSetToNull);
+            $index = array_search('domicile_street_address', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['raw_id_card'] = $raw_id_card;
+        $this->container['domicile_street_address'] = $domicile_street_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets domicile_postal_code
+     *
+     * @return string|null
+     */
+    public function getDomicilePostalCode()
+    {
+        return $this->container['domicile_postal_code'];
+    }
+
+    /**
+     * Sets domicile_postal_code
+     *
+     * @param string|null $domicile_postal_code The postal code of the individual's residence
+     *
+     * @return self
+     */
+    public function setDomicilePostalCode($domicile_postal_code)
+    {
+        if (is_null($domicile_postal_code)) {
+            array_push($this->openAPINullablesSetToNull, 'domicile_postal_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('domicile_postal_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['domicile_postal_code'] = $domicile_postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets domicile_municipality
+     *
+     * @return string|null
+     */
+    public function getDomicileMunicipality()
+    {
+        return $this->container['domicile_municipality'];
+    }
+
+    /**
+     * Sets domicile_municipality
+     *
+     * @param string|null $domicile_municipality The municipality of the individual's residence
+     *
+     * @return self
+     */
+    public function setDomicileMunicipality($domicile_municipality)
+    {
+        if (is_null($domicile_municipality)) {
+            array_push($this->openAPINullablesSetToNull, 'domicile_municipality');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('domicile_municipality', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['domicile_municipality'] = $domicile_municipality;
+
+        return $this;
+    }
+
+    /**
+     * Gets domicile_province
+     *
+     * @return string|null
+     */
+    public function getDomicileProvince()
+    {
+        return $this->container['domicile_province'];
+    }
+
+    /**
+     * Sets domicile_province
+     *
+     * @param string|null $domicile_province The province of the individual's residence
+     *
+     * @return self
+     */
+    public function setDomicileProvince($domicile_province)
+    {
+        if (is_null($domicile_province)) {
+            array_push($this->openAPINullablesSetToNull, 'domicile_province');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('domicile_province', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['domicile_province'] = $domicile_province;
+
+        return $this;
+    }
+
+    /**
+     * Gets domicile_nation
+     *
+     * @return string|null
+     */
+    public function getDomicileNation()
+    {
+        return $this->container['domicile_nation'];
+    }
+
+    /**
+     * Sets domicile_nation
+     *
+     * @param string|null $domicile_nation The 2-digit country code of the individual's residence
+     *
+     * @return self
+     */
+    public function setDomicileNation($domicile_nation)
+    {
+        if (is_null($domicile_nation)) {
+            array_push($this->openAPINullablesSetToNull, 'domicile_nation');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('domicile_nation', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['domicile_nation'] = $domicile_nation;
 
         return $this;
     }
@@ -623,7 +1000,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets email
      *
-     * @param string|null $email The email address of the user.
+     * @param string|null $email The email address of the individual
      *
      * @return self
      */
@@ -645,6 +1022,40 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Gets mobile_phone
+     *
+     * @return string|null
+     */
+    public function getMobilePhone()
+    {
+        return $this->container['mobile_phone'];
+    }
+
+    /**
+     * Sets mobile_phone
+     *
+     * @param string|null $mobile_phone The mobile phone number of the individual, in Italian format.
+     *
+     * @return self
+     */
+    public function setMobilePhone($mobile_phone)
+    {
+        if (is_null($mobile_phone)) {
+            array_push($this->openAPINullablesSetToNull, 'mobile_phone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mobile_phone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['mobile_phone'] = $mobile_phone;
+
+        return $this;
+    }
+
+    /**
      * Gets digital_address
      *
      * @return string|null
@@ -657,7 +1068,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets digital_address
      *
-     * @param string|null $digital_address The digital address of the user.
+     * @param string|null $digital_address The PEC (Italian Certified Email) address of the individual or organization.
      *
      * @return self
      */
@@ -691,7 +1102,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fiscal_number
      *
-     * @param string|null $fiscal_number Fiscal tax number for the subject.
+     * @param string|null $fiscal_number Fiscal tax number for the individual.
      *
      * @return self
      */
@@ -725,7 +1136,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets iva_code
      *
-     * @param string|null $iva_code VAT number for the subject.
+     * @param string|null $iva_code The VAT number of the organization which was verified, or of the organization which the verified individual is associated with.
      *
      * @return self
      */
@@ -759,7 +1170,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets company_name
      *
-     * @param string|null $company_name The name of the company which the user is associated with.
+     * @param string|null $company_name The name of the organization which was verified, or of the organization which the verified individual is associated with.
      *
      * @return self
      */
@@ -793,7 +1204,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets company_fiscal_number
      *
-     * @param string|null $company_fiscal_number The fiscal tax number of the company which the user is associated with.
+     * @param string|null $company_fiscal_number The fiscal tax number of the organization which was verified, or of the organization which the verified individual is associated with.
      *
      * @return self
      */
@@ -827,7 +1238,7 @@ class SpidProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets registered_office
      *
-     * @param string|null $registered_office The registered office address of the company which the user is associated with.
+     * @param string|null $registered_office The registered office address of the organization which was verified, or of the organization which the verified individual is associated with.
      *
      * @return self
      */

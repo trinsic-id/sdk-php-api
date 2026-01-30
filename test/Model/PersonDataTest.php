@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * PersonDataTest Class Doc Comment
  *
  * @category    Class
- * @description PersonData
+ * @description Identity information for the individual being verified
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

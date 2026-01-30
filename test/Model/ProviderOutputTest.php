@@ -80,18 +80,144 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "italy_spid"
+     * Test attribute "a_at_handy_signatur_login"
      */
-    public function testPropertyItalySpid()
+    public function testPropertyAAtHandySignaturLogin()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "mexico_curp_lookup"
+     * Test attribute "a_be_id_login"
      */
-    public function testPropertyMexicoCurpLookup()
+    public function testPropertyABeIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_edoapp_eid_login"
+     */
+    public function testPropertyAEdoappEidLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_ee_web_eid_login"
+     */
+    public function testPropertyAEeWebEidLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_fi_id_login"
+     */
+    public function testPropertyAFiIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_freja_eid_login"
+     */
+    public function testPropertyAFrejaEidLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_itsme_login"
+     */
+    public function testPropertyAItsmeLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_lt_id_login"
+     */
+    public function testPropertyALtIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_lv_eparaksts_id_login"
+     */
+    public function testPropertyALvEparakstsIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_lv_eparaksts_mobile_login"
+     */
+    public function testPropertyALvEparakstsMobileLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_mojeid"
+     */
+    public function testPropertyAMojeid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_pl_mojeid_login"
+     */
+    public function testPropertyAPlMojeidLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_pt_id_login"
+     */
+    public function testPropertyAPtIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "a_rs_id_login"
+     */
+    public function testPropertyARsIdLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "apple_wallet"
+     */
+    public function testPropertyAppleWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "denmark_mitid"
+     */
+    public function testPropertyDenmarkMitid()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -107,9 +233,63 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "philippines_physical_national_id_qr"
+     * Test attribute "france_identite_numerique"
      */
-    public function testPropertyPhilippinesPhysicalNationalIdQr()
+    public function testPropertyFranceIdentiteNumerique()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "google_wallet"
+     */
+    public function testPropertyGoogleWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "italy_spid"
+     */
+    public function testPropertyItalySpid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lloyds_smart_id"
+     */
+    public function testPropertyLloydsSmartId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mexico_curp_lookup"
+     */
+    public function testPropertyMexicoCurpLookup()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mobile_id"
+     */
+    public function testPropertyMobileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "peru_dni_lookup"
+     */
+    public function testPropertyPeruDniLookup()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -119,6 +299,69 @@ class ProviderOutputTest extends TestCase
      * Test attribute "philippines_digital_national_id_qr"
      */
     public function testPropertyPhilippinesDigitalNationalIdQr()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "philippines_physical_national_id_qr"
+     */
+    public function testPropertyPhilippinesPhysicalNationalIdQr()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "post_office_easyid"
+     */
+    public function testPropertyPostOfficeEasyid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "samsung_wallet"
+     */
+    public function testPropertySamsungWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_id"
+     */
+    public function testPropertySmartId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sweden_bankid"
+     */
+    public function testPropertySwedenBankid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "usa_louisiana_wallet"
+     */
+    public function testPropertyUsaLouisianaWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "yoti"
+     */
+    public function testPropertyYoti()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

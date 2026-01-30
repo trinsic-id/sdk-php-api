@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * MatchDataTest Class Doc Comment
  *
  * @category    Class
- * @description MatchData
+ * @description Match results for the data being matched against.              This applies to Providers which operate based on matching data / biometrics against a government database, returning match scores or results as opposed to the data itself.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -137,6 +137,15 @@ class MatchDataTest extends TestCase
      * Test attribute "date_of_birth"
      */
     public function testPropertyDateOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phone_number"
+     */
+    public function testPropertyPhoneNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

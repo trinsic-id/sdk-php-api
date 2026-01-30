@@ -12,7 +12,7 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 ## `createVerificationProfile()`
 
 ```php
-createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo): \Trinsic\Api\Model\CreateVerificationProfileResponse
+createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage): \Trinsic\Api\Model\CreateVerificationProfileResponse
 ```
 
 Create Verification Profile
@@ -41,9 +41,10 @@ $brand_name = 'brand_name_example'; // string | The brand name of the verificati
 $primary_color = 'primary_color_example'; // string | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
 $providers = array('providers_example'); // string[] | The list of providers you'd like to select for this profile. We will not currently enable any providers.
 $logo = '/path/to/file.txt'; // \SplFileObject | The logo of the verification profile.
+$is_production_usage = True; // bool | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
 
 try {
-    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo);
+    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationProfilesApi->createVerificationProfile: ', $e->getMessage(), PHP_EOL;
@@ -59,6 +60,7 @@ try {
 | **primary_color** | **string**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
 | **providers** | [**string[]**](../Model/string.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **\SplFileObject****\SplFileObject**| The logo of the verification profile. | [optional] |
+| **is_production_usage** | **bool**| Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). | [optional] |
 
 ### Return type
 

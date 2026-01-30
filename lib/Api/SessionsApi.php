@@ -92,6 +92,11 @@ class SessionsApi
             'text/json',
             'application/*+json',
         ],
+        'getAttachment' => [
+            'application/json',
+            'text/json',
+            'application/*+json',
+        ],
         'getSession' => [
             'application/json',
         ],
@@ -102,6 +107,11 @@ class SessionsApi
         ],
         'listSessions' => [
             'application/json',
+        ],
+        'recommendProviders' => [
+            'application/json',
+            'text/json',
+            'application/*+json',
         ],
         'redactSession' => [
             'application/json',
@@ -1456,6 +1466,367 @@ class SessionsApi
     }
 
     /**
+     * Operation getAttachment
+     *
+     * Get Attachment
+     *
+     * @param  string $session_id The ID of the Session to fetch the Attachment from (required)
+     * @param  string $attachment_id The ID of the Attachment to fetch (required)
+     * @param  \Trinsic\Api\Model\GetAttachmentRequest|null $get_attachment_request get_attachment_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAttachment'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Trinsic\Api\Model\GetAttachmentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     */
+    public function getAttachment($session_id, $attachment_id, $get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
+    {
+        list($response) = $this->getAttachmentWithHttpInfo($session_id, $attachment_id, $get_attachment_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAttachmentWithHttpInfo
+     *
+     * Get Attachment
+     *
+     * @param  string $session_id The ID of the Session to fetch the Attachment from (required)
+     * @param  string $attachment_id The ID of the Attachment to fetch (required)
+     * @param  \Trinsic\Api\Model\GetAttachmentRequest|null $get_attachment_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAttachment'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Trinsic\Api\Model\GetAttachmentResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAttachmentWithHttpInfo($session_id, $attachment_id, $get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
+    {
+        $request = $this->getAttachmentRequest($session_id, $attachment_id, $get_attachment_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\GetAttachmentResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Trinsic\Api\Model\GetAttachmentResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\GetAttachmentResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAttachmentAsync
+     *
+     * Get Attachment
+     *
+     * @param  string $session_id The ID of the Session to fetch the Attachment from (required)
+     * @param  string $attachment_id The ID of the Attachment to fetch (required)
+     * @param  \Trinsic\Api\Model\GetAttachmentRequest|null $get_attachment_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAttachment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAttachmentAsync($session_id, $attachment_id, $get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
+    {
+        return $this->getAttachmentAsyncWithHttpInfo($session_id, $attachment_id, $get_attachment_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAttachmentAsyncWithHttpInfo
+     *
+     * Get Attachment
+     *
+     * @param  string $session_id The ID of the Session to fetch the Attachment from (required)
+     * @param  string $attachment_id The ID of the Attachment to fetch (required)
+     * @param  \Trinsic\Api\Model\GetAttachmentRequest|null $get_attachment_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAttachment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAttachmentAsyncWithHttpInfo($session_id, $attachment_id, $get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
+    {
+        $returnType = '\Trinsic\Api\Model\GetAttachmentResponse';
+        $request = $this->getAttachmentRequest($session_id, $attachment_id, $get_attachment_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAttachment'
+     *
+     * @param  string $session_id The ID of the Session to fetch the Attachment from (required)
+     * @param  string $attachment_id The ID of the Attachment to fetch (required)
+     * @param  \Trinsic\Api\Model\GetAttachmentRequest|null $get_attachment_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAttachment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAttachmentRequest($session_id, $attachment_id, $get_attachment_request = null, string $contentType = self::contentTypes['getAttachment'][0])
+    {
+
+        // verify the required parameter 'session_id' is set
+        if ($session_id === null || (is_array($session_id) && count($session_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $session_id when calling getAttachment'
+            );
+        }
+
+        // verify the required parameter 'attachment_id' is set
+        if ($attachment_id === null || (is_array($attachment_id) && count($attachment_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $attachment_id when calling getAttachment'
+            );
+        }
+
+
+
+        $resourcePath = '/api/v1/sessions/{sessionId}/attachments/{attachmentId}/get';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($session_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sessionId' . '}',
+                ObjectSerializer::toPathValue($session_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($attachment_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'attachmentId' . '}',
+                ObjectSerializer::toPathValue($attachment_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($get_attachment_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_attachment_request));
+            } else {
+                $httpBody = $get_attachment_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getSession
      *
      * Get Session
@@ -2518,6 +2889,327 @@ class SessionsApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation recommendProviders
+     *
+     * Recommend Providers
+     *
+     * @param  \Trinsic\Api\Model\RecommendProvidersRequest|null $recommend_providers_request recommend_providers_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['recommendProviders'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Trinsic\Api\Model\RecommendProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
+     */
+    public function recommendProviders($recommend_providers_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
+    {
+        list($response) = $this->recommendProvidersWithHttpInfo($recommend_providers_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation recommendProvidersWithHttpInfo
+     *
+     * Recommend Providers
+     *
+     * @param  \Trinsic\Api\Model\RecommendProvidersRequest|null $recommend_providers_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['recommendProviders'] to see the possible values for this operation
+     *
+     * @throws \Trinsic\Api\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Trinsic\Api\Model\RecommendProvidersResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function recommendProvidersWithHttpInfo($recommend_providers_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
+    {
+        $request = $this->recommendProvidersRequest($recommend_providers_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\RecommendProvidersResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Trinsic\Api\Model\RecommendProvidersResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\RecommendProvidersResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Trinsic\Api\Model\ProblemDetails',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation recommendProvidersAsync
+     *
+     * Recommend Providers
+     *
+     * @param  \Trinsic\Api\Model\RecommendProvidersRequest|null $recommend_providers_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['recommendProviders'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function recommendProvidersAsync($recommend_providers_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
+    {
+        return $this->recommendProvidersAsyncWithHttpInfo($recommend_providers_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation recommendProvidersAsyncWithHttpInfo
+     *
+     * Recommend Providers
+     *
+     * @param  \Trinsic\Api\Model\RecommendProvidersRequest|null $recommend_providers_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['recommendProviders'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function recommendProvidersAsyncWithHttpInfo($recommend_providers_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
+    {
+        $returnType = '\Trinsic\Api\Model\RecommendProvidersResponse';
+        $request = $this->recommendProvidersRequest($recommend_providers_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'recommendProviders'
+     *
+     * @param  \Trinsic\Api\Model\RecommendProvidersRequest|null $recommend_providers_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['recommendProviders'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function recommendProvidersRequest($recommend_providers_request = null, string $contentType = self::contentTypes['recommendProviders'][0])
+    {
+
+
+
+        $resourcePath = '/api/v1/sessions/providers/recommend';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/plain', 'application/json', 'text/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($recommend_providers_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($recommend_providers_request));
+            } else {
+                $httpBody = $recommend_providers_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

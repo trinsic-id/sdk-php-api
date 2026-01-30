@@ -80,15 +80,6 @@ class SmartIdInputTest extends TestCase
     }
 
     /**
-     * Test attribute "smart_id_document_number"
-     */
-    public function testPropertySmartIdDocumentNumber()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "smart_id_number"
      */
     public function testPropertySmartIdNumber()

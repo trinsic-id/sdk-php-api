@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * SpidProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description SpidProviderOutput
+ * @description Exposed properties for the &#x60;italy-spid&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -116,6 +116,51 @@ class SpidProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "raw_id_card"
+     */
+    public function testPropertyRawIdCard()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "given_name"
+     */
+    public function testPropertyGivenName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "family_name"
+     */
+    public function testPropertyFamilyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_of_birth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "gender"
+     */
+    public function testPropertyGender()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "place_of_birth"
      */
     public function testPropertyPlaceOfBirth()
@@ -134,9 +179,45 @@ class SpidProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "raw_id_card"
+     * Test attribute "domicile_street_address"
      */
-    public function testPropertyRawIdCard()
+    public function testPropertyDomicileStreetAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "domicile_postal_code"
+     */
+    public function testPropertyDomicilePostalCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "domicile_municipality"
+     */
+    public function testPropertyDomicileMunicipality()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "domicile_province"
+     */
+    public function testPropertyDomicileProvince()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "domicile_nation"
+     */
+    public function testPropertyDomicileNation()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -146,6 +227,15 @@ class SpidProviderOutputTest extends TestCase
      * Test attribute "email"
      */
     public function testPropertyEmail()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mobile_phone"
+     */
+    public function testPropertyMobilePhone()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -120,6 +120,18 @@ class SessionsApiTest extends TestCase
     }
 
     /**
+     * Test case for getAttachment
+     *
+     * Get Attachment.
+     *
+     */
+    public function testGetAttachment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getSession
      *
      * Get Session.
@@ -150,6 +162,18 @@ class SessionsApiTest extends TestCase
      *
      */
     public function testListSessions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for recommendProviders
+     *
+     * Recommend Providers.
+     *
+     */
+    public function testRecommendProviders()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

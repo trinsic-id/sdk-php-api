@@ -125,6 +125,15 @@ class DocumentDataTest extends TestCase
     }
 
     /**
+     * Test attribute "issuing_subdivision"
+     */
+    public function testPropertyIssuingSubdivision()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "issuing_authority"
      */
     public function testPropertyIssuingAuthority()

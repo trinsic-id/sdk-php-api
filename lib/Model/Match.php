@@ -309,7 +309,7 @@ class Match implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets probability_value
      *
-     * @param float|null $probability_value probability_value
+     * @param float|null $probability_value The probability value of the match.              This is a value between 0 and 1, where 1 indicates a perfect match and 0 indicates no match.              This field is non-null when the underlying Provider's match output is in the form of a probability score.
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class Match implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets boolean_value
      *
-     * @param bool|null $boolean_value boolean_value
+     * @param bool|null $boolean_value The boolean value of the match.              This is a value of true or false, where true indicates a match and false indicates no match.              This field is non-null when the underlying Provider's match output is in the form of a boolean value.
      *
      * @return self
      */

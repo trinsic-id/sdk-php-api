@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * Address Class Doc Comment
  *
  * @category Class
+ * @description Address information for an individual
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -487,7 +488,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subdivision
      *
-     * @param string|null $subdivision subdivision
+     * @param string|null $subdivision The subdivision code of the address.              Subdivision refers to a state, province, or other similar division of a country. Examples include \"CA\" for California, \"QC\" for Québec, \"MD\" for Madrid, or \"NSW\" for New South Wales.
      *
      * @return self
      */
@@ -589,7 +590,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets full_address
      *
-     * @param string|null $full_address full_address
+     * @param string|null $full_address The full address as a single string
      *
      * @return self
      */

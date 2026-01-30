@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * MatchData Class Doc Comment
  *
  * @category Class
+ * @description Match results for the data being matched against.              This applies to Providers which operate based on matching data / biometrics against a government database, returning match scores or results as opposed to the data itself.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -64,6 +65,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => '\Trinsic\Api\Model\Match',
         'sex' => '\Trinsic\Api\Model\Match',
         'date_of_birth' => '\Trinsic\Api\Model\Match',
+        'phone_number' => '\Trinsic\Api\Model\Match',
         'face_match' => '\Trinsic\Api\Model\Match',
         'liveness' => '\Trinsic\Api\Model\Match',
         'image_authenticity' => '\Trinsic\Api\Model\Match'
@@ -84,6 +86,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => null,
         'sex' => null,
         'date_of_birth' => null,
+        'phone_number' => null,
         'face_match' => null,
         'liveness' => null,
         'image_authenticity' => null
@@ -102,6 +105,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => true,
         'sex' => true,
         'date_of_birth' => true,
+        'phone_number' => true,
         'face_match' => true,
         'liveness' => true,
         'image_authenticity' => true
@@ -200,6 +204,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => 'familyName',
         'sex' => 'sex',
         'date_of_birth' => 'dateOfBirth',
+        'phone_number' => 'phoneNumber',
         'face_match' => 'faceMatch',
         'liveness' => 'liveness',
         'image_authenticity' => 'imageAuthenticity'
@@ -218,6 +223,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => 'setFamilyName',
         'sex' => 'setSex',
         'date_of_birth' => 'setDateOfBirth',
+        'phone_number' => 'setPhoneNumber',
         'face_match' => 'setFaceMatch',
         'liveness' => 'setLiveness',
         'image_authenticity' => 'setImageAuthenticity'
@@ -236,6 +242,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         'family_name' => 'getFamilyName',
         'sex' => 'getSex',
         'date_of_birth' => 'getDateOfBirth',
+        'phone_number' => 'getPhoneNumber',
         'face_match' => 'getFaceMatch',
         'liveness' => 'getLiveness',
         'image_authenticity' => 'getImageAuthenticity'
@@ -305,6 +312,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('family_name', $data ?? [], null);
         $this->setIfExists('sex', $data ?? [], null);
         $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('phone_number', $data ?? [], null);
         $this->setIfExists('face_match', $data ?? [], null);
         $this->setIfExists('liveness', $data ?? [], null);
         $this->setIfExists('image_authenticity', $data ?? [], null);
@@ -365,7 +373,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets national_id_number
      *
-     * @param \Trinsic\Api\Model\Match|null $national_id_number national_id_number
+     * @param \Trinsic\Api\Model\Match|null $national_id_number Whether the provided National ID Number matched the information on file for the individual
      *
      * @return self
      */
@@ -399,7 +407,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets full_name
      *
-     * @param \Trinsic\Api\Model\Match|null $full_name full_name
+     * @param \Trinsic\Api\Model\Match|null $full_name The match score for the full name of the individual.              Higher values indicate a closer match.
      *
      * @return self
      */
@@ -433,7 +441,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets given_name
      *
-     * @param \Trinsic\Api\Model\Match|null $given_name given_name
+     * @param \Trinsic\Api\Model\Match|null $given_name The match score for the given (first) name of the individual.              Higher values indicate a closer match.
      *
      * @return self
      */
@@ -467,7 +475,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets middle_name
      *
-     * @param \Trinsic\Api\Model\Match|null $middle_name middle_name
+     * @param \Trinsic\Api\Model\Match|null $middle_name The match score for the middle name(s) of the individual.              Higher values indicate a closer match.
      *
      * @return self
      */
@@ -501,7 +509,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets family_name
      *
-     * @param \Trinsic\Api\Model\Match|null $family_name family_name
+     * @param \Trinsic\Api\Model\Match|null $family_name The match score for the family (last) name of the individual.              Higher values indicate a closer match.
      *
      * @return self
      */
@@ -535,7 +543,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sex
      *
-     * @param \Trinsic\Api\Model\Match|null $sex sex
+     * @param \Trinsic\Api\Model\Match|null $sex Whether the provided sex of the individual matched the information on file for the individual
      *
      * @return self
      */
@@ -569,7 +577,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date_of_birth
      *
-     * @param \Trinsic\Api\Model\Match|null $date_of_birth date_of_birth
+     * @param \Trinsic\Api\Model\Match|null $date_of_birth Whether the provided date of birth matched the information on file for the individual
      *
      * @return self
      */
@@ -591,6 +599,40 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets phone_number
+     *
+     * @return \Trinsic\Api\Model\Match|null
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phone_number'];
+    }
+
+    /**
+     * Sets phone_number
+     *
+     * @param \Trinsic\Api\Model\Match|null $phone_number Whether the provided phone number matched the information on file for the individual
+     *
+     * @return self
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        if (is_null($phone_number)) {
+            array_push($this->openAPINullablesSetToNull, 'phone_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
      * Gets face_match
      *
      * @return \Trinsic\Api\Model\Match|null
@@ -603,7 +645,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets face_match
      *
-     * @param \Trinsic\Api\Model\Match|null $face_match face_match
+     * @param \Trinsic\Api\Model\Match|null $face_match The match score for the face match between the provided selfie image and the biometrics on file for the individual.              Higher values indicate greater match confidence.
      *
      * @return self
      */
@@ -637,7 +679,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets liveness
      *
-     * @param \Trinsic\Api\Model\Match|null $liveness liveness
+     * @param \Trinsic\Api\Model\Match|null $liveness The confidence score for the liveness check performed against the selfie image of the individual.              Higher values indicate lower suspicion.
      *
      * @return self
      */
@@ -671,7 +713,7 @@ class MatchData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets image_authenticity
      *
-     * @param \Trinsic\Api\Model\Match|null $image_authenticity image_authenticity
+     * @param \Trinsic\Api\Model\Match|null $image_authenticity The confidence score for the image manipulation check performed against the selfie image of the individual.              Higher values indicate lower suspicion of image manipulation.
      *
      * @return self
      */

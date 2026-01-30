@@ -57,28 +57,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'kenya_biometric2' => '\Trinsic\Api\Model\KenyaNidBiometric2Input',
-        'indonesia_nik' => '\Trinsic\Api\Model\IndonesiaNikInput',
+        'kenya_nid_match_biometric_2' => '\Trinsic\Api\Model\KenyaNidBiometric2Input',
+        'indonesia_nik_lookup' => '\Trinsic\Api\Model\IndonesiaNikInput',
         'indonesia_dukcapil_match' => '\Trinsic\Api\Model\IndonesiaDukcapilMatchInput',
-        'mexico_curp' => '\Trinsic\Api\Model\MexicoCurpInput',
-        'south_africa_nid' => '\Trinsic\Api\Model\SouthAfricaNidInput',
-        'kenya_nid' => '\Trinsic\Api\Model\KenyaNidInput',
-        'kenya_nid_match2' => '\Trinsic\Api\Model\KenyaNidMatch2Input',
-        'kenya_nid_lookup2' => '\Trinsic\Api\Model\KenyaNidLookup2Input',
-        'south_africa_nid_lookup2' => '\Trinsic\Api\Model\SouthAfricaNidLookup2Input',
-        'nigeria_nin' => '\Trinsic\Api\Model\NigeriaNinInput',
-        'aadhaar' => '\Trinsic\Api\Model\AadhaarInput',
-        'bangladesh_national_id' => '\Trinsic\Api\Model\BangladeshNidInput',
-        'brazil_cpf_check' => '\Trinsic\Api\Model\BrazilCpfCheckInput',
+        'mexico_curp_lookup' => '\Trinsic\Api\Model\MexicoCurpInput',
+        'south_africa_nid_lookup' => '\Trinsic\Api\Model\SouthAfricaNidInput',
+        'kenya_nid_lookup' => '\Trinsic\Api\Model\KenyaNidInput',
+        'kenya_nid_match_2' => '\Trinsic\Api\Model\KenyaNidMatch2Input',
+        'kenya_nid_lookup_2' => '\Trinsic\Api\Model\KenyaNidLookup2Input',
+        'south_africa_nid_lookup_2' => '\Trinsic\Api\Model\SouthAfricaNidLookup2Input',
+        'south_africa_nid_match_2' => '\Trinsic\Api\Model\SouthAfricaNidMatch2Input',
+        'south_africa_nid_match_biometric_2' => '\Trinsic\Api\Model\SouthAfricaNidBiometric2Input',
+        'nigeria_nin_lookup_2' => '\Trinsic\Api\Model\NigeriaNinLookup2Input',
+        'cote_divoire_nid_lookup_2' => '\Trinsic\Api\Model\CoteDIvoireNidLookup2Input',
+        'zimbabwe_nid_lookup_2' => '\Trinsic\Api\Model\ZimbabweNidLookup2Input',
+        'nigeria_nin_match_2' => '\Trinsic\Api\Model\NigeriaNinMatch2Input',
+        'uganda_nid_match_2' => '\Trinsic\Api\Model\UgandaNidMatch2Input',
+        'nigeria_nin_match_biometric_2' => '\Trinsic\Api\Model\NigeriaNinBiometric2Input',
+        'nigeria_nin_lookup' => '\Trinsic\Api\Model\NigeriaNinInput',
+        'india_digilocker_aadhaar_match' => '\Trinsic\Api\Model\AadhaarInput',
+        'brazil_cpf_lookup' => '\Trinsic\Api\Model\BrazilCpfCheckInput',
         'brazil_digital_cnh' => '\Trinsic\Api\Model\BrazilDigitalCnhInput',
-        'philippine_match' => '\Trinsic\Api\Model\PhilippineMatchInput',
-        'philippine_qr' => '\Trinsic\Api\Model\PhilippineQRInput',
+        'philippines_philsys_match' => '\Trinsic\Api\Model\PhilippineMatchInput',
+        'philippines_physical_national_id_qr' => '\Trinsic\Api\Model\PhilippineQRInput',
+        'philippines_digital_national_id_qr' => '\Trinsic\Api\Model\PhilippineQRInput',
         'smart_id' => '\Trinsic\Api\Model\SmartIdInput',
         'mobile_id' => '\Trinsic\Api\Model\MobileIdInput',
-        'idin' => '\Trinsic\Api\Model\IdinInput',
-        'spid' => '\Trinsic\Api\Model\SpidInput',
+        'netherlands_idin' => '\Trinsic\Api\Model\IdinInput',
+        'italy_spid' => '\Trinsic\Api\Model\SpidInput',
         'google_wallet' => '\Trinsic\Api\Model\GoogleWalletInput',
         'apple_wallet' => '\Trinsic\Api\Model\AppleWalletInput',
+        'peru_dni_lookup' => '\Trinsic\Api\Model\PeruDniLookupInput',
         'trinsic_test_database_lookup' => '\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput',
         'trinsic_test_sub_providers' => '\Trinsic\Api\Model\TrinsicTestSubProvidersInput'
     ];
@@ -91,28 +100,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'kenya_biometric2' => null,
-        'indonesia_nik' => null,
+        'kenya_nid_match_biometric_2' => null,
+        'indonesia_nik_lookup' => null,
         'indonesia_dukcapil_match' => null,
-        'mexico_curp' => null,
-        'south_africa_nid' => null,
-        'kenya_nid' => null,
-        'kenya_nid_match2' => null,
-        'kenya_nid_lookup2' => null,
-        'south_africa_nid_lookup2' => null,
-        'nigeria_nin' => null,
-        'aadhaar' => null,
-        'bangladesh_national_id' => null,
-        'brazil_cpf_check' => null,
+        'mexico_curp_lookup' => null,
+        'south_africa_nid_lookup' => null,
+        'kenya_nid_lookup' => null,
+        'kenya_nid_match_2' => null,
+        'kenya_nid_lookup_2' => null,
+        'south_africa_nid_lookup_2' => null,
+        'south_africa_nid_match_2' => null,
+        'south_africa_nid_match_biometric_2' => null,
+        'nigeria_nin_lookup_2' => null,
+        'cote_divoire_nid_lookup_2' => null,
+        'zimbabwe_nid_lookup_2' => null,
+        'nigeria_nin_match_2' => null,
+        'uganda_nid_match_2' => null,
+        'nigeria_nin_match_biometric_2' => null,
+        'nigeria_nin_lookup' => null,
+        'india_digilocker_aadhaar_match' => null,
+        'brazil_cpf_lookup' => null,
         'brazil_digital_cnh' => null,
-        'philippine_match' => null,
-        'philippine_qr' => null,
+        'philippines_philsys_match' => null,
+        'philippines_physical_national_id_qr' => null,
+        'philippines_digital_national_id_qr' => null,
         'smart_id' => null,
         'mobile_id' => null,
-        'idin' => null,
-        'spid' => null,
+        'netherlands_idin' => null,
+        'italy_spid' => null,
         'google_wallet' => null,
         'apple_wallet' => null,
+        'peru_dni_lookup' => null,
         'trinsic_test_database_lookup' => null,
         'trinsic_test_sub_providers' => null
     ];
@@ -123,28 +141,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'kenya_biometric2' => true,
-        'indonesia_nik' => true,
+        'kenya_nid_match_biometric_2' => true,
+        'indonesia_nik_lookup' => true,
         'indonesia_dukcapil_match' => true,
-        'mexico_curp' => true,
-        'south_africa_nid' => true,
-        'kenya_nid' => true,
-        'kenya_nid_match2' => true,
-        'kenya_nid_lookup2' => true,
-        'south_africa_nid_lookup2' => true,
-        'nigeria_nin' => true,
-        'aadhaar' => true,
-        'bangladesh_national_id' => true,
-        'brazil_cpf_check' => true,
+        'mexico_curp_lookup' => true,
+        'south_africa_nid_lookup' => true,
+        'kenya_nid_lookup' => true,
+        'kenya_nid_match_2' => true,
+        'kenya_nid_lookup_2' => true,
+        'south_africa_nid_lookup_2' => true,
+        'south_africa_nid_match_2' => true,
+        'south_africa_nid_match_biometric_2' => true,
+        'nigeria_nin_lookup_2' => true,
+        'cote_divoire_nid_lookup_2' => true,
+        'zimbabwe_nid_lookup_2' => true,
+        'nigeria_nin_match_2' => true,
+        'uganda_nid_match_2' => true,
+        'nigeria_nin_match_biometric_2' => true,
+        'nigeria_nin_lookup' => true,
+        'india_digilocker_aadhaar_match' => true,
+        'brazil_cpf_lookup' => true,
         'brazil_digital_cnh' => true,
-        'philippine_match' => true,
-        'philippine_qr' => true,
+        'philippines_philsys_match' => true,
+        'philippines_physical_national_id_qr' => true,
+        'philippines_digital_national_id_qr' => true,
         'smart_id' => true,
         'mobile_id' => true,
-        'idin' => true,
-        'spid' => true,
+        'netherlands_idin' => true,
+        'italy_spid' => true,
         'google_wallet' => true,
         'apple_wallet' => true,
+        'peru_dni_lookup' => true,
         'trinsic_test_database_lookup' => true,
         'trinsic_test_sub_providers' => true
     ];
@@ -235,30 +262,39 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'kenya_biometric2' => 'kenyaBiometric2',
-        'indonesia_nik' => 'indonesiaNik',
-        'indonesia_dukcapil_match' => 'indonesiaDukcapilMatch',
-        'mexico_curp' => 'mexicoCurp',
-        'south_africa_nid' => 'southAfricaNid',
-        'kenya_nid' => 'kenyaNid',
-        'kenya_nid_match2' => 'kenyaNidMatch2',
-        'kenya_nid_lookup2' => 'kenyaNidLookup2',
-        'south_africa_nid_lookup2' => 'southAfricaNidLookup2',
-        'nigeria_nin' => 'nigeriaNin',
-        'aadhaar' => 'aadhaar',
-        'bangladesh_national_id' => 'bangladeshNationalId',
-        'brazil_cpf_check' => 'brazilCpfCheck',
-        'brazil_digital_cnh' => 'brazilDigitalCnh',
-        'philippine_match' => 'philippineMatch',
-        'philippine_qr' => 'philippineQR',
-        'smart_id' => 'smartId',
-        'mobile_id' => 'mobileId',
-        'idin' => 'idin',
-        'spid' => 'spid',
-        'google_wallet' => 'googleWallet',
-        'apple_wallet' => 'appleWallet',
-        'trinsic_test_database_lookup' => 'trinsicTestDatabaseLookup',
-        'trinsic_test_sub_providers' => 'trinsicTestSubProviders'
+        'kenya_nid_match_biometric_2' => 'kenya-nid-match-biometric-2',
+        'indonesia_nik_lookup' => 'indonesia-nik-lookup',
+        'indonesia_dukcapil_match' => 'indonesia-dukcapil-match',
+        'mexico_curp_lookup' => 'mexico-curp-lookup',
+        'south_africa_nid_lookup' => 'south-africa-nid-lookup',
+        'kenya_nid_lookup' => 'kenya-nid-lookup',
+        'kenya_nid_match_2' => 'kenya-nid-match-2',
+        'kenya_nid_lookup_2' => 'kenya-nid-lookup-2',
+        'south_africa_nid_lookup_2' => 'south-africa-nid-lookup-2',
+        'south_africa_nid_match_2' => 'south-africa-nid-match-2',
+        'south_africa_nid_match_biometric_2' => 'south-africa-nid-match-biometric-2',
+        'nigeria_nin_lookup_2' => 'nigeria-nin-lookup-2',
+        'cote_divoire_nid_lookup_2' => 'cote-divoire-nid-lookup-2',
+        'zimbabwe_nid_lookup_2' => 'zimbabwe-nid-lookup-2',
+        'nigeria_nin_match_2' => 'nigeria-nin-match-2',
+        'uganda_nid_match_2' => 'uganda-nid-match-2',
+        'nigeria_nin_match_biometric_2' => 'nigeria-nin-match-biometric-2',
+        'nigeria_nin_lookup' => 'nigeria-nin-lookup',
+        'india_digilocker_aadhaar_match' => 'india-digilocker-aadhaar-match',
+        'brazil_cpf_lookup' => 'brazil-cpf-lookup',
+        'brazil_digital_cnh' => 'brazil-digital-cnh',
+        'philippines_philsys_match' => 'philippines-philsys-match',
+        'philippines_physical_national_id_qr' => 'philippines-physical-national-id-qr',
+        'philippines_digital_national_id_qr' => 'philippines-digital-national-id-qr',
+        'smart_id' => 'smart-id',
+        'mobile_id' => 'mobile-id',
+        'netherlands_idin' => 'netherlands-idin',
+        'italy_spid' => 'italy-spid',
+        'google_wallet' => 'google-wallet',
+        'apple_wallet' => 'apple-wallet',
+        'peru_dni_lookup' => 'peru-dni-lookup',
+        'trinsic_test_database_lookup' => 'trinsic-test-database-lookup',
+        'trinsic_test_sub_providers' => 'trinsic-test-sub-providers'
     ];
 
     /**
@@ -267,28 +303,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'kenya_biometric2' => 'setKenyaBiometric2',
-        'indonesia_nik' => 'setIndonesiaNik',
+        'kenya_nid_match_biometric_2' => 'setKenyaNidMatchBiometric2',
+        'indonesia_nik_lookup' => 'setIndonesiaNikLookup',
         'indonesia_dukcapil_match' => 'setIndonesiaDukcapilMatch',
-        'mexico_curp' => 'setMexicoCurp',
-        'south_africa_nid' => 'setSouthAfricaNid',
-        'kenya_nid' => 'setKenyaNid',
-        'kenya_nid_match2' => 'setKenyaNidMatch2',
-        'kenya_nid_lookup2' => 'setKenyaNidLookup2',
-        'south_africa_nid_lookup2' => 'setSouthAfricaNidLookup2',
-        'nigeria_nin' => 'setNigeriaNin',
-        'aadhaar' => 'setAadhaar',
-        'bangladesh_national_id' => 'setBangladeshNationalId',
-        'brazil_cpf_check' => 'setBrazilCpfCheck',
+        'mexico_curp_lookup' => 'setMexicoCurpLookup',
+        'south_africa_nid_lookup' => 'setSouthAfricaNidLookup',
+        'kenya_nid_lookup' => 'setKenyaNidLookup',
+        'kenya_nid_match_2' => 'setKenyaNidMatch2',
+        'kenya_nid_lookup_2' => 'setKenyaNidLookup2',
+        'south_africa_nid_lookup_2' => 'setSouthAfricaNidLookup2',
+        'south_africa_nid_match_2' => 'setSouthAfricaNidMatch2',
+        'south_africa_nid_match_biometric_2' => 'setSouthAfricaNidMatchBiometric2',
+        'nigeria_nin_lookup_2' => 'setNigeriaNinLookup2',
+        'cote_divoire_nid_lookup_2' => 'setCoteDivoireNidLookup2',
+        'zimbabwe_nid_lookup_2' => 'setZimbabweNidLookup2',
+        'nigeria_nin_match_2' => 'setNigeriaNinMatch2',
+        'uganda_nid_match_2' => 'setUgandaNidMatch2',
+        'nigeria_nin_match_biometric_2' => 'setNigeriaNinMatchBiometric2',
+        'nigeria_nin_lookup' => 'setNigeriaNinLookup',
+        'india_digilocker_aadhaar_match' => 'setIndiaDigilockerAadhaarMatch',
+        'brazil_cpf_lookup' => 'setBrazilCpfLookup',
         'brazil_digital_cnh' => 'setBrazilDigitalCnh',
-        'philippine_match' => 'setPhilippineMatch',
-        'philippine_qr' => 'setPhilippineQr',
+        'philippines_philsys_match' => 'setPhilippinesPhilsysMatch',
+        'philippines_physical_national_id_qr' => 'setPhilippinesPhysicalNationalIdQr',
+        'philippines_digital_national_id_qr' => 'setPhilippinesDigitalNationalIdQr',
         'smart_id' => 'setSmartId',
         'mobile_id' => 'setMobileId',
-        'idin' => 'setIdin',
-        'spid' => 'setSpid',
+        'netherlands_idin' => 'setNetherlandsIdin',
+        'italy_spid' => 'setItalySpid',
         'google_wallet' => 'setGoogleWallet',
         'apple_wallet' => 'setAppleWallet',
+        'peru_dni_lookup' => 'setPeruDniLookup',
         'trinsic_test_database_lookup' => 'setTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'setTrinsicTestSubProviders'
     ];
@@ -299,28 +344,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'kenya_biometric2' => 'getKenyaBiometric2',
-        'indonesia_nik' => 'getIndonesiaNik',
+        'kenya_nid_match_biometric_2' => 'getKenyaNidMatchBiometric2',
+        'indonesia_nik_lookup' => 'getIndonesiaNikLookup',
         'indonesia_dukcapil_match' => 'getIndonesiaDukcapilMatch',
-        'mexico_curp' => 'getMexicoCurp',
-        'south_africa_nid' => 'getSouthAfricaNid',
-        'kenya_nid' => 'getKenyaNid',
-        'kenya_nid_match2' => 'getKenyaNidMatch2',
-        'kenya_nid_lookup2' => 'getKenyaNidLookup2',
-        'south_africa_nid_lookup2' => 'getSouthAfricaNidLookup2',
-        'nigeria_nin' => 'getNigeriaNin',
-        'aadhaar' => 'getAadhaar',
-        'bangladesh_national_id' => 'getBangladeshNationalId',
-        'brazil_cpf_check' => 'getBrazilCpfCheck',
+        'mexico_curp_lookup' => 'getMexicoCurpLookup',
+        'south_africa_nid_lookup' => 'getSouthAfricaNidLookup',
+        'kenya_nid_lookup' => 'getKenyaNidLookup',
+        'kenya_nid_match_2' => 'getKenyaNidMatch2',
+        'kenya_nid_lookup_2' => 'getKenyaNidLookup2',
+        'south_africa_nid_lookup_2' => 'getSouthAfricaNidLookup2',
+        'south_africa_nid_match_2' => 'getSouthAfricaNidMatch2',
+        'south_africa_nid_match_biometric_2' => 'getSouthAfricaNidMatchBiometric2',
+        'nigeria_nin_lookup_2' => 'getNigeriaNinLookup2',
+        'cote_divoire_nid_lookup_2' => 'getCoteDivoireNidLookup2',
+        'zimbabwe_nid_lookup_2' => 'getZimbabweNidLookup2',
+        'nigeria_nin_match_2' => 'getNigeriaNinMatch2',
+        'uganda_nid_match_2' => 'getUgandaNidMatch2',
+        'nigeria_nin_match_biometric_2' => 'getNigeriaNinMatchBiometric2',
+        'nigeria_nin_lookup' => 'getNigeriaNinLookup',
+        'india_digilocker_aadhaar_match' => 'getIndiaDigilockerAadhaarMatch',
+        'brazil_cpf_lookup' => 'getBrazilCpfLookup',
         'brazil_digital_cnh' => 'getBrazilDigitalCnh',
-        'philippine_match' => 'getPhilippineMatch',
-        'philippine_qr' => 'getPhilippineQr',
+        'philippines_philsys_match' => 'getPhilippinesPhilsysMatch',
+        'philippines_physical_national_id_qr' => 'getPhilippinesPhysicalNationalIdQr',
+        'philippines_digital_national_id_qr' => 'getPhilippinesDigitalNationalIdQr',
         'smart_id' => 'getSmartId',
         'mobile_id' => 'getMobileId',
-        'idin' => 'getIdin',
-        'spid' => 'getSpid',
+        'netherlands_idin' => 'getNetherlandsIdin',
+        'italy_spid' => 'getItalySpid',
         'google_wallet' => 'getGoogleWallet',
         'apple_wallet' => 'getAppleWallet',
+        'peru_dni_lookup' => 'getPeruDniLookup',
         'trinsic_test_database_lookup' => 'getTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'getTrinsicTestSubProviders'
     ];
@@ -382,28 +436,37 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('kenya_biometric2', $data ?? [], null);
-        $this->setIfExists('indonesia_nik', $data ?? [], null);
+        $this->setIfExists('kenya_nid_match_biometric_2', $data ?? [], null);
+        $this->setIfExists('indonesia_nik_lookup', $data ?? [], null);
         $this->setIfExists('indonesia_dukcapil_match', $data ?? [], null);
-        $this->setIfExists('mexico_curp', $data ?? [], null);
-        $this->setIfExists('south_africa_nid', $data ?? [], null);
-        $this->setIfExists('kenya_nid', $data ?? [], null);
-        $this->setIfExists('kenya_nid_match2', $data ?? [], null);
-        $this->setIfExists('kenya_nid_lookup2', $data ?? [], null);
-        $this->setIfExists('south_africa_nid_lookup2', $data ?? [], null);
-        $this->setIfExists('nigeria_nin', $data ?? [], null);
-        $this->setIfExists('aadhaar', $data ?? [], null);
-        $this->setIfExists('bangladesh_national_id', $data ?? [], null);
-        $this->setIfExists('brazil_cpf_check', $data ?? [], null);
+        $this->setIfExists('mexico_curp_lookup', $data ?? [], null);
+        $this->setIfExists('south_africa_nid_lookup', $data ?? [], null);
+        $this->setIfExists('kenya_nid_lookup', $data ?? [], null);
+        $this->setIfExists('kenya_nid_match_2', $data ?? [], null);
+        $this->setIfExists('kenya_nid_lookup_2', $data ?? [], null);
+        $this->setIfExists('south_africa_nid_lookup_2', $data ?? [], null);
+        $this->setIfExists('south_africa_nid_match_2', $data ?? [], null);
+        $this->setIfExists('south_africa_nid_match_biometric_2', $data ?? [], null);
+        $this->setIfExists('nigeria_nin_lookup_2', $data ?? [], null);
+        $this->setIfExists('cote_divoire_nid_lookup_2', $data ?? [], null);
+        $this->setIfExists('zimbabwe_nid_lookup_2', $data ?? [], null);
+        $this->setIfExists('nigeria_nin_match_2', $data ?? [], null);
+        $this->setIfExists('uganda_nid_match_2', $data ?? [], null);
+        $this->setIfExists('nigeria_nin_match_biometric_2', $data ?? [], null);
+        $this->setIfExists('nigeria_nin_lookup', $data ?? [], null);
+        $this->setIfExists('india_digilocker_aadhaar_match', $data ?? [], null);
+        $this->setIfExists('brazil_cpf_lookup', $data ?? [], null);
         $this->setIfExists('brazil_digital_cnh', $data ?? [], null);
-        $this->setIfExists('philippine_match', $data ?? [], null);
-        $this->setIfExists('philippine_qr', $data ?? [], null);
+        $this->setIfExists('philippines_philsys_match', $data ?? [], null);
+        $this->setIfExists('philippines_physical_national_id_qr', $data ?? [], null);
+        $this->setIfExists('philippines_digital_national_id_qr', $data ?? [], null);
         $this->setIfExists('smart_id', $data ?? [], null);
         $this->setIfExists('mobile_id', $data ?? [], null);
-        $this->setIfExists('idin', $data ?? [], null);
-        $this->setIfExists('spid', $data ?? [], null);
+        $this->setIfExists('netherlands_idin', $data ?? [], null);
+        $this->setIfExists('italy_spid', $data ?? [], null);
         $this->setIfExists('google_wallet', $data ?? [], null);
         $this->setIfExists('apple_wallet', $data ?? [], null);
+        $this->setIfExists('peru_dni_lookup', $data ?? [], null);
         $this->setIfExists('trinsic_test_database_lookup', $data ?? [], null);
         $this->setIfExists('trinsic_test_sub_providers', $data ?? [], null);
     }
@@ -451,69 +514,69 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets kenya_biometric2
+     * Gets kenya_nid_match_biometric_2
      *
      * @return \Trinsic\Api\Model\KenyaNidBiometric2Input|null
      */
-    public function getKenyaBiometric2()
+    public function getKenyaNidMatchBiometric2()
     {
-        return $this->container['kenya_biometric2'];
+        return $this->container['kenya_nid_match_biometric_2'];
     }
 
     /**
-     * Sets kenya_biometric2
+     * Sets kenya_nid_match_biometric_2
      *
-     * @param \Trinsic\Api\Model\KenyaNidBiometric2Input|null $kenya_biometric2 Input for the `kenya-nid-match-biometric-2` provider
+     * @param \Trinsic\Api\Model\KenyaNidBiometric2Input|null $kenya_nid_match_biometric_2 Input for the `kenya-nid-match-biometric-2` provider
      *
      * @return self
      */
-    public function setKenyaBiometric2($kenya_biometric2)
+    public function setKenyaNidMatchBiometric2($kenya_nid_match_biometric_2)
     {
-        if (is_null($kenya_biometric2)) {
-            array_push($this->openAPINullablesSetToNull, 'kenya_biometric2');
+        if (is_null($kenya_nid_match_biometric_2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_match_biometric_2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('kenya_biometric2', $nullablesSetToNull);
+            $index = array_search('kenya_nid_match_biometric_2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['kenya_biometric2'] = $kenya_biometric2;
+        $this->container['kenya_nid_match_biometric_2'] = $kenya_nid_match_biometric_2;
 
         return $this;
     }
 
     /**
-     * Gets indonesia_nik
+     * Gets indonesia_nik_lookup
      *
      * @return \Trinsic\Api\Model\IndonesiaNikInput|null
      */
-    public function getIndonesiaNik()
+    public function getIndonesiaNikLookup()
     {
-        return $this->container['indonesia_nik'];
+        return $this->container['indonesia_nik_lookup'];
     }
 
     /**
-     * Sets indonesia_nik
+     * Sets indonesia_nik_lookup
      *
-     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik Input for the `indonesia-nik-lookup` provider
+     * @param \Trinsic\Api\Model\IndonesiaNikInput|null $indonesia_nik_lookup Input for the `indonesia-nik-lookup` provider
      *
      * @return self
      */
-    public function setIndonesiaNik($indonesia_nik)
+    public function setIndonesiaNikLookup($indonesia_nik_lookup)
     {
-        if (is_null($indonesia_nik)) {
-            array_push($this->openAPINullablesSetToNull, 'indonesia_nik');
+        if (is_null($indonesia_nik_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'indonesia_nik_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('indonesia_nik', $nullablesSetToNull);
+            $index = array_search('indonesia_nik_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['indonesia_nik'] = $indonesia_nik;
+        $this->container['indonesia_nik_lookup'] = $indonesia_nik_lookup;
 
         return $this;
     }
@@ -553,341 +616,579 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets mexico_curp
+     * Gets mexico_curp_lookup
      *
      * @return \Trinsic\Api\Model\MexicoCurpInput|null
      */
-    public function getMexicoCurp()
+    public function getMexicoCurpLookup()
     {
-        return $this->container['mexico_curp'];
+        return $this->container['mexico_curp_lookup'];
     }
 
     /**
-     * Sets mexico_curp
+     * Sets mexico_curp_lookup
      *
-     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp Input for the `mexico-curp-lookup` provider
+     * @param \Trinsic\Api\Model\MexicoCurpInput|null $mexico_curp_lookup Input for the `mexico-curp-lookup` provider
      *
      * @return self
      */
-    public function setMexicoCurp($mexico_curp)
+    public function setMexicoCurpLookup($mexico_curp_lookup)
     {
-        if (is_null($mexico_curp)) {
-            array_push($this->openAPINullablesSetToNull, 'mexico_curp');
+        if (is_null($mexico_curp_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'mexico_curp_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('mexico_curp', $nullablesSetToNull);
+            $index = array_search('mexico_curp_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['mexico_curp'] = $mexico_curp;
+        $this->container['mexico_curp_lookup'] = $mexico_curp_lookup;
 
         return $this;
     }
 
     /**
-     * Gets south_africa_nid
+     * Gets south_africa_nid_lookup
      *
      * @return \Trinsic\Api\Model\SouthAfricaNidInput|null
      */
-    public function getSouthAfricaNid()
+    public function getSouthAfricaNidLookup()
     {
-        return $this->container['south_africa_nid'];
+        return $this->container['south_africa_nid_lookup'];
     }
 
     /**
-     * Sets south_africa_nid
+     * Sets south_africa_nid_lookup
      *
-     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid Input for the `south-africa-nid-lookup` provider
+     * @param \Trinsic\Api\Model\SouthAfricaNidInput|null $south_africa_nid_lookup Input for the `south-africa-nid-lookup` provider
      *
      * @return self
      */
-    public function setSouthAfricaNid($south_africa_nid)
+    public function setSouthAfricaNidLookup($south_africa_nid_lookup)
     {
-        if (is_null($south_africa_nid)) {
-            array_push($this->openAPINullablesSetToNull, 'south_africa_nid');
+        if (is_null($south_africa_nid_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('south_africa_nid', $nullablesSetToNull);
+            $index = array_search('south_africa_nid_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['south_africa_nid'] = $south_africa_nid;
+        $this->container['south_africa_nid_lookup'] = $south_africa_nid_lookup;
 
         return $this;
     }
 
     /**
-     * Gets kenya_nid
+     * Gets kenya_nid_lookup
      *
      * @return \Trinsic\Api\Model\KenyaNidInput|null
      */
-    public function getKenyaNid()
+    public function getKenyaNidLookup()
     {
-        return $this->container['kenya_nid'];
+        return $this->container['kenya_nid_lookup'];
     }
 
     /**
-     * Sets kenya_nid
+     * Sets kenya_nid_lookup
      *
-     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid Input for the `kenya-nid-lookup` provider
+     * @param \Trinsic\Api\Model\KenyaNidInput|null $kenya_nid_lookup Input for the `kenya-nid-lookup` provider
      *
      * @return self
      */
-    public function setKenyaNid($kenya_nid)
+    public function setKenyaNidLookup($kenya_nid_lookup)
     {
-        if (is_null($kenya_nid)) {
-            array_push($this->openAPINullablesSetToNull, 'kenya_nid');
+        if (is_null($kenya_nid_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('kenya_nid', $nullablesSetToNull);
+            $index = array_search('kenya_nid_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['kenya_nid'] = $kenya_nid;
+        $this->container['kenya_nid_lookup'] = $kenya_nid_lookup;
 
         return $this;
     }
 
     /**
-     * Gets kenya_nid_match2
+     * Gets kenya_nid_match_2
      *
      * @return \Trinsic\Api\Model\KenyaNidMatch2Input|null
      */
     public function getKenyaNidMatch2()
     {
-        return $this->container['kenya_nid_match2'];
+        return $this->container['kenya_nid_match_2'];
     }
 
     /**
-     * Sets kenya_nid_match2
+     * Sets kenya_nid_match_2
      *
-     * @param \Trinsic\Api\Model\KenyaNidMatch2Input|null $kenya_nid_match2 Input for the `kenya-nid-match-2` provider
+     * @param \Trinsic\Api\Model\KenyaNidMatch2Input|null $kenya_nid_match_2 Input for the `kenya-nid-match-2` provider
      *
      * @return self
      */
-    public function setKenyaNidMatch2($kenya_nid_match2)
+    public function setKenyaNidMatch2($kenya_nid_match_2)
     {
-        if (is_null($kenya_nid_match2)) {
-            array_push($this->openAPINullablesSetToNull, 'kenya_nid_match2');
+        if (is_null($kenya_nid_match_2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_match_2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('kenya_nid_match2', $nullablesSetToNull);
+            $index = array_search('kenya_nid_match_2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['kenya_nid_match2'] = $kenya_nid_match2;
+        $this->container['kenya_nid_match_2'] = $kenya_nid_match_2;
 
         return $this;
     }
 
     /**
-     * Gets kenya_nid_lookup2
+     * Gets kenya_nid_lookup_2
      *
      * @return \Trinsic\Api\Model\KenyaNidLookup2Input|null
      */
     public function getKenyaNidLookup2()
     {
-        return $this->container['kenya_nid_lookup2'];
+        return $this->container['kenya_nid_lookup_2'];
     }
 
     /**
-     * Sets kenya_nid_lookup2
+     * Sets kenya_nid_lookup_2
      *
-     * @param \Trinsic\Api\Model\KenyaNidLookup2Input|null $kenya_nid_lookup2 Input for the `kenya-nid-lookup-2` provider
+     * @param \Trinsic\Api\Model\KenyaNidLookup2Input|null $kenya_nid_lookup_2 Input for the `kenya-nid-lookup-2` provider
      *
      * @return self
      */
-    public function setKenyaNidLookup2($kenya_nid_lookup2)
+    public function setKenyaNidLookup2($kenya_nid_lookup_2)
     {
-        if (is_null($kenya_nid_lookup2)) {
-            array_push($this->openAPINullablesSetToNull, 'kenya_nid_lookup2');
+        if (is_null($kenya_nid_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_lookup_2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('kenya_nid_lookup2', $nullablesSetToNull);
+            $index = array_search('kenya_nid_lookup_2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['kenya_nid_lookup2'] = $kenya_nid_lookup2;
+        $this->container['kenya_nid_lookup_2'] = $kenya_nid_lookup_2;
 
         return $this;
     }
 
     /**
-     * Gets south_africa_nid_lookup2
+     * Gets south_africa_nid_lookup_2
      *
      * @return \Trinsic\Api\Model\SouthAfricaNidLookup2Input|null
      */
     public function getSouthAfricaNidLookup2()
     {
-        return $this->container['south_africa_nid_lookup2'];
+        return $this->container['south_africa_nid_lookup_2'];
     }
 
     /**
-     * Sets south_africa_nid_lookup2
+     * Sets south_africa_nid_lookup_2
      *
-     * @param \Trinsic\Api\Model\SouthAfricaNidLookup2Input|null $south_africa_nid_lookup2 Input for the `south-africa-nid-lookup-2` provider
+     * @param \Trinsic\Api\Model\SouthAfricaNidLookup2Input|null $south_africa_nid_lookup_2 Input for the `south-africa-nid-lookup-2` provider
      *
      * @return self
      */
-    public function setSouthAfricaNidLookup2($south_africa_nid_lookup2)
+    public function setSouthAfricaNidLookup2($south_africa_nid_lookup_2)
     {
-        if (is_null($south_africa_nid_lookup2)) {
-            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_lookup2');
+        if (is_null($south_africa_nid_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_lookup_2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('south_africa_nid_lookup2', $nullablesSetToNull);
+            $index = array_search('south_africa_nid_lookup_2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['south_africa_nid_lookup2'] = $south_africa_nid_lookup2;
+        $this->container['south_africa_nid_lookup_2'] = $south_africa_nid_lookup_2;
 
         return $this;
     }
 
     /**
-     * Gets nigeria_nin
+     * Gets south_africa_nid_match_2
+     *
+     * @return \Trinsic\Api\Model\SouthAfricaNidMatch2Input|null
+     */
+    public function getSouthAfricaNidMatch2()
+    {
+        return $this->container['south_africa_nid_match_2'];
+    }
+
+    /**
+     * Sets south_africa_nid_match_2
+     *
+     * @param \Trinsic\Api\Model\SouthAfricaNidMatch2Input|null $south_africa_nid_match_2 Input for the `south-africa-nid-match-2` provider
+     *
+     * @return self
+     */
+    public function setSouthAfricaNidMatch2($south_africa_nid_match_2)
+    {
+        if (is_null($south_africa_nid_match_2)) {
+            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_match_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('south_africa_nid_match_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['south_africa_nid_match_2'] = $south_africa_nid_match_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets south_africa_nid_match_biometric_2
+     *
+     * @return \Trinsic\Api\Model\SouthAfricaNidBiometric2Input|null
+     */
+    public function getSouthAfricaNidMatchBiometric2()
+    {
+        return $this->container['south_africa_nid_match_biometric_2'];
+    }
+
+    /**
+     * Sets south_africa_nid_match_biometric_2
+     *
+     * @param \Trinsic\Api\Model\SouthAfricaNidBiometric2Input|null $south_africa_nid_match_biometric_2 Input for the `south-africa-nid-match-biometric-2` provider
+     *
+     * @return self
+     */
+    public function setSouthAfricaNidMatchBiometric2($south_africa_nid_match_biometric_2)
+    {
+        if (is_null($south_africa_nid_match_biometric_2)) {
+            array_push($this->openAPINullablesSetToNull, 'south_africa_nid_match_biometric_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('south_africa_nid_match_biometric_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['south_africa_nid_match_biometric_2'] = $south_africa_nid_match_biometric_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets nigeria_nin_lookup_2
+     *
+     * @return \Trinsic\Api\Model\NigeriaNinLookup2Input|null
+     */
+    public function getNigeriaNinLookup2()
+    {
+        return $this->container['nigeria_nin_lookup_2'];
+    }
+
+    /**
+     * Sets nigeria_nin_lookup_2
+     *
+     * @param \Trinsic\Api\Model\NigeriaNinLookup2Input|null $nigeria_nin_lookup_2 Input for the `nigeria-nin-lookup-2` provider
+     *
+     * @return self
+     */
+    public function setNigeriaNinLookup2($nigeria_nin_lookup_2)
+    {
+        if (is_null($nigeria_nin_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'nigeria_nin_lookup_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nigeria_nin_lookup_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['nigeria_nin_lookup_2'] = $nigeria_nin_lookup_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets cote_divoire_nid_lookup_2
+     *
+     * @return \Trinsic\Api\Model\CoteDIvoireNidLookup2Input|null
+     */
+    public function getCoteDivoireNidLookup2()
+    {
+        return $this->container['cote_divoire_nid_lookup_2'];
+    }
+
+    /**
+     * Sets cote_divoire_nid_lookup_2
+     *
+     * @param \Trinsic\Api\Model\CoteDIvoireNidLookup2Input|null $cote_divoire_nid_lookup_2 Input for the `cote-divoire-nid-lookup-2` provider
+     *
+     * @return self
+     */
+    public function setCoteDivoireNidLookup2($cote_divoire_nid_lookup_2)
+    {
+        if (is_null($cote_divoire_nid_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'cote_divoire_nid_lookup_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cote_divoire_nid_lookup_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cote_divoire_nid_lookup_2'] = $cote_divoire_nid_lookup_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets zimbabwe_nid_lookup_2
+     *
+     * @return \Trinsic\Api\Model\ZimbabweNidLookup2Input|null
+     */
+    public function getZimbabweNidLookup2()
+    {
+        return $this->container['zimbabwe_nid_lookup_2'];
+    }
+
+    /**
+     * Sets zimbabwe_nid_lookup_2
+     *
+     * @param \Trinsic\Api\Model\ZimbabweNidLookup2Input|null $zimbabwe_nid_lookup_2 Input for the `zimbabwe-nid-lookup-2` provider
+     *
+     * @return self
+     */
+    public function setZimbabweNidLookup2($zimbabwe_nid_lookup_2)
+    {
+        if (is_null($zimbabwe_nid_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'zimbabwe_nid_lookup_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('zimbabwe_nid_lookup_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['zimbabwe_nid_lookup_2'] = $zimbabwe_nid_lookup_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets nigeria_nin_match_2
+     *
+     * @return \Trinsic\Api\Model\NigeriaNinMatch2Input|null
+     */
+    public function getNigeriaNinMatch2()
+    {
+        return $this->container['nigeria_nin_match_2'];
+    }
+
+    /**
+     * Sets nigeria_nin_match_2
+     *
+     * @param \Trinsic\Api\Model\NigeriaNinMatch2Input|null $nigeria_nin_match_2 Input for the `nigeria-nin-match-2` provider
+     *
+     * @return self
+     */
+    public function setNigeriaNinMatch2($nigeria_nin_match_2)
+    {
+        if (is_null($nigeria_nin_match_2)) {
+            array_push($this->openAPINullablesSetToNull, 'nigeria_nin_match_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nigeria_nin_match_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['nigeria_nin_match_2'] = $nigeria_nin_match_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets uganda_nid_match_2
+     *
+     * @return \Trinsic\Api\Model\UgandaNidMatch2Input|null
+     */
+    public function getUgandaNidMatch2()
+    {
+        return $this->container['uganda_nid_match_2'];
+    }
+
+    /**
+     * Sets uganda_nid_match_2
+     *
+     * @param \Trinsic\Api\Model\UgandaNidMatch2Input|null $uganda_nid_match_2 Input for the `uganda-nid-match-2` provider
+     *
+     * @return self
+     */
+    public function setUgandaNidMatch2($uganda_nid_match_2)
+    {
+        if (is_null($uganda_nid_match_2)) {
+            array_push($this->openAPINullablesSetToNull, 'uganda_nid_match_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('uganda_nid_match_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['uganda_nid_match_2'] = $uganda_nid_match_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets nigeria_nin_match_biometric_2
+     *
+     * @return \Trinsic\Api\Model\NigeriaNinBiometric2Input|null
+     */
+    public function getNigeriaNinMatchBiometric2()
+    {
+        return $this->container['nigeria_nin_match_biometric_2'];
+    }
+
+    /**
+     * Sets nigeria_nin_match_biometric_2
+     *
+     * @param \Trinsic\Api\Model\NigeriaNinBiometric2Input|null $nigeria_nin_match_biometric_2 Input for the `nigeria-nin-match-biometric-2` provider
+     *
+     * @return self
+     */
+    public function setNigeriaNinMatchBiometric2($nigeria_nin_match_biometric_2)
+    {
+        if (is_null($nigeria_nin_match_biometric_2)) {
+            array_push($this->openAPINullablesSetToNull, 'nigeria_nin_match_biometric_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nigeria_nin_match_biometric_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['nigeria_nin_match_biometric_2'] = $nigeria_nin_match_biometric_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets nigeria_nin_lookup
      *
      * @return \Trinsic\Api\Model\NigeriaNinInput|null
      */
-    public function getNigeriaNin()
+    public function getNigeriaNinLookup()
     {
-        return $this->container['nigeria_nin'];
+        return $this->container['nigeria_nin_lookup'];
     }
 
     /**
-     * Sets nigeria_nin
+     * Sets nigeria_nin_lookup
      *
-     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin Input for the `nigeria-nin-lookup` provider
+     * @param \Trinsic\Api\Model\NigeriaNinInput|null $nigeria_nin_lookup Input for the `nigeria-nin-lookup` provider
      *
      * @return self
      */
-    public function setNigeriaNin($nigeria_nin)
+    public function setNigeriaNinLookup($nigeria_nin_lookup)
     {
-        if (is_null($nigeria_nin)) {
-            array_push($this->openAPINullablesSetToNull, 'nigeria_nin');
+        if (is_null($nigeria_nin_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'nigeria_nin_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('nigeria_nin', $nullablesSetToNull);
+            $index = array_search('nigeria_nin_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['nigeria_nin'] = $nigeria_nin;
+        $this->container['nigeria_nin_lookup'] = $nigeria_nin_lookup;
 
         return $this;
     }
 
     /**
-     * Gets aadhaar
+     * Gets india_digilocker_aadhaar_match
      *
      * @return \Trinsic\Api\Model\AadhaarInput|null
      */
-    public function getAadhaar()
+    public function getIndiaDigilockerAadhaarMatch()
     {
-        return $this->container['aadhaar'];
+        return $this->container['india_digilocker_aadhaar_match'];
     }
 
     /**
-     * Sets aadhaar
+     * Sets india_digilocker_aadhaar_match
      *
-     * @param \Trinsic\Api\Model\AadhaarInput|null $aadhaar Input for the `india-digilocker-aadhaar-match` provider
+     * @param \Trinsic\Api\Model\AadhaarInput|null $india_digilocker_aadhaar_match Input for the `india-digilocker-aadhaar-match` provider
      *
      * @return self
      */
-    public function setAadhaar($aadhaar)
+    public function setIndiaDigilockerAadhaarMatch($india_digilocker_aadhaar_match)
     {
-        if (is_null($aadhaar)) {
-            array_push($this->openAPINullablesSetToNull, 'aadhaar');
+        if (is_null($india_digilocker_aadhaar_match)) {
+            array_push($this->openAPINullablesSetToNull, 'india_digilocker_aadhaar_match');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aadhaar', $nullablesSetToNull);
+            $index = array_search('india_digilocker_aadhaar_match', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['aadhaar'] = $aadhaar;
+        $this->container['india_digilocker_aadhaar_match'] = $india_digilocker_aadhaar_match;
 
         return $this;
     }
 
     /**
-     * Gets bangladesh_national_id
-     *
-     * @return \Trinsic\Api\Model\BangladeshNidInput|null
-     */
-    public function getBangladeshNationalId()
-    {
-        return $this->container['bangladesh_national_id'];
-    }
-
-    /**
-     * Sets bangladesh_national_id
-     *
-     * @param \Trinsic\Api\Model\BangladeshNidInput|null $bangladesh_national_id Input for the `bangladesh-nid` provider
-     *
-     * @return self
-     */
-    public function setBangladeshNationalId($bangladesh_national_id)
-    {
-        if (is_null($bangladesh_national_id)) {
-            array_push($this->openAPINullablesSetToNull, 'bangladesh_national_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('bangladesh_national_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['bangladesh_national_id'] = $bangladesh_national_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets brazil_cpf_check
+     * Gets brazil_cpf_lookup
      *
      * @return \Trinsic\Api\Model\BrazilCpfCheckInput|null
      */
-    public function getBrazilCpfCheck()
+    public function getBrazilCpfLookup()
     {
-        return $this->container['brazil_cpf_check'];
+        return $this->container['brazil_cpf_lookup'];
     }
 
     /**
-     * Sets brazil_cpf_check
+     * Sets brazil_cpf_lookup
      *
-     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_check Input for the `brazil-cpf-lookup` provider
+     * @param \Trinsic\Api\Model\BrazilCpfCheckInput|null $brazil_cpf_lookup Input for the `brazil-cpf-lookup` provider
      *
      * @return self
      */
-    public function setBrazilCpfCheck($brazil_cpf_check)
+    public function setBrazilCpfLookup($brazil_cpf_lookup)
     {
-        if (is_null($brazil_cpf_check)) {
-            array_push($this->openAPINullablesSetToNull, 'brazil_cpf_check');
+        if (is_null($brazil_cpf_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'brazil_cpf_lookup');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('brazil_cpf_check', $nullablesSetToNull);
+            $index = array_search('brazil_cpf_lookup', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['brazil_cpf_check'] = $brazil_cpf_check;
+        $this->container['brazil_cpf_lookup'] = $brazil_cpf_lookup;
 
         return $this;
     }
@@ -927,69 +1228,103 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets philippine_match
+     * Gets philippines_philsys_match
      *
      * @return \Trinsic\Api\Model\PhilippineMatchInput|null
      */
-    public function getPhilippineMatch()
+    public function getPhilippinesPhilsysMatch()
     {
-        return $this->container['philippine_match'];
+        return $this->container['philippines_philsys_match'];
     }
 
     /**
-     * Sets philippine_match
+     * Sets philippines_philsys_match
      *
-     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippine_match Input for the `philippines-philsys-match` provider
+     * @param \Trinsic\Api\Model\PhilippineMatchInput|null $philippines_philsys_match Input for the `philippines-philsys-match` provider
      *
      * @return self
      */
-    public function setPhilippineMatch($philippine_match)
+    public function setPhilippinesPhilsysMatch($philippines_philsys_match)
     {
-        if (is_null($philippine_match)) {
-            array_push($this->openAPINullablesSetToNull, 'philippine_match');
+        if (is_null($philippines_philsys_match)) {
+            array_push($this->openAPINullablesSetToNull, 'philippines_philsys_match');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('philippine_match', $nullablesSetToNull);
+            $index = array_search('philippines_philsys_match', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['philippine_match'] = $philippine_match;
+        $this->container['philippines_philsys_match'] = $philippines_philsys_match;
 
         return $this;
     }
 
     /**
-     * Gets philippine_qr
+     * Gets philippines_physical_national_id_qr
      *
      * @return \Trinsic\Api\Model\PhilippineQRInput|null
      */
-    public function getPhilippineQr()
+    public function getPhilippinesPhysicalNationalIdQr()
     {
-        return $this->container['philippine_qr'];
+        return $this->container['philippines_physical_national_id_qr'];
     }
 
     /**
-     * Sets philippine_qr
+     * Sets philippines_physical_national_id_qr
      *
-     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippine_qr Input for the `philippines-digital-national-id-qr` and `philippines-physical-national-id-qr` providers
+     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippines_physical_national_id_qr Input for the `philippines-physical-national-id-qr` provider
      *
      * @return self
      */
-    public function setPhilippineQr($philippine_qr)
+    public function setPhilippinesPhysicalNationalIdQr($philippines_physical_national_id_qr)
     {
-        if (is_null($philippine_qr)) {
-            array_push($this->openAPINullablesSetToNull, 'philippine_qr');
+        if (is_null($philippines_physical_national_id_qr)) {
+            array_push($this->openAPINullablesSetToNull, 'philippines_physical_national_id_qr');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('philippine_qr', $nullablesSetToNull);
+            $index = array_search('philippines_physical_national_id_qr', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['philippine_qr'] = $philippine_qr;
+        $this->container['philippines_physical_national_id_qr'] = $philippines_physical_national_id_qr;
+
+        return $this;
+    }
+
+    /**
+     * Gets philippines_digital_national_id_qr
+     *
+     * @return \Trinsic\Api\Model\PhilippineQRInput|null
+     */
+    public function getPhilippinesDigitalNationalIdQr()
+    {
+        return $this->container['philippines_digital_national_id_qr'];
+    }
+
+    /**
+     * Sets philippines_digital_national_id_qr
+     *
+     * @param \Trinsic\Api\Model\PhilippineQRInput|null $philippines_digital_national_id_qr Input for the `philippines-digital-national-id-qr` provider
+     *
+     * @return self
+     */
+    public function setPhilippinesDigitalNationalIdQr($philippines_digital_national_id_qr)
+    {
+        if (is_null($philippines_digital_national_id_qr)) {
+            array_push($this->openAPINullablesSetToNull, 'philippines_digital_national_id_qr');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('philippines_digital_national_id_qr', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['philippines_digital_national_id_qr'] = $philippines_digital_national_id_qr;
 
         return $this;
     }
@@ -1063,69 +1398,69 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets idin
+     * Gets netherlands_idin
      *
      * @return \Trinsic\Api\Model\IdinInput|null
      */
-    public function getIdin()
+    public function getNetherlandsIdin()
     {
-        return $this->container['idin'];
+        return $this->container['netherlands_idin'];
     }
 
     /**
-     * Sets idin
+     * Sets netherlands_idin
      *
-     * @param \Trinsic\Api\Model\IdinInput|null $idin Input for the `netherlands-idin` provider
+     * @param \Trinsic\Api\Model\IdinInput|null $netherlands_idin Input for the `netherlands-idin` provider
      *
      * @return self
      */
-    public function setIdin($idin)
+    public function setNetherlandsIdin($netherlands_idin)
     {
-        if (is_null($idin)) {
-            array_push($this->openAPINullablesSetToNull, 'idin');
+        if (is_null($netherlands_idin)) {
+            array_push($this->openAPINullablesSetToNull, 'netherlands_idin');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('idin', $nullablesSetToNull);
+            $index = array_search('netherlands_idin', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['idin'] = $idin;
+        $this->container['netherlands_idin'] = $netherlands_idin;
 
         return $this;
     }
 
     /**
-     * Gets spid
+     * Gets italy_spid
      *
      * @return \Trinsic\Api\Model\SpidInput|null
      */
-    public function getSpid()
+    public function getItalySpid()
     {
-        return $this->container['spid'];
+        return $this->container['italy_spid'];
     }
 
     /**
-     * Sets spid
+     * Sets italy_spid
      *
-     * @param \Trinsic\Api\Model\SpidInput|null $spid Input for the `italy-spid` provider
+     * @param \Trinsic\Api\Model\SpidInput|null $italy_spid Input for the `italy-spid` provider
      *
      * @return self
      */
-    public function setSpid($spid)
+    public function setItalySpid($italy_spid)
     {
-        if (is_null($spid)) {
-            array_push($this->openAPINullablesSetToNull, 'spid');
+        if (is_null($italy_spid)) {
+            array_push($this->openAPINullablesSetToNull, 'italy_spid');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('spid', $nullablesSetToNull);
+            $index = array_search('italy_spid', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['spid'] = $spid;
+        $this->container['italy_spid'] = $italy_spid;
 
         return $this;
     }
@@ -1194,6 +1529,40 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['apple_wallet'] = $apple_wallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets peru_dni_lookup
+     *
+     * @return \Trinsic\Api\Model\PeruDniLookupInput|null
+     */
+    public function getPeruDniLookup()
+    {
+        return $this->container['peru_dni_lookup'];
+    }
+
+    /**
+     * Sets peru_dni_lookup
+     *
+     * @param \Trinsic\Api\Model\PeruDniLookupInput|null $peru_dni_lookup Input for the `peru-dni-lookup` provider
+     *
+     * @return self
+     */
+    public function setPeruDniLookup($peru_dni_lookup)
+    {
+        if (is_null($peru_dni_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'peru_dni_lookup');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('peru_dni_lookup', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['peru_dni_lookup'] = $peru_dni_lookup;
 
         return $this;
     }

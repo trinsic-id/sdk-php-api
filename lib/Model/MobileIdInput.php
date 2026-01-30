@@ -59,7 +59,7 @@ class MobileIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'mobile_id_phone_number' => 'string',
         'mobile_id_national_identity_number' => 'string',
-        'mobile_id_language' => '\Trinsic\Api\Model\Language'
+        'mobile_id_language' => '\Trinsic\Api\Model\MobileIdLanguage'
     ];
 
     /**
@@ -374,7 +374,7 @@ class MobileIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets mobile_id_language
      *
-     * @return \Trinsic\Api\Model\Language|null
+     * @return \Trinsic\Api\Model\MobileIdLanguage|null
      */
     public function getMobileIdLanguage()
     {
@@ -384,7 +384,7 @@ class MobileIdInput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mobile_id_language
      *
-     * @param \Trinsic\Api\Model\Language|null $mobile_id_language The user's language -- LIT, EST, ENG, or RUS
+     * @param \Trinsic\Api\Model\MobileIdLanguage|null $mobile_id_language The user's language -- LIT, EST, ENG, or RUS
      *
      * @return self
      */

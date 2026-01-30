@@ -125,9 +125,9 @@ class IdentityDataTest extends TestCase
     }
 
     /**
-     * Test attribute "attachment_access_keys"
+     * Test attribute "attachments"
      */
-    public function testPropertyAttachmentAccessKeys()
+    public function testPropertyAttachments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -137,15 +137,6 @@ class IdentityDataTest extends TestCase
      * Test attribute "provider_output"
      */
     public function testPropertyProviderOutput()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "identifiers"
-     */
-    public function testPropertyIdentifiers()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

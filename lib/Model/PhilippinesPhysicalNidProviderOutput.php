@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * PhilippinesPhysicalNidProviderOutput Class Doc Comment
  *
  * @category Class
+ * @description Exposed properties for the &#x60;philippines-physical-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -305,7 +306,7 @@ class PhilippinesPhysicalNidProviderOutput implements ModelInterface, ArrayAcces
     /**
      * Sets philsys_card_number
      *
-     * @param string $philsys_card_number The PhilSys card number.
+     * @param string $philsys_card_number The PhilSys Card Number (PCN). Every citizen or resident alien registered in PhilSys has a PhilSys Number (PSN). This number is tokenized into a card number to protect the PSN. The PhilSys Card Number is 12 characters long, and often is written in octets with dashes in between.
      *
      * @return self
      */

@@ -61,7 +61,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'string',
         'name' => 'string',
         'subtext' => 'string',
-        'description' => 'string',
         'logo_url' => 'string'
     ];
 
@@ -76,7 +75,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => null,
         'name' => null,
         'subtext' => null,
-        'description' => null,
         'logo_url' => null
     ];
 
@@ -89,7 +87,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => false,
         'name' => false,
         'subtext' => false,
-        'description' => false,
         'logo_url' => false
     ];
 
@@ -182,7 +179,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'id',
         'name' => 'name',
         'subtext' => 'subtext',
-        'description' => 'description',
         'logo_url' => 'logoUrl'
     ];
 
@@ -195,7 +191,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'setId',
         'name' => 'setName',
         'subtext' => 'setSubtext',
-        'description' => 'setDescription',
         'logo_url' => 'setLogoUrl'
     ];
 
@@ -208,7 +203,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'getId',
         'name' => 'getName',
         'subtext' => 'getSubtext',
-        'description' => 'getDescription',
         'logo_url' => 'getLogoUrl'
     ];
 
@@ -272,7 +266,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('subtext', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('logo_url', $data ?? [], null);
     }
 
@@ -311,9 +304,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ($this->container['subtext'] === null) {
             $invalidProperties[] = "'subtext' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
         }
         if ($this->container['logo_url'] === null) {
             $invalidProperties[] = "'logo_url' can't be null";
@@ -410,35 +400,6 @@ class SubProviderMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable subtext cannot be null');
         }
         $this->container['subtext'] = $subtext;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     * @deprecated
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description The Provider's subtext recommended to be shown next to the name.              This is flavor text, not a full, human-readable description of the provider.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
 
         return $this;
     }

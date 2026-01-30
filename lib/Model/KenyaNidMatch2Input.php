@@ -62,7 +62,7 @@ class KenyaNidMatch2Input implements ModelInterface, ArrayAccess, \JsonSerializa
         'family_name' => 'string',
         'middle_name' => 'string',
         'date_of_birth' => '\DateTime',
-        'sex' => '\Trinsic\Api\Model\SexV1'
+        'sex' => '\Trinsic\Api\Model\KenyaNidMatch2InputSex'
     ];
 
     /**
@@ -497,7 +497,7 @@ class KenyaNidMatch2Input implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sex
      *
-     * @return \Trinsic\Api\Model\SexV1|null
+     * @return \Trinsic\Api\Model\KenyaNidMatch2InputSex|null
      */
     public function getSex()
     {
@@ -507,7 +507,7 @@ class KenyaNidMatch2Input implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sex
      *
-     * @param \Trinsic\Api\Model\SexV1|null $sex The user's sex as it appears in their National ID
+     * @param \Trinsic\Api\Model\KenyaNidMatch2InputSex|null $sex The user's sex as it appears in their National ID
      *
      * @return self
      */

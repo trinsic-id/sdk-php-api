@@ -35,6 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * PersonData Class Doc Comment
  *
  * @category Class
+ * @description Identity information for the individual being verified
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -365,7 +366,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets given_name
      *
-     * @param string|null $given_name given_name
+     * @param string|null $given_name Given (first) name of the individual
      *
      * @return self
      */
@@ -399,7 +400,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets family_name
      *
-     * @param string|null $family_name family_name
+     * @param string|null $family_name Family (last) name of the individual
      *
      * @return self
      */
@@ -433,7 +434,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets middle_name
      *
-     * @param string|null $middle_name middle_name
+     * @param string|null $middle_name Middle name of the individual
      *
      * @return self
      */
@@ -467,7 +468,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets full_name
      *
-     * @param string|null $full_name full_name
+     * @param string|null $full_name The individual's full name as a single string.              Useful for names which do not fit into a \"first middle last\" structure.
      *
      * @return self
      */
@@ -501,7 +502,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets suffix
      *
-     * @param string|null $suffix suffix
+     * @param string|null $suffix Suffix of the individual's name
      *
      * @return self
      */
@@ -637,7 +638,7 @@ class PersonData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \Trinsic\Api\Model\Address|null $address address
+     * @param \Trinsic\Api\Model\Address|null $address Address information for an individual
      *
      * @return self
      */

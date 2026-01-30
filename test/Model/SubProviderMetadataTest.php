@@ -107,15 +107,6 @@ class SubProviderMetadataTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "logo_url"
      */
     public function testPropertyLogoUrl()

@@ -62,9 +62,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => '\Trinsic\Api\Model\PersonData',
         'document' => '\Trinsic\Api\Model\DocumentData',
         'match' => '\Trinsic\Api\Model\MatchData',
-        'attachment_access_keys' => '\Trinsic\Api\Model\AttachmentAccessKeys',
-        'provider_output' => '\Trinsic\Api\Model\ProviderOutput',
-        'identifiers' => '\Trinsic\Api\Model\Identifier[]'
+        'attachments' => '\Trinsic\Api\Model\AttachmentInfo[]',
+        'provider_output' => '\Trinsic\Api\Model\ProviderOutput'
     ];
 
     /**
@@ -80,9 +79,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => null,
         'document' => null,
         'match' => null,
-        'attachment_access_keys' => null,
-        'provider_output' => null,
-        'identifiers' => null
+        'attachments' => null,
+        'provider_output' => null
     ];
 
     /**
@@ -96,9 +94,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => true,
         'document' => true,
         'match' => true,
-        'attachment_access_keys' => true,
-        'provider_output' => true,
-        'identifiers' => false
+        'attachments' => false,
+        'provider_output' => true
     ];
 
     /**
@@ -192,9 +189,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'person',
         'document' => 'document',
         'match' => 'match',
-        'attachment_access_keys' => 'attachmentAccessKeys',
-        'provider_output' => 'providerOutput',
-        'identifiers' => 'identifiers'
+        'attachments' => 'attachments',
+        'provider_output' => 'providerOutput'
     ];
 
     /**
@@ -208,9 +204,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'setPerson',
         'document' => 'setDocument',
         'match' => 'setMatch',
-        'attachment_access_keys' => 'setAttachmentAccessKeys',
-        'provider_output' => 'setProviderOutput',
-        'identifiers' => 'setIdentifiers'
+        'attachments' => 'setAttachments',
+        'provider_output' => 'setProviderOutput'
     ];
 
     /**
@@ -224,9 +219,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         'person' => 'getPerson',
         'document' => 'getDocument',
         'match' => 'getMatch',
-        'attachment_access_keys' => 'getAttachmentAccessKeys',
-        'provider_output' => 'getProviderOutput',
-        'identifiers' => 'getIdentifiers'
+        'attachments' => 'getAttachments',
+        'provider_output' => 'getProviderOutput'
     ];
 
     /**
@@ -291,9 +285,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('person', $data ?? [], null);
         $this->setIfExists('document', $data ?? [], null);
         $this->setIfExists('match', $data ?? [], null);
-        $this->setIfExists('attachment_access_keys', $data ?? [], null);
+        $this->setIfExists('attachments', $data ?? [], null);
         $this->setIfExists('provider_output', $data ?? [], null);
-        $this->setIfExists('identifiers', $data ?? [], null);
     }
 
     /**
@@ -323,8 +316,8 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['identifiers'] === null) {
-            $invalidProperties[] = "'identifiers' can't be null";
+        if ($this->container['attachments'] === null) {
+            $invalidProperties[] = "'attachments' can't be null";
         }
         return $invalidProperties;
     }
@@ -354,7 +347,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets originating_provider_id
      *
-     * @param string|null $originating_provider_id originating_provider_id
+     * @param string|null $originating_provider_id The ID of the provider from which this data originated (eg \"yoti\", \"clear\")
      *
      * @return self
      */
@@ -388,7 +381,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets originating_sub_provider_id
      *
-     * @param string|null $originating_sub_provider_id originating_sub_provider_id
+     * @param string|null $originating_sub_provider_id The sub-provider ID of the provider from which this data originated (eg \"rabo\", \"poste-italiane\")              This is applicable only to federated Identity Providers such as SPID and IDIN.
      *
      * @return self
      */
@@ -422,7 +415,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person
      *
-     * @param \Trinsic\Api\Model\PersonData|null $person person
+     * @param \Trinsic\Api\Model\PersonData|null $person Identity data of the individual who was verified
      *
      * @return self
      */
@@ -456,7 +449,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets document
      *
-     * @param \Trinsic\Api\Model\DocumentData|null $document document
+     * @param \Trinsic\Api\Model\DocumentData|null $document Identity data of the document involved in verification, if relevant
      *
      * @return self
      */
@@ -490,7 +483,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets match
      *
-     * @param \Trinsic\Api\Model\MatchData|null $match match
+     * @param \Trinsic\Api\Model\MatchData|null $match Match results for the data being matched against.              This applies to Providers which operate based on matching data / biometrics against a government database, returning match scores or results as opposed to the data itself.
      *
      * @return self
      */
@@ -512,35 +505,28 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets attachment_access_keys
+     * Gets attachments
      *
-     * @return \Trinsic\Api\Model\AttachmentAccessKeys|null
+     * @return \Trinsic\Api\Model\AttachmentInfo[]
      */
-    public function getAttachmentAccessKeys()
+    public function getAttachments()
     {
-        return $this->container['attachment_access_keys'];
+        return $this->container['attachments'];
     }
 
     /**
-     * Sets attachment_access_keys
+     * Sets attachments
      *
-     * @param \Trinsic\Api\Model\AttachmentAccessKeys|null $attachment_access_keys attachment_access_keys
+     * @param \Trinsic\Api\Model\AttachmentInfo[] $attachments Information for each attachment included with this set of identity data.              Use the Attachments API to fetch an attachment by its ID for a given Session.
      *
      * @return self
      */
-    public function setAttachmentAccessKeys($attachment_access_keys)
+    public function setAttachments($attachments)
     {
-        if (is_null($attachment_access_keys)) {
-            array_push($this->openAPINullablesSetToNull, 'attachment_access_keys');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attachment_access_keys', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($attachments)) {
+            throw new \InvalidArgumentException('non-nullable attachments cannot be null');
         }
-        $this->container['attachment_access_keys'] = $attachment_access_keys;
+        $this->container['attachments'] = $attachments;
 
         return $this;
     }
@@ -558,7 +544,7 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets provider_output
      *
-     * @param \Trinsic\Api\Model\ProviderOutput|null $provider_output provider_output
+     * @param \Trinsic\Api\Model\ProviderOutput|null $provider_output Provider-specific output data that doesn't fit the standard identity data schema.              The structure of this object varies by provider.
      *
      * @return self
      */
@@ -575,33 +561,6 @@ class IdentityData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['provider_output'] = $provider_output;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifiers
-     *
-     * @return \Trinsic\Api\Model\Identifier[]
-     */
-    public function getIdentifiers()
-    {
-        return $this->container['identifiers'];
-    }
-
-    /**
-     * Sets identifiers
-     *
-     * @param \Trinsic\Api\Model\Identifier[] $identifiers identifiers
-     *
-     * @return self
-     */
-    public function setIdentifiers($identifiers)
-    {
-        if (is_null($identifiers)) {
-            throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
-        }
-        $this->container['identifiers'] = $identifiers;
 
         return $this;
     }

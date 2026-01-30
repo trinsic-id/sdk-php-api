@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * FaydaProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description FaydaProviderOutput
+ * @description Exposed properties for the &#x60;ethiopia-fayda&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

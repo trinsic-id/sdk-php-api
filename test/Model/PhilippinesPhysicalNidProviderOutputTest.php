@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * PhilippinesPhysicalNidProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description PhilippinesPhysicalNidProviderOutput
+ * @description Exposed properties for the &#x60;philippines-physical-national-id-qr&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

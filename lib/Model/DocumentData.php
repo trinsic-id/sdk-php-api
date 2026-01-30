@@ -62,6 +62,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => '\DateTime',
         'expiration_date' => '\DateTime',
         'issuing_country' => 'string',
+        'issuing_subdivision' => 'string',
         'issuing_authority' => 'string'
     ];
 
@@ -78,6 +79,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'date',
         'expiration_date' => 'date',
         'issuing_country' => null,
+        'issuing_subdivision' => null,
         'issuing_authority' => null
     ];
 
@@ -92,6 +94,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => true,
         'expiration_date' => true,
         'issuing_country' => true,
+        'issuing_subdivision' => true,
         'issuing_authority' => true
     ];
 
@@ -186,6 +189,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'issueDate',
         'expiration_date' => 'expirationDate',
         'issuing_country' => 'issuingCountry',
+        'issuing_subdivision' => 'issuingSubdivision',
         'issuing_authority' => 'issuingAuthority'
     ];
 
@@ -200,6 +204,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'setIssueDate',
         'expiration_date' => 'setExpirationDate',
         'issuing_country' => 'setIssuingCountry',
+        'issuing_subdivision' => 'setIssuingSubdivision',
         'issuing_authority' => 'setIssuingAuthority'
     ];
 
@@ -214,6 +219,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         'issue_date' => 'getIssueDate',
         'expiration_date' => 'getExpirationDate',
         'issuing_country' => 'getIssuingCountry',
+        'issuing_subdivision' => 'getIssuingSubdivision',
         'issuing_authority' => 'getIssuingAuthority'
     ];
 
@@ -279,6 +285,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('issue_date', $data ?? [], null);
         $this->setIfExists('expiration_date', $data ?? [], null);
         $this->setIfExists('issuing_country', $data ?? [], null);
+        $this->setIfExists('issuing_subdivision', $data ?? [], null);
         $this->setIfExists('issuing_authority', $data ?? [], null);
     }
 
@@ -337,7 +344,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param \Trinsic\Api\Model\DocumentType|null $type type
+     * @param \Trinsic\Api\Model\DocumentType|null $type The type of the document.
      *
      * @return self
      */
@@ -371,7 +378,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets number
      *
-     * @param string|null $number number
+     * @param string|null $number The primary identifying number of the document.
      *
      * @return self
      */
@@ -405,7 +412,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets issue_date
      *
-     * @param \DateTime|null $issue_date issue_date
+     * @param \DateTime|null $issue_date The date the document was issued.
      *
      * @return self
      */
@@ -439,7 +446,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiration_date
      *
-     * @param \DateTime|null $expiration_date expiration_date
+     * @param \DateTime|null $expiration_date The date the document expires.
      *
      * @return self
      */
@@ -473,7 +480,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets issuing_country
      *
-     * @param string|null $issuing_country issuing_country
+     * @param string|null $issuing_country The ISO 3166-1 alpha-2 country code of the country that issued the document.
      *
      * @return self
      */
@@ -495,6 +502,40 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets issuing_subdivision
+     *
+     * @return string|null
+     */
+    public function getIssuingSubdivision()
+    {
+        return $this->container['issuing_subdivision'];
+    }
+
+    /**
+     * Sets issuing_subdivision
+     *
+     * @param string|null $issuing_subdivision The ISO 3166-2 subdivision code of the issuing authority which issued the document.              This is always in the form {CountryCode}-{SubdivisionCode}, where CountryCode is 2 letters and SubdivisionCode is 1-3 alphanumeric characters.
+     *
+     * @return self
+     */
+    public function setIssuingSubdivision($issuing_subdivision)
+    {
+        if (is_null($issuing_subdivision)) {
+            array_push($this->openAPINullablesSetToNull, 'issuing_subdivision');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('issuing_subdivision', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['issuing_subdivision'] = $issuing_subdivision;
+
+        return $this;
+    }
+
+    /**
      * Gets issuing_authority
      *
      * @return string|null
@@ -507,7 +548,7 @@ class DocumentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets issuing_authority
      *
-     * @param string|null $issuing_authority issuing_authority
+     * @param string|null $issuing_authority The name of the authority which issued the document.
      *
      * @return self
      */

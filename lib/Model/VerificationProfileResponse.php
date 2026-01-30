@@ -62,7 +62,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => 'string',
         'logo_url' => 'string',
         'primary_color' => 'string',
-        'enabled_providers' => 'string[]'
+        'enabled_providers' => 'string[]',
+        'is_production_usage' => 'bool'
     ];
 
     /**
@@ -78,7 +79,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => null,
         'logo_url' => null,
         'primary_color' => null,
-        'enabled_providers' => null
+        'enabled_providers' => null,
+        'is_production_usage' => null
     ];
 
     /**
@@ -92,7 +94,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => false,
         'logo_url' => false,
         'primary_color' => false,
-        'enabled_providers' => false
+        'enabled_providers' => false,
+        'is_production_usage' => false
     ];
 
     /**
@@ -186,7 +189,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => 'brandName',
         'logo_url' => 'logoUrl',
         'primary_color' => 'primaryColor',
-        'enabled_providers' => 'enabledProviders'
+        'enabled_providers' => 'enabledProviders',
+        'is_production_usage' => 'isProductionUsage'
     ];
 
     /**
@@ -200,7 +204,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => 'setBrandName',
         'logo_url' => 'setLogoUrl',
         'primary_color' => 'setPrimaryColor',
-        'enabled_providers' => 'setEnabledProviders'
+        'enabled_providers' => 'setEnabledProviders',
+        'is_production_usage' => 'setIsProductionUsage'
     ];
 
     /**
@@ -214,7 +219,8 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'brand_name' => 'getBrandName',
         'logo_url' => 'getLogoUrl',
         'primary_color' => 'getPrimaryColor',
-        'enabled_providers' => 'getEnabledProviders'
+        'enabled_providers' => 'getEnabledProviders',
+        'is_production_usage' => 'getIsProductionUsage'
     ];
 
     /**
@@ -280,6 +286,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('logo_url', $data ?? [], null);
         $this->setIfExists('primary_color', $data ?? [], null);
         $this->setIfExists('enabled_providers', $data ?? [], null);
+        $this->setIfExists('is_production_usage', $data ?? [], null);
     }
 
     /**
@@ -326,6 +333,9 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         }
         if ($this->container['enabled_providers'] === null) {
             $invalidProperties[] = "'enabled_providers' can't be null";
+        }
+        if ($this->container['is_production_usage'] === null) {
+            $invalidProperties[] = "'is_production_usage' can't be null";
         }
         return $invalidProperties;
     }
@@ -500,6 +510,33 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable enabled_providers cannot be null');
         }
         $this->container['enabled_providers'] = $enabled_providers;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_production_usage
+     *
+     * @return bool
+     */
+    public function getIsProductionUsage()
+    {
+        return $this->container['is_production_usage'];
+    }
+
+    /**
+     * Sets is_production_usage
+     *
+     * @param bool $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles.
+     *
+     * @return self
+     */
+    public function setIsProductionUsage($is_production_usage)
+    {
+        if (is_null($is_production_usage)) {
+            throw new \InvalidArgumentException('non-nullable is_production_usage cannot be null');
+        }
+        $this->container['is_production_usage'] = $is_production_usage;
 
         return $this;
     }

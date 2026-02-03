@@ -77,6 +77,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => '\Trinsic\Api\Model\FrenchNumeriqueProviderOutput',
         'google_wallet' => '\Trinsic\Api\Model\GoogleWalletProviderOutput',
         'italy_spid' => '\Trinsic\Api\Model\SpidProviderOutput',
+        'kenya_nid_lookup_2' => '\Trinsic\Api\Model\KenyaNidLookup2ProviderOutput',
         'lloyds_smart_id' => '\Trinsic\Api\Model\LloydsSmartIdProviderOutput',
         'mexico_curp_lookup' => '\Trinsic\Api\Model\MexicoCurpProviderOutput',
         'mobile_id' => '\Trinsic\Api\Model\MobileIdProviderOutput',
@@ -119,6 +120,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => null,
         'google_wallet' => null,
         'italy_spid' => null,
+        'kenya_nid_lookup_2' => null,
         'lloyds_smart_id' => null,
         'mexico_curp_lookup' => null,
         'mobile_id' => null,
@@ -159,6 +161,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => true,
         'google_wallet' => true,
         'italy_spid' => true,
+        'kenya_nid_lookup_2' => true,
         'lloyds_smart_id' => true,
         'mexico_curp_lookup' => true,
         'mobile_id' => true,
@@ -279,6 +282,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => 'france-identite-numerique',
         'google_wallet' => 'google-wallet',
         'italy_spid' => 'italy-spid',
+        'kenya_nid_lookup_2' => 'kenya-nid-lookup-2',
         'lloyds_smart_id' => 'lloyds-smart-id',
         'mexico_curp_lookup' => 'mexico-curp-lookup',
         'mobile_id' => 'mobile-id',
@@ -319,6 +323,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => 'setFranceIdentiteNumerique',
         'google_wallet' => 'setGoogleWallet',
         'italy_spid' => 'setItalySpid',
+        'kenya_nid_lookup_2' => 'setKenyaNidLookup2',
         'lloyds_smart_id' => 'setLloydsSmartId',
         'mexico_curp_lookup' => 'setMexicoCurpLookup',
         'mobile_id' => 'setMobileId',
@@ -359,6 +364,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'france_identite_numerique' => 'getFranceIdentiteNumerique',
         'google_wallet' => 'getGoogleWallet',
         'italy_spid' => 'getItalySpid',
+        'kenya_nid_lookup_2' => 'getKenyaNidLookup2',
         'lloyds_smart_id' => 'getLloydsSmartId',
         'mexico_curp_lookup' => 'getMexicoCurpLookup',
         'mobile_id' => 'getMobileId',
@@ -450,6 +456,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('france_identite_numerique', $data ?? [], null);
         $this->setIfExists('google_wallet', $data ?? [], null);
         $this->setIfExists('italy_spid', $data ?? [], null);
+        $this->setIfExists('kenya_nid_lookup_2', $data ?? [], null);
         $this->setIfExists('lloyds_smart_id', $data ?? [], null);
         $this->setIfExists('mexico_curp_lookup', $data ?? [], null);
         $this->setIfExists('mobile_id', $data ?? [], null);
@@ -1182,6 +1189,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['italy_spid'] = $italy_spid;
+
+        return $this;
+    }
+
+    /**
+     * Gets kenya_nid_lookup_2
+     *
+     * @return \Trinsic\Api\Model\KenyaNidLookup2ProviderOutput|null
+     */
+    public function getKenyaNidLookup2()
+    {
+        return $this->container['kenya_nid_lookup_2'];
+    }
+
+    /**
+     * Sets kenya_nid_lookup_2
+     *
+     * @param \Trinsic\Api\Model\KenyaNidLookup2ProviderOutput|null $kenya_nid_lookup_2 Exposed properties for the `kenya-nid-lookup-2` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setKenyaNidLookup2($kenya_nid_lookup_2)
+    {
+        if (is_null($kenya_nid_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'kenya_nid_lookup_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('kenya_nid_lookup_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['kenya_nid_lookup_2'] = $kenya_nid_lookup_2;
 
         return $this;
     }

@@ -260,6 +260,15 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "kenya_nid_lookup_2"
+     */
+    public function testPropertyKenyaNidLookup2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "lloyds_smart_id"
      */
     public function testPropertyLloydsSmartId()

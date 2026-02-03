@@ -60,7 +60,9 @@ docs/Model/IntegrationStep.md
 docs/Model/ItsmeProviderOutput.md
 docs/Model/KenyaNidBiometric2Input.md
 docs/Model/KenyaNidInput.md
+docs/Model/KenyaNidLookup2Address.md
 docs/Model/KenyaNidLookup2Input.md
+docs/Model/KenyaNidLookup2ProviderOutput.md
 docs/Model/KenyaNidMatch2Input.md
 docs/Model/KenyaNidMatch2InputSex.md
 docs/Model/LaWalletProviderOutput.md
@@ -208,7 +210,9 @@ lib/Model/IntegrationStep.php
 lib/Model/ItsmeProviderOutput.php
 lib/Model/KenyaNidBiometric2Input.php
 lib/Model/KenyaNidInput.php
+lib/Model/KenyaNidLookup2Address.php
 lib/Model/KenyaNidLookup2Input.php
+lib/Model/KenyaNidLookup2ProviderOutput.php
 lib/Model/KenyaNidMatch2Input.php
 lib/Model/KenyaNidMatch2InputSex.php
 lib/Model/LaWalletProviderOutput.php
@@ -354,7 +358,9 @@ test/Model/IntegrationStepTest.php
 test/Model/ItsmeProviderOutputTest.php
 test/Model/KenyaNidBiometric2InputTest.php
 test/Model/KenyaNidInputTest.php
+test/Model/KenyaNidLookup2AddressTest.php
 test/Model/KenyaNidLookup2InputTest.php
+test/Model/KenyaNidLookup2ProviderOutputTest.php
 test/Model/KenyaNidMatch2InputSexTest.php
 test/Model/KenyaNidMatch2InputTest.php
 test/Model/LaWalletProviderOutputTest.php

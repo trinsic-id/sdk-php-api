@@ -134,6 +134,15 @@ class VerificationProfileResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "session_expiration"
+     */
+    public function testPropertySessionExpiration()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_production_usage"
      */
     public function testPropertyIsProductionUsage()

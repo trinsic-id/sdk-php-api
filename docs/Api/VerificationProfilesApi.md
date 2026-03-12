@@ -12,7 +12,7 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 ## `createVerificationProfile()`
 
 ```php
-createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage): \Trinsic\Api\Model\CreateVerificationProfileResponse
+createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage): \Trinsic\Api\Model\CreateVerificationProfileResponse
 ```
 
 Create Verification Profile
@@ -41,10 +41,12 @@ $brand_name = 'brand_name_example'; // string | The brand name of the verificati
 $primary_color = 'primary_color_example'; // string | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
 $providers = array('providers_example'); // string[] | The list of providers you'd like to select for this profile. We will not currently enable any providers.
 $logo = '/path/to/file.txt'; // \SplFileObject | The logo of the verification profile.
+$redaction_period = 'redaction_period_example'; // string | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
+$session_expiration = 'session_expiration_example'; // string | The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified.
 $is_production_usage = True; // bool | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
 
 try {
-    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage);
+    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationProfilesApi->createVerificationProfile: ', $e->getMessage(), PHP_EOL;
@@ -60,6 +62,8 @@ try {
 | **primary_color** | **string**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
 | **providers** | [**string[]**](../Model/string.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **\SplFileObject****\SplFileObject**| The logo of the verification profile. | [optional] |
+| **redaction_period** | **string**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
+| **session_expiration** | **string**| The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. | [optional] |
 | **is_production_usage** | **bool**| Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). | [optional] |
 
 ### Return type

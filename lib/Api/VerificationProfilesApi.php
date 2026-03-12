@@ -141,6 +141,8 @@ class VerificationProfilesApi
      * @param  string|null $primary_color The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
      * @param  string[]|null $providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
      * @param  \SplFileObject|null $logo The logo of the verification profile. (optional)
+     * @param  string|null $redaction_period The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+     * @param  string|null $session_expiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
      * @param  bool|null $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVerificationProfile'] to see the possible values for this operation
      *
@@ -148,9 +150,9 @@ class VerificationProfilesApi
      * @throws \InvalidArgumentException
      * @return \Trinsic\Api\Model\CreateVerificationProfileResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails
      */
-    public function createVerificationProfile($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
+    public function createVerificationProfile($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $redaction_period = null, $session_expiration = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
     {
-        list($response) = $this->createVerificationProfileWithHttpInfo($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage, $contentType);
+        list($response) = $this->createVerificationProfileWithHttpInfo($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage, $contentType);
         return $response;
     }
 
@@ -164,6 +166,8 @@ class VerificationProfilesApi
      * @param  string|null $primary_color The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
      * @param  string[]|null $providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
      * @param  \SplFileObject|null $logo The logo of the verification profile. (optional)
+     * @param  string|null $redaction_period The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+     * @param  string|null $session_expiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
      * @param  bool|null $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVerificationProfile'] to see the possible values for this operation
      *
@@ -171,9 +175,9 @@ class VerificationProfilesApi
      * @throws \InvalidArgumentException
      * @return array of \Trinsic\Api\Model\CreateVerificationProfileResponse|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails|\Trinsic\Api\Model\ProblemDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createVerificationProfileWithHttpInfo($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
+    public function createVerificationProfileWithHttpInfo($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $redaction_period = null, $session_expiration = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
     {
-        $request = $this->createVerificationProfileRequest($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage, $contentType);
+        $request = $this->createVerificationProfileRequest($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -310,15 +314,17 @@ class VerificationProfilesApi
      * @param  string|null $primary_color The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
      * @param  string[]|null $providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
      * @param  \SplFileObject|null $logo The logo of the verification profile. (optional)
+     * @param  string|null $redaction_period The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+     * @param  string|null $session_expiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
      * @param  bool|null $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVerificationProfile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVerificationProfileAsync($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
+    public function createVerificationProfileAsync($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $redaction_period = null, $session_expiration = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
     {
-        return $this->createVerificationProfileAsyncWithHttpInfo($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage, $contentType)
+        return $this->createVerificationProfileAsyncWithHttpInfo($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -336,16 +342,18 @@ class VerificationProfilesApi
      * @param  string|null $primary_color The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
      * @param  string[]|null $providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
      * @param  \SplFileObject|null $logo The logo of the verification profile. (optional)
+     * @param  string|null $redaction_period The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+     * @param  string|null $session_expiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
      * @param  bool|null $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVerificationProfile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVerificationProfileAsyncWithHttpInfo($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
+    public function createVerificationProfileAsyncWithHttpInfo($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $redaction_period = null, $session_expiration = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
     {
         $returnType = '\Trinsic\Api\Model\CreateVerificationProfileResponse';
-        $request = $this->createVerificationProfileRequest($alias, $brand_name, $primary_color, $providers, $logo, $is_production_usage, $contentType);
+        $request = $this->createVerificationProfileRequest($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -391,13 +399,15 @@ class VerificationProfilesApi
      * @param  string|null $primary_color The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 (optional)
      * @param  string[]|null $providers The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. (optional)
      * @param  \SplFileObject|null $logo The logo of the verification profile. (optional)
+     * @param  string|null $redaction_period The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. (optional)
+     * @param  string|null $session_expiration The session expiration for verification sessions created with this profile. Must be between 15 minutes and 24 hours. Defaults to 1 hour if not specified. (optional)
      * @param  bool|null $is_production_usage Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVerificationProfile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createVerificationProfileRequest($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
+    public function createVerificationProfileRequest($alias, $brand_name, $primary_color = null, $providers = null, $logo = null, $redaction_period = null, $session_expiration = null, $is_production_usage = null, string $contentType = self::contentTypes['createVerificationProfile'][0])
     {
 
         // verify the required parameter 'alias' is set
@@ -437,6 +447,8 @@ class VerificationProfilesApi
 
 
 
+
+
         $resourcePath = '/api/valpha/verification-profiles';
         $formParams = [];
         $queryParams = [];
@@ -456,6 +468,8 @@ class VerificationProfilesApi
             'primary_color' => $primary_color,
             'providers' => $providers,
             'logo' => $logo,
+            'redaction_period' => $redaction_period,
+            'session_expiration' => $session_expiration,
             'is_production_usage' => $is_production_usage,
         ]);
 

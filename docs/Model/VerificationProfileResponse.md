@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **logo_url** | **string** | The URL of the verification profile&#39;s logo. |
 **primary_color** | **string** | The primary color of the verification profile. |
 **enabled_providers** | **string[]** | The providers that are currently enabled for the verification profile. |
+**session_expiration** | **string** | The session expiration for verification sessions created with this profile. |
 **is_production_usage** | **bool** | Whether this profile is for production usage. Only applicable for Live environment profiles. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

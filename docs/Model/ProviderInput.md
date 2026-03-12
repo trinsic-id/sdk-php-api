@@ -34,7 +34,10 @@ Name | Type | Description | Notes
 **italy_spid** | [**\Trinsic\Api\Model\SpidInput**](SpidInput.md) | Input for the &#x60;italy-spid&#x60; provider | [optional]
 **google_wallet** | [**\Trinsic\Api\Model\GoogleWalletInput**](GoogleWalletInput.md) | Input for the &#x60;google-wallet&#x60; provider | [optional]
 **apple_wallet** | [**\Trinsic\Api\Model\AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider | [optional]
+**samsung_wallet** | [**\Trinsic\Api\Model\SamsungWalletInput**](SamsungWalletInput.md) | Input for the &#x60;samsung-wallet&#x60; provider | [optional]
+**france_identite** | [**\Trinsic\Api\Model\FranceIdentiteInput**](FranceIdentiteInput.md) | Input for the &#x60;france-identite&#x60; provider | [optional]
 **peru_dni_lookup** | [**\Trinsic\Api\Model\PeruDniLookupInput**](PeruDniLookupInput.md) | Input for the &#x60;peru-dni-lookup&#x60; provider | [optional]
+**uk_evisa_lookup** | [**\Trinsic\Api\Model\UkEvisaLookupInput**](UkEvisaLookupInput.md) | Input for the &#x60;uk-evisa-lookup&#x60; provider | [optional]
 **trinsic_test_database_lookup** | [**\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider | [optional]
 **trinsic_test_sub_providers** | [**\Trinsic\Api\Model\TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider | [optional]
 

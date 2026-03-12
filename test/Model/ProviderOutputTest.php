@@ -188,6 +188,24 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "australia_connect_id"
+     */
+    public function testPropertyAustraliaConnectId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "czech_republic_mojeid"
+     */
+    public function testPropertyCzechRepublicMojeid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "a_pt_id_login"
      */
     public function testPropertyAPtIdLogin()
@@ -233,6 +251,24 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "finnish_trust_network"
+     */
+    public function testPropertyFinnishTrustNetwork()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "france_identite"
+     */
+    public function testPropertyFranceIdentite()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "france_identite_numerique"
      */
     public function testPropertyFranceIdentiteNumerique()
@@ -242,9 +278,27 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "freja"
+     */
+    public function testPropertyFreja()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "google_wallet"
      */
     public function testPropertyGoogleWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "india_digilocker_aadhaar"
+     */
+    public function testPropertyIndiaDigilockerAadhaar()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -296,9 +350,36 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "nigeria_nin_lookup_2"
+     */
+    public function testPropertyNigeriaNinLookup2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "oneid"
+     */
+    public function testPropertyOneid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "peru_dni_lookup"
      */
     public function testPropertyPeruDniLookup()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "norway_bankid"
+     */
+    public function testPropertyNorwayBankid()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -350,6 +431,15 @@ class ProviderOutputTest extends TestCase
     }
 
     /**
+     * Test attribute "uk_evisa_lookup"
+     */
+    public function testPropertyUkEvisaLookup()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sweden_bankid"
      */
     public function testPropertySwedenBankid()
@@ -371,6 +461,15 @@ class ProviderOutputTest extends TestCase
      * Test attribute "yoti"
      */
     public function testPropertyYoti()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "yoti_deeplink"
+     */
+    public function testPropertyYotiDeeplink()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

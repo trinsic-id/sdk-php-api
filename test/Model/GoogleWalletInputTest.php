@@ -87,4 +87,13 @@ class GoogleWalletInputTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "preview_raw18013_request"
+     */
+    public function testPropertyPreviewRaw18013Request()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

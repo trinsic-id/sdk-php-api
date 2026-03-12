@@ -58,7 +58,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'philsys_card_number' => 'string'
+        'philsys_card_number' => 'string',
+        'given_name' => 'string',
+        'middle_name' => 'string',
+        'family_name' => 'string',
+        'date_of_birth' => '\DateTime',
+        'suffix' => 'string',
+        'sex' => 'string',
+        'place_of_birth' => 'string',
+        'document_issue_date' => '\DateTime',
+        'document_number' => 'string',
+        'issuing_authority' => 'string'
     ];
 
     /**
@@ -69,7 +79,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'philsys_card_number' => null
+        'philsys_card_number' => null,
+        'given_name' => null,
+        'middle_name' => null,
+        'family_name' => null,
+        'date_of_birth' => 'date',
+        'suffix' => null,
+        'sex' => null,
+        'place_of_birth' => null,
+        'document_issue_date' => 'date',
+        'document_number' => null,
+        'issuing_authority' => null
     ];
 
     /**
@@ -78,7 +98,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'philsys_card_number' => false
+        'philsys_card_number' => false,
+        'given_name' => true,
+        'middle_name' => true,
+        'family_name' => true,
+        'date_of_birth' => true,
+        'suffix' => true,
+        'sex' => true,
+        'place_of_birth' => true,
+        'document_issue_date' => true,
+        'document_number' => true,
+        'issuing_authority' => true
     ];
 
     /**
@@ -167,7 +197,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'philsys_card_number' => 'philsysCardNumber'
+        'philsys_card_number' => 'philsysCardNumber',
+        'given_name' => 'givenName',
+        'middle_name' => 'middleName',
+        'family_name' => 'familyName',
+        'date_of_birth' => 'dateOfBirth',
+        'suffix' => 'suffix',
+        'sex' => 'sex',
+        'place_of_birth' => 'placeOfBirth',
+        'document_issue_date' => 'documentIssueDate',
+        'document_number' => 'documentNumber',
+        'issuing_authority' => 'issuingAuthority'
     ];
 
     /**
@@ -176,7 +216,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'philsys_card_number' => 'setPhilsysCardNumber'
+        'philsys_card_number' => 'setPhilsysCardNumber',
+        'given_name' => 'setGivenName',
+        'middle_name' => 'setMiddleName',
+        'family_name' => 'setFamilyName',
+        'date_of_birth' => 'setDateOfBirth',
+        'suffix' => 'setSuffix',
+        'sex' => 'setSex',
+        'place_of_birth' => 'setPlaceOfBirth',
+        'document_issue_date' => 'setDocumentIssueDate',
+        'document_number' => 'setDocumentNumber',
+        'issuing_authority' => 'setIssuingAuthority'
     ];
 
     /**
@@ -185,7 +235,17 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'philsys_card_number' => 'getPhilsysCardNumber'
+        'philsys_card_number' => 'getPhilsysCardNumber',
+        'given_name' => 'getGivenName',
+        'middle_name' => 'getMiddleName',
+        'family_name' => 'getFamilyName',
+        'date_of_birth' => 'getDateOfBirth',
+        'suffix' => 'getSuffix',
+        'sex' => 'getSex',
+        'place_of_birth' => 'getPlaceOfBirth',
+        'document_issue_date' => 'getDocumentIssueDate',
+        'document_number' => 'getDocumentNumber',
+        'issuing_authority' => 'getIssuingAuthority'
     ];
 
     /**
@@ -246,6 +306,16 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->setIfExists('philsys_card_number', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('middle_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('suffix', $data ?? [], null);
+        $this->setIfExists('sex', $data ?? [], null);
+        $this->setIfExists('place_of_birth', $data ?? [], null);
+        $this->setIfExists('document_issue_date', $data ?? [], null);
+        $this->setIfExists('document_number', $data ?? [], null);
+        $this->setIfExists('issuing_authority', $data ?? [], null);
     }
 
     /**
@@ -316,6 +386,346 @@ class PhilippinesDigitalNidProviderOutput implements ModelInterface, ArrayAccess
             throw new \InvalidArgumentException('non-nullable philsys_card_number cannot be null');
         }
         $this->container['philsys_card_number'] = $philsys_card_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets given_name
+     *
+     * @return string|null
+     */
+    public function getGivenName()
+    {
+        return $this->container['given_name'];
+    }
+
+    /**
+     * Sets given_name
+     *
+     * @param string|null $given_name The given (first) name of the individual.
+     *
+     * @return self
+     */
+    public function setGivenName($given_name)
+    {
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('given_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['given_name'] = $given_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets middle_name
+     *
+     * @return string|null
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middle_name'];
+    }
+
+    /**
+     * Sets middle_name
+     *
+     * @param string|null $middle_name The middle name of the individual.
+     *
+     * @return self
+     */
+    public function setMiddleName($middle_name)
+    {
+        if (is_null($middle_name)) {
+            array_push($this->openAPINullablesSetToNull, 'middle_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('middle_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['middle_name'] = $middle_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets family_name
+     *
+     * @return string|null
+     */
+    public function getFamilyName()
+    {
+        return $this->container['family_name'];
+    }
+
+    /**
+     * Sets family_name
+     *
+     * @param string|null $family_name The family (last) name of the individual.
+     *
+     * @return self
+     */
+    public function setFamilyName($family_name)
+    {
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('family_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['family_name'] = $family_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_birth
+     *
+     * @return \DateTime|null
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['date_of_birth'];
+    }
+
+    /**
+     * Sets date_of_birth
+     *
+     * @param \DateTime|null $date_of_birth The date of birth of the individual.
+     *
+     * @return self
+     */
+    public function setDateOfBirth($date_of_birth)
+    {
+        if (is_null($date_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['date_of_birth'] = $date_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets suffix
+     *
+     * @return string|null
+     */
+    public function getSuffix()
+    {
+        return $this->container['suffix'];
+    }
+
+    /**
+     * Sets suffix
+     *
+     * @param string|null $suffix The name suffix of the individual (e.g. Jr., III).
+     *
+     * @return self
+     */
+    public function setSuffix($suffix)
+    {
+        if (is_null($suffix)) {
+            array_push($this->openAPINullablesSetToNull, 'suffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('suffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['suffix'] = $suffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets sex
+     *
+     * @return string|null
+     */
+    public function getSex()
+    {
+        return $this->container['sex'];
+    }
+
+    /**
+     * Sets sex
+     *
+     * @param string|null $sex The sex of the individual.              Possible values: - Male - Female
+     *
+     * @return self
+     */
+    public function setSex($sex)
+    {
+        if (is_null($sex)) {
+            array_push($this->openAPINullablesSetToNull, 'sex');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sex', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['sex'] = $sex;
+
+        return $this;
+    }
+
+    /**
+     * Gets place_of_birth
+     *
+     * @return string|null
+     */
+    public function getPlaceOfBirth()
+    {
+        return $this->container['place_of_birth'];
+    }
+
+    /**
+     * Sets place_of_birth
+     *
+     * @param string|null $place_of_birth The place of birth of the individual as recorded on the PhilSys credential.
+     *
+     * @return self
+     */
+    public function setPlaceOfBirth($place_of_birth)
+    {
+        if (is_null($place_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'place_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('place_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['place_of_birth'] = $place_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_issue_date
+     *
+     * @return \DateTime|null
+     */
+    public function getDocumentIssueDate()
+    {
+        return $this->container['document_issue_date'];
+    }
+
+    /**
+     * Sets document_issue_date
+     *
+     * @param \DateTime|null $document_issue_date The date the document was issued.
+     *
+     * @return self
+     */
+    public function setDocumentIssueDate($document_issue_date)
+    {
+        if (is_null($document_issue_date)) {
+            array_push($this->openAPINullablesSetToNull, 'document_issue_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('document_issue_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['document_issue_date'] = $document_issue_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_number
+     *
+     * @return string|null
+     */
+    public function getDocumentNumber()
+    {
+        return $this->container['document_number'];
+    }
+
+    /**
+     * Sets document_number
+     *
+     * @param string|null $document_number The document number of the digital National ID.
+     *
+     * @return self
+     */
+    public function setDocumentNumber($document_number)
+    {
+        if (is_null($document_number)) {
+            array_push($this->openAPINullablesSetToNull, 'document_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('document_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['document_number'] = $document_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuing_authority
+     *
+     * @return string|null
+     */
+    public function getIssuingAuthority()
+    {
+        return $this->container['issuing_authority'];
+    }
+
+    /**
+     * Sets issuing_authority
+     *
+     * @param string|null $issuing_authority The issuing authority of the document.
+     *
+     * @return self
+     */
+    public function setIssuingAuthority($issuing_authority)
+    {
+        if (is_null($issuing_authority)) {
+            array_push($this->openAPINullablesSetToNull, 'issuing_authority');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('issuing_authority', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['issuing_authority'] = $issuing_authority;
 
         return $this;
     }

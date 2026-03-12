@@ -87,4 +87,94 @@ class PhilippinesDigitalNidProviderOutputTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "given_name"
+     */
+    public function testPropertyGivenName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "middle_name"
+     */
+    public function testPropertyMiddleName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "family_name"
+     */
+    public function testPropertyFamilyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_of_birth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "suffix"
+     */
+    public function testPropertySuffix()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sex"
+     */
+    public function testPropertySex()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "place_of_birth"
+     */
+    public function testPropertyPlaceOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "document_issue_date"
+     */
+    public function testPropertyDocumentIssueDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "document_number"
+     */
+    public function testPropertyDocumentNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issuing_authority"
+     */
+    public function testPropertyIssuingAuthority()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

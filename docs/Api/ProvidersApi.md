@@ -4,8 +4,69 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**getProvider()**](ProvidersApi.md#getProvider) | **GET** /api/v1/providers/{providerId} | Get Provider |
 | [**listProviders()**](ProvidersApi.md#listProviders) | **GET** /api/v1/providers | List Providers |
 
+
+## `getProvider()`
+
+```php
+getProvider($provider_id): \Trinsic\Api\Model\GetProviderResponse
+```
+
+Get Provider
+
+Get a single identity provider by ID, including its license status.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\ProvidersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$provider_id = 'provider_id_example'; // string | The ID of the provider to retrieve
+
+try {
+    $result = $apiInstance->getProvider($provider_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProvidersApi->getProvider: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **provider_id** | **string**| The ID of the provider to retrieve | |
+
+### Return type
+
+[**\Trinsic\Api\Model\GetProviderResponse**](../Model/GetProviderResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `listProviders()`
 

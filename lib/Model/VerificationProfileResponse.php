@@ -63,6 +63,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => 'string',
         'primary_color' => 'string',
         'enabled_providers' => 'string[]',
+        'session_expiration' => 'string',
         'is_production_usage' => 'bool'
     ];
 
@@ -80,6 +81,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => null,
         'primary_color' => null,
         'enabled_providers' => null,
+        'session_expiration' => 'date-span',
         'is_production_usage' => null
     ];
 
@@ -95,6 +97,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => false,
         'primary_color' => false,
         'enabled_providers' => false,
+        'session_expiration' => false,
         'is_production_usage' => false
     ];
 
@@ -190,6 +193,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => 'logoUrl',
         'primary_color' => 'primaryColor',
         'enabled_providers' => 'enabledProviders',
+        'session_expiration' => 'sessionExpiration',
         'is_production_usage' => 'isProductionUsage'
     ];
 
@@ -205,6 +209,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => 'setLogoUrl',
         'primary_color' => 'setPrimaryColor',
         'enabled_providers' => 'setEnabledProviders',
+        'session_expiration' => 'setSessionExpiration',
         'is_production_usage' => 'setIsProductionUsage'
     ];
 
@@ -220,6 +225,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         'logo_url' => 'getLogoUrl',
         'primary_color' => 'getPrimaryColor',
         'enabled_providers' => 'getEnabledProviders',
+        'session_expiration' => 'getSessionExpiration',
         'is_production_usage' => 'getIsProductionUsage'
     ];
 
@@ -286,6 +292,7 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('logo_url', $data ?? [], null);
         $this->setIfExists('primary_color', $data ?? [], null);
         $this->setIfExists('enabled_providers', $data ?? [], null);
+        $this->setIfExists('session_expiration', $data ?? [], null);
         $this->setIfExists('is_production_usage', $data ?? [], null);
     }
 
@@ -333,6 +340,9 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
         }
         if ($this->container['enabled_providers'] === null) {
             $invalidProperties[] = "'enabled_providers' can't be null";
+        }
+        if ($this->container['session_expiration'] === null) {
+            $invalidProperties[] = "'session_expiration' can't be null";
         }
         if ($this->container['is_production_usage'] === null) {
             $invalidProperties[] = "'is_production_usage' can't be null";
@@ -510,6 +520,33 @@ class VerificationProfileResponse implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable enabled_providers cannot be null');
         }
         $this->container['enabled_providers'] = $enabled_providers;
+
+        return $this;
+    }
+
+    /**
+     * Gets session_expiration
+     *
+     * @return string
+     */
+    public function getSessionExpiration()
+    {
+        return $this->container['session_expiration'];
+    }
+
+    /**
+     * Sets session_expiration
+     *
+     * @param string $session_expiration The session expiration for verification sessions created with this profile.
+     *
+     * @return self
+     */
+    public function setSessionExpiration($session_expiration)
+    {
+        if (is_null($session_expiration)) {
+            throw new \InvalidArgumentException('non-nullable session_expiration cannot be null');
+        }
+        $this->container['session_expiration'] = $session_expiration;
 
         return $this;
     }

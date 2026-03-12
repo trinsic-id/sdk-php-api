@@ -62,34 +62,45 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_edoapp_eid_login' => '\Trinsic\Api\Model\PolandEdoAppProviderOutput',
         'a_ee_web_eid_login' => '\Trinsic\Api\Model\EstoniaIdCardProviderOutput',
         'a_fi_id_login' => '\Trinsic\Api\Model\FinlandIdCardProviderOutput',
-        'a_freja_eid_login' => '\Trinsic\Api\Model\FrejaProviderOutput',
+        'a_freja_eid_login' => '\Trinsic\Api\Model\FrejaIndirectProviderOutput',
         'a_itsme_login' => '\Trinsic\Api\Model\ItsmeProviderOutput',
         'a_lt_id_login' => '\Trinsic\Api\Model\LithuaniaIdCardProviderOutput',
         'a_lv_eparaksts_id_login' => '\Trinsic\Api\Model\LatviaEparakstsProviderOutput',
         'a_lv_eparaksts_mobile_login' => '\Trinsic\Api\Model\LatviaEparakstsMobileProviderOutput',
         'a_mojeid' => '\Trinsic\Api\Model\CzechiaMojeIdProviderOutput',
         'a_pl_mojeid_login' => '\Trinsic\Api\Model\PolandMojeIdProviderOutput',
+        'australia_connect_id' => '\Trinsic\Api\Model\ConnectIdProviderOutput',
+        'czech_republic_mojeid' => '\Trinsic\Api\Model\CzechMojeIdProviderOutput',
         'a_pt_id_login' => '\Trinsic\Api\Model\PortugalIdCardProviderOutput',
         'a_rs_id_login' => '\Trinsic\Api\Model\SerbiaIdCardProviderOutput',
         'apple_wallet' => '\Trinsic\Api\Model\AppleWalletProviderOutput',
         'denmark_mitid' => '\Trinsic\Api\Model\MitIdProviderOutput',
         'ethiopia_fayda' => '\Trinsic\Api\Model\FaydaProviderOutput',
+        'finnish_trust_network' => '\Trinsic\Api\Model\FinnishTrustNetworkProviderOutput',
+        'france_identite' => '\Trinsic\Api\Model\FranceIdentiteProviderOutput',
         'france_identite_numerique' => '\Trinsic\Api\Model\FrenchNumeriqueProviderOutput',
+        'freja' => '\Trinsic\Api\Model\FrejaProviderOutput',
         'google_wallet' => '\Trinsic\Api\Model\GoogleWalletProviderOutput',
+        'india_digilocker_aadhaar' => '\Trinsic\Api\Model\DigilockerAadhaarProviderOutput',
         'italy_spid' => '\Trinsic\Api\Model\SpidProviderOutput',
         'kenya_nid_lookup_2' => '\Trinsic\Api\Model\KenyaNidLookup2ProviderOutput',
         'lloyds_smart_id' => '\Trinsic\Api\Model\LloydsSmartIdProviderOutput',
         'mexico_curp_lookup' => '\Trinsic\Api\Model\MexicoCurpProviderOutput',
         'mobile_id' => '\Trinsic\Api\Model\MobileIdProviderOutput',
+        'nigeria_nin_lookup_2' => '\Trinsic\Api\Model\NigeriaNinLookup2ProviderOutput',
+        'oneid' => '\Trinsic\Api\Model\OneIdProviderOutput',
         'peru_dni_lookup' => '\Trinsic\Api\Model\PeruDniProviderOutput',
+        'norway_bankid' => '\Trinsic\Api\Model\NorwegianBankIdProviderOutput',
         'philippines_digital_national_id_qr' => '\Trinsic\Api\Model\PhilippinesDigitalNidProviderOutput',
         'philippines_physical_national_id_qr' => '\Trinsic\Api\Model\PhilippinesPhysicalNidProviderOutput',
         'post_office_easyid' => '\Trinsic\Api\Model\PostOfficeEasyIdProviderOutput',
         'samsung_wallet' => '\Trinsic\Api\Model\SamsungWalletProviderOutput',
         'smart_id' => '\Trinsic\Api\Model\SmartIdProviderOutput',
+        'uk_evisa_lookup' => '\Trinsic\Api\Model\UnitedKingdomEvisaProviderOutput',
         'sweden_bankid' => '\Trinsic\Api\Model\SwedenBankIdProviderOutput',
         'usa_louisiana_wallet' => '\Trinsic\Api\Model\LaWalletProviderOutput',
-        'yoti' => '\Trinsic\Api\Model\YotiProviderOutput'
+        'yoti' => '\Trinsic\Api\Model\YotiProviderOutput',
+        'yoti_deeplink' => '\Trinsic\Api\Model\YotiDeeplinkProviderOutput'
     ];
 
     /**
@@ -112,27 +123,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_lv_eparaksts_mobile_login' => null,
         'a_mojeid' => null,
         'a_pl_mojeid_login' => null,
+        'australia_connect_id' => null,
+        'czech_republic_mojeid' => null,
         'a_pt_id_login' => null,
         'a_rs_id_login' => null,
         'apple_wallet' => null,
         'denmark_mitid' => null,
         'ethiopia_fayda' => null,
+        'finnish_trust_network' => null,
+        'france_identite' => null,
         'france_identite_numerique' => null,
+        'freja' => null,
         'google_wallet' => null,
+        'india_digilocker_aadhaar' => null,
         'italy_spid' => null,
         'kenya_nid_lookup_2' => null,
         'lloyds_smart_id' => null,
         'mexico_curp_lookup' => null,
         'mobile_id' => null,
+        'nigeria_nin_lookup_2' => null,
+        'oneid' => null,
         'peru_dni_lookup' => null,
+        'norway_bankid' => null,
         'philippines_digital_national_id_qr' => null,
         'philippines_physical_national_id_qr' => null,
         'post_office_easyid' => null,
         'samsung_wallet' => null,
         'smart_id' => null,
+        'uk_evisa_lookup' => null,
         'sweden_bankid' => null,
         'usa_louisiana_wallet' => null,
-        'yoti' => null
+        'yoti' => null,
+        'yoti_deeplink' => null
     ];
 
     /**
@@ -153,27 +175,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_lv_eparaksts_mobile_login' => true,
         'a_mojeid' => true,
         'a_pl_mojeid_login' => true,
+        'australia_connect_id' => true,
+        'czech_republic_mojeid' => true,
         'a_pt_id_login' => true,
         'a_rs_id_login' => true,
         'apple_wallet' => true,
         'denmark_mitid' => true,
         'ethiopia_fayda' => true,
+        'finnish_trust_network' => true,
+        'france_identite' => true,
         'france_identite_numerique' => true,
+        'freja' => true,
         'google_wallet' => true,
+        'india_digilocker_aadhaar' => true,
         'italy_spid' => true,
         'kenya_nid_lookup_2' => true,
         'lloyds_smart_id' => true,
         'mexico_curp_lookup' => true,
         'mobile_id' => true,
+        'nigeria_nin_lookup_2' => true,
+        'oneid' => true,
         'peru_dni_lookup' => true,
+        'norway_bankid' => true,
         'philippines_digital_national_id_qr' => true,
         'philippines_physical_national_id_qr' => true,
         'post_office_easyid' => true,
         'samsung_wallet' => true,
         'smart_id' => true,
+        'uk_evisa_lookup' => true,
         'sweden_bankid' => true,
         'usa_louisiana_wallet' => true,
-        'yoti' => true
+        'yoti' => true,
+        'yoti_deeplink' => true
     ];
 
     /**
@@ -274,27 +307,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_lv_eparaksts_mobile_login' => 'a-lv-eparaksts-mobile-login',
         'a_mojeid' => 'a-mojeid',
         'a_pl_mojeid_login' => 'a-pl-mojeid-login',
+        'australia_connect_id' => 'australia-connect-id',
+        'czech_republic_mojeid' => 'czech-republic-mojeid',
         'a_pt_id_login' => 'a-pt-id-login',
         'a_rs_id_login' => 'a-rs-id-login',
         'apple_wallet' => 'apple-wallet',
         'denmark_mitid' => 'denmark-mitid',
         'ethiopia_fayda' => 'ethiopia-fayda',
+        'finnish_trust_network' => 'finnish-trust-network',
+        'france_identite' => 'france-identite',
         'france_identite_numerique' => 'france-identite-numerique',
+        'freja' => 'freja',
         'google_wallet' => 'google-wallet',
+        'india_digilocker_aadhaar' => 'india-digilocker-aadhaar',
         'italy_spid' => 'italy-spid',
         'kenya_nid_lookup_2' => 'kenya-nid-lookup-2',
         'lloyds_smart_id' => 'lloyds-smart-id',
         'mexico_curp_lookup' => 'mexico-curp-lookup',
         'mobile_id' => 'mobile-id',
+        'nigeria_nin_lookup_2' => 'nigeria-nin-lookup-2',
+        'oneid' => 'oneid',
         'peru_dni_lookup' => 'peru-dni-lookup',
+        'norway_bankid' => 'norway-bankid',
         'philippines_digital_national_id_qr' => 'philippines-digital-national-id-qr',
         'philippines_physical_national_id_qr' => 'philippines-physical-national-id-qr',
         'post_office_easyid' => 'post-office-easyid',
         'samsung_wallet' => 'samsung-wallet',
         'smart_id' => 'smart-id',
+        'uk_evisa_lookup' => 'uk-evisa-lookup',
         'sweden_bankid' => 'sweden-bankid',
         'usa_louisiana_wallet' => 'usa-louisiana-wallet',
-        'yoti' => 'yoti'
+        'yoti' => 'yoti',
+        'yoti_deeplink' => 'yoti-deeplink'
     ];
 
     /**
@@ -315,27 +359,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_lv_eparaksts_mobile_login' => 'setALvEparakstsMobileLogin',
         'a_mojeid' => 'setAMojeid',
         'a_pl_mojeid_login' => 'setAPlMojeidLogin',
+        'australia_connect_id' => 'setAustraliaConnectId',
+        'czech_republic_mojeid' => 'setCzechRepublicMojeid',
         'a_pt_id_login' => 'setAPtIdLogin',
         'a_rs_id_login' => 'setARsIdLogin',
         'apple_wallet' => 'setAppleWallet',
         'denmark_mitid' => 'setDenmarkMitid',
         'ethiopia_fayda' => 'setEthiopiaFayda',
+        'finnish_trust_network' => 'setFinnishTrustNetwork',
+        'france_identite' => 'setFranceIdentite',
         'france_identite_numerique' => 'setFranceIdentiteNumerique',
+        'freja' => 'setFreja',
         'google_wallet' => 'setGoogleWallet',
+        'india_digilocker_aadhaar' => 'setIndiaDigilockerAadhaar',
         'italy_spid' => 'setItalySpid',
         'kenya_nid_lookup_2' => 'setKenyaNidLookup2',
         'lloyds_smart_id' => 'setLloydsSmartId',
         'mexico_curp_lookup' => 'setMexicoCurpLookup',
         'mobile_id' => 'setMobileId',
+        'nigeria_nin_lookup_2' => 'setNigeriaNinLookup2',
+        'oneid' => 'setOneid',
         'peru_dni_lookup' => 'setPeruDniLookup',
+        'norway_bankid' => 'setNorwayBankid',
         'philippines_digital_national_id_qr' => 'setPhilippinesDigitalNationalIdQr',
         'philippines_physical_national_id_qr' => 'setPhilippinesPhysicalNationalIdQr',
         'post_office_easyid' => 'setPostOfficeEasyid',
         'samsung_wallet' => 'setSamsungWallet',
         'smart_id' => 'setSmartId',
+        'uk_evisa_lookup' => 'setUkEvisaLookup',
         'sweden_bankid' => 'setSwedenBankid',
         'usa_louisiana_wallet' => 'setUsaLouisianaWallet',
-        'yoti' => 'setYoti'
+        'yoti' => 'setYoti',
+        'yoti_deeplink' => 'setYotiDeeplink'
     ];
 
     /**
@@ -356,27 +411,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         'a_lv_eparaksts_mobile_login' => 'getALvEparakstsMobileLogin',
         'a_mojeid' => 'getAMojeid',
         'a_pl_mojeid_login' => 'getAPlMojeidLogin',
+        'australia_connect_id' => 'getAustraliaConnectId',
+        'czech_republic_mojeid' => 'getCzechRepublicMojeid',
         'a_pt_id_login' => 'getAPtIdLogin',
         'a_rs_id_login' => 'getARsIdLogin',
         'apple_wallet' => 'getAppleWallet',
         'denmark_mitid' => 'getDenmarkMitid',
         'ethiopia_fayda' => 'getEthiopiaFayda',
+        'finnish_trust_network' => 'getFinnishTrustNetwork',
+        'france_identite' => 'getFranceIdentite',
         'france_identite_numerique' => 'getFranceIdentiteNumerique',
+        'freja' => 'getFreja',
         'google_wallet' => 'getGoogleWallet',
+        'india_digilocker_aadhaar' => 'getIndiaDigilockerAadhaar',
         'italy_spid' => 'getItalySpid',
         'kenya_nid_lookup_2' => 'getKenyaNidLookup2',
         'lloyds_smart_id' => 'getLloydsSmartId',
         'mexico_curp_lookup' => 'getMexicoCurpLookup',
         'mobile_id' => 'getMobileId',
+        'nigeria_nin_lookup_2' => 'getNigeriaNinLookup2',
+        'oneid' => 'getOneid',
         'peru_dni_lookup' => 'getPeruDniLookup',
+        'norway_bankid' => 'getNorwayBankid',
         'philippines_digital_national_id_qr' => 'getPhilippinesDigitalNationalIdQr',
         'philippines_physical_national_id_qr' => 'getPhilippinesPhysicalNationalIdQr',
         'post_office_easyid' => 'getPostOfficeEasyid',
         'samsung_wallet' => 'getSamsungWallet',
         'smart_id' => 'getSmartId',
+        'uk_evisa_lookup' => 'getUkEvisaLookup',
         'sweden_bankid' => 'getSwedenBankid',
         'usa_louisiana_wallet' => 'getUsaLouisianaWallet',
-        'yoti' => 'getYoti'
+        'yoti' => 'getYoti',
+        'yoti_deeplink' => 'getYotiDeeplink'
     ];
 
     /**
@@ -448,27 +514,38 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('a_lv_eparaksts_mobile_login', $data ?? [], null);
         $this->setIfExists('a_mojeid', $data ?? [], null);
         $this->setIfExists('a_pl_mojeid_login', $data ?? [], null);
+        $this->setIfExists('australia_connect_id', $data ?? [], null);
+        $this->setIfExists('czech_republic_mojeid', $data ?? [], null);
         $this->setIfExists('a_pt_id_login', $data ?? [], null);
         $this->setIfExists('a_rs_id_login', $data ?? [], null);
         $this->setIfExists('apple_wallet', $data ?? [], null);
         $this->setIfExists('denmark_mitid', $data ?? [], null);
         $this->setIfExists('ethiopia_fayda', $data ?? [], null);
+        $this->setIfExists('finnish_trust_network', $data ?? [], null);
+        $this->setIfExists('france_identite', $data ?? [], null);
         $this->setIfExists('france_identite_numerique', $data ?? [], null);
+        $this->setIfExists('freja', $data ?? [], null);
         $this->setIfExists('google_wallet', $data ?? [], null);
+        $this->setIfExists('india_digilocker_aadhaar', $data ?? [], null);
         $this->setIfExists('italy_spid', $data ?? [], null);
         $this->setIfExists('kenya_nid_lookup_2', $data ?? [], null);
         $this->setIfExists('lloyds_smart_id', $data ?? [], null);
         $this->setIfExists('mexico_curp_lookup', $data ?? [], null);
         $this->setIfExists('mobile_id', $data ?? [], null);
+        $this->setIfExists('nigeria_nin_lookup_2', $data ?? [], null);
+        $this->setIfExists('oneid', $data ?? [], null);
         $this->setIfExists('peru_dni_lookup', $data ?? [], null);
+        $this->setIfExists('norway_bankid', $data ?? [], null);
         $this->setIfExists('philippines_digital_national_id_qr', $data ?? [], null);
         $this->setIfExists('philippines_physical_national_id_qr', $data ?? [], null);
         $this->setIfExists('post_office_easyid', $data ?? [], null);
         $this->setIfExists('samsung_wallet', $data ?? [], null);
         $this->setIfExists('smart_id', $data ?? [], null);
+        $this->setIfExists('uk_evisa_lookup', $data ?? [], null);
         $this->setIfExists('sweden_bankid', $data ?? [], null);
         $this->setIfExists('usa_louisiana_wallet', $data ?? [], null);
         $this->setIfExists('yoti', $data ?? [], null);
+        $this->setIfExists('yoti_deeplink', $data ?? [], null);
     }
 
     /**
@@ -686,7 +763,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets a_freja_eid_login
      *
-     * @return \Trinsic\Api\Model\FrejaProviderOutput|null
+     * @return \Trinsic\Api\Model\FrejaIndirectProviderOutput|null
      */
     public function getAFrejaEidLogin()
     {
@@ -696,7 +773,7 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets a_freja_eid_login
      *
-     * @param \Trinsic\Api\Model\FrejaProviderOutput|null $a_freja_eid_login Exposed properties for the `a-freja-eid-login` Provider which do not directly map to the normalized IdentityData model.
+     * @param \Trinsic\Api\Model\FrejaIndirectProviderOutput|null $a_freja_eid_login Exposed properties for the `a-freja-eid-login` Provider which do not directly map to the normalized IdentityData model.
      *
      * @return self
      */
@@ -922,6 +999,74 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets australia_connect_id
+     *
+     * @return \Trinsic\Api\Model\ConnectIdProviderOutput|null
+     */
+    public function getAustraliaConnectId()
+    {
+        return $this->container['australia_connect_id'];
+    }
+
+    /**
+     * Sets australia_connect_id
+     *
+     * @param \Trinsic\Api\Model\ConnectIdProviderOutput|null $australia_connect_id Exposed properties for the `australia-connect-id` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setAustraliaConnectId($australia_connect_id)
+    {
+        if (is_null($australia_connect_id)) {
+            array_push($this->openAPINullablesSetToNull, 'australia_connect_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('australia_connect_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['australia_connect_id'] = $australia_connect_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets czech_republic_mojeid
+     *
+     * @return \Trinsic\Api\Model\CzechMojeIdProviderOutput|null
+     */
+    public function getCzechRepublicMojeid()
+    {
+        return $this->container['czech_republic_mojeid'];
+    }
+
+    /**
+     * Sets czech_republic_mojeid
+     *
+     * @param \Trinsic\Api\Model\CzechMojeIdProviderOutput|null $czech_republic_mojeid Exposed properties for the `czech-moje-id` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setCzechRepublicMojeid($czech_republic_mojeid)
+    {
+        if (is_null($czech_republic_mojeid)) {
+            array_push($this->openAPINullablesSetToNull, 'czech_republic_mojeid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('czech_republic_mojeid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['czech_republic_mojeid'] = $czech_republic_mojeid;
+
+        return $this;
+    }
+
+    /**
      * Gets a_pt_id_login
      *
      * @return \Trinsic\Api\Model\PortugalIdCardProviderOutput|null
@@ -1092,6 +1237,74 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets finnish_trust_network
+     *
+     * @return \Trinsic\Api\Model\FinnishTrustNetworkProviderOutput|null
+     */
+    public function getFinnishTrustNetwork()
+    {
+        return $this->container['finnish_trust_network'];
+    }
+
+    /**
+     * Sets finnish_trust_network
+     *
+     * @param \Trinsic\Api\Model\FinnishTrustNetworkProviderOutput|null $finnish_trust_network Exposed properties for the `finnish-trust-network` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setFinnishTrustNetwork($finnish_trust_network)
+    {
+        if (is_null($finnish_trust_network)) {
+            array_push($this->openAPINullablesSetToNull, 'finnish_trust_network');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('finnish_trust_network', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['finnish_trust_network'] = $finnish_trust_network;
+
+        return $this;
+    }
+
+    /**
+     * Gets france_identite
+     *
+     * @return \Trinsic\Api\Model\FranceIdentiteProviderOutput|null
+     */
+    public function getFranceIdentite()
+    {
+        return $this->container['france_identite'];
+    }
+
+    /**
+     * Sets france_identite
+     *
+     * @param \Trinsic\Api\Model\FranceIdentiteProviderOutput|null $france_identite Exposed properties for the `france-identite` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setFranceIdentite($france_identite)
+    {
+        if (is_null($france_identite)) {
+            array_push($this->openAPINullablesSetToNull, 'france_identite');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('france_identite', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['france_identite'] = $france_identite;
+
+        return $this;
+    }
+
+    /**
      * Gets france_identite_numerique
      *
      * @return \Trinsic\Api\Model\FrenchNumeriqueProviderOutput|null
@@ -1126,6 +1339,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets freja
+     *
+     * @return \Trinsic\Api\Model\FrejaProviderOutput|null
+     */
+    public function getFreja()
+    {
+        return $this->container['freja'];
+    }
+
+    /**
+     * Sets freja
+     *
+     * @param \Trinsic\Api\Model\FrejaProviderOutput|null $freja Exposed properties for the `freja` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setFreja($freja)
+    {
+        if (is_null($freja)) {
+            array_push($this->openAPINullablesSetToNull, 'freja');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('freja', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['freja'] = $freja;
+
+        return $this;
+    }
+
+    /**
      * Gets google_wallet
      *
      * @return \Trinsic\Api\Model\GoogleWalletProviderOutput|null
@@ -1155,6 +1402,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['google_wallet'] = $google_wallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets india_digilocker_aadhaar
+     *
+     * @return \Trinsic\Api\Model\DigilockerAadhaarProviderOutput|null
+     */
+    public function getIndiaDigilockerAadhaar()
+    {
+        return $this->container['india_digilocker_aadhaar'];
+    }
+
+    /**
+     * Sets india_digilocker_aadhaar
+     *
+     * @param \Trinsic\Api\Model\DigilockerAadhaarProviderOutput|null $india_digilocker_aadhaar Exposed properties for the `india-digilocker-aadhaar` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setIndiaDigilockerAadhaar($india_digilocker_aadhaar)
+    {
+        if (is_null($india_digilocker_aadhaar)) {
+            array_push($this->openAPINullablesSetToNull, 'india_digilocker_aadhaar');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('india_digilocker_aadhaar', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['india_digilocker_aadhaar'] = $india_digilocker_aadhaar;
 
         return $this;
     }
@@ -1330,6 +1611,74 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets nigeria_nin_lookup_2
+     *
+     * @return \Trinsic\Api\Model\NigeriaNinLookup2ProviderOutput|null
+     */
+    public function getNigeriaNinLookup2()
+    {
+        return $this->container['nigeria_nin_lookup_2'];
+    }
+
+    /**
+     * Sets nigeria_nin_lookup_2
+     *
+     * @param \Trinsic\Api\Model\NigeriaNinLookup2ProviderOutput|null $nigeria_nin_lookup_2 Exposed properties for the `nigeria-nin-lookup-2` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setNigeriaNinLookup2($nigeria_nin_lookup_2)
+    {
+        if (is_null($nigeria_nin_lookup_2)) {
+            array_push($this->openAPINullablesSetToNull, 'nigeria_nin_lookup_2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nigeria_nin_lookup_2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['nigeria_nin_lookup_2'] = $nigeria_nin_lookup_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets oneid
+     *
+     * @return \Trinsic\Api\Model\OneIdProviderOutput|null
+     */
+    public function getOneid()
+    {
+        return $this->container['oneid'];
+    }
+
+    /**
+     * Sets oneid
+     *
+     * @param \Trinsic\Api\Model\OneIdProviderOutput|null $oneid Exposed properties for the `oneid` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setOneid($oneid)
+    {
+        if (is_null($oneid)) {
+            array_push($this->openAPINullablesSetToNull, 'oneid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('oneid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['oneid'] = $oneid;
+
+        return $this;
+    }
+
+    /**
      * Gets peru_dni_lookup
      *
      * @return \Trinsic\Api\Model\PeruDniProviderOutput|null
@@ -1359,6 +1708,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['peru_dni_lookup'] = $peru_dni_lookup;
+
+        return $this;
+    }
+
+    /**
+     * Gets norway_bankid
+     *
+     * @return \Trinsic\Api\Model\NorwegianBankIdProviderOutput|null
+     */
+    public function getNorwayBankid()
+    {
+        return $this->container['norway_bankid'];
+    }
+
+    /**
+     * Sets norway_bankid
+     *
+     * @param \Trinsic\Api\Model\NorwegianBankIdProviderOutput|null $norway_bankid Exposed properties for the `norway-bankid` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setNorwayBankid($norway_bankid)
+    {
+        if (is_null($norway_bankid)) {
+            array_push($this->openAPINullablesSetToNull, 'norway_bankid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('norway_bankid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['norway_bankid'] = $norway_bankid;
 
         return $this;
     }
@@ -1534,6 +1917,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets uk_evisa_lookup
+     *
+     * @return \Trinsic\Api\Model\UnitedKingdomEvisaProviderOutput|null
+     */
+    public function getUkEvisaLookup()
+    {
+        return $this->container['uk_evisa_lookup'];
+    }
+
+    /**
+     * Sets uk_evisa_lookup
+     *
+     * @param \Trinsic\Api\Model\UnitedKingdomEvisaProviderOutput|null $uk_evisa_lookup Exposed properties for the `uk-evisa-lookup` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setUkEvisaLookup($uk_evisa_lookup)
+    {
+        if (is_null($uk_evisa_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'uk_evisa_lookup');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('uk_evisa_lookup', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['uk_evisa_lookup'] = $uk_evisa_lookup;
+
+        return $this;
+    }
+
+    /**
      * Gets sweden_bankid
      *
      * @return \Trinsic\Api\Model\SwedenBankIdProviderOutput|null
@@ -1631,6 +2048,40 @@ class ProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['yoti'] = $yoti;
+
+        return $this;
+    }
+
+    /**
+     * Gets yoti_deeplink
+     *
+     * @return \Trinsic\Api\Model\YotiDeeplinkProviderOutput|null
+     */
+    public function getYotiDeeplink()
+    {
+        return $this->container['yoti_deeplink'];
+    }
+
+    /**
+     * Sets yoti_deeplink
+     *
+     * @param \Trinsic\Api\Model\YotiDeeplinkProviderOutput|null $yoti_deeplink Exposed properties for the `yoti-deeplink` Provider which do not directly map to the normalized IdentityData model.
+     *
+     * @return self
+     */
+    public function setYotiDeeplink($yoti_deeplink)
+    {
+        if (is_null($yoti_deeplink)) {
+            array_push($this->openAPINullablesSetToNull, 'yoti_deeplink');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('yoti_deeplink', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['yoti_deeplink'] = $yoti_deeplink;
 
         return $this;
     }

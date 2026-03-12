@@ -58,7 +58,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub' => 'string'
+        'sub' => 'string',
+        'name' => 'string',
+        'english_name' => 'string',
+        'arabic_name' => 'string'
     ];
 
     /**
@@ -69,7 +72,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub' => null
+        'sub' => null,
+        'name' => null,
+        'english_name' => null,
+        'arabic_name' => null
     ];
 
     /**
@@ -78,7 +84,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sub' => true
+        'sub' => true,
+        'name' => true,
+        'english_name' => true,
+        'arabic_name' => true
     ];
 
     /**
@@ -167,7 +176,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub' => 'sub'
+        'sub' => 'sub',
+        'name' => 'name',
+        'english_name' => 'englishName',
+        'arabic_name' => 'arabicName'
     ];
 
     /**
@@ -176,7 +188,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'sub' => 'setSub'
+        'sub' => 'setSub',
+        'name' => 'setName',
+        'english_name' => 'setEnglishName',
+        'arabic_name' => 'setArabicName'
     ];
 
     /**
@@ -185,7 +200,10 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'sub' => 'getSub'
+        'sub' => 'getSub',
+        'name' => 'getName',
+        'english_name' => 'getEnglishName',
+        'arabic_name' => 'getArabicName'
     ];
 
     /**
@@ -246,6 +264,9 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('sub', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('english_name', $data ?? [], null);
+        $this->setIfExists('arabic_name', $data ?? [], null);
     }
 
     /**
@@ -320,6 +341,108 @@ class FaydaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['sub'] = $sub;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The full name of the verified individual.              This may be an English or Arabic name if the individual only has it one language, otherwise this will be null and the other names will be populated.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets english_name
+     *
+     * @return string|null
+     */
+    public function getEnglishName()
+    {
+        return $this->container['english_name'];
+    }
+
+    /**
+     * Sets english_name
+     *
+     * @param string|null $english_name The full English name of the verified individual.
+     *
+     * @return self
+     */
+    public function setEnglishName($english_name)
+    {
+        if (is_null($english_name)) {
+            array_push($this->openAPINullablesSetToNull, 'english_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('english_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['english_name'] = $english_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets arabic_name
+     *
+     * @return string|null
+     */
+    public function getArabicName()
+    {
+        return $this->container['arabic_name'];
+    }
+
+    /**
+     * Sets arabic_name
+     *
+     * @param string|null $arabic_name The full Arabic name of the verified individual.
+     *
+     * @return self
+     */
+    public function setArabicName($arabic_name)
+    {
+        if (is_null($arabic_name)) {
+            array_push($this->openAPINullablesSetToNull, 'arabic_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('arabic_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['arabic_name'] = $arabic_name;
 
         return $this;
     }

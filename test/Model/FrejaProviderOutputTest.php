@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * FrejaProviderOutputTest Class Doc Comment
  *
  * @category    Class
- * @description Exposed properties for the &#x60;a-freja-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+ * @description Exposed properties for the &#x60;freja&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package     Trinsic\Api
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -80,36 +80,162 @@ class FrejaProviderOutputTest extends TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "name"
      */
-    public function testPropertyFirstName()
+    public function testPropertyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "given_name"
      */
-    public function testPropertyLastName()
+    public function testPropertyGivenName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "personal_number"
+     * Test attribute "family_name"
      */
-    public function testPropertyPersonalNumber()
+    public function testPropertyFamilyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "personal_number_country"
+     * Test attribute "date_of_birth"
      */
-    public function testPropertyPersonalNumberCountry()
+    public function testPropertyDateOfBirth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "email_verified"
+     */
+    public function testPropertyEmailVerified()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "all_email_addresses"
+     */
+    public function testPropertyAllEmailAddresses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "primary_physical_address"
+     */
+    public function testPropertyPrimaryPhysicalAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "all_physical_addresses"
+     */
+    public function testPropertyAllPhysicalAddresses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "age"
+     */
+    public function testPropertyAge()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phone_number"
+     */
+    public function testPropertyPhoneNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phone_number_verified"
+     */
+    public function testPropertyPhoneNumberVerified()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "personal_identity_number"
+     */
+    public function testPropertyPersonalIdentityNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "document"
+     */
+    public function testPropertyDocument()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "registration_level"
+     */
+    public function testPropertyRegistrationLevel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "relying_party_user_id"
+     */
+    public function testPropertyRelyingPartyUserId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "transaction_reference"
+     */
+    public function testPropertyTransactionReference()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

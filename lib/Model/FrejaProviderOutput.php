@@ -35,7 +35,7 @@ use \Trinsic\Api\ObjectSerializer;
  * FrejaProviderOutput Class Doc Comment
  *
  * @category Class
- * @description Exposed properties for the &#x60;a-freja-eid-login&#x60; Provider which do not directly map to the normalized IdentityData model.
+ * @description Exposed properties for the &#x60;freja&#x60; Provider which do not directly map to the normalized IdentityData model.
  * @package  Trinsic\Api
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,10 +58,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'personal_number' => 'string',
-        'personal_number_country' => 'string'
+        'name' => 'string',
+        'given_name' => 'string',
+        'family_name' => 'string',
+        'date_of_birth' => '\DateTime',
+        'email' => 'string',
+        'email_verified' => 'bool',
+        'all_email_addresses' => 'string[]',
+        'primary_physical_address' => '\Trinsic\Api\Model\OutputFrejaAddress',
+        'all_physical_addresses' => '\Trinsic\Api\Model\OutputFrejaAddress[]',
+        'age' => 'int',
+        'phone_number' => 'string',
+        'phone_number_verified' => 'bool',
+        'personal_identity_number' => 'string',
+        'country' => 'string',
+        'document' => '\Trinsic\Api\Model\OutputFrejaDocument',
+        'registration_level' => 'string',
+        'relying_party_user_id' => 'string',
+        'transaction_reference' => 'string'
     ];
 
     /**
@@ -72,10 +86,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'first_name' => null,
-        'last_name' => null,
-        'personal_number' => null,
-        'personal_number_country' => null
+        'name' => null,
+        'given_name' => null,
+        'family_name' => null,
+        'date_of_birth' => 'date',
+        'email' => null,
+        'email_verified' => null,
+        'all_email_addresses' => null,
+        'primary_physical_address' => null,
+        'all_physical_addresses' => null,
+        'age' => 'int32',
+        'phone_number' => null,
+        'phone_number_verified' => null,
+        'personal_identity_number' => null,
+        'country' => null,
+        'document' => null,
+        'registration_level' => null,
+        'relying_party_user_id' => null,
+        'transaction_reference' => null
     ];
 
     /**
@@ -84,10 +112,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'first_name' => false,
-        'last_name' => false,
-        'personal_number' => false,
-        'personal_number_country' => false
+        'name' => true,
+        'given_name' => true,
+        'family_name' => true,
+        'date_of_birth' => true,
+        'email' => true,
+        'email_verified' => true,
+        'all_email_addresses' => true,
+        'primary_physical_address' => true,
+        'all_physical_addresses' => true,
+        'age' => true,
+        'phone_number' => true,
+        'phone_number_verified' => true,
+        'personal_identity_number' => true,
+        'country' => true,
+        'document' => true,
+        'registration_level' => true,
+        'relying_party_user_id' => true,
+        'transaction_reference' => true
     ];
 
     /**
@@ -176,10 +218,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
-        'personal_number' => 'personalNumber',
-        'personal_number_country' => 'personalNumberCountry'
+        'name' => 'name',
+        'given_name' => 'givenName',
+        'family_name' => 'familyName',
+        'date_of_birth' => 'dateOfBirth',
+        'email' => 'email',
+        'email_verified' => 'emailVerified',
+        'all_email_addresses' => 'allEmailAddresses',
+        'primary_physical_address' => 'primaryPhysicalAddress',
+        'all_physical_addresses' => 'allPhysicalAddresses',
+        'age' => 'age',
+        'phone_number' => 'phoneNumber',
+        'phone_number_verified' => 'phoneNumberVerified',
+        'personal_identity_number' => 'personalIdentityNumber',
+        'country' => 'country',
+        'document' => 'document',
+        'registration_level' => 'registrationLevel',
+        'relying_party_user_id' => 'relyingPartyUserId',
+        'transaction_reference' => 'transactionReference'
     ];
 
     /**
@@ -188,10 +244,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'personal_number' => 'setPersonalNumber',
-        'personal_number_country' => 'setPersonalNumberCountry'
+        'name' => 'setName',
+        'given_name' => 'setGivenName',
+        'family_name' => 'setFamilyName',
+        'date_of_birth' => 'setDateOfBirth',
+        'email' => 'setEmail',
+        'email_verified' => 'setEmailVerified',
+        'all_email_addresses' => 'setAllEmailAddresses',
+        'primary_physical_address' => 'setPrimaryPhysicalAddress',
+        'all_physical_addresses' => 'setAllPhysicalAddresses',
+        'age' => 'setAge',
+        'phone_number' => 'setPhoneNumber',
+        'phone_number_verified' => 'setPhoneNumberVerified',
+        'personal_identity_number' => 'setPersonalIdentityNumber',
+        'country' => 'setCountry',
+        'document' => 'setDocument',
+        'registration_level' => 'setRegistrationLevel',
+        'relying_party_user_id' => 'setRelyingPartyUserId',
+        'transaction_reference' => 'setTransactionReference'
     ];
 
     /**
@@ -200,10 +270,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'personal_number' => 'getPersonalNumber',
-        'personal_number_country' => 'getPersonalNumberCountry'
+        'name' => 'getName',
+        'given_name' => 'getGivenName',
+        'family_name' => 'getFamilyName',
+        'date_of_birth' => 'getDateOfBirth',
+        'email' => 'getEmail',
+        'email_verified' => 'getEmailVerified',
+        'all_email_addresses' => 'getAllEmailAddresses',
+        'primary_physical_address' => 'getPrimaryPhysicalAddress',
+        'all_physical_addresses' => 'getAllPhysicalAddresses',
+        'age' => 'getAge',
+        'phone_number' => 'getPhoneNumber',
+        'phone_number_verified' => 'getPhoneNumberVerified',
+        'personal_identity_number' => 'getPersonalIdentityNumber',
+        'country' => 'getCountry',
+        'document' => 'getDocument',
+        'registration_level' => 'getRegistrationLevel',
+        'relying_party_user_id' => 'getRelyingPartyUserId',
+        'transaction_reference' => 'getTransactionReference'
     ];
 
     /**
@@ -263,10 +347,24 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('first_name', $data ?? [], null);
-        $this->setIfExists('last_name', $data ?? [], null);
-        $this->setIfExists('personal_number', $data ?? [], null);
-        $this->setIfExists('personal_number_country', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('given_name', $data ?? [], null);
+        $this->setIfExists('family_name', $data ?? [], null);
+        $this->setIfExists('date_of_birth', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('email_verified', $data ?? [], null);
+        $this->setIfExists('all_email_addresses', $data ?? [], null);
+        $this->setIfExists('primary_physical_address', $data ?? [], null);
+        $this->setIfExists('all_physical_addresses', $data ?? [], null);
+        $this->setIfExists('age', $data ?? [], null);
+        $this->setIfExists('phone_number', $data ?? [], null);
+        $this->setIfExists('phone_number_verified', $data ?? [], null);
+        $this->setIfExists('personal_identity_number', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('document', $data ?? [], null);
+        $this->setIfExists('registration_level', $data ?? [], null);
+        $this->setIfExists('relying_party_user_id', $data ?? [], null);
+        $this->setIfExists('transaction_reference', $data ?? [], null);
     }
 
     /**
@@ -296,18 +394,6 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['first_name'] === null) {
-            $invalidProperties[] = "'first_name' can't be null";
-        }
-        if ($this->container['last_name'] === null) {
-            $invalidProperties[] = "'last_name' can't be null";
-        }
-        if ($this->container['personal_number'] === null) {
-            $invalidProperties[] = "'personal_number' can't be null";
-        }
-        if ($this->container['personal_number_country'] === null) {
-            $invalidProperties[] = "'personal_number_country' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -324,109 +410,613 @@ class FrejaProviderOutput implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets first_name
+     * Gets name
      *
-     * @return string
+     * @return string|null
      */
-    public function getFirstName()
+    public function getName()
     {
-        return $this->container['first_name'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets first_name
+     * Sets name
      *
-     * @param string $first_name The first name of the verified individual
+     * @param string|null $name The individual's full name.
      *
      * @return self
      */
-    public function setFirstName($first_name)
+    public function setName($name)
     {
-        if (is_null($first_name)) {
-            throw new \InvalidArgumentException('non-nullable first_name cannot be null');
+        if (is_null($name)) {
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['first_name'] = $first_name;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets given_name
      *
-     * @return string
+     * @return string|null
      */
-    public function getLastName()
+    public function getGivenName()
     {
-        return $this->container['last_name'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets last_name
+     * Sets given_name
      *
-     * @param string $last_name The last name of the verified individual
+     * @param string|null $given_name The individual's first name.
      *
      * @return self
      */
-    public function setLastName($last_name)
+    public function setGivenName($given_name)
     {
-        if (is_null($last_name)) {
-            throw new \InvalidArgumentException('non-nullable last_name cannot be null');
+        if (is_null($given_name)) {
+            array_push($this->openAPINullablesSetToNull, 'given_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('given_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['last_name'] = $last_name;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets personal_number
+     * Gets family_name
      *
-     * @return string
+     * @return string|null
      */
-    public function getPersonalNumber()
+    public function getFamilyName()
     {
-        return $this->container['personal_number'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets personal_number
+     * Sets family_name
      *
-     * @param string $personal_number The value returned by Freja in the \"ssn\" field.              The actual value of this field depends on the country of origin used to create the Freja credential. It is typically a Social Security Number, National Identification Number, or equivalent personal identifier.
+     * @param string|null $family_name The individual's last name.
      *
      * @return self
      */
-    public function setPersonalNumber($personal_number)
+    public function setFamilyName($family_name)
     {
-        if (is_null($personal_number)) {
-            throw new \InvalidArgumentException('non-nullable personal_number cannot be null');
+        if (is_null($family_name)) {
+            array_push($this->openAPINullablesSetToNull, 'family_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('family_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['personal_number'] = $personal_number;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets personal_number_country
+     * Gets date_of_birth
      *
-     * @return string
+     * @return \DateTime|null
      */
-    public function getPersonalNumberCountry()
+    public function getDateOfBirth()
     {
-        return $this->container['personal_number_country'];
+        return $this->container['date_of_birth'];
     }
 
     /**
-     * Sets personal_number_country
+     * Sets date_of_birth
      *
-     * @param string $personal_number_country The 2-digit ISO country code of the country which issued the personal number.
+     * @param \DateTime|null $date_of_birth The date of birth of the individual.              Formatted as an ISO 8601 Date.
      *
      * @return self
      */
-    public function setPersonalNumberCountry($personal_number_country)
+    public function setDateOfBirth($date_of_birth)
     {
-        if (is_null($personal_number_country)) {
-            throw new \InvalidArgumentException('non-nullable personal_number_country cannot be null');
+        if (is_null($date_of_birth)) {
+            array_push($this->openAPINullablesSetToNull, 'date_of_birth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_of_birth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['personal_number_country'] = $personal_number_country;
+        $this->container['date_of_birth'] = $date_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email The individual's primary email address within Freja.
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        if (is_null($email)) {
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets email_verified
+     *
+     * @return bool|null
+     */
+    public function getEmailVerified()
+    {
+        return $this->container['email_verified'];
+    }
+
+    /**
+     * Sets email_verified
+     *
+     * @param bool|null $email_verified A boolean which indicates whether the individual's primary email address has been verified by Freja.
+     *
+     * @return self
+     */
+    public function setEmailVerified($email_verified)
+    {
+        if (is_null($email_verified)) {
+            array_push($this->openAPINullablesSetToNull, 'email_verified');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email_verified', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['email_verified'] = $email_verified;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_email_addresses
+     *
+     * @return string[]|null
+     */
+    public function getAllEmailAddresses()
+    {
+        return $this->container['all_email_addresses'];
+    }
+
+    /**
+     * Sets all_email_addresses
+     *
+     * @param string[]|null $all_email_addresses An array of all associated email addresses of the individual.
+     *
+     * @return self
+     */
+    public function setAllEmailAddresses($all_email_addresses)
+    {
+        if (is_null($all_email_addresses)) {
+            array_push($this->openAPINullablesSetToNull, 'all_email_addresses');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('all_email_addresses', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['all_email_addresses'] = $all_email_addresses;
+
+        return $this;
+    }
+
+    /**
+     * Gets primary_physical_address
+     *
+     * @return \Trinsic\Api\Model\OutputFrejaAddress|null
+     */
+    public function getPrimaryPhysicalAddress()
+    {
+        return $this->container['primary_physical_address'];
+    }
+
+    /**
+     * Sets primary_physical_address
+     *
+     * @param \Trinsic\Api\Model\OutputFrejaAddress|null $primary_physical_address The individual's primary address on file.
+     *
+     * @return self
+     */
+    public function setPrimaryPhysicalAddress($primary_physical_address)
+    {
+        if (is_null($primary_physical_address)) {
+            array_push($this->openAPINullablesSetToNull, 'primary_physical_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('primary_physical_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['primary_physical_address'] = $primary_physical_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_physical_addresses
+     *
+     * @return \Trinsic\Api\Model\OutputFrejaAddress[]|null
+     */
+    public function getAllPhysicalAddresses()
+    {
+        return $this->container['all_physical_addresses'];
+    }
+
+    /**
+     * Sets all_physical_addresses
+     *
+     * @param \Trinsic\Api\Model\OutputFrejaAddress[]|null $all_physical_addresses A list of all associated addresses of the individual.
+     *
+     * @return self
+     */
+    public function setAllPhysicalAddresses($all_physical_addresses)
+    {
+        if (is_null($all_physical_addresses)) {
+            array_push($this->openAPINullablesSetToNull, 'all_physical_addresses');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('all_physical_addresses', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['all_physical_addresses'] = $all_physical_addresses;
+
+        return $this;
+    }
+
+    /**
+     * Gets age
+     *
+     * @return int|null
+     */
+    public function getAge()
+    {
+        return $this->container['age'];
+    }
+
+    /**
+     * Sets age
+     *
+     * @param int|null $age The individual's age in years.
+     *
+     * @return self
+     */
+    public function setAge($age)
+    {
+        if (is_null($age)) {
+            array_push($this->openAPINullablesSetToNull, 'age');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('age', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['age'] = $age;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number
+     *
+     * @return string|null
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phone_number'];
+    }
+
+    /**
+     * Sets phone_number
+     *
+     * @param string|null $phone_number The individual's phone number in the E.164 format.
+     *
+     * @return self
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        if (is_null($phone_number)) {
+            array_push($this->openAPINullablesSetToNull, 'phone_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number_verified
+     *
+     * @return bool|null
+     */
+    public function getPhoneNumberVerified()
+    {
+        return $this->container['phone_number_verified'];
+    }
+
+    /**
+     * Sets phone_number_verified
+     *
+     * @param bool|null $phone_number_verified Whether the individual's phone number has been verified by Freja.
+     *
+     * @return self
+     */
+    public function setPhoneNumberVerified($phone_number_verified)
+    {
+        if (is_null($phone_number_verified)) {
+            array_push($this->openAPINullablesSetToNull, 'phone_number_verified');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone_number_verified', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['phone_number_verified'] = $phone_number_verified;
+
+        return $this;
+    }
+
+    /**
+     * Gets personal_identity_number
+     *
+     * @return string|null
+     */
+    public function getPersonalIdentityNumber()
+    {
+        return $this->container['personal_identity_number'];
+    }
+
+    /**
+     * Sets personal_identity_number
+     *
+     * @param string|null $personal_identity_number The individual's personal identity number. The actual value of this field depends on the country of origin used to create the Freja credential. It is typically a Social Security Number, National Identification Number, or equivalent personal identifier.
+     *
+     * @return self
+     */
+    public function setPersonalIdentityNumber($personal_identity_number)
+    {
+        if (is_null($personal_identity_number)) {
+            array_push($this->openAPINullablesSetToNull, 'personal_identity_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('personal_identity_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['personal_identity_number'] = $personal_identity_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country The ISO 3166-1 alpha-2 country code associated with the individual's country of origin.
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        if (is_null($country)) {
+            array_push($this->openAPINullablesSetToNull, 'country');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('country', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets document
+     *
+     * @return \Trinsic\Api\Model\OutputFrejaDocument|null
+     */
+    public function getDocument()
+    {
+        return $this->container['document'];
+    }
+
+    /**
+     * Sets document
+     *
+     * @param \Trinsic\Api\Model\OutputFrejaDocument|null $document The underlying document, such as a passport, used to create the Freja credential.
+     *
+     * @return self
+     */
+    public function setDocument($document)
+    {
+        if (is_null($document)) {
+            array_push($this->openAPINullablesSetToNull, 'document');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('document', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['document'] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Gets registration_level
+     *
+     * @return string|null
+     */
+    public function getRegistrationLevel()
+    {
+        return $this->container['registration_level'];
+    }
+
+    /**
+     * Sets registration_level
+     *
+     * @param string|null $registration_level The Freja registration level associated with this individual. This can be BASIC, EXTENDED, or PLUS. * BASIC: Individual has a registered account with Freja. * EXTENDED: Individual has an official identity document verified by Freja. * PLUS: Individual has undergone in-person verification with Freja.
+     *
+     * @return self
+     */
+    public function setRegistrationLevel($registration_level)
+    {
+        if (is_null($registration_level)) {
+            array_push($this->openAPINullablesSetToNull, 'registration_level');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('registration_level', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['registration_level'] = $registration_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets relying_party_user_id
+     *
+     * @return string|null
+     */
+    public function getRelyingPartyUserId()
+    {
+        return $this->container['relying_party_user_id'];
+    }
+
+    /**
+     * Sets relying_party_user_id
+     *
+     * @param string|null $relying_party_user_id The relying party user identifier for this individual. This is an identifier specific to the individual and the relying party (your service).
+     *
+     * @return self
+     */
+    public function setRelyingPartyUserId($relying_party_user_id)
+    {
+        if (is_null($relying_party_user_id)) {
+            array_push($this->openAPINullablesSetToNull, 'relying_party_user_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('relying_party_user_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['relying_party_user_id'] = $relying_party_user_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_reference
+     *
+     * @return string|null
+     */
+    public function getTransactionReference()
+    {
+        return $this->container['transaction_reference'];
+    }
+
+    /**
+     * Sets transaction_reference
+     *
+     * @param string|null $transaction_reference The Freja transaction reference for this verification. This is an identifier specific to the verification transaction.
+     *
+     * @return self
+     */
+    public function setTransactionReference($transaction_reference)
+    {
+        if (is_null($transaction_reference)) {
+            array_push($this->openAPINullablesSetToNull, 'transaction_reference');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('transaction_reference', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['transaction_reference'] = $transaction_reference;
 
         return $this;
     }

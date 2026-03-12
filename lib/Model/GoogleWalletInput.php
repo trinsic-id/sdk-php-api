@@ -57,7 +57,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exchange_mechanism' => '\Trinsic\Api\Model\MdlExchangeMechanism'
+        'exchange_mechanism' => '\Trinsic\Api\Model\MdlExchangeMechanism',
+        'preview_raw18013_request' => '\Trinsic\Api\Model\Raw18013RequestInput'
     ];
 
     /**
@@ -68,7 +69,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'exchange_mechanism' => null
+        'exchange_mechanism' => null,
+        'preview_raw18013_request' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'exchange_mechanism' => true
+        'exchange_mechanism' => true,
+        'preview_raw18013_request' => true
     ];
 
     /**
@@ -166,7 +169,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'exchange_mechanism' => 'exchangeMechanism'
+        'exchange_mechanism' => 'exchangeMechanism',
+        'preview_raw18013_request' => 'preview_raw18013Request'
     ];
 
     /**
@@ -175,7 +179,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'exchange_mechanism' => 'setExchangeMechanism'
+        'exchange_mechanism' => 'setExchangeMechanism',
+        'preview_raw18013_request' => 'setPreviewRaw18013Request'
     ];
 
     /**
@@ -184,7 +189,8 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'exchange_mechanism' => 'getExchangeMechanism'
+        'exchange_mechanism' => 'getExchangeMechanism',
+        'preview_raw18013_request' => 'getPreviewRaw18013Request'
     ];
 
     /**
@@ -245,6 +251,7 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('exchange_mechanism', $data ?? [], null);
+        $this->setIfExists('preview_raw18013_request', $data ?? [], null);
     }
 
     /**
@@ -319,6 +326,40 @@ class GoogleWalletInput implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['exchange_mechanism'] = $exchange_mechanism;
+
+        return $this;
+    }
+
+    /**
+     * Gets preview_raw18013_request
+     *
+     * @return \Trinsic\Api\Model\Raw18013RequestInput|null
+     */
+    public function getPreviewRaw18013Request()
+    {
+        return $this->container['preview_raw18013_request'];
+    }
+
+    /**
+     * Sets preview_raw18013_request
+     *
+     * @param \Trinsic\Api\Model\Raw18013RequestInput|null $preview_raw18013_request **Preview feature: not suitable for production use cases**              The raw 18013-7 exchange request to use for this verification.              If set, this overrides any default configuration on your Verification Profile.
+     *
+     * @return self
+     */
+    public function setPreviewRaw18013Request($preview_raw18013_request)
+    {
+        if (is_null($preview_raw18013_request)) {
+            array_push($this->openAPINullablesSetToNull, 'preview_raw18013_request');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('preview_raw18013_request', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['preview_raw18013_request'] = $preview_raw18013_request;
 
         return $this;
     }

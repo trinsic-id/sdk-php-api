@@ -72,6 +72,18 @@ class ProvidersApiTest extends TestCase
     }
 
     /**
+     * Test case for getProvider
+     *
+     * Get Provider.
+     *
+     */
+    public function testGetProvider()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for listProviders
      *
      * List Providers.

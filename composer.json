@@ -1,6 +1,6 @@
 {
   "name": "trinsic/api",
-  "version": "3.0.1",
+  "version": "3.0.2-preview1",
   "description": "Trinsic API PHP library.",
   "keywords": [
     "openapitools",

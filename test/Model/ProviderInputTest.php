@@ -350,9 +350,36 @@ class ProviderInputTest extends TestCase
     }
 
     /**
+     * Test attribute "samsung_wallet"
+     */
+    public function testPropertySamsungWallet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "france_identite"
+     */
+    public function testPropertyFranceIdentite()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "peru_dni_lookup"
      */
     public function testPropertyPeruDniLookup()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "uk_evisa_lookup"
+     */
+    public function testPropertyUkEvisaLookup()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

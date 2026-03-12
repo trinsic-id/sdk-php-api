@@ -87,4 +87,13 @@ class RecommendProvidersResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "remainder"
+     */
+    public function testPropertyRemainder()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

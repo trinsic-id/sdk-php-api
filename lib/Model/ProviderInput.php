@@ -87,7 +87,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => '\Trinsic\Api\Model\SpidInput',
         'google_wallet' => '\Trinsic\Api\Model\GoogleWalletInput',
         'apple_wallet' => '\Trinsic\Api\Model\AppleWalletInput',
+        'samsung_wallet' => '\Trinsic\Api\Model\SamsungWalletInput',
+        'france_identite' => '\Trinsic\Api\Model\FranceIdentiteInput',
         'peru_dni_lookup' => '\Trinsic\Api\Model\PeruDniLookupInput',
+        'uk_evisa_lookup' => '\Trinsic\Api\Model\UkEvisaLookupInput',
         'trinsic_test_database_lookup' => '\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput',
         'trinsic_test_sub_providers' => '\Trinsic\Api\Model\TrinsicTestSubProvidersInput'
     ];
@@ -130,7 +133,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => null,
         'google_wallet' => null,
         'apple_wallet' => null,
+        'samsung_wallet' => null,
+        'france_identite' => null,
         'peru_dni_lookup' => null,
+        'uk_evisa_lookup' => null,
         'trinsic_test_database_lookup' => null,
         'trinsic_test_sub_providers' => null
     ];
@@ -171,7 +177,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => true,
         'google_wallet' => true,
         'apple_wallet' => true,
+        'samsung_wallet' => true,
+        'france_identite' => true,
         'peru_dni_lookup' => true,
+        'uk_evisa_lookup' => true,
         'trinsic_test_database_lookup' => true,
         'trinsic_test_sub_providers' => true
     ];
@@ -292,7 +301,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => 'italy-spid',
         'google_wallet' => 'google-wallet',
         'apple_wallet' => 'apple-wallet',
+        'samsung_wallet' => 'samsung-wallet',
+        'france_identite' => 'france-identite',
         'peru_dni_lookup' => 'peru-dni-lookup',
+        'uk_evisa_lookup' => 'uk-evisa-lookup',
         'trinsic_test_database_lookup' => 'trinsic-test-database-lookup',
         'trinsic_test_sub_providers' => 'trinsic-test-sub-providers'
     ];
@@ -333,7 +345,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => 'setItalySpid',
         'google_wallet' => 'setGoogleWallet',
         'apple_wallet' => 'setAppleWallet',
+        'samsung_wallet' => 'setSamsungWallet',
+        'france_identite' => 'setFranceIdentite',
         'peru_dni_lookup' => 'setPeruDniLookup',
+        'uk_evisa_lookup' => 'setUkEvisaLookup',
         'trinsic_test_database_lookup' => 'setTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'setTrinsicTestSubProviders'
     ];
@@ -374,7 +389,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         'italy_spid' => 'getItalySpid',
         'google_wallet' => 'getGoogleWallet',
         'apple_wallet' => 'getAppleWallet',
+        'samsung_wallet' => 'getSamsungWallet',
+        'france_identite' => 'getFranceIdentite',
         'peru_dni_lookup' => 'getPeruDniLookup',
+        'uk_evisa_lookup' => 'getUkEvisaLookup',
         'trinsic_test_database_lookup' => 'getTrinsicTestDatabaseLookup',
         'trinsic_test_sub_providers' => 'getTrinsicTestSubProviders'
     ];
@@ -466,7 +484,10 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('italy_spid', $data ?? [], null);
         $this->setIfExists('google_wallet', $data ?? [], null);
         $this->setIfExists('apple_wallet', $data ?? [], null);
+        $this->setIfExists('samsung_wallet', $data ?? [], null);
+        $this->setIfExists('france_identite', $data ?? [], null);
         $this->setIfExists('peru_dni_lookup', $data ?? [], null);
+        $this->setIfExists('uk_evisa_lookup', $data ?? [], null);
         $this->setIfExists('trinsic_test_database_lookup', $data ?? [], null);
         $this->setIfExists('trinsic_test_sub_providers', $data ?? [], null);
     }
@@ -1534,6 +1555,74 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets samsung_wallet
+     *
+     * @return \Trinsic\Api\Model\SamsungWalletInput|null
+     */
+    public function getSamsungWallet()
+    {
+        return $this->container['samsung_wallet'];
+    }
+
+    /**
+     * Sets samsung_wallet
+     *
+     * @param \Trinsic\Api\Model\SamsungWalletInput|null $samsung_wallet Input for the `samsung-wallet` provider
+     *
+     * @return self
+     */
+    public function setSamsungWallet($samsung_wallet)
+    {
+        if (is_null($samsung_wallet)) {
+            array_push($this->openAPINullablesSetToNull, 'samsung_wallet');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('samsung_wallet', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['samsung_wallet'] = $samsung_wallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets france_identite
+     *
+     * @return \Trinsic\Api\Model\FranceIdentiteInput|null
+     */
+    public function getFranceIdentite()
+    {
+        return $this->container['france_identite'];
+    }
+
+    /**
+     * Sets france_identite
+     *
+     * @param \Trinsic\Api\Model\FranceIdentiteInput|null $france_identite Input for the `france-identite` provider
+     *
+     * @return self
+     */
+    public function setFranceIdentite($france_identite)
+    {
+        if (is_null($france_identite)) {
+            array_push($this->openAPINullablesSetToNull, 'france_identite');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('france_identite', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['france_identite'] = $france_identite;
+
+        return $this;
+    }
+
+    /**
      * Gets peru_dni_lookup
      *
      * @return \Trinsic\Api\Model\PeruDniLookupInput|null
@@ -1563,6 +1652,40 @@ class ProviderInput implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['peru_dni_lookup'] = $peru_dni_lookup;
+
+        return $this;
+    }
+
+    /**
+     * Gets uk_evisa_lookup
+     *
+     * @return \Trinsic\Api\Model\UkEvisaLookupInput|null
+     */
+    public function getUkEvisaLookup()
+    {
+        return $this->container['uk_evisa_lookup'];
+    }
+
+    /**
+     * Sets uk_evisa_lookup
+     *
+     * @param \Trinsic\Api\Model\UkEvisaLookupInput|null $uk_evisa_lookup Input for the `uk-evisa-lookup` provider
+     *
+     * @return self
+     */
+    public function setUkEvisaLookup($uk_evisa_lookup)
+    {
+        if (is_null($uk_evisa_lookup)) {
+            array_push($this->openAPINullablesSetToNull, 'uk_evisa_lookup');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('uk_evisa_lookup', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['uk_evisa_lookup'] = $uk_evisa_lookup;
 
         return $this;
     }

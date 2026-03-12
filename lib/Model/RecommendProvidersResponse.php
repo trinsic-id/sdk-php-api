@@ -57,7 +57,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recommended_providers' => '\Trinsic\Api\Model\RecommendProviderInformation[]'
+        'recommended_providers' => '\Trinsic\Api\Model\RecommendProviderInformation[]',
+        'remainder' => '\Trinsic\Api\Model\RecommendProviderInformation[]'
     ];
 
     /**
@@ -68,7 +69,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recommended_providers' => null
+        'recommended_providers' => null,
+        'remainder' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'recommended_providers' => false
+        'recommended_providers' => false,
+        'remainder' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'recommended_providers' => 'recommendedProviders'
+        'recommended_providers' => 'recommendedProviders',
+        'remainder' => 'remainder'
     ];
 
     /**
@@ -175,7 +179,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'recommended_providers' => 'setRecommendedProviders'
+        'recommended_providers' => 'setRecommendedProviders',
+        'remainder' => 'setRemainder'
     ];
 
     /**
@@ -184,7 +189,8 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'recommended_providers' => 'getRecommendedProviders'
+        'recommended_providers' => 'getRecommendedProviders',
+        'remainder' => 'getRemainder'
     ];
 
     /**
@@ -245,6 +251,7 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('recommended_providers', $data ?? [], null);
+        $this->setIfExists('remainder', $data ?? [], null);
     }
 
     /**
@@ -276,6 +283,9 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         if ($this->container['recommended_providers'] === null) {
             $invalidProperties[] = "'recommended_providers' can't be null";
+        }
+        if ($this->container['remainder'] === null) {
+            $invalidProperties[] = "'remainder' can't be null";
         }
         return $invalidProperties;
     }
@@ -315,6 +325,33 @@ class RecommendProvidersResponse implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable recommended_providers cannot be null');
         }
         $this->container['recommended_providers'] = $recommended_providers;
+
+        return $this;
+    }
+
+    /**
+     * Gets remainder
+     *
+     * @return \Trinsic\Api\Model\RecommendProviderInformation[]
+     */
+    public function getRemainder()
+    {
+        return $this->container['remainder'];
+    }
+
+    /**
+     * Sets remainder
+     *
+     * @param \Trinsic\Api\Model\RecommendProviderInformation[] $remainder All Providers available to your Verification Profile which are not in `recommendedProviders`
+     *
+     * @return self
+     */
+    public function setRemainder($remainder)
+    {
+        if (is_null($remainder)) {
+            throw new \InvalidArgumentException('non-nullable remainder cannot be null');
+        }
+        $this->container['remainder'] = $remainder;
 
         return $this;
     }

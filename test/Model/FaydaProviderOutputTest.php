@@ -87,4 +87,31 @@ class FaydaProviderOutputTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "english_name"
+     */
+    public function testPropertyEnglishName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "arabic_name"
+     */
+    public function testPropertyArabicName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

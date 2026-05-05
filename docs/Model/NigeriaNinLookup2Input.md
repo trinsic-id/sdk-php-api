@@ -1,4 +1,4 @@
-# # NigeriaNinLookup2Input
+# NigeriaNinLookup2Input
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # FrejaProviderOutput
+# FrejaProviderOutput
 
 ## Properties
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **country** | **string** | The ISO 3166-1 alpha-2 country code associated with the individual&#39;s country of origin. | [optional]
 **document** | [**\Trinsic\Api\Model\OutputFrejaDocument**](OutputFrejaDocument.md) | The underlying document, such as a passport, used to create the Freja credential. | [optional]
 **registration_level** | **string** | The Freja registration level associated with this individual. This can be BASIC, EXTENDED, or PLUS. * BASIC: Individual has a registered account with Freja. * EXTENDED: Individual has an official identity document verified by Freja. * PLUS: Individual has undergone in-person verification with Freja. | [optional]
-**relying_party_user_id** | **string** | The relying party user identifier for this individual. This is an identifier specific to the individual and the relying party (your service). | [optional]
+**relying_party_user_id** | **string** | The relying party identifier for this individual. This is an identifier specific to the individual and the relying party (your service). | [optional]
 **transaction_reference** | **string** | The Freja transaction reference for this verification. This is an identifier specific to the verification transaction. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

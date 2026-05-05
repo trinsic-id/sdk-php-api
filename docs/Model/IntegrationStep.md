@@ -1,4 +1,4 @@
-# # IntegrationStep
+# IntegrationStep
 
 ## Properties
 

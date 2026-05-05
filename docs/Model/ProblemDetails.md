@@ -1,4 +1,4 @@
-# # ProblemDetails
+# ProblemDetails
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetSessionResultResponse
+# GetSessionResultResponse
 
 ## Properties
 

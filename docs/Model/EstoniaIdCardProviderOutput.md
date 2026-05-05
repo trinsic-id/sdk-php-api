@@ -1,4 +1,4 @@
-# # EstoniaIdCardProviderOutput
+# EstoniaIdCardProviderOutput
 
 ## Properties
 

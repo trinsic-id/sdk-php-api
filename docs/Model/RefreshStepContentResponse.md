@@ -1,4 +1,4 @@
-# # RefreshStepContentResponse
+# RefreshStepContentResponse
 
 ## Properties
 

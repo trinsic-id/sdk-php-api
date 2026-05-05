@@ -1,4 +1,4 @@
-# # CreateHostedProviderSessionResponse
+# CreateHostedProviderSessionResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SpidProviderOutput
+# SpidProviderOutput
 
 ## Properties
 

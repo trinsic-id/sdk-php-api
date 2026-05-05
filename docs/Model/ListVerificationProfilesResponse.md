@@ -1,4 +1,4 @@
-# # ListVerificationProfilesResponse
+# ListVerificationProfilesResponse
 
 ## Properties
 

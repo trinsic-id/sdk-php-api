@@ -1,4 +1,4 @@
-# # RefreshStepContentRequest
+# RefreshStepContentRequest
 
 ## Properties
 

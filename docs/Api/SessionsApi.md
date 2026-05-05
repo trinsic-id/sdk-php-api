@@ -1,5 +1,7 @@
 # Trinsic\Api\SessionsApi
 
+
+
 All URIs are relative to https://api.trinsic.id, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -7,7 +9,6 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 | [**cancelSession()**](SessionsApi.md#cancelSession) | **POST** /api/v1/sessions/{sessionId}/cancel | Cancel Session |
 | [**createDirectProviderSession()**](SessionsApi.md#createDirectProviderSession) | **POST** /api/v1/sessions/provider/direct | Create Direct Provider Session |
 | [**createHostedProviderSession()**](SessionsApi.md#createHostedProviderSession) | **POST** /api/v1/sessions/provider/hosted | Create Hosted Provider Session |
-| [**createWidgetSession()**](SessionsApi.md#createWidgetSession) | **POST** /api/v1/sessions/widget | Create Widget Session |
 | [**getAttachment()**](SessionsApi.md#getAttachment) | **POST** /api/v1/sessions/{sessionId}/attachments/{attachmentId}/get | Get Attachment |
 | [**getSession()**](SessionsApi.md#getSession) | **GET** /api/v1/sessions/{sessionId} | Get Session |
 | [**getSessionResult()**](SessionsApi.md#getSessionResult) | **POST** /api/v1/sessions/{sessionId}/results | Get Session Results |
@@ -184,66 +185,6 @@ try {
 ### Return type
 
 [**\Trinsic\Api\Model\CreateHostedProviderSessionResponse**](../Model/CreateHostedProviderSessionResponse.md)
-
-### Authorization
-
-[Bearer](../../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`, `text/json`, `application/*+json`
-- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `createWidgetSession()`
-
-```php
-createWidgetSession($create_widget_session_request): \Trinsic\Api\Model\CreateWidgetSessionResponse
-```
-
-Create Widget Session
-
-Verify a user's identity using Trinsic's hosted Widget flow.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer authorization: Bearer
-$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Trinsic\Api\Api\SessionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$create_widget_session_request = new \Trinsic\Api\Model\CreateWidgetSessionRequest(); // \Trinsic\Api\Model\CreateWidgetSessionRequest
-
-try {
-    $result = $apiInstance->createWidgetSession($create_widget_session_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SessionsApi->createWidgetSession: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **create_widget_session_request** | [**\Trinsic\Api\Model\CreateWidgetSessionRequest**](../Model/CreateWidgetSessionRequest.md)|  | [optional] |
-
-### Return type
-
-[**\Trinsic\Api\Model\CreateWidgetSessionResponse**](../Model/CreateWidgetSessionResponse.md)
 
 ### Authorization
 

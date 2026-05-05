@@ -1,4 +1,4 @@
-# # PhilippineQRInput
+# PhilippineQRInput
 
 ## Properties
 

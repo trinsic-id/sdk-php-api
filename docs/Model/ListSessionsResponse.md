@@ -1,4 +1,4 @@
-# # ListSessionsResponse
+# ListSessionsResponse
 
 ## Properties
 

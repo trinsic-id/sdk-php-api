@@ -1,4 +1,4 @@
-# # PolandEdoAppProviderOutput
+# PolandEdoAppProviderOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # NigeriaNinBiometric2Input
+# NigeriaNinBiometric2Input
 
 ## Properties
 

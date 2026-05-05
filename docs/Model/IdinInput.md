@@ -1,4 +1,4 @@
-# # IdinInput
+# IdinInput
 
 ## Properties
 

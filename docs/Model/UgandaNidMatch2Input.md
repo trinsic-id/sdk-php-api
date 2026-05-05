@@ -1,4 +1,4 @@
-# # UgandaNidMatch2Input
+# UgandaNidMatch2Input
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # Provider
+# Provider
 
 ## Properties
 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **requires_input** | **bool** | Relevant to Hosted Provider Sessions and Direct Provider Sessions.              If &#x60;true&#x60;, this Provider requires provider-specific input on Session creation. If this input is not provided, Trinsic&#39;s Hosted UI will be invoked to collect the input from the user. |
 **has_trinsic_interface** | **bool** | Whether there exists a Trinsic-hosted UI for this Provider.              This is &#x60;true&#x60; for any Provider which is not a simple, OIDC-like redirect flow. |
 **supports_direct_provider_sessions** | **bool** | Whether this Provider can be fully whitelabeled/OEMed through the Direct Provider Sessions API.              If &#x60;false&#x60;, the Provider may still be launched through Direct Provider Sessions; however, it will necessarily require a Trinsic-hosted UI to function. |
+**supported_languages** | [**\Trinsic\Api\Model\ProviderSupportedLanguage[]**](ProviderSupportedLanguage.md) | Languages supported by this Provider&#39;s Trinsic-hosted UI, as BCP 47 language codes. | [optional]
 **available_attributes** | [**\Trinsic\Api\Model\ContractAttribute[]**](ContractAttribute.md) | Information about the user attributes that this Provider will return in verification results. | [optional]
 **available_attachments** | [**\Trinsic\Api\Model\ContractAttachment[]**](ContractAttachment.md) | Information about the attachments that this Provider will return in verification results. | [optional]
 **sub_providers** | [**\Trinsic\Api\Model\SubProviderMetadata[]**](SubProviderMetadata.md) | Metadata about the sub-providers which are available for this Provider in the current Environment.              For example, Italy&#39;s SPID is a Provider which aggregates access to multiple sub-providers. | [optional]

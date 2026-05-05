@@ -1,4 +1,4 @@
-# # LithuaniaIdCardProviderOutput
+# LithuaniaIdCardProviderOutput
 
 ## Properties
 

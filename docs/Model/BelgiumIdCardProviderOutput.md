@@ -1,4 +1,4 @@
-# # BelgiumIdCardProviderOutput
+# BelgiumIdCardProviderOutput
 
 ## Properties
 

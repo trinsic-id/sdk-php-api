@@ -1,4 +1,4 @@
-# # RecommendProviderHealthOption
+# RecommendProviderHealthOption
 
 ## Properties
 

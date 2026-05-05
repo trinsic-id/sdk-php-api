@@ -1,4 +1,4 @@
-# # ResultCollection
+# ResultCollection
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # YotiStructuredPostalAddress
+# YotiStructuredPostalAddress
 
 ## Properties
 

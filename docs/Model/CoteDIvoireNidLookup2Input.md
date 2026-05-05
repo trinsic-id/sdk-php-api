@@ -1,4 +1,4 @@
-# # CoteDIvoireNidLookup2Input
+# CoteDIvoireNidLookup2Input
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetProviderResponse
+# GetProviderResponse
 
 ## Properties
 

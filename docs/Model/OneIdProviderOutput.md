@@ -1,4 +1,4 @@
-# # OneIdProviderOutput
+# OneIdProviderOutput
 
 ## Properties
 

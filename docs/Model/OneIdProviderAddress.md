@@ -1,4 +1,4 @@
-# # OneIdProviderAddress
+# OneIdProviderAddress
 
 ## Properties
 

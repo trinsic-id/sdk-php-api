@@ -1,4 +1,4 @@
-# # NigeriaNinInput
+# NigeriaNinInput
 
 ## Properties
 

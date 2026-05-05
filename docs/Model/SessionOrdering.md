@@ -1,4 +1,4 @@
-# # SessionOrdering
+# SessionOrdering
 
 ## Properties
 

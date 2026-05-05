@@ -1,4 +1,4 @@
-# # FranceIdentiteProviderOutput
+# FranceIdentiteProviderOutput
 
 ## Properties
 

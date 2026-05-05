@@ -1,4 +1,4 @@
-# # RedirectUriResponse
+# RedirectUriResponse
 
 ## Properties
 

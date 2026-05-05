@@ -1,4 +1,4 @@
-# # DocumentData
+# DocumentData
 
 ## Properties
 

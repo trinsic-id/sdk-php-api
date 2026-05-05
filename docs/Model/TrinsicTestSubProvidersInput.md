@@ -1,4 +1,4 @@
-# # TrinsicTestSubProvidersInput
+# TrinsicTestSubProvidersInput
 
 ## Properties
 

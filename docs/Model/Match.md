@@ -1,4 +1,4 @@
-# # Match
+# Match
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ResultCollectionMethod
+# ResultCollectionMethod
 
 ## Properties
 

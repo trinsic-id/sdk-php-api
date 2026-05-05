@@ -1,4 +1,4 @@
-# # MdlExchangeMechanism
+# MdlExchangeMechanism
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ConnectIdProviderOutput
+# ConnectIdProviderOutput
 
 ## Properties
 
@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **sub** | **string** | The OpenID Connect (OIDC) subject identifier (sub). | [optional]
 **age_verification** | [**\Trinsic\Api\Model\ConnectIdAgeVerification**](ConnectIdAgeVerification.md) | The age verification claim and whether the individual meets the age requirement. | [optional]
 **transaction** | **string** | The verification session&#39;s transaction number.              This is a unique identifier assigned to a single ConnectID transaction flow. It can be used for audit purposes or to flag fraudulent activity. | [optional]
-**beneficiary_account** | [**\Trinsic\Api\Model\ConnectIdBeneficiaryAccount**](ConnectIdBeneficiaryAccount.md) | The beneficiary account that has been designated by the individual. | [optional]
 **address** | [**\Trinsic\Api\Model\ConnectIdAddress**](ConnectIdAddress.md) | The address. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

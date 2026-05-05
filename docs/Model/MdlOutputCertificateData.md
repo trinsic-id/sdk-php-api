@@ -1,4 +1,4 @@
-# # MdlOutputCertificateData
+# MdlOutputCertificateData
 
 ## Properties
 

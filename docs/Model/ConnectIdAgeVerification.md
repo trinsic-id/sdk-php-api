@@ -1,4 +1,4 @@
-# # ConnectIdAgeVerification
+# ConnectIdAgeVerification
 
 ## Properties
 

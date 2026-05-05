@@ -1,4 +1,4 @@
-# # SamsungWalletProviderOutput
+# SamsungWalletProviderOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MdlOutputFieldDataType
+# MdlOutputFieldDataType
 
 ## Properties
 

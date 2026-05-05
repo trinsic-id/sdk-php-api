@@ -1,4 +1,4 @@
-# # SamsungWalletInput
+# SamsungWalletInput
 
 ## Properties
 

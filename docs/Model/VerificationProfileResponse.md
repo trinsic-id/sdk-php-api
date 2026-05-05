@@ -1,4 +1,4 @@
-# # VerificationProfileResponse
+# VerificationProfileResponse
 
 ## Properties
 
@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** | The ID of the verification profile |
 **alias** | **string** | An alias of the verification profile shown to developers and administrators. |
 **brand_name** | **string** | The brand name of the verification profile shown to end-users. |
+**external_id** | **string** | A customer-defined external ID for this verification profile, unique within your organization. | [optional]
 **logo_url** | **string** | The URL of the verification profile&#39;s logo. |
 **primary_color** | **string** | The primary color of the verification profile. |
 **enabled_providers** | **string[]** | The providers that are currently enabled for the verification profile. |

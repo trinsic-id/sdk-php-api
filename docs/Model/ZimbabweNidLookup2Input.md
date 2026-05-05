@@ -1,4 +1,4 @@
-# # ZimbabweNidLookup2Input
+# ZimbabweNidLookup2Input
 
 ## Properties
 

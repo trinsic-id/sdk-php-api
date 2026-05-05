@@ -1,4 +1,4 @@
-# # AttachmentInfo
+# AttachmentInfo
 
 ## Properties
 

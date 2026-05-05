@@ -1,4 +1,4 @@
-# # PeruDniLookupInput
+# PeruDniLookupInput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MexicoCurpProviderOutput
+# MexicoCurpProviderOutput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # RecommendationInfo
+# RecommendationInfo
 
 ## Properties
 

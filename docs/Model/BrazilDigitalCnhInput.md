@@ -1,4 +1,4 @@
-# # BrazilDigitalCnhInput
+# BrazilDigitalCnhInput
 
 ## Properties
 

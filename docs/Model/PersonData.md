@@ -1,4 +1,4 @@
-# # PersonData
+# PersonData
 
 ## Properties
 

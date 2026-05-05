@@ -1,4 +1,4 @@
-# # AttributeAvailability
+# AttributeAvailability
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # RecommendProvidersRequest
+# RecommendProvidersRequest
 
 ## Properties
 

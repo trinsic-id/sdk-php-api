@@ -1,4 +1,4 @@
-# # SouthAfricaNidBiometric2Input
+# SouthAfricaNidBiometric2Input
 
 ## Properties
 

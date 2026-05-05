@@ -1,4 +1,4 @@
-# # ListProvidersResponse
+# ListProvidersResponse
 
 ## Properties
 

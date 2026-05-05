@@ -1,4 +1,4 @@
-# # AppleWalletInput
+# AppleWalletInput
 
 ## Properties
 

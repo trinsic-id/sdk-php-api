@@ -1,4 +1,4 @@
-# # AppleWalletProviderOutput
+# AppleWalletProviderOutput
 
 ## Properties
 

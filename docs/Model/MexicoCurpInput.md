@@ -1,4 +1,4 @@
-# # MexicoCurpInput
+# MexicoCurpInput
 
 ## Properties
 

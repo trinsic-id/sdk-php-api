@@ -1,4 +1,4 @@
-# # LatviaEparakstsMobileProviderOutput
+# LatviaEparakstsMobileProviderOutput
 
 ## Properties
 

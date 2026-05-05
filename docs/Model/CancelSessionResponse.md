@@ -1,4 +1,4 @@
-# # CancelSessionResponse
+# CancelSessionResponse
 
 ## Properties
 

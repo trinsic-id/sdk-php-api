@@ -1,4 +1,4 @@
-# # StepRefreshInfo
+# StepRefreshInfo
 
 ## Properties
 

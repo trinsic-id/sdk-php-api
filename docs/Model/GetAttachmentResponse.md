@@ -1,4 +1,4 @@
-# # GetAttachmentResponse
+# GetAttachmentResponse
 
 ## Properties
 

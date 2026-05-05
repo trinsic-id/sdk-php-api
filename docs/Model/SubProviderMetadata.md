@@ -1,4 +1,4 @@
-# # SubProviderMetadata
+# SubProviderMetadata
 
 ## Properties
 

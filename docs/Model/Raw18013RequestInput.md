@@ -1,4 +1,4 @@
-# # Raw18013RequestInput
+# Raw18013RequestInput
 
 ## Properties
 

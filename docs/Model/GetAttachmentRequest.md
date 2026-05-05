@@ -1,4 +1,4 @@
-# # GetAttachmentRequest
+# GetAttachmentRequest
 
 ## Properties
 

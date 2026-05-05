@@ -1,4 +1,4 @@
-# # PortugalIdCardProviderOutput
+# PortugalIdCardProviderOutput
 
 ## Properties
 

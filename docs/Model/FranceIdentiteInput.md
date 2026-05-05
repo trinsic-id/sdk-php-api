@@ -1,4 +1,4 @@
-# # FranceIdentiteInput
+# FranceIdentiteInput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CreateVerificationProfileResponse
+# CreateVerificationProfileResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # NigeriaNinMatch2Input
+# NigeriaNinMatch2Input
 
 ## Properties
 

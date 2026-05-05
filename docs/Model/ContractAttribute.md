@@ -1,4 +1,4 @@
-# # ContractAttribute
+# ContractAttribute
 
 ## Properties
 

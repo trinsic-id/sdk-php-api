@@ -1,4 +1,4 @@
-# # CreateDirectProviderSessionResponse
+# CreateDirectProviderSessionResponse
 
 ## Properties
 

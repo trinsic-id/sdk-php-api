@@ -1,4 +1,4 @@
-# # IntegrationCapability
+# IntegrationCapability
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # TrinsicTestDatabaseLookupInput
+# TrinsicTestDatabaseLookupInput
 
 ## Properties
 

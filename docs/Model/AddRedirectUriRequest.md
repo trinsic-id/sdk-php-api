@@ -1,4 +1,4 @@
-# # AddRedirectUriRequest
+# AddRedirectUriRequest
 
 ## Properties
 

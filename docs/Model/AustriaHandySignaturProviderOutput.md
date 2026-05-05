@@ -1,4 +1,4 @@
-# # AustriaHandySignaturProviderOutput
+# AustriaHandySignaturProviderOutput
 
 ## Properties
 

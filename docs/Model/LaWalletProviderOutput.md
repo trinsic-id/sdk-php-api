@@ -1,4 +1,4 @@
-# # LaWalletProviderOutput
+# LaWalletProviderOutput
 
 ## Properties
 

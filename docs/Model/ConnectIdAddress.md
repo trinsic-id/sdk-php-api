@@ -1,4 +1,4 @@
-# # ConnectIdAddress
+# ConnectIdAddress
 
 ## Properties
 

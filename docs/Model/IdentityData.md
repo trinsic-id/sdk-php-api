@@ -1,4 +1,4 @@
-# # IdentityData
+# IdentityData
 
 ## Properties
 

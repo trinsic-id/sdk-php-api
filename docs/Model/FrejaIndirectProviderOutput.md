@@ -1,4 +1,4 @@
-# # FrejaIndirectProviderOutput
+# FrejaIndirectProviderOutput
 
 ## Properties
 

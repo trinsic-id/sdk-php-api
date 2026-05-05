@@ -1,4 +1,4 @@
-# # SubmitNativeChallengeResponseResponse
+# SubmitNativeChallengeResponseResponse
 
 ## Properties
 

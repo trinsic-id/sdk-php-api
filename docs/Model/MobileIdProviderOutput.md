@@ -1,4 +1,4 @@
-# # MobileIdProviderOutput
+# MobileIdProviderOutput
 
 ## Properties
 

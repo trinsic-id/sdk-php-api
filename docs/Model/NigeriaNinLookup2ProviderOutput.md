@@ -1,4 +1,4 @@
-# # NigeriaNinLookup2ProviderOutput
+# NigeriaNinLookup2ProviderOutput
 
 ## Properties
 

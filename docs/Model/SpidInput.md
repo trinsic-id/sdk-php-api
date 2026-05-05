@@ -1,4 +1,4 @@
-# # SpidInput
+# SpidInput
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UkEvisaLookupInput
+# UkEvisaLookupInput
 
 ## Properties
 

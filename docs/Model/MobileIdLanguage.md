@@ -1,4 +1,4 @@
-# # MobileIdLanguage
+# MobileIdLanguage
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ProviderInput
+# ProviderInput
 
 ## Properties
 
@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **kenya_nid_match_biometric_2** | [**\Trinsic\Api\Model\KenyaNidBiometric2Input**](KenyaNidBiometric2Input.md) | Input for the &#x60;kenya-nid-match-biometric-2&#x60; provider | [optional]
 **indonesia_nik_lookup** | [**\Trinsic\Api\Model\IndonesiaNikInput**](IndonesiaNikInput.md) | Input for the &#x60;indonesia-nik-lookup&#x60; provider | [optional]
+**china_resident_id_match** | [**\Trinsic\Api\Model\ChinaResidentIdMatchInput**](ChinaResidentIdMatchInput.md) | Input for the &#x60;china-resident-id-match&#x60; provider | [optional]
 **indonesia_dukcapil_match** | [**\Trinsic\Api\Model\IndonesiaDukcapilMatchInput**](IndonesiaDukcapilMatchInput.md) | Input for the &#x60;indonesia-dukcapil-match&#x60; provider | [optional]
 **mexico_curp_lookup** | [**\Trinsic\Api\Model\MexicoCurpInput**](MexicoCurpInput.md) | Input for the &#x60;mexico-curp-lookup&#x60; provider | [optional]
 **south_africa_nid_lookup** | [**\Trinsic\Api\Model\SouthAfricaNidInput**](SouthAfricaNidInput.md) | Input for the &#x60;south-africa-nid-lookup&#x60; provider | [optional]
@@ -23,6 +24,8 @@ Name | Type | Description | Notes
 **nigeria_nin_match_biometric_2** | [**\Trinsic\Api\Model\NigeriaNinBiometric2Input**](NigeriaNinBiometric2Input.md) | Input for the &#x60;nigeria-nin-match-biometric-2&#x60; provider | [optional]
 **nigeria_nin_lookup** | [**\Trinsic\Api\Model\NigeriaNinInput**](NigeriaNinInput.md) | Input for the &#x60;nigeria-nin-lookup&#x60; provider | [optional]
 **india_digilocker_aadhaar_match** | [**\Trinsic\Api\Model\AadhaarInput**](AadhaarInput.md) | Input for the &#x60;india-digilocker-aadhaar-match&#x60; provider | [optional]
+**india_pan_lookup** | [**\Trinsic\Api\Model\IndiaPanLookupInput**](IndiaPanLookupInput.md) | Input for the &#x60;india-pan-lookup&#x60; provider | [optional]
+**korea_telco_match** | [**\Trinsic\Api\Model\KoreaTelcoMatchInput**](KoreaTelcoMatchInput.md) | Input for the &#x60;korea-telco-match&#x60; provider | [optional]
 **brazil_cpf_lookup** | [**\Trinsic\Api\Model\BrazilCpfCheckInput**](BrazilCpfCheckInput.md) | Input for the &#x60;brazil-cpf-lookup&#x60; provider | [optional]
 **brazil_digital_cnh** | [**\Trinsic\Api\Model\BrazilDigitalCnhInput**](BrazilDigitalCnhInput.md) | Input for the &#x60;brazil-digital-cnh&#x60; provider | [optional]
 **philippines_philsys_match** | [**\Trinsic\Api\Model\PhilippineMatchInput**](PhilippineMatchInput.md) | Input for the &#x60;philippines-philsys-match&#x60; provider | [optional]
@@ -36,8 +39,15 @@ Name | Type | Description | Notes
 **apple_wallet** | [**\Trinsic\Api\Model\AppleWalletInput**](AppleWalletInput.md) | Input for the &#x60;apple-wallet&#x60; provider | [optional]
 **samsung_wallet** | [**\Trinsic\Api\Model\SamsungWalletInput**](SamsungWalletInput.md) | Input for the &#x60;samsung-wallet&#x60; provider | [optional]
 **france_identite** | [**\Trinsic\Api\Model\FranceIdentiteInput**](FranceIdentiteInput.md) | Input for the &#x60;france-identite&#x60; provider | [optional]
+**poland_mobywatel_match** | [**\Trinsic\Api\Model\PolandMobywatelMatchInput**](PolandMobywatelMatchInput.md) | Input for the &#x60;poland-mobywatel-match&#x60; provider | [optional]
+**bolivia_ci_lookup** | [**\Trinsic\Api\Model\BoliviaCiLookupInput**](BoliviaCiLookupInput.md) | Input for the &#x60;bolivia-ci-lookup&#x60; provider | [optional]
+**colombia_cc_lookup** | [**\Trinsic\Api\Model\ColombiaCcLookupInput**](ColombiaCcLookupInput.md) | Input for the &#x60;colombia-cc-lookup&#x60; provider | [optional]
+**el_salvador_dui_lookup** | [**\Trinsic\Api\Model\ElSalvadorDuiLookupInput**](ElSalvadorDuiLookupInput.md) | Input for the &#x60;el-salvador-dui-lookup&#x60; provider | [optional]
+**guatemala_cui_lookup** | [**\Trinsic\Api\Model\GuatemalaCuiLookupInput**](GuatemalaCuiLookupInput.md) | Input for the &#x60;guatemala-cui-lookup&#x60; provider | [optional]
+**panama_cedula_lookup** | [**\Trinsic\Api\Model\PanamaCedulaLookupInput**](PanamaCedulaLookupInput.md) | Input for the &#x60;panama-cedula-lookup&#x60; provider | [optional]
 **peru_dni_lookup** | [**\Trinsic\Api\Model\PeruDniLookupInput**](PeruDniLookupInput.md) | Input for the &#x60;peru-dni-lookup&#x60; provider | [optional]
 **uk_evisa_lookup** | [**\Trinsic\Api\Model\UkEvisaLookupInput**](UkEvisaLookupInput.md) | Input for the &#x60;uk-evisa-lookup&#x60; provider | [optional]
+**usa_california_dmv** | [**\Trinsic\Api\Model\UsaCaliforniaDmvInput**](UsaCaliforniaDmvInput.md) | Input for the &#x60;usa-california-dmv&#x60; provider | [optional]
 **trinsic_test_database_lookup** | [**\Trinsic\Api\Model\TrinsicTestDatabaseLookupInput**](TrinsicTestDatabaseLookupInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-database-lookup&#x60; provider | [optional]
 **trinsic_test_sub_providers** | [**\Trinsic\Api\Model\TrinsicTestSubProvidersInput**](TrinsicTestSubProvidersInput.md) | *TEST MODE ONLY.*              Input for the &#x60;trinsic-test-sub-providers&#x60; provider | [optional]
 

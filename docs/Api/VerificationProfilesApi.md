@@ -1,10 +1,13 @@
 # Trinsic\Api\VerificationProfilesApi
 
+
+
 All URIs are relative to https://api.trinsic.id, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**createVerificationProfile()**](VerificationProfilesApi.md#createVerificationProfile) | **POST** /api/valpha/verification-profiles | Create Verification Profile |
+| [**getVerificationProfileByExternalId()**](VerificationProfilesApi.md#getVerificationProfileByExternalId) | **GET** /api/valpha/verification-profiles/external-ids/{externalId} | Get Verification Profile by External ID |
 | [**getVerificationProfileById()**](VerificationProfilesApi.md#getVerificationProfileById) | **GET** /api/valpha/verification-profiles/{id} | Get Verification Profile |
 | [**listVerificationProfiles()**](VerificationProfilesApi.md#listVerificationProfiles) | **GET** /api/valpha/verification-profiles | List Verification Profiles |
 
@@ -12,7 +15,7 @@ All URIs are relative to https://api.trinsic.id, except if the operation defines
 ## `createVerificationProfile()`
 
 ```php
-createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage): \Trinsic\Api\Model\CreateVerificationProfileResponse
+createVerificationProfile($alias, $brand_name, $primary_color, $external_id, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage): \Trinsic\Api\Model\CreateVerificationProfileResponse
 ```
 
 Create Verification Profile
@@ -39,6 +42,7 @@ $apiInstance = new Trinsic\Api\Api\VerificationProfilesApi(
 $alias = 'alias_example'; // string | An alias of the verification profile shown to developers and administrators.
 $brand_name = 'brand_name_example'; // string | The brand name of the verification profile shown to end-users.
 $primary_color = 'primary_color_example'; // string | The primary color of the verification profile. Must be a 6-character hex string prefixed with a '#' character. Example: #000000
+$external_id = 'external_id_example'; // string | A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long.
 $providers = array('providers_example'); // string[] | The list of providers you'd like to select for this profile. We will not currently enable any providers.
 $logo = '/path/to/file.txt'; // \SplFileObject | The logo of the verification profile.
 $redaction_period = 'redaction_period_example'; // string | The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days.
@@ -46,7 +50,7 @@ $session_expiration = 'session_expiration_example'; // string | The session expi
 $is_production_usage = True; // bool | Whether this profile is for production usage. Only applicable for Live environment profiles. If not specified for Live profiles, defaults to false (Demo).
 
 try {
-    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage);
+    $result = $apiInstance->createVerificationProfile($alias, $brand_name, $primary_color, $external_id, $providers, $logo, $redaction_period, $session_expiration, $is_production_usage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationProfilesApi->createVerificationProfile: ', $e->getMessage(), PHP_EOL;
@@ -60,6 +64,7 @@ try {
 | **alias** | **string**| An alias of the verification profile shown to developers and administrators. | |
 | **brand_name** | **string**| The brand name of the verification profile shown to end-users. | |
 | **primary_color** | **string**| The primary color of the verification profile. Must be a 6-character hex string prefixed with a &#39;#&#39; character. Example: #000000 | [optional] |
+| **external_id** | **string**| A customer-defined external ID for this verification profile. Must be unique within your organization and be at most 255 characters long. | [optional] |
 | **providers** | [**string[]**](../Model/string.md)| The list of providers you&#39;d like to select for this profile. We will not currently enable any providers. | [optional] |
 | **logo** | **\SplFileObject****\SplFileObject**| The logo of the verification profile. | [optional] |
 | **redaction_period** | **string**| The redaction period for verification data. Must be between 0 and 31 days, and at least 15 minutes greater than the session expiration. If not specified, defaults to 31 days. | [optional] |
@@ -77,6 +82,66 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `multipart/form-data`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getVerificationProfileByExternalId()`
+
+```php
+getVerificationProfileByExternalId($external_id): \Trinsic\Api\Model\VerificationProfileResponse
+```
+
+Get Verification Profile by External ID
+
+Gets a specific verification profile by its customer-defined external ID.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Trinsic\Api\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Trinsic\Api\Api\VerificationProfilesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$external_id = 'external_id_example'; // string | Customer-defined external ID
+
+try {
+    $result = $apiInstance->getVerificationProfileByExternalId($external_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VerificationProfilesApi->getVerificationProfileByExternalId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **external_id** | **string**| Customer-defined external ID | |
+
+### Return type
+
+[**\Trinsic\Api\Model\VerificationProfileResponse**](../Model/VerificationProfileResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `text/plain`, `application/json`, `text/json`, `application/problem+json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -1,4 +1,4 @@
-# # MatchData
+# MatchData
 
 ## Properties
 

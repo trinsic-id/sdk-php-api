@@ -1,4 +1,4 @@
-# # ProviderHealth
+# ProviderHealth
 
 ## Properties
 

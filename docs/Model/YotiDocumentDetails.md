@@ -1,4 +1,4 @@
-# # YotiDocumentDetails
+# YotiDocumentDetails
 
 ## Properties
 

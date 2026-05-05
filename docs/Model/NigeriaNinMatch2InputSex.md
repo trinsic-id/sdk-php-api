@@ -1,4 +1,4 @@
-# # NigeriaNinMatch2InputSex
+# NigeriaNinMatch2InputSex
 
 ## Properties
 

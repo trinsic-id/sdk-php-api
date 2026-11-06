@@ -2,6 +2,7 @@
   "name": "trinsic/api",
   "version": "3.2.1",
   "description": "Trinsic API PHP library.",
+  "abandoned": true,
   "keywords": [
     "openapitools",
     "openapi-generator",
